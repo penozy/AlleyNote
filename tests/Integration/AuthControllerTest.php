@@ -127,6 +127,13 @@ class AuthControllerTest extends TestCase
 
         // 設定 Mock 期望和請求數據
         $this->request->shouldReceive('getParsedBody')->andReturn($userData);
+        $this->request->shouldReceive('getHeaderLine')->with('User-Agent')->andReturn('Test User Agent');
+        $this->request->shouldReceive('hasHeader')->andReturn(false); // 模擬沒有特殊 IP header
+        $this->request->shouldReceive('getServerParams')->andReturn(['REMOTE_ADDR' => '192.168.1.1']);
+
+        // Mock validator 期望的 addRule 和 validate 方法
+        $this->validator->shouldReceive('addRule')->zeroOrMoreTimes()->andReturnSelf();
+        $this->validator->shouldReceive('validate')->andReturn($userData);
 
         $this->authService->shouldReceive('register')
             ->once()
@@ -211,28 +218,39 @@ class AuthControllerTest extends TestCase
     public function loginUserSuccessfully(): void
     {
         $credentials = [
-            'username' => 'testuser',
+            'email' => 'test@example.com',
             'password' => 'password123',
         ];
 
         // 設定 Mock 期望和請求數據
         $this->request->shouldReceive('getParsedBody')->andReturn($credentials);
+        $this->request->shouldReceive('getHeaderLine')->with('User-Agent')->andReturn('Test User Agent');
+        $this->request->shouldReceive('hasHeader')->andReturn(false); // 模擬沒有特殊 IP header
+        $this->request->shouldReceive('getServerParams')->andReturn(['REMOTE_ADDR' => '192.168.1.1']);
 
-        $this->authService->shouldReceive('login')
-            ->once()
-            ->with($credentials)
-            ->andReturn([
-                'success' => true,
-                'token' => 'fake-jwt-token',
-                'user' => [
-                    'id' => 1,
-                    'username' => 'testuser',
-                    'email' => 'test@example.com',
-                ],
-            ]);
-
-        // 建立控制器並執行
+        // Mock AuthenticationService 的預期回傳
         $authenticationService = Mockery::mock(\AlleyNote\Domains\Auth\Contracts\AuthenticationServiceInterface::class);
+
+        // Create real TokenPair object with valid JWT format
+        $tokenPair = new \AlleyNote\Domains\Auth\ValueObjects\TokenPair(
+            accessToken: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiIxIiwiaWF0IjoxNjAwMDAwMDAwfQ.signature',
+            refreshToken: 'fake-refresh-token-1234567890abcdefghijklmnopqrstuvwxyz',
+            accessTokenExpiresAt: new \DateTimeImmutable('+1 hour'),
+            refreshTokenExpiresAt: new \DateTimeImmutable('+7 days')
+        );
+
+        // Create real LoginResponseDTO object  
+        $loginResponse = new \AlleyNote\Domains\Auth\DTOs\LoginResponseDTO(
+            tokens: $tokenPair,
+            userId: 1,
+            userEmail: 'test@example.com',
+            expiresAt: time() + 3600
+        );
+
+        $authenticationService->shouldReceive('login')
+            ->once()
+            ->andReturn($loginResponse);
+
         $jwtTokenService = Mockery::mock(\AlleyNote\Domains\Auth\Contracts\JwtTokenServiceInterface::class);
         $activityLoggingService = Mockery::mock(\App\Domains\Security\Contracts\ActivityLoggingServiceInterface::class);
         $activityLoggingService->shouldReceive('logSuccess')->zeroOrMoreTimes();
@@ -251,6 +269,8 @@ class AuthControllerTest extends TestCase
         // 驗證回應
         $this->assertEquals(200, $response->getStatusCode());
         $responseBody = (string) $response->getBody();
+        $responseData = json_decode($responseBody, true);
+        $this->assertTrue($responseData['success']);
         $responseData = json_decode($responseBody, true);
         $this->assertTrue($responseData['success']);
     }

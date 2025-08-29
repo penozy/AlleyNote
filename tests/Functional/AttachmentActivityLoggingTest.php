@@ -9,6 +9,7 @@ use App\Domains\Security\Enums\ActivityType;
 use App\Domains\Security\Repositories\ActivityLogRepository;
 use App\Domains\Security\Services\ActivityLoggingService;
 use PDO;
+use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 use Psr\Log\NullLogger;
 
@@ -42,7 +43,7 @@ class AttachmentActivityLoggingTest extends TestCase
         $this->activityLogger->setLogLevel(1);
     }
 
-    /** @test */
+    #[Test]
     public function it_logs_attachment_upload_activity(): void
     {
         $postId = 123;
@@ -85,7 +86,7 @@ class AttachmentActivityLoggingTest extends TestCase
         $this->assertEquals($filename, $metadata['filename']);
     }
 
-    /** @test */
+    #[Test]
     public function it_logs_attachment_download_activity(): void
     {
         $attachmentUuid = 'test-attachment-uuid-12345';
@@ -126,7 +127,7 @@ class AttachmentActivityLoggingTest extends TestCase
         $this->assertEquals($filename, $metadata['filename']);
     }
 
-    /** @test */
+    #[Test]
     public function it_logs_attachment_delete_activity(): void
     {
         $attachmentUuid = 'test-delete-uuid-12345';
@@ -167,7 +168,7 @@ class AttachmentActivityLoggingTest extends TestCase
         $this->assertEquals($filename, $metadata['filename']);
     }
 
-    /** @test */
+    #[Test]
     public function it_logs_attachment_permission_denied_activity(): void
     {
         $postId = 789;
@@ -211,7 +212,7 @@ class AttachmentActivityLoggingTest extends TestCase
         $this->assertEquals($filename, $metadata['filename']);
     }
 
-    /** @test */
+    #[Test]
     public function it_logs_attachment_size_exceeded_activity(): void
     {
         $filename = 'huge-file.zip';
@@ -255,7 +256,7 @@ class AttachmentActivityLoggingTest extends TestCase
         $this->assertEquals($fileSize, $metadata['file_size']);
     }
 
-    /** @test */
+    #[Test]
     public function it_logs_attachment_virus_detected_activity(): void
     {
         $filename = 'suspicious-file.exe';

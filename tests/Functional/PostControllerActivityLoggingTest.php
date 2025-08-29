@@ -8,6 +8,7 @@ use App\Domains\Security\Enums\ActivityType;
 use App\Domains\Security\Repositories\ActivityLogRepository;
 use DateTime;
 use PDO;
+use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -40,7 +41,7 @@ class PostControllerActivityLoggingTest extends TestCase
         parent::tearDown();
     }
 
-    /** @test */
+    #[Test]
     public function it_can_record_post_creation_activity(): void
     {
         $userId = null; // 使用 NULL 來避免外鍵約束問題
@@ -87,7 +88,7 @@ class PostControllerActivityLoggingTest extends TestCase
         $this->assertSame('Test Post Title', $metadata['title']);
     }
 
-    /** @test */
+    #[Test]
     public function it_can_record_post_viewing_activity(): void
     {
         $userId = null;
@@ -133,7 +134,7 @@ class PostControllerActivityLoggingTest extends TestCase
         $this->assertSame('view', $metadata['operation']);
     }
 
-    /** @test */
+    #[Test]
     public function it_can_record_post_update_activity(): void
     {
         $userId = null;
@@ -177,7 +178,7 @@ class PostControllerActivityLoggingTest extends TestCase
         $this->assertContains('content', $metadata['changes']);
     }
 
-    /** @test */
+    #[Test]
     public function it_can_query_post_activities_by_time_range(): void
     {
         $userId = null;

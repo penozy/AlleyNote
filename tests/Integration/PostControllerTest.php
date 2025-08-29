@@ -349,15 +349,35 @@ class PostControllerTest extends TestCase
         // 準備測試資料
         $postId = 1;
 
+        // Mock CSRF token
+        $this->request->shouldReceive('getHeaderLine')
+            ->with('X-CSRF-TOKEN')
+            ->andReturn('valid-token');
+
+        // Mock user_id attribute
+        $this->request->shouldReceive('getAttribute')
+            ->with('user_id')
+            ->andReturn(1);
+
+        // Mock server params for IP address
+        $this->request->shouldReceive('getServerParams')
+            ->andReturn(['REMOTE_ADDR' => '127.0.0.1']);
+
+        // Mock Post 物件
+        $mockPost = \Mockery::mock(\App\Domains\Post\Models\Post::class);
+        $mockPost->shouldReceive('getTitle')->andReturn('Test Post Title');
+        $mockPost->shouldReceive('getStatus')->andReturn('published');
+
         // 設定服務層期望行為
+        $this->postService->shouldReceive('findById')
+            ->once()
+            ->with($postId)
+            ->andReturn($mockPost);
+
         $this->postService->shouldReceive('deletePost')
             ->once()
             ->with($postId)
             ->andReturn(true);
-
-        // 預期的回應設定
-        $this->response->shouldReceive('getStatusCode')
-            ->andReturn(204);
 
         // 執行測試
         $controller = $this->createController();

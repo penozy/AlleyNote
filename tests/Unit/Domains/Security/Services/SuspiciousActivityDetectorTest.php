@@ -14,6 +14,7 @@ use DateTimeImmutable;
 use Exception;
 use Mockery;
 use Mockery\MockInterface;
+use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 use Psr\Log\LoggerInterface;
 
@@ -54,7 +55,7 @@ class SuspiciousActivityDetectorTest extends TestCase
         parent::tearDown();
     }
 
-    /** @test */
+    #[Test]
     public function it_can_detect_suspicious_user_activity_with_high_failure_rate(): void
     {
         $userId = 123;
@@ -93,7 +94,7 @@ class SuspiciousActivityDetectorTest extends TestCase
         $this->assertSame('user', $result->getTargetType());
     }
 
-    /** @test */
+    #[Test]
     public function it_can_detect_suspicious_ip_activity(): void
     {
         $ipAddress = '192.168.1.100';
@@ -131,7 +132,7 @@ class SuspiciousActivityDetectorTest extends TestCase
         $this->assertSame('ip', $result->getTargetType());
     }
 
-    /** @test */
+    #[Test]
     public function it_can_detect_global_suspicious_patterns(): void
     {
         $timeWindow = 60;
@@ -160,7 +161,7 @@ class SuspiciousActivityDetectorTest extends TestCase
         // 由於統計資料顯示異常，應該會檢測到模式
     }
 
-    /** @test */
+    #[Test]
     public function it_can_set_and_get_failure_threshold(): void
     {
         $activityType = ActivityType::LOGIN_FAILED;
@@ -177,7 +178,7 @@ class SuspiciousActivityDetectorTest extends TestCase
         $this->assertSame($timeWindow, $config['failure_thresholds'][$activityType->value]['timeWindow']);
     }
 
-    /** @test */
+    #[Test]
     public function it_can_set_and_get_frequency_threshold(): void
     {
         $activityType = ActivityType::LOGIN_SUCCESS;
@@ -194,7 +195,7 @@ class SuspiciousActivityDetectorTest extends TestCase
         $this->assertSame($timeWindow, $config['frequency_thresholds'][$activityType->value]['timeWindow']);
     }
 
-    /** @test */
+    #[Test]
     public function it_can_enable_and_disable_detection_types(): void
     {
         $detectionType = 'failure_rate';
@@ -211,7 +212,7 @@ class SuspiciousActivityDetectorTest extends TestCase
         $this->assertTrue($this->detector->isDetectionEnabled($detectionType));
     }
 
-    /** @test */
+    #[Test]
     public function it_can_reset_thresholds_to_defaults(): void
     {
         // 修改一個閾值
@@ -227,7 +228,7 @@ class SuspiciousActivityDetectorTest extends TestCase
         $this->assertSame(60, $config['failure_thresholds'][ActivityType::LOGIN_FAILED->value]['timeWindow']);
     }
 
-    /** @test */
+    #[Test]
     public function it_should_trigger_alert_for_high_severity_suspicious_activity(): void
     {
         $analysis = SuspiciousActivityAnalysisDTO::forUser(
@@ -249,7 +250,7 @@ class SuspiciousActivityDetectorTest extends TestCase
         $this->assertTrue($shouldAlert);
     }
 
-    /** @test */
+    #[Test]
     public function it_should_not_trigger_alert_for_non_suspicious_activity(): void
     {
         $analysis = SuspiciousActivityAnalysisDTO::forUser(
@@ -271,7 +272,7 @@ class SuspiciousActivityDetectorTest extends TestCase
         $this->assertFalse($shouldAlert);
     }
 
-    /** @test */
+    #[Test]
     public function it_handles_exceptions_gracefully_during_user_detection(): void
     {
         $userId = 123;
@@ -291,7 +292,7 @@ class SuspiciousActivityDetectorTest extends TestCase
         $this->assertSame(ActivitySeverity::LOW, $result->getSeverityLevel());
     }
 
-    /** @test */
+    #[Test]
     public function it_handles_exceptions_gracefully_during_ip_detection(): void
     {
         $ipAddress = '192.168.1.1';
@@ -311,7 +312,7 @@ class SuspiciousActivityDetectorTest extends TestCase
         $this->assertSame(ActivitySeverity::LOW, $result->getSeverityLevel());
     }
 
-    /** @test */
+    #[Test]
     public function it_returns_empty_array_when_global_detection_fails(): void
     {
         $this->mockRepository

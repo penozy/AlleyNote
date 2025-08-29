@@ -644,6 +644,23 @@ class PostControllerTest extends TestCase
             ->with('X-CSRF-TOKEN')
             ->andReturn('valid-token');
 
+        $this->request->shouldReceive('getAttribute')
+            ->with('user_id')
+            ->andReturn(1);
+
+        $this->request->shouldReceive('getServerParams')
+            ->andReturn(['REMOTE_ADDR' => '127.0.0.1']);
+
+        // Mock Post 物件
+        $mockPost = \Mockery::mock(\App\Domains\Post\Models\Post::class);
+        $mockPost->shouldReceive('getTitle')->andReturn('Test Post Title');
+        $mockPost->shouldReceive('getStatus')->andReturn('published');
+
+        $this->postService->shouldReceive('findById')
+            ->once()
+            ->with($postId)
+            ->andReturn($mockPost);
+
         $this->postService->shouldReceive('deletePost')
             ->once()
             ->with($postId)
@@ -663,13 +680,20 @@ class PostControllerTest extends TestCase
             ->with('X-CSRF-TOKEN')
             ->andReturn('valid-token');
 
+        $this->request->shouldReceive('getAttribute')
+            ->with('user_id')
+            ->andReturn(1);
+
         $this->request->shouldReceive('getServerParams')
             ->andReturn(['REMOTE_ADDR' => '127.0.0.1']);
 
-        $this->postService->shouldReceive('deletePost')
+        $this->postService->shouldReceive('findById')
             ->once()
             ->with($postId)
             ->andThrow(new PostNotFoundException($postId));
+
+        // deletePost 不應該被呼叫，因為 findById 已經拋出例外
+        $this->postService->shouldNotReceive('deletePost');
 
         $response = $this->controller->delete($this->request, $this->response, ['id' => $postId]);
 
