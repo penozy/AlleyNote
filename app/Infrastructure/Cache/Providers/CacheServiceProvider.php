@@ -4,21 +4,20 @@ declare(strict_types=1);
 
 namespace App\Infrastructure\Cache\Providers;
 
-use App\Infrastructure\Cache\Providers\AppRedisCache;
 use App\Shared\Contracts\CacheInterface;
 use DI\Container;
 use Psr\Container\ContainerInterface;
 
 /**
- * 快取服務提供者
- * 
+ * 快取服務提供者.
+ *
  * 註冊快取相關的服務到 DI 容器中
  */
 class CacheServiceProvider
 {
     /**
-     * 取得服務定義
-     * 
+     * 取得服務定義.
+     *
      * @return array<string, mixed>
      */
     public static function getDefinitions(): array
@@ -38,7 +37,7 @@ class CacheServiceProvider
                     port: $port,
                     prefix: $prefix,
                     database: $database,
-                    password: $password
+                    password: $password,
                 );
             },
 
@@ -48,7 +47,7 @@ class CacheServiceProvider
     }
 
     /**
-     * 註冊服務
+     * 註冊服務.
      */
     public function register(Container $container): void
     {

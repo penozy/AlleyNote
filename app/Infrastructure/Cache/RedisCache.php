@@ -10,13 +10,14 @@ use Redis;
 use Throwable;
 
 /**
- * Redis 快取服務實作
- * 
+ * Redis 快取服務實作.
+ *
  * 使用 Redis 作為快取後端的實作
  */
 class RedisCache implements CacheServiceInterface
 {
     private Redis $redis;
+
     private string $prefix;
 
     /**
@@ -25,7 +26,7 @@ class RedisCache implements CacheServiceInterface
      * @param string $prefix 快取鍵前綴
      * @param int $database 資料庫編號
      * @param string|null $password Redis 密碼
-     * 
+     *
      * @throws Exception 當連接失敗時
      */
     public function __construct(
@@ -33,7 +34,7 @@ class RedisCache implements CacheServiceInterface
         int $port = 6379,
         string $prefix = 'alleynote:',
         int $database = 0,
-        ?string $password = null
+        ?string $password = null,
     ) {
         $this->redis = new Redis();
         $this->prefix = $prefix;
@@ -61,7 +62,7 @@ class RedisCache implements CacheServiceInterface
     }
 
     /**
-     * 產生完整的快取鍵
+     * 產生完整的快取鍵.
      */
     private function getKey(string $key): string
     {
@@ -72,6 +73,7 @@ class RedisCache implements CacheServiceInterface
     {
         try {
             $value = $this->redis->get($this->getKey($key));
+
             return $value === false ? null : $value;
         } catch (Throwable) {
             return null;
@@ -154,6 +156,7 @@ class RedisCache implements CacheServiceInterface
                 foreach ($values as $key => $value) {
                     $redisValues[$this->getKey($key)] = $value;
                 }
+
                 return $this->redis->mset($redisValues);
             }
 
@@ -164,6 +167,7 @@ class RedisCache implements CacheServiceInterface
                     $success = false;
                 }
             }
+
             return $success;
         } catch (Throwable) {
             return false;
@@ -178,6 +182,7 @@ class RedisCache implements CacheServiceInterface
 
         try {
             $redisKeys = array_map([$this, 'getKey'], $keys);
+
             return $this->redis->del(...$redisKeys) > 0;
         } catch (Throwable) {
             return false;
@@ -203,8 +208,8 @@ class RedisCache implements CacheServiceInterface
     }
 
     /**
-     * 取得 Redis 連接資訊
-     * 
+     * 取得 Redis 連接資訊.
+     *
      * @return array<string, mixed>
      */
     public function getConnectionInfo(): array
@@ -225,7 +230,7 @@ class RedisCache implements CacheServiceInterface
     }
 
     /**
-     * 清理類別時關閉連接
+     * 清理類別時關閉連接.
      */
     public function __destruct()
     {

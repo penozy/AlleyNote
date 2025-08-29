@@ -4,43 +4,46 @@ declare(strict_types=1);
 
 namespace App\Application\DTOs\Monitoring;
 
-use App\Domain\Common\ValueObjects\AlertSeverity;
 use App\Application\DTOs\Common\BaseDTO;
+use App\Domain\Common\ValueObjects\AlertSeverity;
+use DateTime;
+use DateTimeInterface;
+use Exception;
 
 /**
- * 告警規則 DTO
- * 
+ * 告警規則 DTO.
+ *
  * 用於告警規則的數據傳輸和驗證
  */
 final class AlertRuleDTO extends BaseDTO
 {
     /**
-     * 規則 ID
+     * 規則 ID.
      */
     public readonly ?string $id;
 
     /**
-     * 規則名稱
+     * 規則名稱.
      */
     public readonly string $name;
 
     /**
-     * 規則描述
+     * 規則描述.
      */
     public readonly string $description;
 
     /**
-     * 指標名稱
+     * 指標名稱.
      */
     public readonly string $metric;
 
     /**
-     * 指標路徑（用於從指標數據中提取值）
+     * 指標路徑（用於從指標數據中提取值）.
      */
     public readonly string $metricPath;
 
     /**
-     * 比較操作符
+     * 比較操作符.
      */
     public readonly string $operator;
 
@@ -50,47 +53,47 @@ final class AlertRuleDTO extends BaseDTO
     public readonly float $threshold;
 
     /**
-     * 告警嚴重程度
+     * 告警嚴重程度.
      */
     public readonly AlertSeverity $severity;
 
     /**
-     * 評估窗口時間（秒）
+     * 評估窗口時間（秒）.
      */
     public readonly int $evaluationWindow;
 
     /**
-     * 觸發條件數量
+     * 觸發條件數量.
      */
     public readonly int $triggerCount;
 
     /**
-     * 是否啟用
+     * 是否啟用.
      */
     public readonly bool $enabled;
 
     /**
-     * 標籤
+     * 標籤.
      */
     public readonly array $tags;
 
     /**
-     * 通知管道
+     * 通知管道.
      */
     public readonly array $notificationChannels;
 
     /**
-     * 建立時間
+     * 建立時間.
      */
-    public readonly ?\DateTimeInterface $createdAt;
+    public readonly ?DateTimeInterface $createdAt;
 
     /**
-     * 更新時間
+     * 更新時間.
      */
-    public readonly ?\DateTimeInterface $updatedAt;
+    public readonly ?DateTimeInterface $updatedAt;
 
     /**
-     * 建構子
+     * 建構子.
      */
     public function __construct(
         string $name,
@@ -106,8 +109,8 @@ final class AlertRuleDTO extends BaseDTO
         array $tags = [],
         array $notificationChannels = [],
         ?string $id = null,
-        ?\DateTimeInterface $createdAt = null,
-        ?\DateTimeInterface $updatedAt = null
+        ?DateTimeInterface $createdAt = null,
+        ?DateTimeInterface $updatedAt = null,
     ) {
         $this->id = $id;
         $this->name = $name;
@@ -129,7 +132,7 @@ final class AlertRuleDTO extends BaseDTO
     }
 
     /**
-     * 轉換為陣列
+     * 轉換為陣列.
      */
     public function toArray(): array
     {
@@ -148,13 +151,13 @@ final class AlertRuleDTO extends BaseDTO
             'tags' => $this->tags,
             'notificationChannels' => $this->notificationChannels,
             'createdAt' => $this->createdAt?->format('Y-m-d H:i:s'),
-            'updatedAt' => $this->updatedAt?->format('Y-m-d H:i:s')
+            'updatedAt' => $this->updatedAt?->format('Y-m-d H:i:s'),
         ];
     }
 
     /**
-     * 獲取驗證錯誤
-     * 
+     * 獲取驗證錯誤.
+     *
      * @return array<string, array<string>>
      */
     protected function getValidationErrors(): array
@@ -228,7 +231,7 @@ final class AlertRuleDTO extends BaseDTO
     }
 
     /**
-     * 從陣列建立 DTO
+     * 從陣列建立 DTO.
      */
     public static function fromArray(array $data): self
     {
@@ -239,7 +242,7 @@ final class AlertRuleDTO extends BaseDTO
             metricPath: $data['metricPath'] ?? $data['metric'] ?? '',
             operator: $data['operator'] ?? '',
             threshold: (float) ($data['threshold'] ?? 0.0),
-            severity: is_string($data['severity'] ?? null) 
+            severity: is_string($data['severity'] ?? null)
                 ? AlertSeverity::from($data['severity'])
                 : ($data['severity'] ?? AlertSeverity::WARNING),
             evaluationWindow: (int) ($data['evaluationWindow'] ?? 300),
@@ -248,13 +251,13 @@ final class AlertRuleDTO extends BaseDTO
             tags: $data['tags'] ?? [],
             notificationChannels: $data['notificationChannels'] ?? [],
             id: $data['id'] ?? null,
-            createdAt: isset($data['createdAt']) ? new \DateTime($data['createdAt']) : null,
-            updatedAt: isset($data['updatedAt']) ? new \DateTime($data['updatedAt']) : null
+            createdAt: isset($data['createdAt']) ? new DateTime($data['createdAt']) : null,
+            updatedAt: isset($data['updatedAt']) ? new DateTime($data['updatedAt']) : null,
         );
     }
 
     /**
-     * 檢查指標值是否觸發告警
+     * 檢查指標值是否觸發告警.
      */
     public function evaluateMetric(float $value): bool
     {
@@ -270,7 +273,7 @@ final class AlertRuleDTO extends BaseDTO
     }
 
     /**
-     * 獲取操作符的顯示名稱
+     * 獲取操作符的顯示名稱.
      */
     public function getOperatorDisplayName(): string
     {
@@ -286,7 +289,7 @@ final class AlertRuleDTO extends BaseDTO
     }
 
     /**
-     * 獲取完整的規則描述
+     * 獲取完整的規則描述.
      */
     public function getFullDescription(): string
     {
@@ -296,12 +299,12 @@ final class AlertRuleDTO extends BaseDTO
             $this->metric,
             $this->getOperatorDisplayName(),
             $this->threshold,
-            $this->severity->getDisplayName()
+            $this->severity->getDisplayName(),
         );
     }
 
     /**
-     * 複製並修改規則
+     * 複製並修改規則.
      */
     public function withChanges(array $changes): self
     {
@@ -309,18 +312,20 @@ final class AlertRuleDTO extends BaseDTO
         foreach ($changes as $key => $value) {
             $data[$key] = $value;
         }
+
         return self::fromArray($data);
     }
 
     /**
-     * 檢查規則是否有效
+     * 檢查規則是否有效.
      */
     public function isValid(): bool
     {
         try {
             $this->validate();
+
             return true;
-        } catch (\Exception) {
+        } catch (Exception) {
             return false;
         }
     }

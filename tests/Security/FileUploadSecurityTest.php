@@ -9,6 +9,7 @@ use App\Domains\Attachment\Services\AttachmentService;
 use App\Domains\Auth\Services\AuthorizationService;
 use App\Domains\Post\Models\Post;
 use App\Domains\Post\Repositories\PostRepository;
+use App\Domains\Security\Contracts\ActivityLoggingServiceInterface;
 use App\Infrastructure\Services\CacheService;
 use App\Shared\Exceptions\ValidationException;
 use Mockery;
@@ -45,7 +46,7 @@ class FileUploadSecurityTest extends TestCase
         $this->uploadDir = '/tmp/test-uploads';
 
         // Mock ActivityLoggingService
-        $activityLogger = Mockery::mock(\App\Domains\Security\Contracts\ActivityLoggingServiceInterface::class);
+        $activityLogger = Mockery::mock(ActivityLoggingServiceInterface::class);
         $activityLogger->shouldReceive('log')->zeroOrMoreTimes();
         $activityLogger->shouldReceive('logSuccess')->zeroOrMoreTimes();
         $activityLogger->shouldReceive('logFailure')->zeroOrMoreTimes();
@@ -56,7 +57,7 @@ class FileUploadSecurityTest extends TestCase
             $this->postRepo,
             $this->authService,
             $activityLogger,
-            $this->uploadDir
+            $this->uploadDir,
         );
 
         // 設定預設的mock行為

@@ -4,24 +4,25 @@ declare(strict_types=1);
 
 namespace App\Application\Services\Monitoring;
 
-use App\Application\DTOs\Monitoring\AlertRuleDTO;
 use App\Application\DTOs\Monitoring\AlertDTO;
+use App\Application\DTOs\Monitoring\AlertRuleDTO;
 use App\Domain\Common\ValueObjects\AlertSeverity;
+use Exception;
 
 /**
- * 告警規則引擎服務
- * 
+ * 告警規則引擎服務.
+ *
  * 負責管理和評估告警規則，生成告警
  */
 final class AlertRuleEngine
 {
     /**
-     * 預設告警規則
+     * 預設告警規則.
      */
     private array $defaultRules = [];
 
     /**
-     * 自訂告警規則
+     * 自訂告警規則.
      */
     private array $customRules = [];
 
@@ -31,7 +32,7 @@ final class AlertRuleEngine
     }
 
     /**
-     * 評估指標數據並生成告警
+     * 評估指標數據並生成告警.
      */
     public function evaluateMetrics(array $metrics): array
     {
@@ -45,11 +46,11 @@ final class AlertRuleEngine
 
             try {
                 $value = $this->extractMetricValue($metrics, $rule->metricPath);
-                
+
                 if ($value !== null && $rule->evaluateMetric($value)) {
                     $alerts[] = $this->createAlert($rule, $value);
                 }
-            } catch (\Exception $e) {
+            } catch (Exception $e) {
                 // 記錄錯誤但不中斷處理其他規則
                 error_log("Error evaluating rule {$rule->name}: " . $e->getMessage());
             }
@@ -59,7 +60,7 @@ final class AlertRuleEngine
     }
 
     /**
-     * 添加自訂規則
+     * 添加自訂規則.
      */
     public function addCustomRule(AlertRuleDTO $rule): void
     {
@@ -67,21 +68,23 @@ final class AlertRuleEngine
     }
 
     /**
-     * 移除自訂規則
+     * 移除自訂規則.
      */
     public function removeCustomRule(string $ruleId): bool
     {
         foreach ($this->customRules as $index => $rule) {
             if ($rule->id === $ruleId) {
                 unset($this->customRules[$index]);
+
                 return true;
             }
         }
+
         return false;
     }
 
     /**
-     * 取得所有規則
+     * 取得所有規則.
      */
     public function getAllRules(): array
     {
@@ -89,7 +92,7 @@ final class AlertRuleEngine
     }
 
     /**
-     * 取得已啟用的規則
+     * 取得已啟用的規則.
      */
     public function getEnabledRules(): array
     {
@@ -97,7 +100,7 @@ final class AlertRuleEngine
     }
 
     /**
-     * 根據嚴重程度取得規則
+     * 根據嚴重程度取得規則.
      */
     public function getRulesBySeverity(AlertSeverity $severity): array
     {
@@ -123,12 +126,12 @@ final class AlertRuleEngine
     }
 
     /**
-     * 建立告警
+     * 建立告警.
      */
     private function createAlert(AlertRuleDTO $rule, float $value): AlertDTO
     {
         $message = $this->generateAlertMessage($rule, $value);
-        
+
         return new AlertDTO(
             ruleId: $rule->id ?? 'unknown',
             ruleName: $rule->name,
@@ -144,13 +147,13 @@ final class AlertRuleEngine
             labels: [
                 'rule_id' => $rule->id ?? 'unknown',
                 'metric_path' => $rule->metricPath,
-                'tags' => implode(',', $rule->tags)
-            ]
+                'tags' => implode(',', $rule->tags),
+            ],
         );
     }
 
     /**
-     * 生成告警訊息
+     * 生成告警訊息.
      */
     private function generateAlertMessage(AlertRuleDTO $rule, float $value): string
     {
@@ -170,12 +173,12 @@ final class AlertRuleEngine
             $value,
             $operatorName,
             $rule->threshold,
-            $rule->severity->getDisplayName()
+            $rule->severity->getDisplayName(),
         );
     }
 
     /**
-     * 載入預設規則
+     * 載入預設規則.
      */
     private function loadDefaultRules(): array
     {
@@ -194,7 +197,7 @@ final class AlertRuleEngine
                 'triggerCount' => 2,
                 'enabled' => true,
                 'tags' => ['system', 'memory', 'critical'],
-                'notificationChannels' => ['email', 'slack']
+                'notificationChannels' => ['email', 'slack'],
             ]),
 
             AlertRuleDTO::fromArray([
@@ -210,7 +213,7 @@ final class AlertRuleEngine
                 'triggerCount' => 3,
                 'enabled' => true,
                 'tags' => ['system', 'memory', 'warning'],
-                'notificationChannels' => ['email']
+                'notificationChannels' => ['email'],
             ]),
 
             // 磁碟使用率告警
@@ -227,7 +230,7 @@ final class AlertRuleEngine
                 'triggerCount' => 1,
                 'enabled' => true,
                 'tags' => ['system', 'disk', 'critical'],
-                'notificationChannels' => ['email', 'slack']
+                'notificationChannels' => ['email', 'slack'],
             ]),
 
             AlertRuleDTO::fromArray([
@@ -243,7 +246,7 @@ final class AlertRuleEngine
                 'triggerCount' => 2,
                 'enabled' => true,
                 'tags' => ['system', 'disk', 'warning'],
-                'notificationChannels' => ['email']
+                'notificationChannels' => ['email'],
             ]),
 
             // 錯誤率告警
@@ -260,7 +263,7 @@ final class AlertRuleEngine
                 'triggerCount' => 2,
                 'enabled' => true,
                 'tags' => ['application', 'error', 'critical'],
-                'notificationChannels' => ['email', 'slack']
+                'notificationChannels' => ['email', 'slack'],
             ]),
 
             AlertRuleDTO::fromArray([
@@ -276,7 +279,7 @@ final class AlertRuleEngine
                 'triggerCount' => 3,
                 'enabled' => true,
                 'tags' => ['application', 'error', 'warning'],
-                'notificationChannels' => ['email']
+                'notificationChannels' => ['email'],
             ]),
 
             // 回應時間告警
@@ -293,8 +296,8 @@ final class AlertRuleEngine
                 'triggerCount' => 3,
                 'enabled' => true,
                 'tags' => ['application', 'performance', 'critical'],
-                'notificationChannels' => ['email', 'slack']
-            ])
+                'notificationChannels' => ['email', 'slack'],
+            ]),
         ];
     }
 }

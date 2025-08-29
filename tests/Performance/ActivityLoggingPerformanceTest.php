@@ -4,25 +4,26 @@ declare(strict_types=1);
 
 namespace Tests\Performance;
 
-use App\Domains\Security\Contracts\ActivityLogRepositoryInterface;
 use App\Domains\Security\Contracts\ActivityLoggingServiceInterface;
+use App\Domains\Security\Contracts\ActivityLogRepositoryInterface;
 use App\Domains\Security\DTOs\CreateActivityLogDTO;
 use App\Domains\Security\Enums\ActivityStatus;
 use App\Domains\Security\Enums\ActivityType;
 use App\Domains\Security\Repositories\ActivityLogRepository;
 use App\Domains\Security\Services\ActivityLoggingService;
-use App\Infrastructure\Database\DatabaseConnection;
 use App\Shared\Contracts\ValidatorInterface;
-use App\Shared\Validation\Validator;
 use Mockery;
 use PDO;
 use PHPUnit\Framework\Attributes\Test;
+use Psr\Log\LoggerInterface;
 use Tests\TestCase;
 
 class ActivityLoggingPerformanceTest extends TestCase
 {
     private ActivityLoggingServiceInterface $activityLoggingService;
+
     private ActivityLogRepositoryInterface $repository;
+
     private PDO $database;
 
     protected function setUp(): void
@@ -39,13 +40,13 @@ class ActivityLoggingPerformanceTest extends TestCase
         $validator->shouldReceive('validate')->andReturn([]);
 
         // ActivityLoggingService 建構子需要 Repository 和 Logger
-        $logger = Mockery::mock(\Psr\Log\LoggerInterface::class);
+        $logger = Mockery::mock(LoggerInterface::class);
         $logger->shouldReceive('info')->zeroOrMoreTimes();
         $logger->shouldReceive('error')->zeroOrMoreTimes();
 
         $this->activityLoggingService = new ActivityLoggingService(
             $this->repository,
-            $logger
+            $logger,
         );
 
         // 取得資料庫連線
@@ -112,7 +113,7 @@ class ActivityLoggingPerformanceTest extends TestCase
                     'test_iteration' => $i,
                     'performance_test' => 'single_record',
                 ],
-                ipAddress: '192.168.1.100'
+                ipAddress: '192.168.1.100',
             );
 
             $this->activityLoggingService->log($dto);
@@ -126,20 +127,20 @@ class ActivityLoggingPerformanceTest extends TestCase
         $maxTime = max($times);
 
         echo "\n📊 單筆記錄效能測試結果:\n";
-        echo "   平均執行時間: " . number_format($averageTime, 2) . "ms\n";
-        echo "   最大執行時間: " . number_format($maxTime, 2) . "ms\n";
+        echo '   平均執行時間: ' . number_format($averageTime, 2) . "ms\n";
+        echo '   最大執行時間: ' . number_format($maxTime, 2) . "ms\n";
         echo "   執行次數: {$iterations}\n";
 
         // 驗證效能需求：單筆記錄 < 50ms
         $this->assertLessThan(
             50,
             $averageTime,
-            "平均執行時間 {$averageTime}ms 超過 50ms 需求"
+            "平均執行時間 {$averageTime}ms 超過 50ms 需求",
         );
         $this->assertLessThan(
             100,
             $maxTime,
-            "最大執行時間 {$maxTime}ms 超過合理範圍"
+            "最大執行時間 {$maxTime}ms 超過合理範圍",
         );
     }
 
@@ -165,7 +166,7 @@ class ActivityLoggingPerformanceTest extends TestCase
                         'record_number' => $i,
                         'performance_test' => 'batch_record',
                     ],
-                    ipAddress: "192.168.1." . ($i % 255 + 1)
+                    ipAddress: '192.168.1.' . ($i % 255 + 1),
                 );
             }
 
@@ -183,21 +184,21 @@ class ActivityLoggingPerformanceTest extends TestCase
 
         echo "\n📊 批次記錄效能測試結果:\n";
         echo "   批次大小: {$batchSize} 筆\n";
-        echo "   平均批次時間: " . number_format($averageBatchTime, 2) . "ms\n";
-        echo "   平均每筆時間: " . number_format($averagePerRecord, 2) . "ms\n";
-        echo "   最大批次時間: " . number_format($maxBatchTime, 2) . "ms\n";
+        echo '   平均批次時間: ' . number_format($averageBatchTime, 2) . "ms\n";
+        echo '   平均每筆時間: ' . number_format($averagePerRecord, 2) . "ms\n";
+        echo '   最大批次時間: ' . number_format($maxBatchTime, 2) . "ms\n";
         echo "   執行批次數: {$batchCount}\n";
 
         // 驗證批次效能：平均每筆應該比單筆更快
         $this->assertLessThan(
             10,
             $averagePerRecord,
-            "批次平均每筆時間 {$averagePerRecord}ms 應該 < 10ms"
+            "批次平均每筆時間 {$averagePerRecord}ms 應該 < 10ms",
         );
         $this->assertLessThan(
             2000,
             $maxBatchTime,
-            "最大批次時間 {$maxBatchTime}ms 超過合理範圍"
+            "最大批次時間 {$maxBatchTime}ms 超過合理範圍",
         );
     }
 
@@ -240,14 +241,14 @@ class ActivityLoggingPerformanceTest extends TestCase
         echo "\n📊 查詢效能測試結果:\n";
         foreach ($results as $testName => $result) {
             echo "   {$testName}:\n";
-            echo "     平均: " . number_format($result['average'], 2) . "ms\n";
-            echo "     最大: " . number_format($result['max'], 2) . "ms\n";
+            echo '     平均: ' . number_format($result['average'], 2) . "ms\n";
+            echo '     最大: ' . number_format($result['max'], 2) . "ms\n";
 
             // 驗證查詢效能：< 500ms
             $this->assertLessThan(
                 500,
                 $result['average'],
-                "{$testName} 平均查詢時間 {$result['average']}ms 超過 500ms 需求"
+                "{$testName} 平均查詢時間 {$result['average']}ms 超過 500ms 需求",
             );
         }
     }
@@ -278,7 +279,7 @@ class ActivityLoggingPerformanceTest extends TestCase
                         'record_id' => $record,
                         'performance_test' => 'concurrent',
                         'ip_address' => "10.0.{$process}." . ($record + 1),
-                    ]
+                    ],
                 );
 
                 $this->activityLoggingService->log($dto);
@@ -289,20 +290,20 @@ class ActivityLoggingPerformanceTest extends TestCase
         $totalTime = ($endTime - $startTime) * 1000;
         $averagePerRecord = $totalTime / $totalRecords;
 
-        echo "   總執行時間: " . number_format($totalTime, 2) . "ms\n";
-        echo "   平均每筆時間: " . number_format($averagePerRecord, 2) . "ms\n";
-        echo "   每秒處理能力: " . number_format(1000 / $averagePerRecord, 0) . " 筆/秒\n";
+        echo '   總執行時間: ' . number_format($totalTime, 2) . "ms\n";
+        echo '   平均每筆時間: ' . number_format($averagePerRecord, 2) . "ms\n";
+        echo '   每秒處理能力: ' . number_format(1000 / $averagePerRecord, 0) . " 筆/秒\n";
 
         // 驗證併發效能
         $this->assertLessThan(
             50,
             $averagePerRecord,
-            "併發平均每筆時間 {$averagePerRecord}ms 超過 50ms 需求"
+            "併發平均每筆時間 {$averagePerRecord}ms 超過 50ms 需求",
         );
         $this->assertGreaterThan(
             20,
             1000 / $averagePerRecord,
-            "每秒處理能力應該 > 20 筆/秒"
+            '每秒處理能力應該 > 20 筆/秒',
         );
     }
 
@@ -338,8 +339,8 @@ class ActivityLoggingPerformanceTest extends TestCase
                         'record_index' => $recordIndex,
                         'batch_index' => $batch,
                         'performance_test' => 'large_dataset',
-                        'ip_address' => "203.0." . floor($recordIndex / 256) . "." . ($recordIndex % 256),
-                    ]
+                        'ip_address' => '203.0.' . floor($recordIndex / 256) . '.' . ($recordIndex % 256),
+                    ],
                 );
             }
 
@@ -351,8 +352,8 @@ class ActivityLoggingPerformanceTest extends TestCase
             $batchTimes[] = $batchTime;
 
             if ($batch % 5 == 0) { // 每5個批次報告一次進度
-                echo "   批次 " . ($batch + 1) . "/{$batches} 完成，耗時: " .
-                    number_format($batchTime, 2) . "ms\n";
+                echo '   批次 ' . ($batch + 1) . "/{$batches} 完成，耗時: "
+                    . number_format($batchTime, 2) . "ms\n";
             }
         }
 
@@ -362,20 +363,20 @@ class ActivityLoggingPerformanceTest extends TestCase
         $averageBatchTime = array_sum($batchTimes) / count($batchTimes);
 
         echo "\n   總執行時間: " . number_format($totalTime / 1000, 2) . "s\n";
-        echo "   平均每筆時間: " . number_format($averagePerRecord, 2) . "ms\n";
-        echo "   平均批次時間: " . number_format($averageBatchTime, 2) . "ms\n";
-        echo "   每秒處理能力: " . number_format($recordCount / ($totalTime / 1000), 0) . " 筆/秒\n";
+        echo '   平均每筆時間: ' . number_format($averagePerRecord, 2) . "ms\n";
+        echo '   平均批次時間: ' . number_format($averageBatchTime, 2) . "ms\n";
+        echo '   每秒處理能力: ' . number_format($recordCount / ($totalTime / 1000), 0) . " 筆/秒\n";
 
         // 驗證大量資料效能
         $this->assertLessThan(
             5,
             $averagePerRecord,
-            "大量資料平均每筆時間 {$averagePerRecord}ms 應該 < 5ms"
+            "大量資料平均每筆時間 {$averagePerRecord}ms 應該 < 5ms",
         );
         $this->assertGreaterThan(
             100,
             $recordCount / ($totalTime / 1000),
-            "每秒處理能力應該 > 100 筆/秒"
+            '每秒處理能力應該 > 100 筆/秒',
         );
     }
 
@@ -395,8 +396,8 @@ class ActivityLoggingPerformanceTest extends TestCase
                 metadata: [
                     'query_test_index' => $i,
                     'performance_test' => 'query',
-                    'ip_address' => "192.168.2." . ($i % 255 + 1),
-                ]
+                    'ip_address' => '192.168.2.' . ($i % 255 + 1),
+                ],
             );
         }
 
@@ -412,6 +413,7 @@ class ActivityLoggingPerformanceTest extends TestCase
             LIMIT 20
         ');
         $stmt->execute(['1']);
+
         return $stmt->fetchAll();
     }
 
@@ -427,6 +429,7 @@ class ActivityLoggingPerformanceTest extends TestCase
             ORDER BY created_at DESC
         ');
         $stmt->execute([$startTime, $endTime]);
+
         return $stmt->fetchAll();
     }
 
@@ -439,6 +442,7 @@ class ActivityLoggingPerformanceTest extends TestCase
             LIMIT 50
         ');
         $stmt->execute([ActivityStatus::SUCCESS->value]);
+
         return $stmt->fetchAll();
     }
 
@@ -454,6 +458,7 @@ class ActivityLoggingPerformanceTest extends TestCase
             GROUP BY action_type
         ');
         $stmt->execute();
+
         return $stmt->fetchAll();
     }
 }

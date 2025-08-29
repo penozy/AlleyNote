@@ -7,6 +7,7 @@ namespace Tests\Security;
 use App\Application\Controllers\Api\V1\PostController;
 use App\Domains\Post\Contracts\PostServiceInterface;
 use App\Domains\Post\Models\Post;
+use App\Domains\Security\Contracts\ActivityLoggingServiceInterface;
 use App\Domains\Security\Contracts\CsrfProtectionServiceInterface;
 use App\Domains\Security\Contracts\XssProtectionServiceInterface;
 use App\Shared\Contracts\OutputSanitizerInterface;
@@ -59,7 +60,7 @@ class CsrfProtectionTest extends TestCase
         $this->stream = Mockery::mock(StreamInterface::class);
 
         // Mock ActivityLoggingService
-        $activityLogger = Mockery::mock(\App\Domains\Security\Contracts\ActivityLoggingServiceInterface::class);
+        $activityLogger = Mockery::mock(ActivityLoggingServiceInterface::class);
         $activityLogger->shouldReceive('log')->zeroOrMoreTimes();
         $activityLogger->shouldReceive('logSuccess')->zeroOrMoreTimes();
         $activityLogger->shouldReceive('logFailure')->zeroOrMoreTimes();

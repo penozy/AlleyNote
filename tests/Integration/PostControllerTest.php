@@ -10,6 +10,7 @@ use App\Domains\Post\DTOs\CreatePostDTO;
 use App\Domains\Post\DTOs\UpdatePostDTO;
 use App\Domains\Post\Exceptions\PostNotFoundException;
 use App\Domains\Post\Models\Post;
+use App\Domains\Security\Contracts\ActivityLoggingServiceInterface;
 use App\Domains\Security\Contracts\CsrfProtectionServiceInterface;
 use App\Domains\Security\Contracts\XssProtectionServiceInterface;
 use App\Shared\Contracts\OutputSanitizerInterface;
@@ -55,7 +56,7 @@ class PostControllerTest extends TestCase
     private function createController(): PostController
     {
         // Mock ActivityLoggingService
-        $activityLogger = Mockery::mock(\App\Domains\Security\Contracts\ActivityLoggingServiceInterface::class);
+        $activityLogger = Mockery::mock(ActivityLoggingServiceInterface::class);
         $activityLogger->shouldReceive('log')->zeroOrMoreTimes();
         $activityLogger->shouldReceive('logSuccess')->zeroOrMoreTimes();
         $activityLogger->shouldReceive('logFailure')->zeroOrMoreTimes();
@@ -364,7 +365,7 @@ class PostControllerTest extends TestCase
             ->andReturn(['REMOTE_ADDR' => '127.0.0.1']);
 
         // Mock Post 物件
-        $mockPost = \Mockery::mock(\App\Domains\Post\Models\Post::class);
+        $mockPost = Mockery::mock(Post::class);
         $mockPost->shouldReceive('getTitle')->andReturn('Test Post Title');
         $mockPost->shouldReceive('getStatus')->andReturn('published');
 

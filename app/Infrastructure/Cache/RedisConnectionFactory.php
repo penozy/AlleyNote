@@ -9,22 +9,24 @@ use Redis;
 use RedisException;
 
 /**
- * Redis 連線工廠
- * 
+ * Redis 連線工廠.
+ *
  * 負責建立與管理 Redis 連線實例，支援連接池、重連機制等功能。
- * 
+ *
  * @author AI Assistant
  * @version 1.0
  */
 final class RedisConnectionFactory
 {
     private const int DEFAULT_TIMEOUT = 2;
+
     private const int DEFAULT_READ_TIMEOUT = 5;
+
     private const int DEFAULT_RETRY_INTERVAL = 100;
 
     /**
-     * 建立 Redis 連線
-     * 
+     * 建立 Redis 連線.
+     *
      * @param string $host Redis 主機地址
      * @param int $port Redis 埠號
      * @param string|null $password Redis 密碼
@@ -42,7 +44,7 @@ final class RedisConnectionFactory
         int $database = 0,
         int $timeout = self::DEFAULT_TIMEOUT,
         int $readTimeout = self::DEFAULT_READ_TIMEOUT,
-        int $retryInterval = self::DEFAULT_RETRY_INTERVAL
+        int $retryInterval = self::DEFAULT_RETRY_INTERVAL,
     ): Redis {
         $redis = new Redis();
 
@@ -54,12 +56,12 @@ final class RedisConnectionFactory
                 $timeout,
                 null,
                 $retryInterval,
-                $readTimeout
+                $readTimeout,
             );
 
             if (!$connected) {
                 throw new InfrastructureException(
-                    "Unable to connect to Redis server at {$host}:{$port}"
+                    "Unable to connect to Redis server at {$host}:{$port}",
                 );
             }
 
@@ -71,7 +73,7 @@ final class RedisConnectionFactory
             // 選擇資料庫
             if (!$redis->select($database)) {
                 throw new InfrastructureException(
-                    "Unable to select Redis database {$database}"
+                    "Unable to select Redis database {$database}",
                 );
             }
 
@@ -85,14 +87,14 @@ final class RedisConnectionFactory
         } catch (RedisException $e) {
             throw new InfrastructureException(
                 "Failed to initialize Redis connection: {$e->getMessage()}",
-                previous: $e
+                previous: $e,
             );
         }
     }
 
     /**
-     * 測試 Redis 連線
-     * 
+     * 測試 Redis 連線.
+     *
      * @param Redis $redis Redis 實例
      * @return bool 連線正常返回 true
      */
@@ -100,6 +102,7 @@ final class RedisConnectionFactory
     {
         try {
             $response = $redis->ping();
+
             return $response === true || $response === '+PONG';
         } catch (RedisException) {
             return false;
@@ -107,8 +110,8 @@ final class RedisConnectionFactory
     }
 
     /**
-     * 取得 Redis 連線資訊
-     * 
+     * 取得 Redis 連線資訊.
+     *
      * @param Redis $redis Redis 實例
      * @return array<string, mixed> 連線資訊
      */

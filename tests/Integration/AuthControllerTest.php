@@ -6,13 +6,18 @@ namespace Tests\Integration;
 
 use AlleyNote\Domains\Auth\Contracts\AuthenticationServiceInterface;
 use AlleyNote\Domains\Auth\Contracts\JwtTokenServiceInterface;
+use AlleyNote\Domains\Auth\DTOs\LoginResponseDTO;
+use AlleyNote\Domains\Auth\DTOs\LogoutRequestDTO;
+use AlleyNote\Domains\Auth\ValueObjects\TokenPair;
 use App\Application\Controllers\Api\V1\AuthController;
 use App\Domains\Auth\DTOs\RegisterUserDTO;
 use App\Domains\Auth\Services\AuthService;
 use App\Domains\Security\Contracts\ActivityLoggingServiceInterface;
+use App\Domains\Security\DTOs\CreateActivityLogDTO;
 use App\Shared\Contracts\ValidatorInterface;
 use App\Shared\Exceptions\ValidationException;
 use App\Shared\Validation\ValidationResult;
+use DateTimeImmutable;
 use InvalidArgumentException;
 use Mockery;
 use Mockery\MockInterface;
@@ -146,9 +151,9 @@ class AuthControllerTest extends TestCase
             ]);
 
         // 建立控制器並執行
-        $authenticationService = Mockery::mock(\AlleyNote\Domains\Auth\Contracts\AuthenticationServiceInterface::class);
-        $jwtTokenService = Mockery::mock(\AlleyNote\Domains\Auth\Contracts\JwtTokenServiceInterface::class);
-        $activityLoggingService = Mockery::mock(\App\Domains\Security\Contracts\ActivityLoggingServiceInterface::class);
+        $authenticationService = Mockery::mock(AuthenticationServiceInterface::class);
+        $jwtTokenService = Mockery::mock(JwtTokenServiceInterface::class);
+        $activityLoggingService = Mockery::mock(ActivityLoggingServiceInterface::class);
         $activityLoggingService->shouldReceive('logSuccess')->zeroOrMoreTimes();
         $activityLoggingService->shouldReceive('logFailure')->zeroOrMoreTimes();
         $activityLoggingService->shouldReceive('log')->zeroOrMoreTimes();
@@ -158,7 +163,7 @@ class AuthControllerTest extends TestCase
             $authenticationService,
             $jwtTokenService,
             $this->validator,
-            $activityLoggingService
+            $activityLoggingService,
         );
         $response = $controller->register($this->request, $this->response);
 
@@ -194,9 +199,9 @@ class AuthControllerTest extends TestCase
         $this->authService->shouldNotReceive('register');
 
         // 建立控制器並執行
-        $authenticationService = Mockery::mock(\AlleyNote\Domains\Auth\Contracts\AuthenticationServiceInterface::class);
-        $jwtTokenService = Mockery::mock(\AlleyNote\Domains\Auth\Contracts\JwtTokenServiceInterface::class);
-        $activityLoggingService = Mockery::mock(\App\Domains\Security\Contracts\ActivityLoggingServiceInterface::class);
+        $authenticationService = Mockery::mock(AuthenticationServiceInterface::class);
+        $jwtTokenService = Mockery::mock(JwtTokenServiceInterface::class);
+        $activityLoggingService = Mockery::mock(ActivityLoggingServiceInterface::class);
         $activityLoggingService->shouldReceive('logSuccess')->zeroOrMoreTimes();
         $activityLoggingService->shouldReceive('logFailure')->zeroOrMoreTimes();
         $activityLoggingService->shouldReceive('log')->zeroOrMoreTimes();
@@ -206,7 +211,7 @@ class AuthControllerTest extends TestCase
             $authenticationService,
             $jwtTokenService,
             $this->validator,
-            $activityLoggingService
+            $activityLoggingService,
         );
         $response = $controller->register($this->request, $this->response);
 
@@ -229,30 +234,30 @@ class AuthControllerTest extends TestCase
         $this->request->shouldReceive('getServerParams')->andReturn(['REMOTE_ADDR' => '192.168.1.1']);
 
         // Mock AuthenticationService 的預期回傳
-        $authenticationService = Mockery::mock(\AlleyNote\Domains\Auth\Contracts\AuthenticationServiceInterface::class);
+        $authenticationService = Mockery::mock(AuthenticationServiceInterface::class);
 
         // Create real TokenPair object with valid JWT format
-        $tokenPair = new \AlleyNote\Domains\Auth\ValueObjects\TokenPair(
+        $tokenPair = new TokenPair(
             accessToken: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiIxIiwiaWF0IjoxNjAwMDAwMDAwfQ.signature',
             refreshToken: 'fake-refresh-token-1234567890abcdefghijklmnopqrstuvwxyz',
-            accessTokenExpiresAt: new \DateTimeImmutable('+1 hour'),
-            refreshTokenExpiresAt: new \DateTimeImmutable('+7 days')
+            accessTokenExpiresAt: new DateTimeImmutable('+1 hour'),
+            refreshTokenExpiresAt: new DateTimeImmutable('+7 days'),
         );
 
-        // Create real LoginResponseDTO object  
-        $loginResponse = new \AlleyNote\Domains\Auth\DTOs\LoginResponseDTO(
+        // Create real LoginResponseDTO object
+        $loginResponse = new LoginResponseDTO(
             tokens: $tokenPair,
             userId: 1,
             userEmail: 'test@example.com',
-            expiresAt: time() + 3600
+            expiresAt: time() + 3600,
         );
 
         $authenticationService->shouldReceive('login')
             ->once()
             ->andReturn($loginResponse);
 
-        $jwtTokenService = Mockery::mock(\AlleyNote\Domains\Auth\Contracts\JwtTokenServiceInterface::class);
-        $activityLoggingService = Mockery::mock(\App\Domains\Security\Contracts\ActivityLoggingServiceInterface::class);
+        $jwtTokenService = Mockery::mock(JwtTokenServiceInterface::class);
+        $activityLoggingService = Mockery::mock(ActivityLoggingServiceInterface::class);
         $activityLoggingService->shouldReceive('logSuccess')->zeroOrMoreTimes();
         $activityLoggingService->shouldReceive('logFailure')->zeroOrMoreTimes();
         $activityLoggingService->shouldReceive('log')->zeroOrMoreTimes();
@@ -262,7 +267,7 @@ class AuthControllerTest extends TestCase
             $authenticationService,
             $jwtTokenService,
             $this->validator,
-            $activityLoggingService
+            $activityLoggingService,
         );
         $response = $controller->login($this->request, $this->response);
 
@@ -292,9 +297,9 @@ class AuthControllerTest extends TestCase
             ->andThrow(new InvalidArgumentException('無效的憑證'));
 
         // 建立控制器並執行
-        $authenticationService = Mockery::mock(\AlleyNote\Domains\Auth\Contracts\AuthenticationServiceInterface::class);
-        $jwtTokenService = Mockery::mock(\AlleyNote\Domains\Auth\Contracts\JwtTokenServiceInterface::class);
-        $activityLoggingService = Mockery::mock(\App\Domains\Security\Contracts\ActivityLoggingServiceInterface::class);
+        $authenticationService = Mockery::mock(AuthenticationServiceInterface::class);
+        $jwtTokenService = Mockery::mock(JwtTokenServiceInterface::class);
+        $activityLoggingService = Mockery::mock(ActivityLoggingServiceInterface::class);
         $activityLoggingService->shouldReceive('logSuccess')->zeroOrMoreTimes();
         $activityLoggingService->shouldReceive('logFailure')->zeroOrMoreTimes();
         $activityLoggingService->shouldReceive('log')->zeroOrMoreTimes();
@@ -304,7 +309,7 @@ class AuthControllerTest extends TestCase
             $authenticationService,
             $jwtTokenService,
             $this->validator,
-            $activityLoggingService
+            $activityLoggingService,
         );
         $response = $controller->login($this->request, $this->response);
 
@@ -330,20 +335,20 @@ class AuthControllerTest extends TestCase
         $this->request->shouldReceive('getServerParams')->andReturn(['REMOTE_ADDR' => '192.168.1.1']);
 
         // 建立控制器並執行
-        $authenticationService = Mockery::mock(\AlleyNote\Domains\Auth\Contracts\AuthenticationServiceInterface::class);
-        $jwtTokenService = Mockery::mock(\AlleyNote\Domains\Auth\Contracts\JwtTokenServiceInterface::class);
-        $activityLoggingService = Mockery::mock(\App\Domains\Security\Contracts\ActivityLoggingServiceInterface::class);
+        $authenticationService = Mockery::mock(AuthenticationServiceInterface::class);
+        $jwtTokenService = Mockery::mock(JwtTokenServiceInterface::class);
+        $activityLoggingService = Mockery::mock(ActivityLoggingServiceInterface::class);
 
         // Mock logout 方法，它應該接收 LogoutRequestDTO 並回傳 bool
         $authenticationService->shouldReceive('logout')
             ->once()
-            ->with(Mockery::type(\AlleyNote\Domains\Auth\DTOs\LogoutRequestDTO::class))
+            ->with(Mockery::type(LogoutRequestDTO::class))
             ->andReturn(true);
 
         // Mock 活動記錄服務
         $activityLoggingService->shouldReceive('log')
             ->once()
-            ->with(Mockery::type(\App\Domains\Security\DTOs\CreateActivityLogDTO::class))
+            ->with(Mockery::type(CreateActivityLogDTO::class))
             ->andReturn(true);
 
         $controller = new AuthController(
@@ -351,7 +356,7 @@ class AuthControllerTest extends TestCase
             $authenticationService,
             $jwtTokenService,
             $this->validator,
-            $activityLoggingService
+            $activityLoggingService,
         );
         $response = $controller->logout($this->request, $this->response);
 

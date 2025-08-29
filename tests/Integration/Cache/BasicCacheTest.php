@@ -6,10 +6,11 @@ namespace Tests\Integration\Cache;
 
 use App\Infrastructure\Cache\Providers\AppRedisCache;
 use App\Shared\Contracts\CacheInterface;
+use Exception;
 use PHPUnit\Framework\TestCase;
 
 /**
- * Redis 快取系統基本連接測試
+ * Redis 快取系統基本連接測試.
  */
 final class BasicCacheTest extends TestCase
 {
@@ -29,12 +30,12 @@ final class BasicCacheTest extends TestCase
                 host: $_ENV['REDIS_HOST'] ?? 'redis',
                 port: (int) ($_ENV['REDIS_PORT'] ?? 6379),
                 prefix: 'test:basic:',
-                database: 15 // 使用測試專用資料庫
+                database: 15, // 使用測試專用資料庫
             );
 
             // 清理測試資料庫
             $this->cache->clear();
-        } catch (\Exception $e) {
+        } catch (Exception $e) {
             $this->markTestSkipped('Redis connection failed: ' . $e->getMessage());
         }
     }

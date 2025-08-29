@@ -4,29 +4,34 @@ declare(strict_types=1);
 
 namespace Tests\Unit\Controllers\Api\V1;
 
-use App\Controllers\Api\V1\MonitoringController;
-use App\Application\Services\Monitoring\MetricsCollectorService;
-use App\Application\Services\Monitoring\HealthCheckService;
-use App\Application\Services\Monitoring\AlertManagerService;
-use App\Application\Services\Monitoring\AlertRuleEngine;
 use App\Application\DTOs\Monitoring\AlertDTO;
 use App\Application\DTOs\Monitoring\AlertRuleDTO;
+use App\Application\Services\Monitoring\AlertManagerService;
+use App\Application\Services\Monitoring\AlertRuleEngine;
+use App\Application\Services\Monitoring\HealthCheckService;
+use App\Application\Services\Monitoring\MetricsCollectorService;
+use App\Controllers\Api\V1\MonitoringController;
 use App\Domain\Common\ValueObjects\AlertSeverity;
-use PHPUnit\Framework\TestCase;
+use DateTime;
 use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 
 /**
- * 監控控制器單元測試
+ * 監控控制器單元測試.
  */
 final class MonitoringControllerTest extends TestCase
 {
     private MonitoringController $controller;
+
     /** @var MetricsCollectorService&MockObject */
     private MetricsCollectorService $metricsCollector;
+
     /** @var HealthCheckService&MockObject */
     private HealthCheckService $healthCheck;
+
     /** @var AlertManagerService&MockObject */
     private AlertManagerService $alertManager;
+
     /** @var AlertRuleEngine&MockObject */
     private AlertRuleEngine $alertRuleEngine;
 
@@ -41,7 +46,7 @@ final class MonitoringControllerTest extends TestCase
             metricsCollector: $this->metricsCollector,
             healthCheck: $this->healthCheck,
             alertManager: $this->alertManager,
-            alertRuleEngine: $this->alertRuleEngine
+            alertRuleEngine: $this->alertRuleEngine,
         );
     }
 
@@ -55,7 +60,7 @@ final class MonitoringControllerTest extends TestCase
             'checks' => [
                 'database' => ['status' => 'healthy'],
                 'cache' => ['status' => 'healthy'],
-            ]
+            ],
         ];
 
         $this->healthCheck
@@ -68,7 +73,7 @@ final class MonitoringControllerTest extends TestCase
 
         // Assert
         $this->assertIsString($result);
-        
+
         $decodedResult = json_decode($result, true);
         $this->assertTrue($decodedResult['success']);
         $this->assertEquals($healthData, $decodedResult['data']);
@@ -84,7 +89,7 @@ final class MonitoringControllerTest extends TestCase
             'checks' => [
                 'database' => ['status' => 'unhealthy'],
                 'cache' => ['status' => 'healthy'],
-            ]
+            ],
         ];
 
         $this->healthCheck
@@ -97,7 +102,7 @@ final class MonitoringControllerTest extends TestCase
 
         // Assert
         $this->assertIsString($result);
-        
+
         $decodedResult = json_decode($result, true);
         $this->assertEquals($healthData, $decodedResult['data']);
     }
@@ -121,7 +126,7 @@ final class MonitoringControllerTest extends TestCase
 
         // Assert
         $this->assertIsString($result);
-        
+
         $decodedResult = json_decode($result, true);
         $this->assertTrue($decodedResult['success']);
         $this->assertEquals($metricsData, $decodedResult['data']);
@@ -132,7 +137,7 @@ final class MonitoringControllerTest extends TestCase
     {
         // Arrange
         $_GET['category'] = 'system';
-        
+
         $systemMetrics = ['cpu' => 45.2, 'memory' => 78.5];
 
         $this->metricsCollector
@@ -145,7 +150,7 @@ final class MonitoringControllerTest extends TestCase
 
         // Assert
         $this->assertIsString($result);
-        
+
         $decodedResult = json_decode($result, true);
         $this->assertTrue($decodedResult['success']);
         $this->assertEquals($systemMetrics, $decodedResult['data']);
@@ -162,7 +167,7 @@ final class MonitoringControllerTest extends TestCase
             'id' => 'alert-123',
             'title' => 'High CPU Usage',
             'severity' => 'warning',
-            'status' => 'active'
+            'status' => 'active',
         ]);
 
         $alerts = [$mockAlert];
@@ -178,7 +183,7 @@ final class MonitoringControllerTest extends TestCase
 
         // Assert
         $this->assertIsString($result);
-        
+
         $decodedResult = json_decode($result, true);
         $this->assertTrue($decodedResult['success']);
         $this->assertEquals(1, $decodedResult['data']['total']);
@@ -195,7 +200,7 @@ final class MonitoringControllerTest extends TestCase
             'id' => 'alert-456',
             'title' => 'Database Down',
             'severity' => 'critical',
-            'status' => 'active'
+            'status' => 'active',
         ]);
 
         $alerts = [$mockAlert];
@@ -211,7 +216,7 @@ final class MonitoringControllerTest extends TestCase
 
         // Assert
         $this->assertIsString($result);
-        
+
         $decodedResult = json_decode($result, true);
         $this->assertTrue($decodedResult['success']);
         $this->assertEquals('critical', $decodedResult['data']['filtered_by_severity']);
@@ -224,7 +229,7 @@ final class MonitoringControllerTest extends TestCase
     {
         // Arrange
         $alertId = 'alert-123';
-        
+
         // Mock PHP input
         $input = json_encode(['acknowledged_by' => 'admin']);
         $this->mockPhpInput($input);
@@ -240,7 +245,7 @@ final class MonitoringControllerTest extends TestCase
 
         // Assert
         $this->assertIsString($result);
-        
+
         $decodedResult = json_decode($result, true);
         $this->assertTrue($decodedResult['success']);
         $this->assertEquals('告警確認成功', $decodedResult['message']);
@@ -252,7 +257,7 @@ final class MonitoringControllerTest extends TestCase
     {
         // Arrange
         $alertId = 'non-existent-alert';
-        
+
         $input = json_encode(['acknowledged_by' => 'admin']);
         $this->mockPhpInput($input);
 
@@ -267,7 +272,7 @@ final class MonitoringControllerTest extends TestCase
 
         // Assert
         $this->assertIsString($result);
-        
+
         $decodedResult = json_decode($result, true);
         $this->assertFalse($decodedResult['success']);
         $this->assertEquals('告警確認失敗，可能告警不存在', $decodedResult['message']);
@@ -289,7 +294,7 @@ final class MonitoringControllerTest extends TestCase
 
         // Assert
         $this->assertIsString($result);
-        
+
         $decodedResult = json_decode($result, true);
         $this->assertTrue($decodedResult['success']);
         $this->assertEquals('告警解決成功', $decodedResult['message']);
@@ -301,14 +306,14 @@ final class MonitoringControllerTest extends TestCase
         // Arrange
         $alertId = 'alert-123';
         $until = '2024-12-31 23:59:59';
-        
+
         $input = json_encode(['until' => $until]);
         $this->mockPhpInput($input);
 
         $this->alertManager
             ->expects($this->once())
             ->method('silenceAlert')
-            ->with($alertId, $this->isInstanceOf(\DateTime::class))
+            ->with($alertId, $this->isInstanceOf(DateTime::class))
             ->willReturn(true);
 
         // Act
@@ -316,7 +321,7 @@ final class MonitoringControllerTest extends TestCase
 
         // Assert
         $this->assertIsString($result);
-        
+
         $decodedResult = json_decode($result, true);
         $this->assertTrue($decodedResult['success']);
         $this->assertEquals('告警靜音成功', $decodedResult['message']);
@@ -335,8 +340,8 @@ final class MonitoringControllerTest extends TestCase
                 'critical' => 2,
                 'warning' => 3,
                 'info' => 0,
-                'debug' => 0
-            ]
+                'debug' => 0,
+            ],
         ];
 
         $this->alertManager
@@ -349,7 +354,7 @@ final class MonitoringControllerTest extends TestCase
 
         // Assert
         $this->assertIsString($result);
-        
+
         $decodedResult = json_decode($result, true);
         $this->assertTrue($decodedResult['success']);
         $this->assertEquals($statistics, $decodedResult['data']);
@@ -382,7 +387,7 @@ final class MonitoringControllerTest extends TestCase
 
         // Assert
         $this->assertIsString($result);
-        
+
         $decodedResult = json_decode($result, true);
         $this->assertTrue($decodedResult['success']);
         $this->assertEquals(1, $decodedResult['data']['total']);
@@ -439,7 +444,7 @@ final class MonitoringControllerTest extends TestCase
 
         // Assert
         $this->assertIsString($result);
-        
+
         $decodedResult = json_decode($result, true);
         $this->assertTrue($decodedResult['success']);
         $this->assertArrayHasKey('timestamp', $decodedResult['data']);

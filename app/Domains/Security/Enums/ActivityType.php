@@ -23,7 +23,7 @@ enum ActivityType: string
     case ACCOUNT_LOCKED = 'auth.account.locked';
     case ACCOUNT_UNLOCKED = 'auth.account.unlocked';
 
-        // === 文章管理行為 ===
+    // === 文章管理行為 ===
     case POST_CREATED = 'post.created';
     case POST_UPDATED = 'post.updated';
     case POST_DELETED = 'post.deleted';
@@ -33,7 +33,7 @@ enum ActivityType: string
     case POST_PINNED = 'post.pinned';
     case POST_UNPINNED = 'post.unpinned';
 
-        // === 附件管理行為 ===
+    // === 附件管理行為 ===
     case ATTACHMENT_UPLOADED = 'attachment.uploaded';
     case ATTACHMENT_DOWNLOADED = 'attachment.downloaded';
     case ATTACHMENT_DELETED = 'attachment.deleted';
@@ -41,7 +41,7 @@ enum ActivityType: string
     case ATTACHMENT_SIZE_EXCEEDED = 'attachment.size_exceeded';
     case ATTACHMENT_PERMISSION_DENIED = 'attachment.permission_denied';
 
-        // === 使用者管理行為 ===
+    // === 使用者管理行為 ===
     case USER_REGISTERED = 'user.registered';
     case USER_PROFILE_UPDATED = 'user.profile.updated';
     case USER_AVATAR_CHANGED = 'user.avatar.changed';
@@ -49,14 +49,14 @@ enum ActivityType: string
     case USER_BANNED = 'user.banned';
     case USER_UNBANNED = 'user.unbanned';
 
-        // === 權限與角色管理 ===
+    // === 權限與角色管理 ===
     case ROLE_ASSIGNED = 'role.assigned';
     case ROLE_REMOVED = 'role.removed';
     case PERMISSION_GRANTED = 'permission.granted';
     case PERMISSION_REVOKED = 'permission.revoked';
     case PERMISSION_DENIED = 'permission.denied';
 
-        // === 系統安全行為 ===
+    // === 系統安全行為 ===
     case SUSPICIOUS_ACTIVITY_DETECTED = 'security.suspicious_activity';
     case SECURITY_ACTIVITY_SCAN_COMPLETED = 'security.scan.completed';
     case BRUTE_FORCE_ATTEMPT = 'security.brute_force';
@@ -67,7 +67,7 @@ enum ActivityType: string
     case SQL_INJECTION_BLOCKED = 'security.sql_injection.blocked';
     case CSP_VIOLATION = 'security.csp.violation';
 
-        // === 管理員操作 ===
+    // === 管理員操作 ===
     case ADMIN_LOGIN = 'admin.login';
     case ADMIN_LOGOUT = 'admin.logout';
     case SYSTEM_SETTINGS_CHANGED = 'admin.settings.changed';
@@ -76,13 +76,13 @@ enum ActivityType: string
     case BACKUP_CREATED = 'admin.backup.created';
     case BACKUP_RESTORED = 'admin.backup.restored';
 
-        // === API 操作 ===
+    // === API 操作 ===
     case API_KEY_CREATED = 'api.key.created';
     case API_KEY_DELETED = 'api.key.deleted';
     case API_RATE_LIMIT_EXCEEDED = 'api.rate_limit.exceeded';
     case API_UNAUTHORIZED_ACCESS = 'api.unauthorized';
 
-        // === 資料匯出入 ===
+    // === 資料匯出入 ===
     case DATA_EXPORTED = 'data.exported';
     case DATA_IMPORTED = 'data.imported';
     case GDPR_DATA_REQUEST = 'gdpr.data.requested';

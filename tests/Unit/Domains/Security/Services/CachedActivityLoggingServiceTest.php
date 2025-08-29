@@ -13,12 +13,14 @@ use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 
 /**
- * 快取增強活動記錄服務測試
+ * 快取增強活動記錄服務測試.
  */
 final class CachedActivityLoggingServiceTest extends TestCase
 {
     private MockObject&ActivityLoggingServiceInterface $mockDecoratedService;
+
     private MockObject&CacheInterface $mockCache;
+
     private CachedActivityLoggingService $service;
 
     protected function setUp(): void
@@ -29,7 +31,7 @@ final class CachedActivityLoggingServiceTest extends TestCase
         $this->mockCache = $this->createMock(CacheInterface::class);
         $this->service = new CachedActivityLoggingService(
             $this->mockDecoratedService,
-            $this->mockCache
+            $this->mockCache,
         );
     }
 

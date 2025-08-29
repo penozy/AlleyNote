@@ -5,15 +5,16 @@ declare(strict_types=1);
 namespace Tests\Performance;
 
 use App\Infrastructure\Database\DatabaseConnection;
-use PHPUnit\Framework\TestCase;
 use PDO;
+use PHPUnit\Framework\TestCase;
 
 /**
- * 資料庫查詢效能測試
+ * 資料庫查詢效能測試.
  */
 class DatabaseQueryPerformanceTest extends TestCase
 {
     private PDO $pdo;
+
     private array $performanceResults = [];
 
     protected function setUp(): void
@@ -28,7 +29,7 @@ class DatabaseQueryPerformanceTest extends TestCase
     }
 
     /**
-     * 測試最新公告查詢效能
+     * 測試最新公告查詢效能.
      */
     public function testRecentPostsQueryPerformance(): void
     {
@@ -42,7 +43,7 @@ class DatabaseQueryPerformanceTest extends TestCase
     }
 
     /**
-     * 測試使用者公告查詢效能
+     * 測試使用者公告查詢效能.
      */
     public function testUserPostsQueryPerformance(): void
     {
@@ -59,7 +60,7 @@ class DatabaseQueryPerformanceTest extends TestCase
     }
 
     /**
-     * 測試複雜聯合查詢效能
+     * 測試複雜聯合查詢效能.
      */
     public function testComplexJoinQueryPerformance(): void
     {
@@ -80,7 +81,7 @@ class DatabaseQueryPerformanceTest extends TestCase
     }
 
     /**
-     * 測試權限查詢效能
+     * 測試權限查詢效能.
      */
     public function testPermissionQueryPerformance(): void
     {
@@ -100,7 +101,7 @@ class DatabaseQueryPerformanceTest extends TestCase
     }
 
     /**
-     * 測試分頁查詢效能
+     * 測試分頁查詢效能.
      */
     public function testPaginationQueryPerformance(): void
     {
@@ -120,7 +121,7 @@ class DatabaseQueryPerformanceTest extends TestCase
     }
 
     /**
-     * 測試批次插入效能
+     * 測試批次插入效能.
      */
     public function testBatchInsertPerformance(): void
     {
@@ -142,7 +143,7 @@ class DatabaseQueryPerformanceTest extends TestCase
                 '127.0.0.1',
                 'test-agent',
                 date('Y-m-d H:i:s'),
-                date('Y-m-d H:i:s')
+                date('Y-m-d H:i:s'),
             ]);
         }
 
@@ -159,7 +160,7 @@ class DatabaseQueryPerformanceTest extends TestCase
     }
 
     /**
-     * 測量查詢執行時間
+     * 測量查詢執行時間.
      */
     private function measureQueryTime(string $sql, array $params = []): float
     {
@@ -175,7 +176,7 @@ class DatabaseQueryPerformanceTest extends TestCase
     }
 
     /**
-     * 建立測試使用者
+     * 建立測試使用者.
      */
     private function createTestUser(): void
     {
@@ -187,12 +188,12 @@ class DatabaseQueryPerformanceTest extends TestCase
             'performance_test_user',
             'test@example.com',
             password_hash('test123', PASSWORD_DEFAULT),
-            date('Y-m-d H:i:s')
+            date('Y-m-d H:i:s'),
         ]);
     }
 
     /**
-     * 輸出效能報告
+     * 輸出效能報告.
      */
     private function outputPerformanceReport(): void
     {
@@ -200,9 +201,9 @@ class DatabaseQueryPerformanceTest extends TestCase
             return;
         }
 
-        echo "\n" . str_repeat("=", 60) . "\n";
+        echo "\n" . str_repeat('=', 60) . "\n";
         echo "📊 T4.2 資料庫查詢效能測試報告\n";
-        echo str_repeat("=", 60) . "\n";
+        echo str_repeat('=', 60) . "\n";
 
         foreach ($this->performanceResults as $testName => $time) {
             $timeMs = round($time * 1000, 2);
@@ -215,11 +216,11 @@ class DatabaseQueryPerformanceTest extends TestCase
 
         echo sprintf("\n總執行時間: %.2fms\n", $totalTime * 1000);
         echo sprintf("平均執行時間: %.2fms\n", $avgTime * 1000);
-        echo str_repeat("=", 60) . "\n\n";
+        echo str_repeat('=', 60) . "\n\n";
     }
 
     /**
-     * 獲取效能狀態
+     * 獲取效能狀態.
      */
     private function getPerformanceStatus(string $testName, float $time): string
     {
@@ -229,7 +230,7 @@ class DatabaseQueryPerformanceTest extends TestCase
             'complex_join' => 0.02,
             'permission_query' => 0.015,
             'pagination' => 0.01,
-            'batch_insert' => 0.05
+            'batch_insert' => 0.05,
         ];
 
         $threshold = $thresholds[$testName] ?? 0.01;

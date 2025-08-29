@@ -5,25 +5,25 @@ declare(strict_types=1);
 namespace AlleyNote\Infrastructure\Cache;
 
 use AlleyNote\Shared\Cache\CacheServiceInterface;
-use AlleyNote\Infrastructure\Cache\CacheKeys;
 
 /**
- * 快取管理器
- * 
+ * 快取管理器.
+ *
  * 提供高階快取操作介面，包含記憶化、模式操作、統計等功能。
  * 基於 CacheServiceInterface 實作，支援不同的快取後端。
- * 
+ *
  * @author AI Assistant
  * @version 1.0
  */
 final class CacheManager
 {
     private CacheServiceInterface $cache;
+
     private int $defaultTtl;
 
     public function __construct(
         CacheServiceInterface $cache,
-        int $defaultTtl = 3600
+        int $defaultTtl = 3600,
     ) {
         $this->cache = $cache;
         $this->defaultTtl = $defaultTtl;
@@ -35,6 +35,7 @@ final class CacheManager
     public function get(string $key, $default = null)
     {
         $value = $this->cache->get($key);
+
         return $value !== null ? $value : $default;
     }
 
@@ -44,11 +45,12 @@ final class CacheManager
     public function set(string $key, $value, ?int $ttl = null): bool
     {
         $ttl ??= $this->defaultTtl;
+
         return $this->cache->set($key, $value, $ttl);
     }
 
     /**
-     * 檢查快取是否存在
+     * 檢查快取是否存在.
      */
     public function has(string $key): bool
     {
@@ -56,7 +58,7 @@ final class CacheManager
     }
 
     /**
-     * 刪除快取
+     * 刪除快取.
      */
     public function delete(string $key): bool
     {
@@ -64,7 +66,7 @@ final class CacheManager
     }
 
     /**
-     * 清空所有快取
+     * 清空所有快取.
      */
     public function clear(): bool
     {
@@ -72,7 +74,7 @@ final class CacheManager
     }
 
     /**
-     * 記憶化取得（如果不存在則執行回調並快取結果）
+     * 記憶化取得（如果不存在則執行回調並快取結果）.
      */
     public function remember(string $key, callable $callback, ?int $ttl = null)
     {
@@ -87,7 +89,7 @@ final class CacheManager
     }
 
     /**
-     * 永久記憶化取得（直到手動刪除）
+     * 永久記憶化取得（直到手動刪除）.
      */
     public function rememberForever(string $key, callable $callback)
     {
@@ -115,12 +117,13 @@ final class CacheManager
     public function putMany(array $values, ?int $ttl = null): bool
     {
         $ttl ??= $this->defaultTtl;
+
         return $this->cache->setMultiple($values, $ttl);
     }
 
     /**
      * 根據模式刪除快取
-     * 注意：這個功能需要快取後端支援，目前僅支援部分實作
+     * 注意：這個功能需要快取後端支援，目前僅支援部分實作.
      */
     public function deletePattern(string $pattern): int
     {
@@ -136,12 +139,13 @@ final class CacheManager
 
     /**
      * 增加數值快取
-     * 注意：這個功能需要快取後端支援
+     * 注意：這個功能需要快取後端支援.
      */
     public function increment(string $key, int $value = 1): int
     {
         if ($this->cache instanceof RedisCache && method_exists($this->cache, 'increment')) {
             $result = $this->cache->increment($key, $value);
+
             return $result !== false ? $result : 0;
         }
 
@@ -154,7 +158,7 @@ final class CacheManager
     }
 
     /**
-     * 減少數值快取
+     * 減少數值快取.
      */
     public function decrement(string $key, int $value = 1): int
     {
@@ -163,7 +167,7 @@ final class CacheManager
 
     /**
      * 取得快取統計資訊
-     * 注意：此實作可能不準確，依賴於快取後端
+     * 注意：此實作可能不準確，依賴於快取後端.
      */
     public function getStats(): array
     {
@@ -176,7 +180,7 @@ final class CacheManager
     }
 
     /**
-     * 取得支援的操作列表
+     * 取得支援的操作列表.
      */
     private function getSupportedOperations(): array
     {
@@ -202,7 +206,7 @@ final class CacheManager
     }
 
     /**
-     * 估算記憶體使用量（簡化實作）
+     * 估算記憶體使用量（簡化實作）.
      */
     private function getMemoryUsage(): string
     {
@@ -218,7 +222,7 @@ final class CacheManager
     }
 
     /**
-     * 清理過期的快取（依賴快取後端實作）
+     * 清理過期的快取（依賴快取後端實作）.
      */
     public function cleanup(): int
     {

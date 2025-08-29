@@ -60,7 +60,7 @@ class IpServiceTest extends TestCase
         $this->service = new IpService(
             $this->repository,
             $this->activityLogger,
-            $this->validator
+            $this->validator,
         );
     }
 

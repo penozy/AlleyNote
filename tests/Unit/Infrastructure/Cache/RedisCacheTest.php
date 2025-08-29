@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Tests\Unit\Infrastructure\Cache;
 
 use App\Infrastructure\Cache\RedisCache;
+use Exception;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 use Redis;
@@ -22,7 +23,7 @@ class RedisCacheTest extends TestCase
 
         try {
             $this->cache = new RedisCache();
-        } catch (\Exception $e) {
+        } catch (Exception $e) {
             $this->markTestSkipped('無法連接到 Redis 服務: ' . $e->getMessage());
         }
 
@@ -216,7 +217,7 @@ class RedisCacheTest extends TestCase
     public function connectionInfo(): void
     {
         $info = $this->cache->getConnectionInfo();
-        
+
         $this->assertIsArray($info);
         $this->assertArrayHasKey('connected', $info);
         $this->assertArrayHasKey('prefix', $info);

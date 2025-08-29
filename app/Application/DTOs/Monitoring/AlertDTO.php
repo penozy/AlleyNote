@@ -4,58 +4,60 @@ declare(strict_types=1);
 
 namespace App\Application\DTOs\Monitoring;
 
-use App\Domain\Common\ValueObjects\AlertSeverity;
 use App\Application\DTOs\Common\BaseDTO;
+use App\Domain\Common\ValueObjects\AlertSeverity;
+use DateTime;
+use DateTimeInterface;
 
 /**
- * 告警 DTO
- * 
+ * 告警 DTO.
+ *
  * 用於告警的數據傳輸和驗證
  */
 final class AlertDTO extends BaseDTO
 {
     /**
-     * 告警 ID
+     * 告警 ID.
      */
     public readonly ?string $id;
 
     /**
-     * 規則 ID
+     * 規則 ID.
      */
     public readonly string $ruleId;
 
     /**
-     * 規則名稱
+     * 規則名稱.
      */
     public readonly string $ruleName;
 
     /**
-     * 告警標題
+     * 告警標題.
      */
     public readonly string $title;
 
     /**
-     * 告警描述
+     * 告警描述.
      */
     public readonly string $description;
 
     /**
-     * 告警訊息
+     * 告警訊息.
      */
     public readonly string $message;
 
     /**
-     * 告警嚴重程度
+     * 告警嚴重程度.
      */
     public readonly AlertSeverity $severity;
 
     /**
-     * 告警狀態
+     * 告警狀態.
      */
     public readonly string $status;
 
     /**
-     * 觸發指標名稱
+     * 觸發指標名稱.
      */
     public readonly string $metric;
 
@@ -70,62 +72,62 @@ final class AlertDTO extends BaseDTO
     public readonly float $threshold;
 
     /**
-     * 比較操作符
+     * 比較操作符.
      */
     public readonly string $operator;
 
     /**
-     * 告警標籤
+     * 告警標籤.
      */
     public readonly array $labels;
 
     /**
-     * 告警註釋
+     * 告警註釋.
      */
     public readonly array $annotations;
 
     /**
-     * 告警觸發時間
+     * 告警觸發時間.
      */
-    public readonly \DateTimeInterface $alertedAt;
+    public readonly DateTimeInterface $alertedAt;
 
     /**
-     * 告警解決時間
+     * 告警解決時間.
      */
-    public readonly ?\DateTimeInterface $resolvedAt;
+    public readonly ?DateTimeInterface $resolvedAt;
 
     /**
-     * 告警確認時間
+     * 告警確認時間.
      */
-    public readonly ?\DateTimeInterface $acknowledgedAt;
+    public readonly ?DateTimeInterface $acknowledgedAt;
 
     /**
-     * 告警確認者
+     * 告警確認者.
      */
     public readonly ?string $acknowledgedBy;
 
     /**
-     * 靜音到期時間
+     * 靜音到期時間.
      */
-    public readonly ?\DateTimeInterface $silencedUntil;
+    public readonly ?DateTimeInterface $silencedUntil;
 
     /**
-     * 通知狀態
+     * 通知狀態.
      */
     public readonly array $notificationStatus;
 
     /**
-     * 建立時間
+     * 建立時間.
      */
-    public readonly ?\DateTimeInterface $createdAt;
+    public readonly ?DateTimeInterface $createdAt;
 
     /**
-     * 更新時間
+     * 更新時間.
      */
-    public readonly ?\DateTimeInterface $updatedAt;
+    public readonly ?DateTimeInterface $updatedAt;
 
     /**
-     * 建構子
+     * 建構子.
      */
     public function __construct(
         string $ruleId,
@@ -141,15 +143,15 @@ final class AlertDTO extends BaseDTO
         string $operator,
         array $labels = [],
         array $annotations = [],
-        ?\DateTimeInterface $alertedAt = null,
-        ?\DateTimeInterface $resolvedAt = null,
-        ?\DateTimeInterface $acknowledgedAt = null,
+        ?DateTimeInterface $alertedAt = null,
+        ?DateTimeInterface $resolvedAt = null,
+        ?DateTimeInterface $acknowledgedAt = null,
         ?string $acknowledgedBy = null,
-        ?\DateTimeInterface $silencedUntil = null,
+        ?DateTimeInterface $silencedUntil = null,
         array $notificationStatus = [],
         ?string $id = null,
-        ?\DateTimeInterface $createdAt = null,
-        ?\DateTimeInterface $updatedAt = null
+        ?DateTimeInterface $createdAt = null,
+        ?DateTimeInterface $updatedAt = null,
     ) {
         $this->id = $id;
         $this->ruleId = $ruleId;
@@ -165,7 +167,7 @@ final class AlertDTO extends BaseDTO
         $this->operator = $operator;
         $this->labels = $labels;
         $this->annotations = $annotations;
-        $this->alertedAt = $alertedAt ?? new \DateTime();
+        $this->alertedAt = $alertedAt ?? new DateTime();
         $this->resolvedAt = $resolvedAt;
         $this->acknowledgedAt = $acknowledgedAt;
         $this->acknowledgedBy = $acknowledgedBy;
@@ -178,7 +180,7 @@ final class AlertDTO extends BaseDTO
     }
 
     /**
-     * 轉換為陣列
+     * 轉換為陣列.
      */
     public function toArray(): array
     {
@@ -204,13 +206,13 @@ final class AlertDTO extends BaseDTO
             'silencedUntil' => $this->silencedUntil?->format('Y-m-d H:i:s'),
             'notificationStatus' => $this->notificationStatus,
             'createdAt' => $this->createdAt?->format('Y-m-d H:i:s'),
-            'updatedAt' => $this->updatedAt?->format('Y-m-d H:i:s')
+            'updatedAt' => $this->updatedAt?->format('Y-m-d H:i:s'),
         ];
     }
 
     /**
-     * 獲取驗證錯誤
-     * 
+     * 獲取驗證錯誤.
+     *
      * @return array<string, array<string>>
      */
     protected function getValidationErrors(): array
@@ -281,7 +283,7 @@ final class AlertDTO extends BaseDTO
     }
 
     /**
-     * 從陣列建立 DTO
+     * 從陣列建立 DTO.
      */
     public static function fromArray(array $data): self
     {
@@ -291,7 +293,7 @@ final class AlertDTO extends BaseDTO
             title: $data['title'] ?? '',
             description: $data['description'] ?? '',
             message: $data['message'] ?? '',
-            severity: is_string($data['severity'] ?? null) 
+            severity: is_string($data['severity'] ?? null)
                 ? AlertSeverity::from($data['severity'])
                 : ($data['severity'] ?? AlertSeverity::WARNING),
             status: $data['status'] ?? 'firing',
@@ -301,20 +303,20 @@ final class AlertDTO extends BaseDTO
             operator: $data['operator'] ?? '',
             labels: $data['labels'] ?? [],
             annotations: $data['annotations'] ?? [],
-            alertedAt: isset($data['alertedAt']) ? new \DateTime($data['alertedAt']) : null,
-            resolvedAt: isset($data['resolvedAt']) ? new \DateTime($data['resolvedAt']) : null,
-            acknowledgedAt: isset($data['acknowledgedAt']) ? new \DateTime($data['acknowledgedAt']) : null,
+            alertedAt: isset($data['alertedAt']) ? new DateTime($data['alertedAt']) : null,
+            resolvedAt: isset($data['resolvedAt']) ? new DateTime($data['resolvedAt']) : null,
+            acknowledgedAt: isset($data['acknowledgedAt']) ? new DateTime($data['acknowledgedAt']) : null,
             acknowledgedBy: $data['acknowledgedBy'] ?? null,
-            silencedUntil: isset($data['silencedUntil']) ? new \DateTime($data['silencedUntil']) : null,
+            silencedUntil: isset($data['silencedUntil']) ? new DateTime($data['silencedUntil']) : null,
             notificationStatus: $data['notificationStatus'] ?? [],
             id: $data['id'] ?? null,
-            createdAt: isset($data['createdAt']) ? new \DateTime($data['createdAt']) : null,
-            updatedAt: isset($data['updatedAt']) ? new \DateTime($data['updatedAt']) : null
+            createdAt: isset($data['createdAt']) ? new DateTime($data['createdAt']) : null,
+            updatedAt: isset($data['updatedAt']) ? new DateTime($data['updatedAt']) : null,
         );
     }
 
     /**
-     * 檢查告警是否處於活動狀態
+     * 檢查告警是否處於活動狀態.
      */
     public function isActive(): bool
     {
@@ -322,7 +324,7 @@ final class AlertDTO extends BaseDTO
     }
 
     /**
-     * 檢查告警是否已解決
+     * 檢查告警是否已解決.
      */
     public function isResolved(): bool
     {
@@ -330,7 +332,7 @@ final class AlertDTO extends BaseDTO
     }
 
     /**
-     * 檢查告警是否已確認
+     * 檢查告警是否已確認.
      */
     public function isAcknowledged(): bool
     {
@@ -338,36 +340,37 @@ final class AlertDTO extends BaseDTO
     }
 
     /**
-     * 檢查告警是否被靜音
+     * 檢查告警是否被靜音.
      */
     public function isSilenced(): bool
     {
         if ($this->silencedUntil === null) {
             return false;
         }
-        
-        return $this->silencedUntil > new \DateTime();
+
+        return $this->silencedUntil > new DateTime();
     }
 
     /**
-     * 獲取告警持續時間（秒）
+     * 獲取告警持續時間（秒）.
      */
     public function getDuration(): int
     {
-        $endTime = $this->resolvedAt ?? new \DateTime();
+        $endTime = $this->resolvedAt ?? new DateTime();
+
         return $endTime->getTimestamp() - $this->alertedAt->getTimestamp();
     }
 
     /**
-     * 獲取告警年齡（從觸發到現在的時間）
+     * 獲取告警年齡（從觸發到現在的時間）.
      */
     public function getAge(): int
     {
-        return (new \DateTime())->getTimestamp() - $this->alertedAt->getTimestamp();
+        return new DateTime()->getTimestamp() - $this->alertedAt->getTimestamp();
     }
 
     /**
-     * 複製並修改告警
+     * 複製並修改告警.
      */
     public function withChanges(array $changes): self
     {
@@ -375,43 +378,44 @@ final class AlertDTO extends BaseDTO
         foreach ($changes as $key => $value) {
             $data[$key] = $value;
         }
+
         return self::fromArray($data);
     }
 
     /**
-     * 建立已解決的告警副本
+     * 建立已解決的告警副本.
      */
     public function resolve(): self
     {
         return $this->withChanges([
             'status' => 'resolved',
-            'resolvedAt' => (new \DateTime())->format('Y-m-d H:i:s'),
-            'updatedAt' => (new \DateTime())->format('Y-m-d H:i:s')
+            'resolvedAt' => new DateTime()->format('Y-m-d H:i:s'),
+            'updatedAt' => new DateTime()->format('Y-m-d H:i:s'),
         ]);
     }
 
     /**
-     * 建立已確認的告警副本
+     * 建立已確認的告警副本.
      */
     public function acknowledge(string $acknowledgedBy): self
     {
         return $this->withChanges([
             'status' => 'acknowledged',
-            'acknowledgedAt' => (new \DateTime())->format('Y-m-d H:i:s'),
+            'acknowledgedAt' => new DateTime()->format('Y-m-d H:i:s'),
             'acknowledgedBy' => $acknowledgedBy,
-            'updatedAt' => (new \DateTime())->format('Y-m-d H:i:s')
+            'updatedAt' => new DateTime()->format('Y-m-d H:i:s'),
         ]);
     }
 
     /**
-     * 建立靜音的告警副本
+     * 建立靜音的告警副本.
      */
-    public function silence(\DateTimeInterface $until): self
+    public function silence(DateTimeInterface $until): self
     {
         return $this->withChanges([
             'status' => 'silenced',
             'silencedUntil' => $until->format('Y-m-d H:i:s'),
-            'updatedAt' => (new \DateTime())->format('Y-m-d H:i:s')
+            'updatedAt' => new DateTime()->format('Y-m-d H:i:s'),
         ]);
     }
 
@@ -430,7 +434,7 @@ final class AlertDTO extends BaseDTO
             'threshold' => $this->threshold,
             'alertedAt' => $this->alertedAt->format('Y-m-d H:i:s'),
             'duration' => $this->getDuration(),
-            'age' => $this->getAge()
+            'age' => $this->getAge(),
         ];
     }
 }

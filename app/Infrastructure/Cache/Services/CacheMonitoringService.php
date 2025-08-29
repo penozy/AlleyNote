@@ -5,19 +5,24 @@ declare(strict_types=1);
 namespace App\Infrastructure\Cache\Services;
 
 use App\Shared\Contracts\CacheInterface;
+use Redis;
 use Throwable;
 
 /**
- * 快取監控服務
- * 
+ * 快取監控服務.
+ *
  * 提供快取效能監控、統計分析和除錯資訊
  */
 final class CacheMonitoringService
 {
     private const string STATS_KEY_PREFIX = 'cache:monitoring:';
+
     private const string HITS_KEY = self::STATS_KEY_PREFIX . 'hits';
+
     private const string MISSES_KEY = self::STATS_KEY_PREFIX . 'misses';
+
     private const string OPERATIONS_KEY = self::STATS_KEY_PREFIX . 'operations';
+
     private const string ERRORS_KEY = self::STATS_KEY_PREFIX . 'errors';
 
     public function __construct(
@@ -25,7 +30,7 @@ final class CacheMonitoringService
     ) {}
 
     /**
-     * 記錄快取命中
+     * 記錄快取命中.
      */
     public function recordHit(string $key): void
     {
@@ -38,7 +43,7 @@ final class CacheMonitoringService
     }
 
     /**
-     * 記錄快取未命中
+     * 記錄快取未命中.
      */
     public function recordMiss(string $key): void
     {
@@ -51,7 +56,7 @@ final class CacheMonitoringService
     }
 
     /**
-     * 記錄快取操作錯誤
+     * 記錄快取操作錯誤.
      */
     public function recordError(string $operation, string $error): void
     {
@@ -74,7 +79,7 @@ final class CacheMonitoringService
     }
 
     /**
-     * 記錄快取操作
+     * 記錄快取操作.
      */
     private function recordOperation(string $type, string $key): void
     {
@@ -103,8 +108,8 @@ final class CacheMonitoringService
     }
 
     /**
-     * 取得快取統計資訊
-     * 
+     * 取得快取統計資訊.
+     *
      * @return array<string, mixed>
      */
     public function getStats(): array
@@ -148,7 +153,7 @@ final class CacheMonitoringService
     }
 
     /**
-     * 計算快取健康分數 (0-100)
+     * 計算快取健康分數 (0-100).
      */
     private function calculateHealthScore(float $hitRate, int $errors, int $total): int
     {
@@ -170,7 +175,7 @@ final class CacheMonitoringService
     }
 
     /**
-     * 重置所有統計資料
+     * 重置所有統計資料.
      */
     public function resetStats(): bool
     {
@@ -180,6 +185,7 @@ final class CacheMonitoringService
             $this->cache->delete(self::ERRORS_KEY);
             $this->cache->delete(self::OPERATIONS_KEY);
             $this->cache->delete('cache:monitoring:recent_errors');
+
             return true;
         } catch (Throwable) {
             return false;
@@ -187,8 +193,8 @@ final class CacheMonitoringService
     }
 
     /**
-     * 取得快取鍵分析
-     * 
+     * 取得快取鍵分析.
+     *
      * @return array<string, mixed>
      */
     public function analyzeKeys(): array
@@ -199,7 +205,7 @@ final class CacheMonitoringService
                 return ['error' => 'Key analysis not supported for this cache backend'];
             }
 
-            /** @var \Redis $redis */
+            /** @var Redis $redis */
             $redis = $this->cache->getRedisInstance();
             $prefix = method_exists($this->cache, 'getPrefix') ? $this->cache->getPrefix() : '';
 
@@ -245,7 +251,7 @@ final class CacheMonitoringService
     }
 
     /**
-     * 從快取鍵中提取模式
+     * 從快取鍵中提取模式.
      */
     private function extractKeyPattern(string $key): string
     {
@@ -258,8 +264,8 @@ final class CacheMonitoringService
     }
 
     /**
-     * 產生快取報告
-     * 
+     * 產生快取報告.
+     *
      * @return array<string, mixed>
      */
     public function generateReport(): array
@@ -276,8 +282,8 @@ final class CacheMonitoringService
     }
 
     /**
-     * 基於統計資料產生建議
-     * 
+     * 基於統計資料產生建議.
+     *
      * @param array<string, mixed> $stats
      * @param array<string, mixed> $keyAnalysis
      * @return array<string>

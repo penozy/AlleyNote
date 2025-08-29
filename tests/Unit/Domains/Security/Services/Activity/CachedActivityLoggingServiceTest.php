@@ -4,19 +4,22 @@ declare(strict_types=1);
 
 namespace Tests\Unit\Domains\Security\Services\Activity;
 
+use App\Domains\Security\Contracts\ActivityLoggingServiceInterface;
 use App\Domains\Security\DTOs\CreateActivityLogDTO;
 use App\Domains\Security\Enums\ActivityType;
 use App\Domains\Security\Services\Activity\CachedActivityLoggingService;
-use App\Domains\Security\Contracts\ActivityLoggingServiceInterface;
 use App\Shared\Contracts\CacheInterface;
+use Exception;
+use Mockery;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
-use Mockery;
 
 class CachedActivityLoggingServiceTest extends TestCase
 {
     private CachedActivityLoggingService $cachedService;
+
     private ActivityLoggingServiceInterface $mockActivityService;
+
     private CacheInterface $mockCache;
 
     protected function setUp(): void
@@ -25,7 +28,7 @@ class CachedActivityLoggingServiceTest extends TestCase
         $this->mockCache = Mockery::mock(CacheInterface::class);
         $this->cachedService = new CachedActivityLoggingService(
             $this->mockActivityService,
-            $this->mockCache
+            $this->mockCache,
         );
     }
 
@@ -42,7 +45,7 @@ class CachedActivityLoggingServiceTest extends TestCase
             userId: 123,
             targetType: 'system',
             targetId: '1',
-            ipAddress: '192.168.1.1'
+            ipAddress: '192.168.1.1',
         );
 
         // 預期 cache 會被清除
@@ -135,13 +138,13 @@ class CachedActivityLoggingServiceTest extends TestCase
                 actionType: ActivityType::LOGIN_SUCCESS,
                 userId: 123,
                 targetType: 'system',
-                targetId: '1'
+                targetId: '1',
             ),
             new CreateActivityLogDTO(
                 actionType: ActivityType::LOGOUT,
                 userId: 456,
                 targetType: 'system',
-                targetId: '1'
+                targetId: '1',
             ),
         ];
 
@@ -278,13 +281,13 @@ class CachedActivityLoggingServiceTest extends TestCase
             actionType: ActivityType::USER_LOGIN,
             userId: 123,
             targetType: 'system',
-            targetId: '1'
+            targetId: '1',
         );
 
         // cache 操作失敗
         $this->mockCache
             ->shouldReceive('delete')
-            ->andThrow(new \Exception('Cache error'));
+            ->andThrow(new Exception('Cache error'));
 
         // 但原始服務仍然被呼叫
         $this->mockActivityService
@@ -304,7 +307,7 @@ class CachedActivityLoggingServiceTest extends TestCase
             actionType: ActivityType::POST_CREATED,
             userId: null,
             targetType: 'system',
-            targetId: '1'
+            targetId: '1',
         );
 
         // 不應該嘗試清除使用者 cache

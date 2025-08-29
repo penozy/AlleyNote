@@ -5,8 +5,8 @@ declare(strict_types=1);
 namespace App\Domain\Common\ValueObjects;
 
 /**
- * 告警嚴重程度枚舉
- * 
+ * 告警嚴重程度枚舉.
+ *
  * 定義告警的嚴重程度等級
  */
 enum AlertSeverity: string
@@ -17,11 +17,11 @@ enum AlertSeverity: string
     case DEBUG = 'debug';
 
     /**
-     * 獲取嚴重程度的顯示名稱
+     * 獲取嚴重程度的顯示名稱.
      */
     public function getDisplayName(): string
     {
-        return match($this) {
+        return match ($this) {
             self::CRITICAL => '危險',
             self::WARNING => '警告',
             self::INFO => '資訊',
@@ -30,11 +30,11 @@ enum AlertSeverity: string
     }
 
     /**
-     * 獲取嚴重程度的數值權重（用於排序）
+     * 獲取嚴重程度的數值權重（用於排序）.
      */
     public function getWeight(): int
     {
-        return match($this) {
+        return match ($this) {
             self::CRITICAL => 4,
             self::WARNING => 3,
             self::INFO => 2,
@@ -47,7 +47,7 @@ enum AlertSeverity: string
      */
     public function getColorCode(): string
     {
-        return match($this) {
+        return match ($this) {
             self::CRITICAL => '#FF4444',  // 紅色
             self::WARNING => '#FFA500',   // 橙色
             self::INFO => '#2196F3',      // 藍色
@@ -56,7 +56,7 @@ enum AlertSeverity: string
     }
 
     /**
-     * 檢查是否需要立即處理
+     * 檢查是否需要立即處理.
      */
     public function requiresImmediateAction(): bool
     {
@@ -64,7 +64,7 @@ enum AlertSeverity: string
     }
 
     /**
-     * 檢查是否應該發送通知
+     * 檢查是否應該發送通知.
      */
     public function shouldNotify(): bool
     {
@@ -72,7 +72,7 @@ enum AlertSeverity: string
     }
 
     /**
-     * 比較嚴重程度
+     * 比較嚴重程度.
      */
     public function isMoreSevereThan(self $other): bool
     {
@@ -80,7 +80,7 @@ enum AlertSeverity: string
     }
 
     /**
-     * 獲取所有嚴重程度選項
+     * 獲取所有嚴重程度選項.
      */
     public static function getAllOptions(): array
     {
@@ -88,16 +88,16 @@ enum AlertSeverity: string
             self::CRITICAL,
             self::WARNING,
             self::INFO,
-            self::DEBUG
+            self::DEBUG,
         ];
     }
 
     /**
-     * 從字串建立枚舉
+     * 從字串建立枚舉.
      */
     public static function fromString(string $value): ?self
     {
-        return match(strtolower($value)) {
+        return match (strtolower($value)) {
             'critical', 'crit', '危險' => self::CRITICAL,
             'warning', 'warn', '警告' => self::WARNING,
             'info', 'information', '資訊' => self::INFO,

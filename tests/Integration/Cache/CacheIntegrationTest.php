@@ -4,17 +4,15 @@ declare(strict_types=1);
 
 namespace Tests\Integration\Cache;
 
-use App\Domains\Security\Contracts\ActivityLoggingServiceInterface;
-use App\Domains\Security\DTOs\CreateActivityLogDTO;
-use App\Domains\Security\Enums\ActivityType;
-use App\Domains\Security\Services\CachedActivityLoggingService;
 use App\Infrastructure\Cache\RedisCache;
 use App\Shared\Contracts\CacheInterface;
+use Exception;
 use PHPUnit\Framework\TestCase;
+use Redis;
 
 /**
- * Redis 快取整合測試
- * 
+ * Redis 快取整合測試.
+ *
  * 測試 Redis 快取是否與活動記錄服務正確整合
  */
 final class CacheIntegrationTest extends TestCase
@@ -35,12 +33,12 @@ final class CacheIntegrationTest extends TestCase
                 host: $_ENV['REDIS_HOST'] ?? 'redis',
                 port: (int) ($_ENV['REDIS_PORT'] ?? 6379),
                 prefix: 'test:cache:integration:',
-                database: 15 // 使用測試專用的資料庫
+                database: 15, // 使用測試專用的資料庫
             );
 
             // 清理測試資料庫
             $this->cache->clear();
-        } catch (\Exception $e) {
+        } catch (Exception $e) {
             $this->markTestSkipped('Redis connection failed: ' . $e->getMessage());
         }
     }
@@ -193,7 +191,7 @@ final class CacheIntegrationTest extends TestCase
         $this->assertTrue($this->cache->set('prefixed_key', 'prefixed_value'));
 
         // 直接連接 Redis 檢查鍵是否包含前綴
-        $redis = new \Redis();
+        $redis = new Redis();
         $redis->connect($_ENV['REDIS_HOST'] ?? 'redis', (int) ($_ENV['REDIS_PORT'] ?? 6379));
         $redis->select(15); // 使用相同的測試資料庫
 

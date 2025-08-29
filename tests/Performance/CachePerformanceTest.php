@@ -5,18 +5,17 @@ declare(strict_types=1);
 namespace Tests\Performance;
 
 use App\Domains\Security\Contracts\ActivityLoggingServiceInterface;
-use App\Domains\Security\DTOs\CreateActivityLogDTO;
 use App\Domains\Security\Enums\ActivityType;
 use App\Domains\Security\Services\CachedActivityLoggingService;
-use App\Domains\Security\Services\Core\ActivityLoggingService;
 use App\Infrastructure\Cache\Providers\AppRedisCache;
 use App\Shared\Contracts\CacheInterface;
+use Exception;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 
 /**
- * Redis 快取效能基準測試
- * 
+ * Redis 快取效能基準測試.
+ *
  * 測試快取系統是否達到預期的效能提升目標：
  * - 50% 查詢效能提升
  * - 80%+ 快取命中率
@@ -24,11 +23,15 @@ use PHPUnit\Framework\TestCase;
 final class CachePerformanceTest extends TestCase
 {
     private const TEST_ITERATIONS = 100;
+
     private const CACHE_HIT_RATE_TARGET = 80.0; // 80%
+
     private const PERFORMANCE_IMPROVEMENT_TARGET = 50.0; // 50%
 
     private ActivityLoggingServiceInterface $originalService;
+
     private CachedActivityLoggingService $cachedService;
+
     private CacheInterface $cache;
 
     protected function setUp(): void
@@ -46,7 +49,7 @@ final class CachePerformanceTest extends TestCase
                 host: $_ENV['REDIS_HOST'] ?? 'redis',
                 port: (int) ($_ENV['REDIS_PORT'] ?? 6379),
                 prefix: 'perf_test:',
-                database: 14 // 使用專用測試資料庫
+                database: 14, // 使用專用測試資料庫
             );
 
             // 清理測試快取
@@ -58,9 +61,9 @@ final class CachePerformanceTest extends TestCase
             // 建立快取裝飾器服務
             $this->cachedService = new CachedActivityLoggingService(
                 $this->originalService,
-                $this->cache
+                $this->cache,
             );
-        } catch (\Exception $e) {
+        } catch (Exception $e) {
             $this->markTestSkipped('Redis connection failed: ' . $e->getMessage());
         }
     }
@@ -74,7 +77,7 @@ final class CachePerformanceTest extends TestCase
     }
 
     /**
-     * 測試快取配置查詢的效能提升
+     * 測試快取配置查詢的效能提升.
      */
     #[Test]
     public function cacheImproveIsLoggingEnabledPerformance(): void
@@ -89,6 +92,7 @@ final class CachePerformanceTest extends TestCase
             ->willReturnCallback(function () {
                 // 模擬資料庫查詢延遲
                 usleep(10000); // 10ms 延遲
+
                 return true;
             });
 
@@ -121,26 +125,26 @@ final class CachePerformanceTest extends TestCase
                 $performanceImprovement,
                 self::PERFORMANCE_IMPROVEMENT_TARGET,
                 $firstCallTime,
-                $avgHitTime
-            )
+                $avgHitTime,
+            ),
         );
 
         // 輸出效能統計
         printf(
-            "\n🚀 Cache Performance Test Results:\n" .
-                "   First call (Cache Miss): %.2fms\n" .
-                "   Average hit time: %.2fms\n" .
-                "   Performance improvement: %.2f%%\n" .
-                "   Target: %.2f%%\n",
+            "\n🚀 Cache Performance Test Results:\n"
+                . "   First call (Cache Miss): %.2fms\n"
+                . "   Average hit time: %.2fms\n"
+                . "   Performance improvement: %.2f%%\n"
+                . "   Target: %.2f%%\n",
             $firstCallTime,
             $avgHitTime,
             $performanceImprovement,
-            self::PERFORMANCE_IMPROVEMENT_TARGET
+            self::PERFORMANCE_IMPROVEMENT_TARGET,
         );
     }
 
     /**
-     * 測試快取命中率統計功能
+     * 測試快取命中率統計功能.
      */
     #[Test]
     public function measureCacheHitRate(): void
@@ -194,28 +198,28 @@ final class CachePerformanceTest extends TestCase
                 $hitRate,
                 self::CACHE_HIT_RATE_TARGET,
                 $hits,
-                $misses
-            )
+                $misses,
+            ),
         );
 
         // 輸出命中率統計
         printf(
-            "\n📊 Cache Hit Rate Test Results:\n" .
-                "   Total requests: %d\n" .
-                "   Cache hits: %d\n" .
-                "   Cache misses: %d\n" .
-                "   Hit rate: %.2f%%\n" .
-                "   Target: %.2f%%\n",
+            "\n📊 Cache Hit Rate Test Results:\n"
+                . "   Total requests: %d\n"
+                . "   Cache hits: %d\n"
+                . "   Cache misses: %d\n"
+                . "   Hit rate: %.2f%%\n"
+                . "   Target: %.2f%%\n",
             $hits + $misses,
             $hits,
             $misses,
             $hitRate,
-            self::CACHE_HIT_RATE_TARGET
+            self::CACHE_HIT_RATE_TARGET,
         );
     }
 
     /**
-     * 測試快取操作本身的效能
+     * 測試快取操作本身的效能.
      */
     #[Test]
     public function measureCacheOperationPerformance(): void
@@ -257,18 +261,18 @@ final class CachePerformanceTest extends TestCase
 
         // 輸出效能統計
         printf(
-            "\n⚡ Cache Operation Performance:\n" .
-                "   Average SET time: %.2fms\n" .
-                "   Average GET time: %.2fms\n" .
-                "   Operations tested: %d each\n",
+            "\n⚡ Cache Operation Performance:\n"
+                . "   Average SET time: %.2fms\n"
+                . "   Average GET time: %.2fms\n"
+                . "   Operations tested: %d each\n",
             $avgSetTime,
             $avgGetTime,
-            self::TEST_ITERATIONS
+            self::TEST_ITERATIONS,
         );
     }
 
     /**
-     * 測試批次操作的效能
+     * 測試批次操作的效能.
      */
     #[Test]
     public function measureBatchOperationPerformance(): void
@@ -306,20 +310,20 @@ final class CachePerformanceTest extends TestCase
 
         // 輸出批次操作效能統計
         printf(
-            "\n🔄 Batch Operation Performance:\n" .
-                "   Batch size: %d items\n" .
-                "   Total SET time: %.2fms (%.3fms per item)\n" .
-                "   Total GET time: %.2fms (%.3fms per item)\n",
+            "\n🔄 Batch Operation Performance:\n"
+                . "   Batch size: %d items\n"
+                . "   Total SET time: %.2fms (%.3fms per item)\n"
+                . "   Total GET time: %.2fms (%.3fms per item)\n",
             $batchSize,
             $batchSetTime,
             $avgSetTimePerItem,
             $batchGetTime,
-            $avgGetTimePerItem
+            $avgGetTimePerItem,
         );
     }
 
     /**
-     * 測試快取失效機制的效能
+     * 測試快取失效機制的效能.
      */
     #[Test]
     public function measureCacheInvalidationPerformance(): void
@@ -355,13 +359,13 @@ final class CachePerformanceTest extends TestCase
 
         // 輸出失效操作效能統計
         printf(
-            "\n🗑️ Cache Invalidation Performance:\n" .
-                "   Items deleted: %d\n" .
-                "   Total time: %.2fms\n" .
-                "   Average per item: %.3fms\n",
+            "\n🗑️ Cache Invalidation Performance:\n"
+                . "   Items deleted: %d\n"
+                . "   Total time: %.2fms\n"
+                . "   Average per item: %.3fms\n",
             count($cacheKeys),
             $invalidationTime,
-            $avgDeleteTimePerItem
+            $avgDeleteTimePerItem,
         );
     }
 }

@@ -9,13 +9,14 @@ use Exception;
 use Redis;
 
 /**
- * Redis 快取服務實作
- * 
+ * Redis 快取服務實作.
+ *
  * 使用 Redis 作為快取後端，實現 App\Shared\Contracts\CacheInterface 介面
  */
 final class AppRedisCache implements CacheInterface
 {
     private Redis $redis;
+
     private string $prefix;
 
     /**
@@ -24,7 +25,7 @@ final class AppRedisCache implements CacheInterface
      * @param string $prefix 快取鍵前綴
      * @param int $database 資料庫編號
      * @param string|null $password Redis 密碼
-     * 
+     *
      * @throws Exception 當連接失敗時
      */
     public function __construct(
@@ -32,7 +33,7 @@ final class AppRedisCache implements CacheInterface
         int $port = 6379,
         string $prefix = 'alleynote:',
         int $database = 0,
-        ?string $password = null
+        ?string $password = null,
     ) {
         $this->redis = new Redis();
         $this->prefix = $prefix;
@@ -65,6 +66,7 @@ final class AppRedisCache implements CacheInterface
 
         try {
             $value = $this->redis->get($fullKey);
+
             return $value === false ? null : $value;
         } catch (Exception) {
             return null;
@@ -92,6 +94,7 @@ final class AppRedisCache implements CacheInterface
 
         try {
             $result = $this->redis->del($fullKey);
+
             return $result > 0;
         } catch (Exception) {
             return false;
@@ -120,6 +123,7 @@ final class AppRedisCache implements CacheInterface
                 if (!empty($keys)) {
                     return $this->redis->del($keys) > 0;
                 }
+
                 return true;
             }
 
@@ -196,6 +200,7 @@ final class AppRedisCache implements CacheInterface
 
         try {
             $deleted = $this->redis->del($fullKeys);
+
             return $deleted > 0;
         } catch (Exception) {
             return false;
@@ -233,7 +238,7 @@ final class AppRedisCache implements CacheInterface
     }
 
     /**
-     * 關閉 Redis 連接
+     * 關閉 Redis 連接.
      */
     public function __destruct()
     {
@@ -247,9 +252,7 @@ final class AppRedisCache implements CacheInterface
     }
 
     /**
-     * 取得 Redis 連接實例（用於測試或高級操作）
-     * 
-     * @return Redis
+     * 取得 Redis 連接實例（用於測試或高級操作）.
      */
     public function getRedisInstance(): Redis
     {
@@ -257,9 +260,7 @@ final class AppRedisCache implements CacheInterface
     }
 
     /**
-     * 取得快取鍵前綴
-     * 
-     * @return string
+     * 取得快取鍵前綴.
      */
     public function getPrefix(): string
     {

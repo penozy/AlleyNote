@@ -7,8 +7,11 @@ namespace Tests\Integration;
 use App\Application\Controllers\Api\V1\PostController;
 use App\Domains\Post\Contracts\PostServiceInterface;
 use App\Domains\Post\Models\Post;
+use App\Domains\Security\Contracts\ActivityLoggingServiceInterface;
 use App\Domains\Security\Contracts\CsrfProtectionServiceInterface;
 use App\Domains\Security\Contracts\XssProtectionServiceInterface;
+use App\Shared\Contracts\OutputSanitizerInterface;
+use App\Shared\Contracts\ValidatorInterface;
 use App\Shared\Exceptions\NotFoundException;
 use InvalidArgumentException;
 use Mockery;
@@ -130,9 +133,9 @@ class PostControllerTest extends TestCase
             ->andReturn($expectedData);
 
         // Execute
-        $activityLogger = Mockery::mock(\App\Domains\Security\Contracts\ActivityLoggingServiceInterface::class);
-        $validator = Mockery::mock(\App\Shared\Contracts\ValidatorInterface::class);
-        $sanitizer = Mockery::mock(\App\Shared\Contracts\OutputSanitizerInterface::class);
+        $activityLogger = Mockery::mock(ActivityLoggingServiceInterface::class);
+        $validator = Mockery::mock(ValidatorInterface::class);
+        $sanitizer = Mockery::mock(OutputSanitizerInterface::class);
 
         $controller = new PostController($this->postService, $validator, $sanitizer, $activityLogger);
         $response = $controller->index($this->request, $this->response);

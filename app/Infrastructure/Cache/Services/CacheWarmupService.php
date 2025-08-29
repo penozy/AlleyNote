@@ -4,20 +4,22 @@ declare(strict_types=1);
 
 namespace App\Infrastructure\Cache\Services;
 
-use App\Domains\Security\Enums\ActivityType;
 use App\Domains\Security\Contracts\ActivityLoggingServiceInterface;
+use App\Domains\Security\Enums\ActivityType;
 use App\Shared\Contracts\CacheInterface;
 use Throwable;
 
 /**
- * 快取暖機服務
- * 
+ * 快取暖機服務.
+ *
  * 負責在系統啟動時預載入常用資料到快取中，提高首次查詢效能
  */
 final class CacheWarmupService
 {
     private const string WARMUP_STATUS_KEY = 'cache:warmup:status';
+
     private const string WARMUP_TIMESTAMP_KEY = 'cache:warmup:timestamp';
+
     private const int WARMUP_TTL = 3600; // 1 小時
 
     public function __construct(
@@ -27,7 +29,7 @@ final class CacheWarmupService
 
     /**
      * 執行快取暖機
-     * 
+     *
      * @return array<string, mixed> 暖機結果統計
      */
     public function warmup(): array
@@ -60,7 +62,7 @@ final class CacheWarmupService
     }
 
     /**
-     * 預載入所有活動類型的啟用狀態配置
+     * 預載入所有活動類型的啟用狀態配置.
      */
     private function preloadActivityTypeConfigs(): int
     {
@@ -80,7 +82,7 @@ final class CacheWarmupService
     }
 
     /**
-     * 預載入系統配置項目
+     * 預載入系統配置項目.
      */
     private function preloadSystemConfigs(): int
     {
@@ -107,7 +109,7 @@ final class CacheWarmupService
     }
 
     /**
-     * 標記暖機完成
+     * 標記暖機完成.
      */
     private function markWarmupComplete(): void
     {
@@ -122,7 +124,7 @@ final class CacheWarmupService
 
     /**
      * 檢查是否需要執行暖機
-     * 
+     *
      * @param int $maxAge 最大暖機結果有效時間（秒），預設 1 小時
      */
     public function shouldWarmup(int $maxAge = 3600): bool
@@ -145,8 +147,8 @@ final class CacheWarmupService
     }
 
     /**
-     * 取得暖機狀態資訊
-     * 
+     * 取得暖機狀態資訊.
+     *
      * @return array<string, mixed>
      */
     public function getWarmupStatus(): array
@@ -179,13 +181,14 @@ final class CacheWarmupService
     }
 
     /**
-     * 清除暖機狀態（強制重新暖機）
+     * 清除暖機狀態（強制重新暖機）.
      */
     public function clearWarmupStatus(): bool
     {
         try {
             $this->cache->delete(self::WARMUP_STATUS_KEY);
             $this->cache->delete(self::WARMUP_TIMESTAMP_KEY);
+
             return true;
         } catch (Throwable) {
             return false;
@@ -194,7 +197,7 @@ final class CacheWarmupService
 
     /**
      * 智能暖機 - 只在需要時執行暖機
-     * 
+     *
      * @return array<string, mixed>|null 暖機結果，如果不需要暖機則返回 null
      */
     public function smartWarmup(): ?array

@@ -11,22 +11,24 @@ use App\Shared\Contracts\CacheInterface;
 use Throwable;
 
 /**
- * 快取版活動記錄服務
- * 
+ * 快取版活動記錄服務.
+ *
  * 透過快取提升活動記錄服務的效能
  */
 class CachedActivityLoggingService implements ActivityLoggingServiceInterface
 {
     private const CACHE_TTL_STATS = 300; // 5 分鐘
+
     private const CACHE_TTL_USER_ACTIVITIES = 60; // 1 分鐘
+
     private const CACHE_PREFIX_STATS = 'activity_stats:';
+
     private const CACHE_PREFIX_USER = 'user_activities:';
 
     public function __construct(
         private ActivityLoggingServiceInterface $activityLoggingService,
-        private CacheInterface $cache
-    ) {
-    }
+        private CacheInterface $cache,
+    ) {}
 
     public function log(CreateActivityLogDTO $dto): bool
     {
@@ -134,8 +136,8 @@ class CachedActivityLoggingService implements ActivityLoggingServiceInterface
     }
 
     /**
-     * 取得使用者活動統計（帶快取）
-     * 
+     * 取得使用者活動統計（帶快取）.
+     *
      * @param int $userId 使用者 ID
      * @param int $days 天數
      * @return array<string, mixed>
@@ -143,7 +145,7 @@ class CachedActivityLoggingService implements ActivityLoggingServiceInterface
     public function getUserActivityStats(int $userId, int $days = 30): array
     {
         $cacheKey = self::CACHE_PREFIX_USER . "{$userId}:stats:{$days}";
-        
+
         $stats = $this->cache->get($cacheKey);
         if ($stats !== null) {
             return $stats;
@@ -151,37 +153,37 @@ class CachedActivityLoggingService implements ActivityLoggingServiceInterface
 
         // 這裡應該調用實際的統計方法，暫時回傳模擬資料
         $stats = $this->calculateUserActivityStats($userId, $days);
-        
+
         $this->cache->set($cacheKey, $stats, self::CACHE_TTL_STATS);
-        
+
         return $stats;
     }
 
     /**
-     * 取得系統活動統計（帶快取）
-     * 
+     * 取得系統活動統計（帶快取）.
+     *
      * @param int $days 天數
      * @return array<string, mixed>
      */
     public function getSystemActivityStats(int $days = 30): array
     {
         $cacheKey = self::CACHE_PREFIX_STATS . "system:{$days}";
-        
+
         $stats = $this->cache->get($cacheKey);
         if ($stats !== null) {
             return $stats;
         }
 
         $stats = $this->calculateSystemActivityStats($days);
-        
+
         $this->cache->set($cacheKey, $stats, self::CACHE_TTL_STATS);
-        
+
         return $stats;
     }
 
     /**
-     * 取得熱門活動類型（帶快取）
-     * 
+     * 取得熱門活動類型（帶快取）.
+     *
      * @param int $limit 限制數量
      * @param int $days 天數
      * @return array<array<string, mixed>>
@@ -189,21 +191,21 @@ class CachedActivityLoggingService implements ActivityLoggingServiceInterface
     public function getPopularActivityTypes(int $limit = 10, int $days = 7): array
     {
         $cacheKey = self::CACHE_PREFIX_STATS . "popular:{$limit}:{$days}";
-        
+
         $activities = $this->cache->get($cacheKey);
         if ($activities !== null) {
             return $activities;
         }
 
         $activities = $this->calculatePopularActivityTypes($limit, $days);
-        
+
         $this->cache->set($cacheKey, $activities, self::CACHE_TTL_STATS);
-        
+
         return $activities;
     }
 
     /**
-     * 清除使用者相關快取
+     * 清除使用者相關快取.
      */
     private function invalidateUserCache(int $userId): void
     {
@@ -214,7 +216,7 @@ class CachedActivityLoggingService implements ActivityLoggingServiceInterface
                 self::CACHE_PREFIX_USER . "{$userId}:stats:30",
                 self::CACHE_PREFIX_USER . "{$userId}:recent",
             ];
-            
+
             $this->cache->deleteMultiple($commonKeys);
         } catch (Throwable) {
             // 快取清除失敗不影響主要功能
@@ -222,7 +224,7 @@ class CachedActivityLoggingService implements ActivityLoggingServiceInterface
     }
 
     /**
-     * 清除統計快取
+     * 清除統計快取.
      */
     private function invalidateStatsCache(): void
     {
@@ -233,7 +235,7 @@ class CachedActivityLoggingService implements ActivityLoggingServiceInterface
                 self::CACHE_PREFIX_STATS . 'popular:10:7',
                 self::CACHE_PREFIX_STATS . 'popular:10:30',
             ];
-            
+
             $this->cache->deleteMultiple($commonKeys);
         } catch (Throwable) {
             // 快取清除失敗不影響主要功能
@@ -241,7 +243,7 @@ class CachedActivityLoggingService implements ActivityLoggingServiceInterface
     }
 
     /**
-     * 清除所有活動相關快取
+     * 清除所有活動相關快取.
      */
     private function clearAllActivityCache(): void
     {
@@ -255,8 +257,8 @@ class CachedActivityLoggingService implements ActivityLoggingServiceInterface
     }
 
     /**
-     * 計算使用者活動統計
-     * 
+     * 計算使用者活動統計.
+     *
      * @param int $userId 使用者 ID
      * @param int $days 天數
      * @return array<string, mixed>
@@ -277,8 +279,8 @@ class CachedActivityLoggingService implements ActivityLoggingServiceInterface
     }
 
     /**
-     * 計算系統活動統計
-     * 
+     * 計算系統活動統計.
+     *
      * @param int $days 天數
      * @return array<string, mixed>
      */
@@ -295,8 +297,8 @@ class CachedActivityLoggingService implements ActivityLoggingServiceInterface
     }
 
     /**
-     * 計算熱門活動類型
-     * 
+     * 計算熱門活動類型.
+     *
      * @param int $limit 限制數量
      * @param int $days 天數
      * @return array<array<string, mixed>>
@@ -307,8 +309,8 @@ class CachedActivityLoggingService implements ActivityLoggingServiceInterface
     }
 
     /**
-     * 取得快取狀態
-     * 
+     * 取得快取狀態.
+     *
      * @return array<string, mixed>
      */
     public function getCacheStatus(): array

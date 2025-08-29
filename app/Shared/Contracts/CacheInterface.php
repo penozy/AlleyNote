@@ -5,8 +5,8 @@ declare(strict_types=1);
 namespace App\Shared\Contracts;
 
 /**
- * 快取服務介面
- * 
+ * 快取服務介面.
+ *
  * 提供統一的快取操作介面，支援多種後端實作
  */
 interface CacheInterface
@@ -30,7 +30,7 @@ interface CacheInterface
     public function set(string $key, mixed $value, ?int $ttl = null): bool;
 
     /**
-     * 刪除快取
+     * 刪除快取.
      *
      * @param string $key 快取鍵
      * @return bool 刪除是否成功
@@ -38,7 +38,7 @@ interface CacheInterface
     public function delete(string $key): bool;
 
     /**
-     * 檢查快取是否存在
+     * 檢查快取是否存在.
      *
      * @param string $key 快取鍵
      * @return bool 是否存在
@@ -46,7 +46,7 @@ interface CacheInterface
     public function has(string $key): bool;
 
     /**
-     * 清空所有快取
+     * 清空所有快取.
      *
      * @return bool 清空是否成功
      */
@@ -70,7 +70,7 @@ interface CacheInterface
     public function setMultiple(array $values, ?int $ttl = null): bool;
 
     /**
-     * 批次刪除快取
+     * 批次刪除快取.
      *
      * @param array<string> $keys 快取鍵陣列
      * @return bool 刪除是否成功
@@ -78,7 +78,7 @@ interface CacheInterface
     public function deleteMultiple(array $keys): bool;
 
     /**
-     * 遞增計數器
+     * 遞增計數器.
      *
      * @param string $key 快取鍵
      * @param int $value 遞增值，預設為 1
@@ -87,7 +87,7 @@ interface CacheInterface
     public function increment(string $key, int $value = 1): int|false;
 
     /**
-     * 遞減計數器
+     * 遞減計數器.
      *
      * @param string $key 快取鍵
      * @param int $value 遞減值，預設為 1

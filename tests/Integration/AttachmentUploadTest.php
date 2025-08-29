@@ -9,6 +9,7 @@ use App\Domains\Attachment\Repositories\AttachmentRepository;
 use App\Domains\Attachment\Services\AttachmentService;
 use App\Domains\Auth\Services\AuthorizationService;
 use App\Domains\Post\Repositories\PostRepository;
+use App\Domains\Security\Contracts\ActivityLoggingServiceInterface;
 use App\Domains\Security\Contracts\LoggingSecurityServiceInterface;
 use App\Shared\Exceptions\ValidationException;
 use Exception;
@@ -59,7 +60,7 @@ class AttachmentUploadTest extends TestCase
         $this->postRepo = new PostRepository($this->db, $this->cache, $this->logger);
 
         // Mock ActivityLoggingService
-        $activityLogger = Mockery::mock(\App\Domains\Security\Contracts\ActivityLoggingServiceInterface::class);
+        $activityLogger = Mockery::mock(ActivityLoggingServiceInterface::class);
         $activityLogger->shouldReceive('log')->zeroOrMoreTimes();
         $activityLogger->shouldReceive('logSuccess')->zeroOrMoreTimes();
         $activityLogger->shouldReceive('logFailure')->zeroOrMoreTimes();
