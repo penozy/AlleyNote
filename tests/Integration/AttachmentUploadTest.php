@@ -61,6 +61,8 @@ class AttachmentUploadTest extends TestCase
         // Mock ActivityLoggingService
         $activityLogger = Mockery::mock(\App\Domains\Security\Contracts\ActivityLoggingServiceInterface::class);
         $activityLogger->shouldReceive('log')->zeroOrMoreTimes();
+        $activityLogger->shouldReceive('logSuccess')->zeroOrMoreTimes();
+        $activityLogger->shouldReceive('logFailure')->zeroOrMoreTimes();
 
         // 初始化測試對象
         $this->attachmentService = new AttachmentService($this->attachmentRepo, $this->postRepo, $this->authService, $activityLogger, $this->uploadDir);

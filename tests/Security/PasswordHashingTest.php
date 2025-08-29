@@ -119,12 +119,19 @@ class PasswordHashingTest extends TestCase
         $dto = new RegisterUserDTO($this->validator, $userData);
 
         // 註冊使用者
-        $user = $this->authService->register($dto);
+        $result = $this->authService->register($dto);
+        $this->assertIsArray($result);
+        $this->assertArrayHasKey('user', $result);
+        $user = $result['user'];
 
         // 從資料庫取得雜湊後的密碼
         $stmt = $this->db->prepare('SELECT password FROM users WHERE id = ?');
         $stmt->execute([$user['id']]);
         $hashedPassword = $stmt->fetchColumn();
+
+        // 確保密碼雜湊成功
+        $this->assertIsString($hashedPassword);
+        $this->assertNotFalse($hashedPassword);
 
         // 驗證使用 Argon2id 演算法
         $this->assertStringStartsWith('$argon2id$', $hashedPassword);
@@ -149,12 +156,19 @@ class PasswordHashingTest extends TestCase
         $dto = new RegisterUserDTO($this->validator, $userData);
 
         // 註冊使用者
-        $user = $this->authService->register($dto);
+        $result = $this->authService->register($dto);
+        $this->assertIsArray($result);
+        $this->assertArrayHasKey('user', $result);
+        $user = $result['user'];
 
         // 從資料庫取得雜湊後的密碼
         $stmt = $this->db->prepare('SELECT password FROM users WHERE id = ?');
         $stmt->execute([$user['id']]);
         $hashedPassword = $stmt->fetchColumn();
+
+        // 確保密碼雜湊成功
+        $this->assertIsString($hashedPassword);
+        $this->assertNotFalse($hashedPassword);
 
         // 取得雜湊資訊
         $info = password_get_info($hashedPassword);
@@ -210,13 +224,19 @@ class PasswordHashingTest extends TestCase
         $dto = new RegisterUserDTO($this->validator, $userData);
 
         // 註冊使用者
-        $user = $this->authService->register($dto);
+        $result = $this->authService->register($dto);
+        $this->assertIsArray($result);
+        $this->assertArrayHasKey('user', $result);
+        $user = $result['user'];
+        $this->assertIsArray($user);
+        $this->assertArrayHasKey('id', $user);
+        $userId = $user['id'];
 
         // 模擬使用者嘗試更新密碼為相同的密碼
         $this->expectException(InvalidArgumentException::class);
         $this->expectExceptionMessage('新密碼不能與目前的密碼相同');
 
-        $this->userRepository->updatePassword($user['id'], $userData['password']);
+        $this->userRepository->updatePassword($userId, $userData['password']);
     }
 
     protected function tearDown(): void

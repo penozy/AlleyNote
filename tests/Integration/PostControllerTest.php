@@ -52,6 +52,22 @@ class PostControllerTest extends TestCase
 
     private mixed $currentResponseData;
 
+    private function createController(): PostController
+    {
+        // Mock ActivityLoggingService
+        $activityLogger = Mockery::mock(\App\Domains\Security\Contracts\ActivityLoggingServiceInterface::class);
+        $activityLogger->shouldReceive('log')->zeroOrMoreTimes();
+        $activityLogger->shouldReceive('logSuccess')->zeroOrMoreTimes();
+        $activityLogger->shouldReceive('logFailure')->zeroOrMoreTimes();
+
+        return new PostController(
+            $this->postService,
+            $this->validator,
+            $this->sanitizer,
+            $activityLogger,
+        );
+    }
+
     protected function setUp(): void
     {
         parent::setUp();
@@ -133,11 +149,7 @@ class PostControllerTest extends TestCase
             ->andReturn($serviceResult);
 
         // 執行測試
-        $controller = new PostController(
-            $this->postService,
-            $this->validator,
-            $this->sanitizer,
-        );
+        $controller = $this->createController();
         $response = $controller->index($this->request, $this->response);
 
         // 驗證結果
@@ -180,11 +192,7 @@ class PostControllerTest extends TestCase
             ->andReturn(true);
 
         // 執行測試
-        $controller = new PostController(
-            $this->postService,
-            $this->validator,
-            $this->sanitizer,
-        );
+        $controller = $this->createController();
         $response = $controller->show($this->request, $this->response, ['id' => $postId]);
 
         // 驗證結果
@@ -219,11 +227,7 @@ class PostControllerTest extends TestCase
             ->andReturn($createdPost);
 
         // 執行測試
-        $controller = new PostController(
-            $this->postService,
-            $this->validator,
-            $this->sanitizer,
-        );
+        $controller = $this->createController();
         $response = $controller->store($this->request, $this->response);
 
         // 驗證結果
@@ -256,11 +260,7 @@ class PostControllerTest extends TestCase
         $this->postService->shouldNotReceive('createPost');
 
         // 執行測試
-        $controller = new PostController(
-            $this->postService,
-            $this->validator,
-            $this->sanitizer,
-        );
+        $controller = $this->createController();
         $response = $controller->store($this->request, $this->response);
 
         // 驗證結果
@@ -297,11 +297,7 @@ class PostControllerTest extends TestCase
             ->andReturn($updatedPost);
 
         // 執行測試
-        $controller = new PostController(
-            $this->postService,
-            $this->validator,
-            $this->sanitizer,
-        );
+        $controller = $this->createController();
         $response = $controller->update($this->request, $this->response, ['id' => $postId]);
 
         // 驗證結果
@@ -336,11 +332,7 @@ class PostControllerTest extends TestCase
             ->andReturn(404);
 
         // 執行測試
-        $controller = new PostController(
-            $this->postService,
-            $this->validator,
-            $this->sanitizer,
-        );
+        $controller = $this->createController();
         $response = $controller->update($this->request, $this->response, ['id' => $postId]);
 
         // 驗證結果
@@ -368,11 +360,7 @@ class PostControllerTest extends TestCase
             ->andReturn(204);
 
         // 執行測試
-        $controller = new PostController(
-            $this->postService,
-            $this->validator,
-            $this->sanitizer,
-        );
+        $controller = $this->createController();
         $response = $controller->delete($this->request, $this->response, ['id' => '1']);
 
         // 驗證結果
@@ -404,11 +392,7 @@ class PostControllerTest extends TestCase
             ->andReturn($post);
 
         // 執行測試
-        $controller = new PostController(
-            $this->postService,
-            $this->validator,
-            $this->sanitizer,
-        );
+        $controller = $this->createController();
         $response = $controller->togglePin($this->request, $this->response, ['id' => '1']);
 
         // 驗證結果
@@ -437,11 +421,7 @@ class PostControllerTest extends TestCase
             ->andThrow(new StateTransitionException('無效的狀態轉換'));
 
         // 執行測試
-        $controller = new PostController(
-            $this->postService,
-            $this->validator,
-            $this->sanitizer,
-        );
+        $controller = $this->createController();
         $response = $controller->togglePin($this->request, $this->response, ['id' => '1']);
 
         // 驗證結果

@@ -1,6 +1,6 @@
 # ## 🎯 專案進度總覽
 **整體完成度：96%** 🎯  
-**目前狀態：Phase 1-4 核心功能完成，Phase 3 測試階段重大進展，正在進行效能優化**
+**目前狀態：Phase 1-4 核心功能完成，Phase 3 測試階段重大進展，正在進行 T3.1.3 程式碼覆蓋率優化**
 
 ### 已完成里程碑
 - ✅ M1: 基礎架構完成 (100%)
@@ -8,7 +8,23 @@
 - ✅ M3: Service 層完成 (100%)
 - ✅ M4: API 層完成 (100%)
 - 🔄 M5: 系統整合完成 (85% - 6大安全元件完整整合)
-- 🔄 M6: 測試優化完成 (60% - 效能測試完成，單元測試通過)發待辦清單
+- 🔄 M6: 測試優化完成 (70% - 重大進展，錯誤大幅減少)
+
+### 測試基礎建設重大進展 🎉
+**T3.1.3 程式碼覆蓋率改善任務**：
+- ✅ 測試錯誤數：**19個 → 0個** (-100%)  
+- ✅ 測試失敗數：**20個 → 11個** (-45%)  
+- 📊 程式碼覆蓋率：**48.88%** (目標：90%)
+- 🧪 測試套件：**1285 tests, 6037 assertions**
+- ⚠️ PHPUnit Deprecations: 12個 (待處理)
+
+**已修復的關鍵問題**：
+- ✅ AttachmentUploadTest: ActivityLoggingService mock 設定
+- ✅ FileUploadSecurityTest: ActivityLoggingService mock 設定  
+- ✅ PostControllerTest: 構造函數參數修復 (9個測試方法)
+- ✅ CsrfProtectionTest: PostController 構造函數修復
+- ✅ XssPreventionTest: PostController 構造函數修復
+- ✅ PasswordHashingTest: AuthService 返回格式處理修復
 
 ## � 專案進度總覽
 **整體完成度：95%** 🎯  

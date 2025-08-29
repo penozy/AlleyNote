@@ -133,7 +133,7 @@ class PostControllerTest extends TestCase
         $activityLogger = Mockery::mock(\App\Domains\Security\Contracts\ActivityLoggingServiceInterface::class);
         $validator = Mockery::mock(\App\Shared\Contracts\ValidatorInterface::class);
         $sanitizer = Mockery::mock(\App\Shared\Contracts\OutputSanitizerInterface::class);
-        
+
         $controller = new PostController($this->postService, $validator, $sanitizer, $activityLogger);
         $response = $controller->index($this->request, $this->response);
 

@@ -55,10 +55,17 @@ class XssPreventionTest extends TestCase
         $this->response = Mockery::mock(ResponseInterface::class);
         $this->stream = Mockery::mock(StreamInterface::class);
 
+        // Mock ActivityLoggingService
+        $activityLogger = Mockery::mock(\App\Domains\Security\Contracts\ActivityLoggingServiceInterface::class);
+        $activityLogger->shouldReceive('log')->zeroOrMoreTimes();
+        $activityLogger->shouldReceive('logSuccess')->zeroOrMoreTimes();
+        $activityLogger->shouldReceive('logFailure')->zeroOrMoreTimes();
+
         $this->controller = new PostController(
             $this->postService,
             $this->validator,
             $this->sanitizer,
+            $activityLogger,  // 第四個參數
         );
 
         // 設定預設回應行為

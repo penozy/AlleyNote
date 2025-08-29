@@ -145,12 +145,12 @@ class AuthControllerTest extends TestCase
         $activityLoggingService->shouldReceive('logSuccess')->zeroOrMoreTimes();
         $activityLoggingService->shouldReceive('logFailure')->zeroOrMoreTimes();
         $activityLoggingService->shouldReceive('log')->zeroOrMoreTimes();
-        
+
         $controller = new AuthController(
-            $this->authService, 
-            $authenticationService, 
-            $jwtTokenService, 
-            $this->validator, 
+            $this->authService,
+            $authenticationService,
+            $jwtTokenService,
+            $this->validator,
             $activityLoggingService
         );
         $response = $controller->register($this->request, $this->response);
@@ -193,12 +193,12 @@ class AuthControllerTest extends TestCase
         $activityLoggingService->shouldReceive('logSuccess')->zeroOrMoreTimes();
         $activityLoggingService->shouldReceive('logFailure')->zeroOrMoreTimes();
         $activityLoggingService->shouldReceive('log')->zeroOrMoreTimes();
-        
+
         $controller = new AuthController(
-            $this->authService, 
-            $authenticationService, 
-            $jwtTokenService, 
-            $this->validator, 
+            $this->authService,
+            $authenticationService,
+            $jwtTokenService,
+            $this->validator,
             $activityLoggingService
         );
         $response = $controller->register($this->request, $this->response);
@@ -238,12 +238,12 @@ class AuthControllerTest extends TestCase
         $activityLoggingService->shouldReceive('logSuccess')->zeroOrMoreTimes();
         $activityLoggingService->shouldReceive('logFailure')->zeroOrMoreTimes();
         $activityLoggingService->shouldReceive('log')->zeroOrMoreTimes();
-        
+
         $controller = new AuthController(
-            $this->authService, 
-            $authenticationService, 
-            $jwtTokenService, 
-            $this->validator, 
+            $this->authService,
+            $authenticationService,
+            $jwtTokenService,
+            $this->validator,
             $activityLoggingService
         );
         $response = $controller->login($this->request, $this->response);
@@ -278,12 +278,12 @@ class AuthControllerTest extends TestCase
         $activityLoggingService->shouldReceive('logSuccess')->zeroOrMoreTimes();
         $activityLoggingService->shouldReceive('logFailure')->zeroOrMoreTimes();
         $activityLoggingService->shouldReceive('log')->zeroOrMoreTimes();
-        
+
         $controller = new AuthController(
-            $this->authService, 
-            $authenticationService, 
-            $jwtTokenService, 
-            $this->validator, 
+            $this->authService,
+            $authenticationService,
+            $jwtTokenService,
+            $this->validator,
             $activityLoggingService
         );
         $response = $controller->login($this->request, $this->response);
@@ -304,12 +304,12 @@ class AuthControllerTest extends TestCase
         $activityLoggingService->shouldReceive('logSuccess')->zeroOrMoreTimes();
         $activityLoggingService->shouldReceive('logFailure')->zeroOrMoreTimes();
         $activityLoggingService->shouldReceive('log')->zeroOrMoreTimes();
-        
+
         $controller = new AuthController(
-            $this->authService, 
-            $authenticationService, 
-            $jwtTokenService, 
-            $this->validator, 
+            $this->authService,
+            $authenticationService,
+            $jwtTokenService,
+            $this->validator,
             $activityLoggingService
         );
         $response = $controller->logout($this->request, $this->response);

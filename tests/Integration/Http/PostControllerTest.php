@@ -72,7 +72,7 @@ class PostControllerTest extends TestCase
         $activityLogger->shouldReceive('log')->zeroOrMoreTimes();
         $activityLogger->shouldReceive('logFailure')->zeroOrMoreTimes();
         $activityLogger->shouldReceive('logSuccess')->zeroOrMoreTimes();
-        
+
         $this->controller = new PostController(
             $this->postService,
             $this->validator,
@@ -449,7 +449,7 @@ class PostControllerTest extends TestCase
         $activityLogger->shouldReceive('log')->zeroOrMoreTimes();
         $activityLogger->shouldReceive('logFailure')->zeroOrMoreTimes();
         $activityLogger->shouldReceive('logSuccess')->zeroOrMoreTimes();
-        
+
         $this->controller = new PostController(
             $this->postService,
             $this->validator,
