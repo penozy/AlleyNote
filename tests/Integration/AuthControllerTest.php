@@ -315,15 +315,36 @@ class AuthControllerTest extends TestCase
     #[Test]
     public function logoutUserSuccessfully(): void
     {
-        // logout 方法不需要調用 AuthService，直接返回成功響應
+        // 模擬請求中包含 access_token
+        $requestData = [
+            'access_token' => 'valid_access_token',
+            'refresh_token' => 'valid_refresh_token',
+            'logout_all_devices' => false,
+        ];
+        
+        // 設定 Mock 期望和請求數據
+        $this->request->shouldReceive('getParsedBody')->andReturn($requestData);
+        $this->request->shouldReceive('getHeaderLine')->with('Authorization')->andReturn('Bearer valid_access_token');
+        $this->request->shouldReceive('getHeaderLine')->with('User-Agent')->andReturn('Test User Agent');
+        $this->request->shouldReceive('hasHeader')->andReturn(false); // 模擬沒有特殊 IP header
+        $this->request->shouldReceive('getServerParams')->andReturn(['REMOTE_ADDR' => '192.168.1.1']);
 
         // 建立控制器並執行
         $authenticationService = Mockery::mock(\AlleyNote\Domains\Auth\Contracts\AuthenticationServiceInterface::class);
         $jwtTokenService = Mockery::mock(\AlleyNote\Domains\Auth\Contracts\JwtTokenServiceInterface::class);
         $activityLoggingService = Mockery::mock(\App\Domains\Security\Contracts\ActivityLoggingServiceInterface::class);
-        $activityLoggingService->shouldReceive('logSuccess')->zeroOrMoreTimes();
-        $activityLoggingService->shouldReceive('logFailure')->zeroOrMoreTimes();
-        $activityLoggingService->shouldReceive('log')->zeroOrMoreTimes();
+        
+        // Mock logout 方法，它應該接收 LogoutRequestDTO 並回傳 bool
+        $authenticationService->shouldReceive('logout')
+            ->once()
+            ->with(Mockery::type(\AlleyNote\Domains\Auth\DTOs\LogoutRequestDTO::class))
+            ->andReturn(true);
+        
+        // Mock 活動記錄服務
+        $activityLoggingService->shouldReceive('log')
+            ->once()
+            ->with(Mockery::type(\App\Domains\Security\DTOs\CreateActivityLogDTO::class))
+            ->andReturn(true);
 
         $controller = new AuthController(
             $this->authService,

@@ -55,8 +55,12 @@ class CsrfProtectionServiceTest extends TestCase
     {
         $token = $this->service->generateToken();
 
-        $this->expectNotToPerformAssertions();
+        // 驗證 token 應該不會拋出例外，並且會成功更新 session 中的 token
+        $oldToken = $_SESSION['csrf_token'];
         $this->service->validateToken($token);
+        
+        // 驗證 token 驗證成功後會更新為新的 token
+        $this->assertNotEquals($oldToken, $_SESSION['csrf_token']);
     }
 
     #[Test]
@@ -138,9 +142,15 @@ class CsrfProtectionServiceTest extends TestCase
         $this->service->initializeTokenPool();
         $token = $this->service->generateToken();
 
-        // 驗證應該成功，不拋出例外
-        $this->expectNotToPerformAssertions();
+        // 驗證權杖池中的 token 應該成功，並從池中移除
+        $poolBefore = $_SESSION['csrf_token_pool'];
+        $this->assertArrayHasKey($token, $poolBefore);
+        
         $this->service->validateToken($token);
+        
+        // 驗證 token 已從池中移除
+        $poolAfter = $_SESSION['csrf_token_pool'];
+        $this->assertArrayNotHasKey($token, $poolAfter);
     }
 
     #[Test]
@@ -209,8 +219,15 @@ class CsrfProtectionServiceTest extends TestCase
         // 不初始化權杖池，使用舊的單一權杖模式
         $token = $this->service->generateToken();
 
-        $this->expectNotToPerformAssertions();
+        // 在單一 token 模式下，token 應該存在於 $_SESSION['csrf_token'] 中
+        $this->assertEquals($token, $_SESSION['csrf_token']);
+        
+        // 驗證應該成功
+        $oldToken = $_SESSION['csrf_token'];
         $this->service->validateToken($token);
+        
+        // 單一 token 模式下，驗證後應該更新 token
+        $this->assertNotEquals($oldToken, $_SESSION['csrf_token']);
     }
 
     #[Test]

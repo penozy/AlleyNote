@@ -5,18 +5,14 @@
 
 set -e
 
-# 預設設定
-DB_PATH="${DB_PATH:-./database/alleynote.sqlite3}"
-BACKUP_FILE="${BACKUP_FILE:-}"
-BACKUP_DIR="${BACKUP_DIR:-./database/backups}"
-
 # 顯示使用說明
 show_help() {
     echo "用途: 從備份檔案還原 SQLite 資料庫"
     echo "使用方法:"
-    echo "  $0 [backup_file]"
+    echo "  $0 [backup_file] [target_db_path]"
     echo ""
     echo "範例:"
+    echo "  $0 ./database/backups/backup_20240829_143000.db ./database/alleynote.sqlite3"
     echo "  $0 ./database/backups/backup_20240829_143000.db"
     echo "  BACKUP_FILE=./backups/latest.db $0"
     echo ""
@@ -27,9 +23,20 @@ show_help() {
 }
 
 # 解析參數
-if [[ $# -eq 1 ]]; then
+if [[ $# -eq 2 ]]; then
+    # 兩個參數：備份檔案路徑 和 目標資料庫路徑
     BACKUP_FILE="$1"
-elif [[ $# -gt 1 ]]; then
+    DB_PATH="$2"
+elif [[ $# -eq 1 ]]; then
+    # 一個參數：備份檔案路徑
+    BACKUP_FILE="$1"
+    DB_PATH="${DB_PATH:-./database/alleynote.sqlite3}"
+elif [[ $# -eq 0 ]]; then
+    # 無參數：使用環境變數或預設值
+    DB_PATH="${DB_PATH:-./database/alleynote.sqlite3}"
+    BACKUP_FILE="${BACKUP_FILE:-}"
+    BACKUP_DIR="${BACKUP_DIR:-./database/backups}"
+else
     show_help
     exit 1
 fi
