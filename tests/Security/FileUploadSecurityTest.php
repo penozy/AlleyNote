@@ -44,12 +44,17 @@ class FileUploadSecurityTest extends TestCase
 
         $this->uploadDir = '/tmp/test-uploads';
 
+        // Mock ActivityLoggingService
+        $activityLogger = Mockery::mock(\App\Domains\Security\Contracts\ActivityLoggingServiceInterface::class);
+        $activityLogger->shouldReceive('log')->zeroOrMoreTimes();
+
         // 建立真實的 AttachmentService 實例
         $this->service = new AttachmentService(
             $this->attachmentRepo,
             $this->postRepo,
             $this->authService,
-            $this->uploadDir,
+            $activityLogger,
+            $this->uploadDir
         );
 
         // 設定預設的mock行為

@@ -34,15 +34,15 @@ class ActivityLoggingPerformanceTest extends TestCase
 
         // 建立真實的 ActivityLogRepository 和 ActivityLoggingService
         $this->repository = new ActivityLogRepository($this->db);
-        
+
         $validator = Mockery::mock(ValidatorInterface::class);
         $validator->shouldReceive('validate')->andReturn([]);
-        
+
         // ActivityLoggingService 建構子需要 Repository 和 Logger
         $logger = Mockery::mock(\Psr\Log\LoggerInterface::class);
         $logger->shouldReceive('info')->zeroOrMoreTimes();
         $logger->shouldReceive('error')->zeroOrMoreTimes();
-        
+
         $this->activityLoggingService = new ActivityLoggingService(
             $this->repository,
             $logger
@@ -131,10 +131,16 @@ class ActivityLoggingPerformanceTest extends TestCase
         echo "   執行次數: {$iterations}\n";
 
         // 驗證效能需求：單筆記錄 < 50ms
-        $this->assertLessThan(50, $averageTime, 
-            "平均執行時間 {$averageTime}ms 超過 50ms 需求");
-        $this->assertLessThan(100, $maxTime, 
-            "最大執行時間 {$maxTime}ms 超過合理範圍");
+        $this->assertLessThan(
+            50,
+            $averageTime,
+            "平均執行時間 {$averageTime}ms 超過 50ms 需求"
+        );
+        $this->assertLessThan(
+            100,
+            $maxTime,
+            "最大執行時間 {$maxTime}ms 超過合理範圍"
+        );
     }
 
     #[Test]
@@ -147,7 +153,7 @@ class ActivityLoggingPerformanceTest extends TestCase
 
         for ($batch = 0; $batch < $batchCount; $batch++) {
             $records = [];
-            
+
             // 準備批次資料
             for ($i = 0; $i < $batchSize; $i++) {
                 $records[] = new CreateActivityLogDTO(
@@ -166,7 +172,7 @@ class ActivityLoggingPerformanceTest extends TestCase
             $startTime = microtime(true);
             $this->activityLoggingService->logBatch($records);
             $endTime = microtime(true);
-            
+
             $executionTime = ($endTime - $startTime) * 1000;
             $batchTimes[] = $executionTime;
         }
@@ -183,10 +189,16 @@ class ActivityLoggingPerformanceTest extends TestCase
         echo "   執行批次數: {$batchCount}\n";
 
         // 驗證批次效能：平均每筆應該比單筆更快
-        $this->assertLessThan(10, $averagePerRecord, 
-            "批次平均每筆時間 {$averagePerRecord}ms 應該 < 10ms");
-        $this->assertLessThan(2000, $maxBatchTime, 
-            "最大批次時間 {$maxBatchTime}ms 超過合理範圍");
+        $this->assertLessThan(
+            10,
+            $averagePerRecord,
+            "批次平均每筆時間 {$averagePerRecord}ms 應該 < 10ms"
+        );
+        $this->assertLessThan(
+            2000,
+            $maxBatchTime,
+            "最大批次時間 {$maxBatchTime}ms 超過合理範圍"
+        );
     }
 
     #[Test]
@@ -197,13 +209,13 @@ class ActivityLoggingPerformanceTest extends TestCase
 
         $queryTests = [
             'findByUser' => fn() => $this->queryByUser(),
-            'findByTimeRange' => fn() => $this->queryByTimeRange(), 
+            'findByTimeRange' => fn() => $this->queryByTimeRange(),
             'findSecurityEvents' => fn() => $this->querySecurityEvents(),
             'getActivityStatistics' => fn() => $this->queryStatistics(),
         ];
 
         $results = [];
-        
+
         foreach ($queryTests as $testName => $queryFunction) {
             $times = [];
             $iterations = 10;
@@ -217,7 +229,7 @@ class ActivityLoggingPerformanceTest extends TestCase
 
             $averageTime = array_sum($times) / count($times);
             $maxTime = max($times);
-            
+
             $results[$testName] = [
                 'average' => $averageTime,
                 'max' => $maxTime,
@@ -232,8 +244,11 @@ class ActivityLoggingPerformanceTest extends TestCase
             echo "     最大: " . number_format($result['max'], 2) . "ms\n";
 
             // 驗證查詢效能：< 500ms
-            $this->assertLessThan(500, $result['average'], 
-                "{$testName} 平均查詢時間 {$result['average']}ms 超過 500ms 需求");
+            $this->assertLessThan(
+                500,
+                $result['average'],
+                "{$testName} 平均查詢時間 {$result['average']}ms 超過 500ms 需求"
+            );
         }
     }
 
@@ -279,10 +294,16 @@ class ActivityLoggingPerformanceTest extends TestCase
         echo "   每秒處理能力: " . number_format(1000 / $averagePerRecord, 0) . " 筆/秒\n";
 
         // 驗證併發效能
-        $this->assertLessThan(50, $averagePerRecord, 
-            "併發平均每筆時間 {$averagePerRecord}ms 超過 50ms 需求");
-        $this->assertGreaterThan(20, 1000 / $averagePerRecord, 
-            "每秒處理能力應該 > 20 筆/秒");
+        $this->assertLessThan(
+            50,
+            $averagePerRecord,
+            "併發平均每筆時間 {$averagePerRecord}ms 超過 50ms 需求"
+        );
+        $this->assertGreaterThan(
+            20,
+            1000 / $averagePerRecord,
+            "每秒處理能力應該 > 20 筆/秒"
+        );
     }
 
     #[Test]
@@ -330,8 +351,8 @@ class ActivityLoggingPerformanceTest extends TestCase
             $batchTimes[] = $batchTime;
 
             if ($batch % 5 == 0) { // 每5個批次報告一次進度
-                echo "   批次 " . ($batch + 1) . "/{$batches} 完成，耗時: " . 
-                     number_format($batchTime, 2) . "ms\n";
+                echo "   批次 " . ($batch + 1) . "/{$batches} 完成，耗時: " .
+                    number_format($batchTime, 2) . "ms\n";
             }
         }
 
@@ -346,20 +367,26 @@ class ActivityLoggingPerformanceTest extends TestCase
         echo "   每秒處理能力: " . number_format($recordCount / ($totalTime / 1000), 0) . " 筆/秒\n";
 
         // 驗證大量資料效能
-        $this->assertLessThan(5, $averagePerRecord, 
-            "大量資料平均每筆時間 {$averagePerRecord}ms 應該 < 5ms");
-        $this->assertGreaterThan(100, $recordCount / ($totalTime / 1000), 
-            "每秒處理能力應該 > 100 筆/秒");
+        $this->assertLessThan(
+            5,
+            $averagePerRecord,
+            "大量資料平均每筆時間 {$averagePerRecord}ms 應該 < 5ms"
+        );
+        $this->assertGreaterThan(
+            100,
+            $recordCount / ($totalTime / 1000),
+            "每秒處理能力應該 > 100 筆/秒"
+        );
     }
 
     private function createTestDataForQueryPerformance(): void
     {
         echo "   建立查詢測試資料...\n";
-        
+
         $testData = [];
         $userIds = [1, 2, 3, 4, 5];
         $activityTypes = [ActivityType::LOGIN_SUCCESS, ActivityType::LOGOUT, ActivityType::POST_CREATED];
-        
+
         for ($i = 0; $i < 100; $i++) {
             $testData[] = CreateActivityLogDTO::success(
                 actionType: $activityTypes[array_rand($activityTypes)],
@@ -392,7 +419,7 @@ class ActivityLoggingPerformanceTest extends TestCase
     {
         $endTime = date('Y-m-d H:i:s');
         $startTime = date('Y-m-d H:i:s', strtotime('-1 hour'));
-        
+
         $stmt = $this->database->prepare('
             SELECT * FROM user_activity_logs 
             WHERE created_at BETWEEN ? AND ? 

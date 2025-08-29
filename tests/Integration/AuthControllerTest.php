@@ -139,7 +139,20 @@ class AuthControllerTest extends TestCase
             ]);
 
         // 建立控制器並執行
-        $controller = new AuthController($this->authService, $this->validator);
+        $authenticationService = Mockery::mock(\AlleyNote\Domains\Auth\Contracts\AuthenticationServiceInterface::class);
+        $jwtTokenService = Mockery::mock(\AlleyNote\Domains\Auth\Contracts\JwtTokenServiceInterface::class);
+        $activityLoggingService = Mockery::mock(\App\Domains\Security\Contracts\ActivityLoggingServiceInterface::class);
+        $activityLoggingService->shouldReceive('logSuccess')->zeroOrMoreTimes();
+        $activityLoggingService->shouldReceive('logFailure')->zeroOrMoreTimes();
+        $activityLoggingService->shouldReceive('log')->zeroOrMoreTimes();
+        
+        $controller = new AuthController(
+            $this->authService, 
+            $authenticationService, 
+            $jwtTokenService, 
+            $this->validator, 
+            $activityLoggingService
+        );
         $response = $controller->register($this->request, $this->response);
 
         // 驗證回應
@@ -174,7 +187,20 @@ class AuthControllerTest extends TestCase
         $this->authService->shouldNotReceive('register');
 
         // 建立控制器並執行
-        $controller = new AuthController($this->authService, $this->validator);
+        $authenticationService = Mockery::mock(\AlleyNote\Domains\Auth\Contracts\AuthenticationServiceInterface::class);
+        $jwtTokenService = Mockery::mock(\AlleyNote\Domains\Auth\Contracts\JwtTokenServiceInterface::class);
+        $activityLoggingService = Mockery::mock(\App\Domains\Security\Contracts\ActivityLoggingServiceInterface::class);
+        $activityLoggingService->shouldReceive('logSuccess')->zeroOrMoreTimes();
+        $activityLoggingService->shouldReceive('logFailure')->zeroOrMoreTimes();
+        $activityLoggingService->shouldReceive('log')->zeroOrMoreTimes();
+        
+        $controller = new AuthController(
+            $this->authService, 
+            $authenticationService, 
+            $jwtTokenService, 
+            $this->validator, 
+            $activityLoggingService
+        );
         $response = $controller->register($this->request, $this->response);
 
         // 驗證回應
@@ -206,7 +232,20 @@ class AuthControllerTest extends TestCase
             ]);
 
         // 建立控制器並執行
-        $controller = new AuthController($this->authService, $this->validator);
+        $authenticationService = Mockery::mock(\AlleyNote\Domains\Auth\Contracts\AuthenticationServiceInterface::class);
+        $jwtTokenService = Mockery::mock(\AlleyNote\Domains\Auth\Contracts\JwtTokenServiceInterface::class);
+        $activityLoggingService = Mockery::mock(\App\Domains\Security\Contracts\ActivityLoggingServiceInterface::class);
+        $activityLoggingService->shouldReceive('logSuccess')->zeroOrMoreTimes();
+        $activityLoggingService->shouldReceive('logFailure')->zeroOrMoreTimes();
+        $activityLoggingService->shouldReceive('log')->zeroOrMoreTimes();
+        
+        $controller = new AuthController(
+            $this->authService, 
+            $authenticationService, 
+            $jwtTokenService, 
+            $this->validator, 
+            $activityLoggingService
+        );
         $response = $controller->login($this->request, $this->response);
 
         // 驗證回應
@@ -233,7 +272,20 @@ class AuthControllerTest extends TestCase
             ->andThrow(new InvalidArgumentException('無效的憑證'));
 
         // 建立控制器並執行
-        $controller = new AuthController($this->authService, $this->validator);
+        $authenticationService = Mockery::mock(\AlleyNote\Domains\Auth\Contracts\AuthenticationServiceInterface::class);
+        $jwtTokenService = Mockery::mock(\AlleyNote\Domains\Auth\Contracts\JwtTokenServiceInterface::class);
+        $activityLoggingService = Mockery::mock(\App\Domains\Security\Contracts\ActivityLoggingServiceInterface::class);
+        $activityLoggingService->shouldReceive('logSuccess')->zeroOrMoreTimes();
+        $activityLoggingService->shouldReceive('logFailure')->zeroOrMoreTimes();
+        $activityLoggingService->shouldReceive('log')->zeroOrMoreTimes();
+        
+        $controller = new AuthController(
+            $this->authService, 
+            $authenticationService, 
+            $jwtTokenService, 
+            $this->validator, 
+            $activityLoggingService
+        );
         $response = $controller->login($this->request, $this->response);
 
         // 驗證回應 - 當 AuthService 拋出 InvalidArgumentException 時，控制器返回 400
@@ -246,7 +298,20 @@ class AuthControllerTest extends TestCase
         // logout 方法不需要調用 AuthService，直接返回成功響應
 
         // 建立控制器並執行
-        $controller = new AuthController($this->authService, $this->validator);
+        $authenticationService = Mockery::mock(\AlleyNote\Domains\Auth\Contracts\AuthenticationServiceInterface::class);
+        $jwtTokenService = Mockery::mock(\AlleyNote\Domains\Auth\Contracts\JwtTokenServiceInterface::class);
+        $activityLoggingService = Mockery::mock(\App\Domains\Security\Contracts\ActivityLoggingServiceInterface::class);
+        $activityLoggingService->shouldReceive('logSuccess')->zeroOrMoreTimes();
+        $activityLoggingService->shouldReceive('logFailure')->zeroOrMoreTimes();
+        $activityLoggingService->shouldReceive('log')->zeroOrMoreTimes();
+        
+        $controller = new AuthController(
+            $this->authService, 
+            $authenticationService, 
+            $jwtTokenService, 
+            $this->validator, 
+            $activityLoggingService
+        );
         $response = $controller->logout($this->request, $this->response);
 
         // 驗證回應

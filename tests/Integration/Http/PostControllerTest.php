@@ -68,10 +68,16 @@ class PostControllerTest extends TestCase
         $this->stream = Mockery::mock(StreamInterface::class);
 
         // 創建控制器實例
+        $activityLogger = Mockery::mock(\App\Domains\Security\Contracts\ActivityLoggingServiceInterface::class);
+        $activityLogger->shouldReceive('log')->zeroOrMoreTimes();
+        $activityLogger->shouldReceive('logFailure')->zeroOrMoreTimes();
+        $activityLogger->shouldReceive('logSuccess')->zeroOrMoreTimes();
+        
         $this->controller = new PostController(
             $this->postService,
             $this->validator,
             $this->sanitizer,
+            $activityLogger,
         );
 
         // 設定預設的response行為
@@ -119,6 +125,14 @@ class PostControllerTest extends TestCase
                 return $data; // 返回原始資料作為驗證過的資料
             })
             ->byDefault();
+
+        // 設定預設的 request 期望值
+        $this->request->shouldReceive('getServerParams')
+            ->andReturn(['REMOTE_ADDR' => '127.0.0.1']);
+
+        $this->request->shouldReceive('getAttribute')
+            ->with('user_id')
+            ->andReturn(1);
 
         // 設定預設的用戶ID
         $this->request->shouldReceive('getAttribute')
@@ -431,10 +445,16 @@ class PostControllerTest extends TestCase
 
         // 移除預設的 validator 行為，讓它拋出異常
         $this->validator = Mockery::mock(ValidatorInterface::class);
+        $activityLogger = Mockery::mock(\App\Domains\Security\Contracts\ActivityLoggingServiceInterface::class);
+        $activityLogger->shouldReceive('log')->zeroOrMoreTimes();
+        $activityLogger->shouldReceive('logFailure')->zeroOrMoreTimes();
+        $activityLogger->shouldReceive('logSuccess')->zeroOrMoreTimes();
+        
         $this->controller = new PostController(
             $this->postService,
             $this->validator,
             $this->sanitizer,
+            $activityLogger,
         );
 
         // 設定 validator 拋出驗證異常
