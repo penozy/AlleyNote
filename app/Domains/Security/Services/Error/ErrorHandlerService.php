@@ -4,7 +4,10 @@ declare(strict_types=1);
 
 namespace App\Domains\Security\Services\Error;
 
+use App\Domains\Security\Contracts\ActivityLoggingServiceInterface;
 use App\Domains\Security\Contracts\ErrorHandlerServiceInterface;
+use App\Domains\Security\DTOs\CreateActivityLogDTO;
+use App\Domains\Security\Enums\ActivityType;
 use ErrorException;
 use Monolog\Formatter\LineFormatter;
 use Monolog\Handler\RotatingFileHandler;
@@ -22,6 +25,7 @@ class ErrorHandlerService implements ErrorHandlerServiceInterface
     private array $sensitiveKeys;
 
     public function __construct(
+        private ?ActivityLoggingServiceInterface $activityLogger,
         string $logPath = '',
         bool $isDevelopment = false,
         array $sensitiveKeys = [],
@@ -76,6 +80,7 @@ class ErrorHandlerService implements ErrorHandlerServiceInterface
     {
         $sanitizedContext = $this->sanitizeLogData($context);
 
+        // 記錄到 Monolog
         $this->logger->warning('Security Event: ' . $event, array_merge([
             'ip' => $_SERVER['REMOTE_ADDR'] ?? 'unknown',
             'user_agent' => $_SERVER['HTTP_USER_AGENT'] ?? 'unknown',
@@ -83,6 +88,31 @@ class ErrorHandlerService implements ErrorHandlerServiceInterface
             'method' => $_SERVER['REQUEST_METHOD'] ?? 'unknown',
             'timestamp' => time(),
         ], $sanitizedContext));
+
+        // 記錄到活動記錄系統
+        if ($this->activityLogger) {
+            try {
+                $dto = CreateActivityLogDTO::securityEvent(
+                    actionType: ActivityType::SUSPICIOUS_ACTIVITY_DETECTED,
+                    description: "安全事件: {$event}",
+                    ipAddress: $_SERVER['REMOTE_ADDR'] ?? null,
+                    userAgent: $_SERVER['HTTP_USER_AGENT'] ?? null,
+                    metadata: [
+                        'security_event_type' => $event,
+                        'context' => $sanitizedContext,
+                        'request_uri' => $_SERVER['REQUEST_URI'] ?? null,
+                        'request_method' => $_SERVER['REQUEST_METHOD'] ?? null,
+                    ],
+                );
+
+                $this->activityLogger->log($dto);
+            } catch (Throwable $e) {
+                $this->logger->error('Failed to log security event to activity logger', [
+                    'event' => $event,
+                    'error' => $e->getMessage(),
+                ]);
+            }
+        }
     }
 
     public function logAuthenticationAttempt(bool $success, string $username, array $context = []): void
@@ -93,6 +123,33 @@ class ErrorHandlerService implements ErrorHandlerServiceInterface
             'username' => $username,
             'success' => $success,
         ], $context));
+
+        // 額外記錄認證嘗試到活動記錄系統
+        if ($this->activityLogger) {
+            try {
+                $activityType = $success ? ActivityType::LOGIN_SUCCESS : ActivityType::LOGIN_FAILED;
+
+                $dto = CreateActivityLogDTO::securityEvent(
+                    actionType: $activityType,
+                    description: $success ? "使用者 {$username} 登入成功" : "使用者 {$username} 登入失敗",
+                    ipAddress: $_SERVER['REMOTE_ADDR'] ?? null,
+                    userAgent: $_SERVER['HTTP_USER_AGENT'] ?? null,
+                    metadata: [
+                        'username' => $username,
+                        'authentication_success' => $success,
+                        'context' => $this->sanitizeLogData($context),
+                    ],
+                );
+
+                $this->activityLogger->log($dto);
+            } catch (Throwable $e) {
+                $this->logger->error('Failed to log authentication attempt to activity logger', [
+                    'username' => $username,
+                    'success' => $success,
+                    'error' => $e->getMessage(),
+                ]);
+            }
+        }
     }
 
     public function logSuspiciousActivity(string $activity, array $context = []): void

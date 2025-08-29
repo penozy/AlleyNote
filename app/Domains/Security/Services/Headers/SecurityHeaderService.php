@@ -4,8 +4,13 @@ declare(strict_types=1);
 
 namespace App\Domains\Security\Services\Headers;
 
+use App\Domains\Security\Contracts\ActivityLoggingServiceInterface;
 use App\Domains\Security\Contracts\SecurityHeaderServiceInterface;
+use App\Domains\Security\DTOs\CreateActivityLogDTO;
+use App\Domains\Security\Enums\ActivityType;
 use Exception;
+use Psr\Log\LoggerInterface;
+use Throwable;
 
 class SecurityHeaderService implements SecurityHeaderServiceInterface
 {
@@ -13,8 +18,11 @@ class SecurityHeaderService implements SecurityHeaderServiceInterface
 
     private ?string $currentNonce = null;
 
-    public function __construct(array $config = [])
-    {
+    public function __construct(
+        private ActivityLoggingServiceInterface $activityLogger,
+        private LoggerInterface $logger,
+        array $config = [],
+    ) {
         $this->config = array_merge($this->getDefaultConfig(), $config);
     }
 
@@ -149,6 +157,38 @@ class SecurityHeaderService implements SecurityHeaderServiceInterface
             'user_agent' => $_SERVER['HTTP_USER_AGENT'] ?? 'unknown',
             'report' => $report,
         ];
+
+        // 記錄 CSP 違規活動
+        try {
+            $dto = CreateActivityLogDTO::securityEvent(
+                actionType: ActivityType::CSP_VIOLATION,
+                description: 'Content Security Policy 違規檢測',
+                ipAddress: $logData['ip'],
+                userAgent: $logData['user_agent'],
+                metadata: [
+                    'csp_report' => $report,
+                    'violated_directive' => $report['csp-report']['violated-directive'] ?? 'unknown',
+                    'blocked_uri' => $report['csp-report']['blocked-uri'] ?? 'unknown',
+                    'document_uri' => $report['csp-report']['document-uri'] ?? 'unknown',
+                    'effective_directive' => $report['csp-report']['effective-directive'] ?? 'unknown',
+                    'original_policy' => $report['csp-report']['original-policy'] ?? 'unknown',
+                ],
+            );
+
+            $this->activityLogger->log($dto);
+
+            $this->logger->warning('CSP violation detected', [
+                'ip_address' => $logData['ip'],
+                'violated_directive' => $report['csp-report']['violated-directive'] ?? 'unknown',
+                'blocked_uri' => $report['csp-report']['blocked-uri'] ?? 'unknown',
+                'user_agent' => $logData['user_agent'],
+            ]);
+        } catch (Throwable $e) {
+            $this->logger->error('Failed to log CSP violation activity', [
+                'error' => $e->getMessage(),
+                'report' => $report,
+            ]);
+        }
 
         // 記錄到日誌檔案
         error_log('CSP Violation: ' . (json_encode($logData) ?? ''));

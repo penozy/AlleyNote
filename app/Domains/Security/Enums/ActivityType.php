@@ -65,6 +65,7 @@ enum ActivityType: string
     case CSRF_ATTACK_BLOCKED = 'security.csrf.blocked';
     case XSS_ATTACK_BLOCKED = 'security.xss.blocked';
     case SQL_INJECTION_BLOCKED = 'security.sql_injection.blocked';
+    case CSP_VIOLATION = 'security.csp.violation';
 
     // === 管理員操作 ===
     case ADMIN_LOGIN = 'admin.login';
@@ -118,7 +119,7 @@ enum ActivityType: string
             self::SUSPICIOUS_ACTIVITY_DETECTED, self::SECURITY_ACTIVITY_SCAN_COMPLETED,
             self::BRUTE_FORCE_ATTEMPT, self::IP_BLOCKED, self::IP_UNBLOCKED,
             self::CSRF_ATTACK_BLOCKED, self::XSS_ATTACK_BLOCKED,
-            self::SQL_INJECTION_BLOCKED => ActivityCategory::SECURITY,
+            self::SQL_INJECTION_BLOCKED, self::CSP_VIOLATION => ActivityCategory::SECURITY,
 
             self::ADMIN_LOGIN, self::ADMIN_LOGOUT, self::SYSTEM_SETTINGS_CHANGED,
             self::USER_IMPERSONATED, self::CACHE_CLEARED, self::BACKUP_CREATED,
@@ -172,7 +173,8 @@ enum ActivityType: string
 
             // CRITICAL 等級：關鍵安全事件
             self::CSRF_ATTACK_BLOCKED, self::XSS_ATTACK_BLOCKED,
-            self::SQL_INJECTION_BLOCKED, self::ATTACHMENT_VIRUS_DETECTED => ActivitySeverity::CRITICAL,
+            self::SQL_INJECTION_BLOCKED, self::ATTACHMENT_VIRUS_DETECTED,
+            self::CSP_VIOLATION => ActivitySeverity::CRITICAL,
         };
     }
 
@@ -218,6 +220,7 @@ enum ActivityType: string
             self::ATTACHMENT_PERMISSION_DENIED => '附件權限被拒',
             self::SUSPICIOUS_ACTIVITY_DETECTED => '檢測到可疑活動',
             self::SECURITY_ACTIVITY_SCAN_COMPLETED => '安全掃描完成',
+            self::CSP_VIOLATION => 'CSP違規檢測',
             // ... 可以繼續添加更多描述
             default => $this->value,
         };

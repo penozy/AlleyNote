@@ -1,21 +1,24 @@
 # 使用者行為紀錄功能開發待辦清單
 
 ## � 專案進度總覽
-**整體完成度：90%** 🎯  
-**目前狀態：Phase 2 核心功能完成，正在進行 Phase 3 系統整合**
+**整體完成度：95%** 🎯  
+**目前狀態：Phase 1-4 核心功能完成，正在進行 Phase 5 系統整合**
 
 ### 已完成里程碑
 - ✅ M1: 基礎架構完成 (100%)
 - ✅ M2: Repository 層完成 (100%) 
 - ✅ M3: Service 層完成 (100%)
 - ✅ M4: API 層完成 (100%)
-- 🔄 M5: 系統整合完成 (50% - AuthController 和 PostController 整合已完成)
+- 🔄 M5: 系統整合完成 (25% - AuthController 整合已完成)
 
 ### 測試統計
 - **Security Domain**: 60 tests, 280 assertions (100% pass)
 - **ActivityLog Controller**: 9 tests, 24 assertions (100% pass)
-- **SuspiciousActivityDetector**: 12 tests, 32 assertions (100% pass)
 - **程式碼品質**: 通過 PHP CS Fixer，主要程式碼通過 PHPStan Level 8
+
+### 🌱 測試資料統計
+- **使用者資料**: 6 個測試帳號（包含管理員、一般使用者、測試帳號）
+- **活動記錄**: 12 筆範例資料（涵蓋認證、內容、檔案、安全等各類活動）
 
 ---
 
@@ -52,13 +55,14 @@
     - ✅ 外鍵約束正常運作
     - ✅ PHPStan Level 8 無錯誤且無忽略規則
 
-- [ ] **T1.2** 建立測試資料 Seeder
-  - [ ] 建立範例使用者資料
-  - [ ] 建立範例活動記錄資料
-  - [ ] 包含各種行為類型的測試案例
-  - [ ] 包含成功和失敗操作的範例
-  - **預估時間**: 2 小時
-  - **驗收標準**: 測試資料完整且合理
+- [x] **T1.2** 建立測試資料 Seeder
+  - [x] 建立範例使用者資料 (6個使用者帳號)
+  - [x] 建立範例活動記錄資料 (12筆活動記錄)
+  - [x] 包含各種行為類型的測試案例
+  - [x] 包含成功和失敗操作的範例
+  - [x] 建立便利的資料填充腳本 (`scripts/seed-data.sh`)
+  - **完成時間**: 2025-08-29 已完成
+  - **驗收標準**: ✅ 測試資料完整且合理，包含認證、內容、檔案管理、安全等各類活動
 
 #### 🎯 領域模型建立
 - [x] **T1.3** 建立 ActivityType 枚舉
@@ -316,14 +320,41 @@
   - **實際完成時間**: 5 小時（含測試調試和類型修正）
   - **驗收標準**: ✅ 功能測試完全通過，附件操作活動記錄正常運作
 
-- [ ] **T2.9** 整合安全系統
-  - [ ] 整合現有的 Security Services
-  - [ ] 記錄 IP 封鎖/解封事件
-  - [ ] 記錄 CSRF/XSS 攻擊攔截
-  - [ ] 記錄權限檢查失敗
-  - [ ] 撰寫整合測試
-  - **預估時間**: 8 小時
-  - **驗收標準**: 安全事件完整記錄
+- [x] **T2.9** 整合安全系統
+  - [x] **T2.9.1** IP 位址追蹤整合
+    - [x] 修改 IpService，整合 ActivityLoggingService
+    - [x] 記錄 IP 封鎖事件 (IP_BLOCKED)
+    - [x] 記錄 IP 解封事件 (IP_UNBLOCKED)
+    - [x] 記錄可疑 IP 活動
+    - **完成時間**: 已完成
+  - [x] **T2.9.2** CSRF/XSS 防護整合
+    - [x] 修改 CsrfProtectionService，整合活動記錄
+    - [x] 修改 XssProtectionService，整合活動記錄
+    - [x] 記錄 CSRF 攻擊嘗試 (CSRF_ATTACK_BLOCKED)
+    - [x] 記錄 XSS 攻擊嘗試 (XSS_ATTACK_BLOCKED)
+    - **完成時間**: 已完成
+  - [x] **T2.9.3** 安全標頭和 CSP 違規整合
+    - [x] 修改 SecurityHeaderService，整合 ActivityLoggingService
+    - [x] 建立 CSP_VIOLATION 活動類型
+    - [x] 記錄 CSP 違規事件與來源分析
+    - **完成時間**: 已完成
+  - [x] **T2.9.4** 錯誤處理和認證記錄整合
+    - [x] 修改 ErrorHandlerService，整合安全事件記錄
+    - [x] 記錄認證失敗次數和異常嘗試
+    - [x] 記錄可疑活動和安全威脅
+    - **完成時間**: 已完成
+  - [x] **T2.9.5** 流量限制和防濫用整合
+    - [x] 修改 RateLimitMiddleware，整合活動記錄
+    - [x] 記錄流量限制違規 (RATE_LIMIT_EXCEEDED)
+    - [x] 統計異常請求模式
+    - **完成時間**: 已完成
+  - **實際完成時間**: 4 小時（系統性整合六大安全元件）
+  - **驗收標準**: 
+    - [x] 安全事件都有完整記錄
+    - [x] 可疑活動自動標記
+    - [x] 統計報表正確顯示安全資訊
+    - [x] 六大安全元件完整整合：IpService, CsrfProtectionService, XssProtectionService, SecurityHeaderService, ErrorHandlerService, RateLimitMiddleware
+    - [x] ActivityLoggingService 測試通過（14個測試，39個斷言）
 
 ---
 

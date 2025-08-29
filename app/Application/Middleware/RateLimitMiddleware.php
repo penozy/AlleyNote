@@ -2,12 +2,16 @@
 
 namespace App\Application\Middleware;
 
+use App\Domains\Security\Contracts\ActivityLoggingServiceInterface;
+use App\Domains\Security\DTOs\CreateActivityLogDTO;
+use App\Domains\Security\Enums\ActivityType;
 use App\Infrastructure\Routing\Contracts\MiddlewareInterface;
 use App\Infrastructure\Routing\Contracts\RequestHandlerInterface;
 use App\Infrastructure\Services\RateLimitService;
 use GuzzleHttp\Psr7\Response;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface as Request;
+use Throwable;
 
 class RateLimitMiddleware implements MiddlewareInterface
 {
@@ -15,8 +19,11 @@ class RateLimitMiddleware implements MiddlewareInterface
 
     private array $config;
 
-    public function __construct(RateLimitService $rateLimitService, array $config = [])
-    {
+    public function __construct(
+        RateLimitService $rateLimitService,
+        private ActivityLoggingServiceInterface $activityLogger,
+        array $config = [],
+    ) {
         $this->rateLimitService = $rateLimitService;
         $this->config = array_merge($this->getDefaultConfig(), $config);
     }
@@ -45,6 +52,9 @@ class RateLimitMiddleware implements MiddlewareInterface
         $result = $this->rateLimitService->checkLimit($ip, $maxRequests, $timeWindow);
 
         if (!$result['allowed']) {
+            // 記錄速率限制違規
+            $this->logRateLimitViolation($request, $ip, $userId, $result);
+
             return $this->createRateLimitResponse($result, $request);
         }
 
@@ -131,6 +141,39 @@ class RateLimitMiddleware implements MiddlewareInterface
             ->withHeader('X-RateLimit-Limit', (string) $result['limit'])
             ->withHeader('X-RateLimit-Remaining', '0')
             ->withHeader('X-RateLimit-Reset', (string) $result['reset']);
+    }
+
+    /**
+     * 記錄速率限制違規.
+     */
+    private function logRateLimitViolation(Request $request, string $ip, ?int $userId, array $result): void
+    {
+        try {
+            $dto = CreateActivityLogDTO::securityEvent(
+                actionType: ActivityType::API_RATE_LIMIT_EXCEEDED,
+                description: '速率限制超出',
+                ipAddress: $ip,
+                userAgent: $request->getHeaderLine('User-Agent') ?: null,
+                metadata: [
+                    'request_method' => $request->getMethod(),
+                    'request_uri' => $request->getUri()->getPath(),
+                    'rate_limit' => $result['limit'],
+                    'requests_made' => $result['limit'] - $result['remaining'] + 1,
+                    'time_window' => $this->config['time_window'] ?? 60,
+                    'user_id' => $userId,
+                    'reset_time' => $result['reset'],
+                ],
+            );
+
+            if ($userId) {
+                $dto = $dto->withUserId($userId);
+            }
+
+            $this->activityLogger->log($dto);
+        } catch (Throwable $e) {
+            // 記錄失敗不應該影響請求處理
+            error_log('Failed to log rate limit violation: ' . $e->getMessage());
+        }
     }
 
     /**
