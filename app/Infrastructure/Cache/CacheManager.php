@@ -181,7 +181,7 @@ final class CacheManager
     private function getSupportedOperations(): array
     {
         $operations = ['get', 'set', 'delete', 'exists', 'clear'];
-        
+
         if (method_exists($this->cache, 'getMultiple')) {
             $operations[] = 'getMultiple';
         }
@@ -207,7 +207,7 @@ final class CacheManager
     private function getMemoryUsage(): string
     {
         $memory = memory_get_usage(true);
-        
+
         if ($memory < 1024) {
             return $memory . ' B';
         } elseif ($memory < 1048576) {

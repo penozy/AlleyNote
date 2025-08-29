@@ -82,11 +82,11 @@ class RedisCache implements CacheServiceInterface
     {
         try {
             $redisKey = $this->getKey($key);
-            
+
             if ($ttl === null) {
                 return $this->redis->set($redisKey, $value);
             }
-            
+
             return $this->redis->setex($redisKey, $ttl, $value);
         } catch (Throwable) {
             return false;
@@ -129,13 +129,13 @@ class RedisCache implements CacheServiceInterface
         try {
             $redisKeys = array_map([$this, 'getKey'], $keys);
             $values = $this->redis->mget($redisKeys);
-            
+
             $result = [];
             foreach ($keys as $index => $originalKey) {
                 $value = $values[$index] ?? null;
                 $result[$originalKey] = $value === false ? null : $value;
             }
-            
+
             return $result;
         } catch (Throwable) {
             return array_fill_keys($keys, null);

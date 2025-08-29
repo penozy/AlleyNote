@@ -77,7 +77,7 @@ final class RedisConnectionFactory
 
             // 設定序列化模式
             $redis->setOption(Redis::OPT_SERIALIZER, Redis::SERIALIZER_PHP);
-            
+
             // 設定讀取逾時
             $redis->setOption(Redis::OPT_READ_TIMEOUT, $readTimeout);
 

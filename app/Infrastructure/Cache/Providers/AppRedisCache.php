@@ -62,7 +62,7 @@ final class AppRedisCache implements CacheInterface
     public function get(string $key): mixed
     {
         $fullKey = $this->prefix . $key;
-        
+
         try {
             $value = $this->redis->get($fullKey);
             return $value === false ? null : $value;
@@ -74,12 +74,12 @@ final class AppRedisCache implements CacheInterface
     public function set(string $key, mixed $value, ?int $ttl = null): bool
     {
         $fullKey = $this->prefix . $key;
-        
+
         try {
             if ($ttl !== null) {
                 return $this->redis->setex($fullKey, $ttl, $value);
             }
-            
+
             return $this->redis->set($fullKey, $value);
         } catch (Exception) {
             return false;
@@ -89,7 +89,7 @@ final class AppRedisCache implements CacheInterface
     public function delete(string $key): bool
     {
         $fullKey = $this->prefix . $key;
-        
+
         try {
             $result = $this->redis->del($fullKey);
             return $result > 0;
@@ -101,7 +101,7 @@ final class AppRedisCache implements CacheInterface
     public function has(string $key): bool
     {
         $fullKey = $this->prefix . $key;
-        
+
         try {
             return $this->redis->exists($fullKey) > 0;
         } catch (Exception) {
@@ -116,13 +116,13 @@ final class AppRedisCache implements CacheInterface
             if (!empty($this->prefix)) {
                 $pattern = $this->prefix . '*';
                 $keys = $this->redis->keys($pattern);
-                
+
                 if (!empty($keys)) {
                     return $this->redis->del($keys) > 0;
                 }
                 return true;
             }
-            
+
             // 沒有前綴時清空整個資料庫
             return $this->redis->flushDB();
         } catch (Exception) {
@@ -135,27 +135,27 @@ final class AppRedisCache implements CacheInterface
         if (empty($keys)) {
             return [];
         }
-        
+
         $fullKeys = [];
         $keyMap = [];
-        
+
         foreach ($keys as $key) {
             $fullKey = $this->prefix . $key;
             $fullKeys[] = $fullKey;
             $keyMap[$fullKey] = $key;
         }
-        
+
         try {
             $values = $this->redis->mget($fullKeys);
             $result = [];
-            
+
             foreach ($fullKeys as $index => $fullKey) {
                 $value = $values[$index] ?? false;
                 if ($value !== false) {
                     $result[$keyMap[$fullKey]] = $value;
                 }
             }
-            
+
             return $result;
         } catch (Exception) {
             return [];
@@ -167,16 +167,16 @@ final class AppRedisCache implements CacheInterface
         if (empty($values)) {
             return true;
         }
-        
+
         try {
             $success = true;
-            
+
             foreach ($values as $key => $value) {
                 if (!$this->set($key, $value, $ttl)) {
                     $success = false;
                 }
             }
-            
+
             return $success;
         } catch (Exception) {
             return false;
@@ -188,12 +188,12 @@ final class AppRedisCache implements CacheInterface
         if (empty($keys)) {
             return true;
         }
-        
+
         $fullKeys = [];
         foreach ($keys as $key) {
             $fullKeys[] = $this->prefix . $key;
         }
-        
+
         try {
             $deleted = $this->redis->del($fullKeys);
             return $deleted > 0;
@@ -205,12 +205,12 @@ final class AppRedisCache implements CacheInterface
     public function increment(string $key, int $value = 1): int|false
     {
         $fullKey = $this->prefix . $key;
-        
+
         try {
             if ($value === 1) {
                 return $this->redis->incr($fullKey);
             }
-            
+
             return $this->redis->incrBy($fullKey, $value);
         } catch (Exception) {
             return false;
@@ -220,12 +220,12 @@ final class AppRedisCache implements CacheInterface
     public function decrement(string $key, int $value = 1): int|false
     {
         $fullKey = $this->prefix . $key;
-        
+
         try {
             if ($value === 1) {
                 return $this->redis->decr($fullKey);
             }
-            
+
             return $this->redis->decrBy($fullKey, $value);
         } catch (Exception) {
             return false;
