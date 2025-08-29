@@ -1,0 +1,45 @@
+server {
+    listen 80;
+    index index.php;
+    server_name localhost ${SSL_DOMAIN} www.${SSL_DOMAIN};
+    root /var/www/html/public;
+    error_log /var/log/nginx/error.log;
+    access_log /var/log/nginx/access.log;
+
+    # ACME Challenge 路徑 (Let's Encrypt 憑證驗證)
+    location /.well-known/acme-challenge/ {
+        root /var/www/certbot;
+        try_files $uri =404;
+    }
+
+    # 開發環境 localhost 不重導向
+    location / {
+        # 如果是正式環境且啟用 HTTPS，則重導向
+        if ($host != "localhost") {
+            return 301 https://$host$request_uri;
+        }
+        
+        try_files $uri $uri/ /index.php?$query_string;
+    }
+
+    location ~ \.php$ {
+        # 如果是正式環境且啟用 HTTPS，則重導向
+        if ($host != "localhost") {
+            return 301 https://$host$request_uri;
+        }
+        
+        fastcgi_split_path_info ^(.+\.php)(/.+)$;
+        fastcgi_pass web:9000;
+        fastcgi_index index.php;
+        include fastcgi_params;
+        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+        fastcgi_param PATH_INFO $fastcgi_path_info;
+    }
+
+    # 安全標頭設定 (開發環境 - 允許 Swagger UI CDN)
+    add_header X-Frame-Options "SAMEORIGIN" always;
+    add_header X-XSS-Protection "1; mode=block" always;
+    add_header X-Content-Type-Options "nosniff" always;
+    add_header Referrer-Policy "strict-origin-when-cross-origin" always;
+    add_header Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://unpkg.com; style-src 'self' 'unsafe-inline' https://unpkg.com; img-src 'self' data: https://unpkg.com; font-src 'self' https://unpkg.com;" always;
+}
