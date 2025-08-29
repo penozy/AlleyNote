@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Dashboard for /var/www/html/app/Infrastructure/Routing/Middleware</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="../../../_css/bootstrap.min.css?v=11.0.10" rel="stylesheet" type="text/css">
+  <link href="../../../_css/nv.d3.min.css?v=11.0.10" rel="stylesheet" type="text/css">
+  <link href="../../../_css/style.css?v=11.0.10" rel="stylesheet" type="text/css">
+  <link href="../../../_css/custom.css" rel="stylesheet" type="text/css">
+ </head>
+ <body>
+  <header>
+   <div class="container-fluid">
+    <div class="row">
+     <div class="col-md-12">
+      <nav aria-label="breadcrumb">
+       <ol class="breadcrumb">
+         <li class="breadcrumb-item"><a href="../../../index.html">/var/www/html/app</a></li>
+         <li class="breadcrumb-item"><a href="../../index.html">Infrastructure</a></li>
+         <li class="breadcrumb-item"><a href="../index.html">Routing</a></li>
+         <li class="breadcrumb-item"><a href="index.html">Middleware</a></li>
+         <li class="breadcrumb-item active">(Dashboard)</li>
+
+       </ol>
+      </nav>
+     </div>
+    </div>
+   </div>
+  </header>
+  <div class="container-fluid">
+   <div class="row">
+    <div class="col-md-12">
+     <h2>Classes</h2>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Coverage Distribution</h3>
+     <div id="classCoverageDistribution" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Complexity</h3>
+     <div id="classComplexity" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Insufficient Coverage</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Class</th>
+         <th class="text-right">Coverage</th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="AbstractMiddleware.php.html#17">App\Infrastructure\Routing\Middleware\AbstractMiddleware</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="MiddlewareManager.php.html#19">App\Infrastructure\Routing\Middleware\MiddlewareManager</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="RouteInfoMiddleware.php.html#16">App\Infrastructure\Routing\Middleware\RouteInfoMiddleware</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="RouteParametersMiddleware.php.html#16">App\Infrastructure\Routing\Middleware\RouteParametersMiddleware</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="MiddlewareResolver.php.html#16">App\Infrastructure\Routing\Middleware\MiddlewareResolver</a></td><td class="text-right">19%</td></tr>
+       <tr><td><a href="MiddlewareDispatcher.php.html#18">App\Infrastructure\Routing\Middleware\MiddlewareDispatcher</a></td><td class="text-right">45%</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Project Risks</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Class</th>
+         <th class="text-right"><abbr title="Change Risk Anti-Patterns (CRAP) Index">CRAP</abbr></th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="MiddlewareManager.php.html#19">App\Infrastructure\Routing\Middleware\MiddlewareManager</a></td><td class="text-right">462</td></tr>
+       <tr><td><a href="RouteInfoMiddleware.php.html#16">App\Infrastructure\Routing\Middleware\RouteInfoMiddleware</a></td><td class="text-right">210</td></tr>
+       <tr><td><a href="MiddlewareResolver.php.html#16">App\Infrastructure\Routing\Middleware\MiddlewareResolver</a></td><td class="text-right">187</td></tr>
+       <tr><td><a href="AbstractMiddleware.php.html#17">App\Infrastructure\Routing\Middleware\AbstractMiddleware</a></td><td class="text-right">182</td></tr>
+       <tr><td><a href="RouteParametersMiddleware.php.html#16">App\Infrastructure\Routing\Middleware\RouteParametersMiddleware</a></td><td class="text-right">72</td></tr>
+       <tr><td><a href="MiddlewareDispatcher.php.html#18">App\Infrastructure\Routing\Middleware\MiddlewareDispatcher</a></td><td class="text-right">6</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-12">
+     <h2>Methods</h2>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Coverage Distribution</h3>
+     <div id="methodCoverageDistribution" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Complexity</h3>
+     <div id="methodComplexity" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Insufficient Coverage</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Method</th>
+         <th class="text-right">Coverage</th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="AbstractMiddleware.php.html#41"><abbr title="App\Infrastructure\Routing\Middleware\AbstractMiddleware::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="AbstractMiddleware.php.html#51"><abbr title="App\Infrastructure\Routing\Middleware\AbstractMiddleware::process">process</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="AbstractMiddleware.php.html#71"><abbr title="App\Infrastructure\Routing\Middleware\AbstractMiddleware::execute">execute</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="AbstractMiddleware.php.html#76"><abbr title="App\Infrastructure\Routing\Middleware\AbstractMiddleware::getPriority">getPriority</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="AbstractMiddleware.php.html#81"><abbr title="App\Infrastructure\Routing\Middleware\AbstractMiddleware::getName">getName</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="AbstractMiddleware.php.html#86"><abbr title="App\Infrastructure\Routing\Middleware\AbstractMiddleware::shouldProcess">shouldProcess</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="AbstractMiddleware.php.html#96"><abbr title="App\Infrastructure\Routing\Middleware\AbstractMiddleware::setPriority">setPriority</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="AbstractMiddleware.php.html#108"><abbr title="App\Infrastructure\Routing\Middleware\AbstractMiddleware::setName">setName</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="AbstractMiddleware.php.html#118"><abbr title="App\Infrastructure\Routing\Middleware\AbstractMiddleware::enable">enable</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="AbstractMiddleware.php.html#128"><abbr title="App\Infrastructure\Routing\Middleware\AbstractMiddleware::disable">disable</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="AbstractMiddleware.php.html#138"><abbr title="App\Infrastructure\Routing\Middleware\AbstractMiddleware::isEnabled">isEnabled</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="MiddlewareDispatcher.php.html#51"><abbr title="App\Infrastructure\Routing\Middleware\MiddlewareDispatcher::createMiddlewareHandler">createMiddlewareHandler</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="MiddlewareManager.php.html#38"><abbr title="App\Infrastructure\Routing\Middleware\MiddlewareManager::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="MiddlewareManager.php.html#43"><abbr title="App\Infrastructure\Routing\Middleware\MiddlewareManager::add">add</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="MiddlewareManager.php.html#50"><abbr title="App\Infrastructure\Routing\Middleware\MiddlewareManager::addMultiple">addMultiple</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="MiddlewareManager.php.html#61"><abbr title="App\Infrastructure\Routing\Middleware\MiddlewareManager::remove">remove</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="MiddlewareManager.php.html#68"><abbr title="App\Infrastructure\Routing\Middleware\MiddlewareManager::clear">clear</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="MiddlewareManager.php.html#75"><abbr title="App\Infrastructure\Routing\Middleware\MiddlewareManager::has">has</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="MiddlewareManager.php.html#80"><abbr title="App\Infrastructure\Routing\Middleware\MiddlewareManager::get">get</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="MiddlewareManager.php.html#85"><abbr title="App\Infrastructure\Routing\Middleware\MiddlewareManager::getAll">getAll</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="MiddlewareManager.php.html#90"><abbr title="App\Infrastructure\Routing\Middleware\MiddlewareManager::getSorted">getSorted</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="MiddlewareManager.php.html#102"><abbr title="App\Infrastructure\Routing\Middleware\MiddlewareManager::process">process</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="MiddlewareManager.php.html#117"><abbr title="App\Infrastructure\Routing\Middleware\MiddlewareManager::count">count</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="MiddlewareManager.php.html#127"><abbr title="App\Infrastructure\Routing\Middleware\MiddlewareManager::getNames">getNames</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="MiddlewareManager.php.html#137"><abbr title="App\Infrastructure\Routing\Middleware\MiddlewareManager::setPriorities">setPriorities</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="MiddlewareManager.php.html#154"><abbr title="App\Infrastructure\Routing\Middleware\MiddlewareManager::setStates">setStates</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="MiddlewareResolver.php.html#89"><abbr title="App\Infrastructure\Routing\Middleware\MiddlewareResolver::resolveMultiple">resolveMultiple</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="MiddlewareResolver.php.html#105"><abbr title="App\Infrastructure\Routing\Middleware\MiddlewareResolver::canResolve">canResolve</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="MiddlewareResolver.php.html#133"><abbr title="App\Infrastructure\Routing\Middleware\MiddlewareResolver::getAliases">getAliases</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="MiddlewareResolver.php.html#141"><abbr title="App\Infrastructure\Routing\Middleware\MiddlewareResolver::registerAlias">registerAlias</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="RouteInfoMiddleware.php.html#49"><abbr title="App\Infrastructure\Routing\Middleware\RouteInfoMiddleware::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="RouteInfoMiddleware.php.html#63"><abbr title="App\Infrastructure\Routing\Middleware\RouteInfoMiddleware::execute">execute</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="RouteInfoMiddleware.php.html#102"><abbr title="App\Infrastructure\Routing\Middleware\RouteInfoMiddleware::setRouteName">setRouteName</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="RouteInfoMiddleware.php.html#114"><abbr title="App\Infrastructure\Routing\Middleware\RouteInfoMiddleware::setRoutePattern">setRoutePattern</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="RouteInfoMiddleware.php.html#126"><abbr title="App\Infrastructure\Routing\Middleware\RouteInfoMiddleware::setMethods">setMethods</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="RouteInfoMiddleware.php.html#138"><abbr title="App\Infrastructure\Routing\Middleware\RouteInfoMiddleware::setHandler">setHandler</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="RouteInfoMiddleware.php.html#148"><abbr title="App\Infrastructure\Routing\Middleware\RouteInfoMiddleware::getRouteName">getRouteName</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="RouteInfoMiddleware.php.html#156"><abbr title="App\Infrastructure\Routing\Middleware\RouteInfoMiddleware::getRoutePattern">getRoutePattern</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="RouteInfoMiddleware.php.html#166"><abbr title="App\Infrastructure\Routing\Middleware\RouteInfoMiddleware::getMethods">getMethods</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="RouteInfoMiddleware.php.html#174"><abbr title="App\Infrastructure\Routing\Middleware\RouteInfoMiddleware::getHandler">getHandler</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="RouteParametersMiddleware.php.html#31"><abbr title="App\Infrastructure\Routing\Middleware\RouteParametersMiddleware::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="RouteParametersMiddleware.php.html#37"><abbr title="App\Infrastructure\Routing\Middleware\RouteParametersMiddleware::execute">execute</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="RouteParametersMiddleware.php.html#57"><abbr title="App\Infrastructure\Routing\Middleware\RouteParametersMiddleware::setParameters">setParameters</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="RouteParametersMiddleware.php.html#70"><abbr title="App\Infrastructure\Routing\Middleware\RouteParametersMiddleware::addParameter">addParameter</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="RouteParametersMiddleware.php.html#82"><abbr title="App\Infrastructure\Routing\Middleware\RouteParametersMiddleware::getParameters">getParameters</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="RouteParametersMiddleware.php.html#92"><abbr title="App\Infrastructure\Routing\Middleware\RouteParametersMiddleware::removeParameter">removeParameter</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="RouteParametersMiddleware.php.html#102"><abbr title="App\Infrastructure\Routing\Middleware\RouteParametersMiddleware::clearParameters">clearParameters</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="MiddlewareResolver.php.html#39"><abbr title="App\Infrastructure\Routing\Middleware\MiddlewareResolver::resolve">resolve</abbr></a></td><td class="text-right">22%</td></tr>
+       <tr><td><a href="MiddlewareDispatcher.php.html#30"><abbr title="App\Infrastructure\Routing\Middleware\MiddlewareDispatcher::buildChain">buildChain</abbr></a></td><td class="text-right">60%</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Project Risks</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Method</th>
+         <th class="text-right"><abbr title="Change Risk Anti-Patterns (CRAP) Index">CRAP</abbr></th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="MiddlewareResolver.php.html#39"><abbr title="App\Infrastructure\Routing\Middleware\MiddlewareResolver::resolve">resolve</abbr></a></td><td class="text-right">37</td></tr>
+       <tr><td><a href="RouteInfoMiddleware.php.html#63"><abbr title="App\Infrastructure\Routing\Middleware\RouteInfoMiddleware::execute">execute</abbr></a></td><td class="text-right">30</td></tr>
+       <tr><td><a href="MiddlewareManager.php.html#154"><abbr title="App\Infrastructure\Routing\Middleware\MiddlewareManager::setStates">setStates</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="MiddlewareResolver.php.html#105"><abbr title="App\Infrastructure\Routing\Middleware\MiddlewareResolver::canResolve">canResolve</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="AbstractMiddleware.php.html#51"><abbr title="App\Infrastructure\Routing\Middleware\AbstractMiddleware::process">process</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="MiddlewareManager.php.html#50"><abbr title="App\Infrastructure\Routing\Middleware\MiddlewareManager::addMultiple">addMultiple</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="MiddlewareManager.php.html#137"><abbr title="App\Infrastructure\Routing\Middleware\MiddlewareManager::setPriorities">setPriorities</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="AbstractMiddleware.php.html#41"><abbr title="App\Infrastructure\Routing\Middleware\AbstractMiddleware::__construct">__construct</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="MiddlewareResolver.php.html#89"><abbr title="App\Infrastructure\Routing\Middleware\MiddlewareResolver::resolveMultiple">resolveMultiple</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="RouteParametersMiddleware.php.html#37"><abbr title="App\Infrastructure\Routing\Middleware\RouteParametersMiddleware::execute">execute</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="MiddlewareDispatcher.php.html#30"><abbr title="App\Infrastructure\Routing\Middleware\MiddlewareDispatcher::buildChain">buildChain</abbr></a></td><td class="text-right">2</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+   </div>
+   <footer>
+    <hr/>
+    <p>
+     <small>Generated by <a href="https://github.com/sebastianbergmann/php-code-coverage" target="_top">php-code-coverage 11.0.10</a> using <a href="https://www.php.net/" target="_top">PHP 8.4.11</a> and <a href="https://phpunit.de/">PHPUnit 11.5.34</a> at Fri Aug 29 9:23:06 CST 2025.</small>
+    </p>
+   </footer>
+  </div>
+  <script src="../../../_js/jquery.min.js?v=11.0.10" type="text/javascript"></script>
+  <script src="../../../_js/d3.min.js?v=11.0.10" type="text/javascript"></script>
+  <script src="../../../_js/nv.d3.min.js?v=11.0.10" type="text/javascript"></script>
+  <script type="text/javascript">
+$(document).ready(function() {
+  nv.addGraph(function() {
+    var chart = nv.models.multiBarChart();
+    chart.tooltips(false)
+      .showControls(false)
+      .showLegend(false)
+      .reduceXTicks(false)
+      .staggerLabels(true)
+      .yAxis.tickFormat(d3.format('d'));
+
+    d3.select('#classCoverageDistribution svg')
+      .datum(getCoverageDistributionData([4,0,1,0,0,1,0,0,0,0,0,0], "Class Coverage"))
+      .transition().duration(500).call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  nv.addGraph(function() {
+    var chart = nv.models.multiBarChart();
+    chart.tooltips(false)
+      .showControls(false)
+      .showLegend(false)
+      .reduceXTicks(false)
+      .staggerLabels(true)
+      .yAxis.tickFormat(d3.format('d'));
+
+    d3.select('#methodCoverageDistribution svg')
+      .datum(getCoverageDistributionData([47,0,0,1,0,0,0,1,0,0,0,3], "Method Coverage"))
+      .transition().duration(500).call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  function getCoverageDistributionData(data, label) {
+    var labels = [
+      '0%',
+      '0-10%',
+      '10-20%',
+      '20-30%',
+      '30-40%',
+      '40-50%',
+      '50-60%',
+      '60-70%',
+      '70-80%',
+      '80-90%',
+      '90-100%',
+      '100%'
+    ];
+    var values = [];
+    $.each(labels, function(key) {
+      values.push({x: labels[key], y: data[key]});
+    });
+
+    return [
+      {
+        key: label,
+        values: values,
+        color: "#4572A7"
+      }
+    ];
+  }
+  nv.addGraph(function() {
+    var chart = nv.models.scatterChart()
+      .showDistX(true)
+      .showDistY(true)
+      .showLegend(false)
+      .forceX([0, 100]);
+    chart.tooltipContent(function(graph) {
+      return '<p>' + graph.point.class + '</p>';
+    });
+
+    chart.xAxis.axisLabel('Code Coverage (in percent)');
+    chart.yAxis.axisLabel('Cyclomatic Complexity');
+
+    d3.select('#classComplexity svg')
+      .datum(getComplexityData([[0,13,"<a href=\"AbstractMiddleware.php.html#17\">App\\Infrastructure\\Routing\\Middleware\\AbstractMiddleware<\/a>"],[45.45454545454545,4,"<a href=\"MiddlewareDispatcher.php.html#18\">App\\Infrastructure\\Routing\\Middleware\\MiddlewareDispatcher<\/a>"],[0,21,"<a href=\"MiddlewareManager.php.html#19\">App\\Infrastructure\\Routing\\Middleware\\MiddlewareManager<\/a>"],[19.444444444444446,18,"<a href=\"MiddlewareResolver.php.html#16\">App\\Infrastructure\\Routing\\Middleware\\MiddlewareResolver<\/a>"],[0,14,"<a href=\"RouteInfoMiddleware.php.html#16\">App\\Infrastructure\\Routing\\Middleware\\RouteInfoMiddleware<\/a>"],[0,8,"<a href=\"RouteParametersMiddleware.php.html#16\">App\\Infrastructure\\Routing\\Middleware\\RouteParametersMiddleware<\/a>"]], 'Class Complexity'))
+      .transition()
+      .duration(500)
+      .call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  nv.addGraph(function() {
+    var chart = nv.models.scatterChart()
+      .showDistX(true)
+      .showDistY(true)
+      .showLegend(false)
+      .forceX([0, 100]);
+    chart.tooltipContent(function(graph) {
+      return '<p>' + graph.point.class + '</p>';
+    });
+
+    chart.xAxis.axisLabel('Code Coverage (in percent)');
+    chart.yAxis.axisLabel('Method Complexity');
+
+    d3.select('#methodComplexity svg')
+      .datum(getComplexityData([[0,2,"<a href=\"AbstractMiddleware.php.html#41\">App\\Infrastructure\\Routing\\Middleware\\AbstractMiddleware::__construct<\/a>"],[0,3,"<a href=\"AbstractMiddleware.php.html#51\">App\\Infrastructure\\Routing\\Middleware\\AbstractMiddleware::process<\/a>"],[0,0,"<a href=\"AbstractMiddleware.php.html#71\">App\\Infrastructure\\Routing\\Middleware\\AbstractMiddleware::execute<\/a>"],[0,1,"<a href=\"AbstractMiddleware.php.html#76\">App\\Infrastructure\\Routing\\Middleware\\AbstractMiddleware::getPriority<\/a>"],[0,1,"<a href=\"AbstractMiddleware.php.html#81\">App\\Infrastructure\\Routing\\Middleware\\AbstractMiddleware::getName<\/a>"],[0,1,"<a href=\"AbstractMiddleware.php.html#86\">App\\Infrastructure\\Routing\\Middleware\\AbstractMiddleware::shouldProcess<\/a>"],[0,1,"<a href=\"AbstractMiddleware.php.html#96\">App\\Infrastructure\\Routing\\Middleware\\AbstractMiddleware::setPriority<\/a>"],[0,1,"<a href=\"AbstractMiddleware.php.html#108\">App\\Infrastructure\\Routing\\Middleware\\AbstractMiddleware::setName<\/a>"],[0,1,"<a href=\"AbstractMiddleware.php.html#118\">App\\Infrastructure\\Routing\\Middleware\\AbstractMiddleware::enable<\/a>"],[0,1,"<a href=\"AbstractMiddleware.php.html#128\">App\\Infrastructure\\Routing\\Middleware\\AbstractMiddleware::disable<\/a>"],[0,1,"<a href=\"AbstractMiddleware.php.html#138\">App\\Infrastructure\\Routing\\Middleware\\AbstractMiddleware::isEnabled<\/a>"],[100,1,"<a href=\"MiddlewareDispatcher.php.html#20\">App\\Infrastructure\\Routing\\Middleware\\MiddlewareDispatcher::dispatch<\/a>"],[60,2,"<a href=\"MiddlewareDispatcher.php.html#30\">App\\Infrastructure\\Routing\\Middleware\\MiddlewareDispatcher::buildChain<\/a>"],[0,1,"<a href=\"MiddlewareDispatcher.php.html#51\">App\\Infrastructure\\Routing\\Middleware\\MiddlewareDispatcher::createMiddlewareHandler<\/a>"],[0,1,"<a href=\"MiddlewareManager.php.html#38\">App\\Infrastructure\\Routing\\Middleware\\MiddlewareManager::__construct<\/a>"],[0,1,"<a href=\"MiddlewareManager.php.html#43\">App\\Infrastructure\\Routing\\Middleware\\MiddlewareManager::add<\/a>"],[0,3,"<a href=\"MiddlewareManager.php.html#50\">App\\Infrastructure\\Routing\\Middleware\\MiddlewareManager::addMultiple<\/a>"],[0,1,"<a href=\"MiddlewareManager.php.html#61\">App\\Infrastructure\\Routing\\Middleware\\MiddlewareManager::remove<\/a>"],[0,1,"<a href=\"MiddlewareManager.php.html#68\">App\\Infrastructure\\Routing\\Middleware\\MiddlewareManager::clear<\/a>"],[0,1,"<a href=\"MiddlewareManager.php.html#75\">App\\Infrastructure\\Routing\\Middleware\\MiddlewareManager::has<\/a>"],[0,1,"<a href=\"MiddlewareManager.php.html#80\">App\\Infrastructure\\Routing\\Middleware\\MiddlewareManager::get<\/a>"],[0,1,"<a href=\"MiddlewareManager.php.html#85\">App\\Infrastructure\\Routing\\Middleware\\MiddlewareManager::getAll<\/a>"],[0,1,"<a href=\"MiddlewareManager.php.html#90\">App\\Infrastructure\\Routing\\Middleware\\MiddlewareManager::getSorted<\/a>"],[0,1,"<a href=\"MiddlewareManager.php.html#102\">App\\Infrastructure\\Routing\\Middleware\\MiddlewareManager::process<\/a>"],[0,1,"<a href=\"MiddlewareManager.php.html#117\">App\\Infrastructure\\Routing\\Middleware\\MiddlewareManager::count<\/a>"],[0,1,"<a href=\"MiddlewareManager.php.html#127\">App\\Infrastructure\\Routing\\Middleware\\MiddlewareManager::getNames<\/a>"],[0,3,"<a href=\"MiddlewareManager.php.html#137\">App\\Infrastructure\\Routing\\Middleware\\MiddlewareManager::setPriorities<\/a>"],[0,4,"<a href=\"MiddlewareManager.php.html#154\">App\\Infrastructure\\Routing\\Middleware\\MiddlewareManager::setStates<\/a>"],[100,1,"<a href=\"MiddlewareResolver.php.html#29\">App\\Infrastructure\\Routing\\Middleware\\MiddlewareResolver::__construct<\/a>"],[22.727272727272727,8,"<a href=\"MiddlewareResolver.php.html#39\">App\\Infrastructure\\Routing\\Middleware\\MiddlewareResolver::resolve<\/a>"],[0,2,"<a href=\"MiddlewareResolver.php.html#89\">App\\Infrastructure\\Routing\\Middleware\\MiddlewareResolver::resolveMultiple<\/a>"],[0,4,"<a href=\"MiddlewareResolver.php.html#105\">App\\Infrastructure\\Routing\\Middleware\\MiddlewareResolver::canResolve<\/a>"],[100,1,"<a href=\"MiddlewareResolver.php.html#123\">App\\Infrastructure\\Routing\\Middleware\\MiddlewareResolver::resolveAlias<\/a>"],[0,1,"<a href=\"MiddlewareResolver.php.html#133\">App\\Infrastructure\\Routing\\Middleware\\MiddlewareResolver::getAliases<\/a>"],[0,1,"<a href=\"MiddlewareResolver.php.html#141\">App\\Infrastructure\\Routing\\Middleware\\MiddlewareResolver::registerAlias<\/a>"],[0,1,"<a href=\"RouteInfoMiddleware.php.html#49\">App\\Infrastructure\\Routing\\Middleware\\RouteInfoMiddleware::__construct<\/a>"],[0,5,"<a href=\"RouteInfoMiddleware.php.html#63\">App\\Infrastructure\\Routing\\Middleware\\RouteInfoMiddleware::execute<\/a>"],[0,1,"<a href=\"RouteInfoMiddleware.php.html#102\">App\\Infrastructure\\Routing\\Middleware\\RouteInfoMiddleware::setRouteName<\/a>"],[0,1,"<a href=\"RouteInfoMiddleware.php.html#114\">App\\Infrastructure\\Routing\\Middleware\\RouteInfoMiddleware::setRoutePattern<\/a>"],[0,1,"<a href=\"RouteInfoMiddleware.php.html#126\">App\\Infrastructure\\Routing\\Middleware\\RouteInfoMiddleware::setMethods<\/a>"],[0,1,"<a href=\"RouteInfoMiddleware.php.html#138\">App\\Infrastructure\\Routing\\Middleware\\RouteInfoMiddleware::setHandler<\/a>"],[0,1,"<a href=\"RouteInfoMiddleware.php.html#148\">App\\Infrastructure\\Routing\\Middleware\\RouteInfoMiddleware::getRouteName<\/a>"],[0,1,"<a href=\"RouteInfoMiddleware.php.html#156\">App\\Infrastructure\\Routing\\Middleware\\RouteInfoMiddleware::getRoutePattern<\/a>"],[0,1,"<a href=\"RouteInfoMiddleware.php.html#166\">App\\Infrastructure\\Routing\\Middleware\\RouteInfoMiddleware::getMethods<\/a>"],[0,1,"<a href=\"RouteInfoMiddleware.php.html#174\">App\\Infrastructure\\Routing\\Middleware\\RouteInfoMiddleware::getHandler<\/a>"],[0,1,"<a href=\"RouteParametersMiddleware.php.html#31\">App\\Infrastructure\\Routing\\Middleware\\RouteParametersMiddleware::__construct<\/a>"],[0,2,"<a href=\"RouteParametersMiddleware.php.html#37\">App\\Infrastructure\\Routing\\Middleware\\RouteParametersMiddleware::execute<\/a>"],[0,1,"<a href=\"RouteParametersMiddleware.php.html#57\">App\\Infrastructure\\Routing\\Middleware\\RouteParametersMiddleware::setParameters<\/a>"],[0,1,"<a href=\"RouteParametersMiddleware.php.html#70\">App\\Infrastructure\\Routing\\Middleware\\RouteParametersMiddleware::addParameter<\/a>"],[0,1,"<a href=\"RouteParametersMiddleware.php.html#82\">App\\Infrastructure\\Routing\\Middleware\\RouteParametersMiddleware::getParameters<\/a>"],[0,1,"<a href=\"RouteParametersMiddleware.php.html#92\">App\\Infrastructure\\Routing\\Middleware\\RouteParametersMiddleware::removeParameter<\/a>"],[0,1,"<a href=\"RouteParametersMiddleware.php.html#102\">App\\Infrastructure\\Routing\\Middleware\\RouteParametersMiddleware::clearParameters<\/a>"]], 'Method Complexity'))
+      .transition()
+      .duration(500)
+      .call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  function getComplexityData(data, label) {
+    var values = [];
+    $.each(data, function(key) {
+      var value = Math.round(data[key][0]*100) / 100;
+      values.push({
+        x: value,
+        y: data[key][1],
+        class: data[key][2],
+        size: 0.05,
+        shape: 'diamond'
+      });
+    });
+
+    return [
+      {
+        key: label,
+        values: values,
+        color: "#4572A7"
+      }
+    ];
+  }
+});
+  </script>
+ </body>
+</html>

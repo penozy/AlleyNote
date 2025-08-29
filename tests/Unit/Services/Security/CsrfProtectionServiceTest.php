@@ -4,18 +4,33 @@ declare(strict_types=1);
 
 namespace Tests\Unit\Services\Security;
 
+use App\Domains\Security\Contracts\ActivityLoggingServiceInterface;
 use App\Domains\Security\Services\Core\CsrfProtectionService;
 use App\Shared\Exceptions\CsrfTokenException;
+use Mockery;
+use Mockery\Adapter\Phpunit\MockeryPHPUnitIntegration;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 
 class CsrfProtectionServiceTest extends TestCase
 {
+    use MockeryPHPUnitIntegration;
+
     private CsrfProtectionService $service;
+
+    private ActivityLoggingServiceInterface $activityLogger;
 
     protected function setUp(): void
     {
-        $this->service = new CsrfProtectionService();
+        $this->activityLogger = Mockery::mock(ActivityLoggingServiceInterface::class);
+
+        // 設定 ActivityLogger Mock 的通用預期
+        $this->activityLogger->shouldReceive('log')
+            ->zeroOrMoreTimes();
+        $this->activityLogger->shouldReceive('logSecurityEvent')
+            ->zeroOrMoreTimes();
+
+        $this->service = new CsrfProtectionService($this->activityLogger);
         $_SESSION = [];
     }
 

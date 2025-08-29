@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Dashboard for /var/www/html/app/Domains/Post/Services</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="../../../_css/bootstrap.min.css?v=11.0.10" rel="stylesheet" type="text/css">
+  <link href="../../../_css/nv.d3.min.css?v=11.0.10" rel="stylesheet" type="text/css">
+  <link href="../../../_css/style.css?v=11.0.10" rel="stylesheet" type="text/css">
+  <link href="../../../_css/custom.css" rel="stylesheet" type="text/css">
+ </head>
+ <body>
+  <header>
+   <div class="container-fluid">
+    <div class="row">
+     <div class="col-md-12">
+      <nav aria-label="breadcrumb">
+       <ol class="breadcrumb">
+         <li class="breadcrumb-item"><a href="../../../index.html">/var/www/html/app</a></li>
+         <li class="breadcrumb-item"><a href="../../index.html">Domains</a></li>
+         <li class="breadcrumb-item"><a href="../index.html">Post</a></li>
+         <li class="breadcrumb-item"><a href="index.html">Services</a></li>
+         <li class="breadcrumb-item active">(Dashboard)</li>
+
+       </ol>
+      </nav>
+     </div>
+    </div>
+   </div>
+  </header>
+  <div class="container-fluid">
+   <div class="row">
+    <div class="col-md-12">
+     <h2>Classes</h2>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Coverage Distribution</h3>
+     <div id="classCoverageDistribution" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Complexity</h3>
+     <div id="classComplexity" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Insufficient Coverage</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Class</th>
+         <th class="text-right">Coverage</th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="ContentModerationService.php.html#14">App\Domains\Post\Services\ContentModerationService</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="RichTextProcessorService.php.html#16">App\Domains\Post\Services\RichTextProcessorService</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="PostCacheKeyService.php.html#13">App\Domains\Post\Services\PostCacheKeyService</a></td><td class="text-right">88%</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Project Risks</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Class</th>
+         <th class="text-right"><abbr title="Change Risk Anti-Patterns (CRAP) Index">CRAP</abbr></th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="ContentModerationService.php.html#14">App\Domains\Post\Services\ContentModerationService</a></td><td class="text-right">2450</td></tr>
+       <tr><td><a href="RichTextProcessorService.php.html#16">App\Domains\Post\Services\RichTextProcessorService</a></td><td class="text-right">600</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-12">
+     <h2>Methods</h2>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Coverage Distribution</h3>
+     <div id="methodCoverageDistribution" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Complexity</h3>
+     <div id="methodComplexity" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Insufficient Coverage</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Method</th>
+         <th class="text-right">Coverage</th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="ContentModerationService.php.html#22"><abbr title="App\Domains\Post\Services\ContentModerationService::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ContentModerationService.php.html#35"><abbr title="App\Domains\Post\Services\ContentModerationService::moderateContent">moderateContent</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ContentModerationService.php.html#88"><abbr title="App\Domains\Post\Services\ContentModerationService::checkSecurity">checkSecurity</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ContentModerationService.php.html#124"><abbr title="App\Domains\Post\Services\ContentModerationService::checkQuality">checkQuality</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ContentModerationService.php.html#174"><abbr title="App\Domains\Post\Services\ContentModerationService::checkSensitiveWords">checkSensitiveWords</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ContentModerationService.php.html#199"><abbr title="App\Domains\Post\Services\ContentModerationService::calculateSpamScore">calculateSpamScore</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ContentModerationService.php.html#241"><abbr title="App\Domains\Post\Services\ContentModerationService::determineFinalStatus">determineFinalStatus</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ContentModerationService.php.html#272"><abbr title="App\Domains\Post\Services\ContentModerationService::isRepetitiveContent">isRepetitiveContent</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ContentModerationService.php.html#289"><abbr title="App\Domains\Post\Services\ContentModerationService::isAllCaps">isAllCaps</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ContentModerationService.php.html#302"><abbr title="App\Domains\Post\Services\ContentModerationService::getUpperCaseRatio">getUpperCaseRatio</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ContentModerationService.php.html#317"><abbr title="App\Domains\Post\Services\ContentModerationService::hasExcessiveRepetition">hasExcessiveRepetition</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ContentModerationService.php.html#327"><abbr title="App\Domains\Post\Services\ContentModerationService::hasSuspiciousUrls">hasSuspiciousUrls</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ContentModerationService.php.html#349"><abbr title="App\Domains\Post\Services\ContentModerationService::getSensitiveWordSeverity">getSensitiveWordSeverity</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ContentModerationService.php.html#367"><abbr title="App\Domains\Post\Services\ContentModerationService::getDefaultConfig">getDefaultConfig</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="PostCacheKeyService.php.html#64"><abbr title="App\Domains\Post\Services\PostCacheKeyService::postsByCategory">postsByCategory</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="PostCacheKeyService.php.html#90"><abbr title="App\Domains\Post\Services\PostCacheKeyService::postPattern">postPattern</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="RichTextProcessorService.php.html#26"><abbr title="App\Domains\Post\Services\RichTextProcessorService::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="RichTextProcessorService.php.html#35"><abbr title="App\Domains\Post\Services\RichTextProcessorService::initializePurifiers">initializePurifiers</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="RichTextProcessorService.php.html#96"><abbr title="App\Domains\Post\Services\RichTextProcessorService::processContent">processContent</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="RichTextProcessorService.php.html#135"><abbr title="App\Domains\Post\Services\RichTextProcessorService::processCKEditorContent">processCKEditorContent</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="RichTextProcessorService.php.html#147"><abbr title="App\Domains\Post\Services\RichTextProcessorService::preprocessCKEditorContent">preprocessCKEditorContent</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="RichTextProcessorService.php.html#166"><abbr title="App\Domains\Post\Services\RichTextProcessorService::getAllowedElements">getAllowedElements</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="RichTextProcessorService.php.html#192"><abbr title="App\Domains\Post\Services\RichTextProcessorService::generateStatistics">generateStatistics</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="RichTextProcessorService.php.html#210"><abbr title="App\Domains\Post\Services\RichTextProcessorService::generatePreview">generatePreview</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="RichTextProcessorService.php.html#229"><abbr title="App\Domains\Post\Services\RichTextProcessorService::validateSecurity">validateSecurity</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="RichTextProcessorService.php.html#271"><abbr title="App\Domains\Post\Services\RichTextProcessorService::getCachePath">getCachePath</abbr></a></td><td class="text-right">0%</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Project Risks</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Method</th>
+         <th class="text-right"><abbr title="Change Risk Anti-Patterns (CRAP) Index">CRAP</abbr></th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="ContentModerationService.php.html#199"><abbr title="App\Domains\Post\Services\ContentModerationService::calculateSpamScore">calculateSpamScore</abbr></a></td><td class="text-right">72</td></tr>
+       <tr><td><a href="ContentModerationService.php.html#241"><abbr title="App\Domains\Post\Services\ContentModerationService::determineFinalStatus">determineFinalStatus</abbr></a></td><td class="text-right">72</td></tr>
+       <tr><td><a href="ContentModerationService.php.html#35"><abbr title="App\Domains\Post\Services\ContentModerationService::moderateContent">moderateContent</abbr></a></td><td class="text-right">30</td></tr>
+       <tr><td><a href="ContentModerationService.php.html#88"><abbr title="App\Domains\Post\Services\ContentModerationService::checkSecurity">checkSecurity</abbr></a></td><td class="text-right">30</td></tr>
+       <tr><td><a href="ContentModerationService.php.html#124"><abbr title="App\Domains\Post\Services\ContentModerationService::checkQuality">checkQuality</abbr></a></td><td class="text-right">30</td></tr>
+       <tr><td><a href="RichTextProcessorService.php.html#96"><abbr title="App\Domains\Post\Services\RichTextProcessorService::processContent">processContent</abbr></a></td><td class="text-right">30</td></tr>
+       <tr><td><a href="RichTextProcessorService.php.html#166"><abbr title="App\Domains\Post\Services\RichTextProcessorService::getAllowedElements">getAllowedElements</abbr></a></td><td class="text-right">30</td></tr>
+       <tr><td><a href="ContentModerationService.php.html#174"><abbr title="App\Domains\Post\Services\ContentModerationService::checkSensitiveWords">checkSensitiveWords</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="RichTextProcessorService.php.html#229"><abbr title="App\Domains\Post\Services\RichTextProcessorService::validateSecurity">validateSecurity</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="ContentModerationService.php.html#327"><abbr title="App\Domains\Post\Services\ContentModerationService::hasSuspiciousUrls">hasSuspiciousUrls</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="ContentModerationService.php.html#272"><abbr title="App\Domains\Post\Services\ContentModerationService::isRepetitiveContent">isRepetitiveContent</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="ContentModerationService.php.html#289"><abbr title="App\Domains\Post\Services\ContentModerationService::isAllCaps">isAllCaps</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="ContentModerationService.php.html#302"><abbr title="App\Domains\Post\Services\ContentModerationService::getUpperCaseRatio">getUpperCaseRatio</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="ContentModerationService.php.html#317"><abbr title="App\Domains\Post\Services\ContentModerationService::hasExcessiveRepetition">hasExcessiveRepetition</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="RichTextProcessorService.php.html#192"><abbr title="App\Domains\Post\Services\RichTextProcessorService::generateStatistics">generateStatistics</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="RichTextProcessorService.php.html#210"><abbr title="App\Domains\Post\Services\RichTextProcessorService::generatePreview">generatePreview</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="RichTextProcessorService.php.html#271"><abbr title="App\Domains\Post\Services\RichTextProcessorService::getCachePath">getCachePath</abbr></a></td><td class="text-right">6</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+   </div>
+   <footer>
+    <hr/>
+    <p>
+     <small>Generated by <a href="https://github.com/sebastianbergmann/php-code-coverage" target="_top">php-code-coverage 11.0.10</a> using <a href="https://www.php.net/" target="_top">PHP 8.4.11</a> and <a href="https://phpunit.de/">PHPUnit 11.5.34</a> at Fri Aug 29 9:23:06 CST 2025.</small>
+    </p>
+   </footer>
+  </div>
+  <script src="../../../_js/jquery.min.js?v=11.0.10" type="text/javascript"></script>
+  <script src="../../../_js/d3.min.js?v=11.0.10" type="text/javascript"></script>
+  <script src="../../../_js/nv.d3.min.js?v=11.0.10" type="text/javascript"></script>
+  <script type="text/javascript">
+$(document).ready(function() {
+  nv.addGraph(function() {
+    var chart = nv.models.multiBarChart();
+    chart.tooltips(false)
+      .showControls(false)
+      .showLegend(false)
+      .reduceXTicks(false)
+      .staggerLabels(true)
+      .yAxis.tickFormat(d3.format('d'));
+
+    d3.select('#classCoverageDistribution svg')
+      .datum(getCoverageDistributionData([2,0,0,0,0,0,0,0,0,1,0,1], "Class Coverage"))
+      .transition().duration(500).call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  nv.addGraph(function() {
+    var chart = nv.models.multiBarChart();
+    chart.tooltips(false)
+      .showControls(false)
+      .showLegend(false)
+      .reduceXTicks(false)
+      .staggerLabels(true)
+      .yAxis.tickFormat(d3.format('d'));
+
+    d3.select('#methodCoverageDistribution svg')
+      .datum(getCoverageDistributionData([26,0,0,0,0,0,0,0,0,0,0,21], "Method Coverage"))
+      .transition().duration(500).call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  function getCoverageDistributionData(data, label) {
+    var labels = [
+      '0%',
+      '0-10%',
+      '10-20%',
+      '20-30%',
+      '30-40%',
+      '40-50%',
+      '50-60%',
+      '60-70%',
+      '70-80%',
+      '80-90%',
+      '90-100%',
+      '100%'
+    ];
+    var values = [];
+    $.each(labels, function(key) {
+      values.push({x: labels[key], y: data[key]});
+    });
+
+    return [
+      {
+        key: label,
+        values: values,
+        color: "#4572A7"
+      }
+    ];
+  }
+  nv.addGraph(function() {
+    var chart = nv.models.scatterChart()
+      .showDistX(true)
+      .showDistY(true)
+      .showLegend(false)
+      .forceX([0, 100]);
+    chart.tooltipContent(function(graph) {
+      return '<p>' + graph.point.class + '</p>';
+    });
+
+    chart.xAxis.axisLabel('Code Coverage (in percent)');
+    chart.yAxis.axisLabel('Cyclomatic Complexity');
+
+    d3.select('#classComplexity svg')
+      .datum(getComplexityData([[0,49,"<a href=\"ContentModerationService.php.html#14\">App\\Domains\\Post\\Services\\ContentModerationService<\/a>"],[88.88888888888889,13,"<a href=\"PostCacheKeyService.php.html#13\">App\\Domains\\Post\\Services\\PostCacheKeyService<\/a>"],[100,22,"<a href=\"PostService.php.html#21\">App\\Domains\\Post\\Services\\PostService<\/a>"],[0,24,"<a href=\"RichTextProcessorService.php.html#16\">App\\Domains\\Post\\Services\\RichTextProcessorService<\/a>"]], 'Class Complexity'))
+      .transition()
+      .duration(500)
+      .call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  nv.addGraph(function() {
+    var chart = nv.models.scatterChart()
+      .showDistX(true)
+      .showDistY(true)
+      .showLegend(false)
+      .forceX([0, 100]);
+    chart.tooltipContent(function(graph) {
+      return '<p>' + graph.point.class + '</p>';
+    });
+
+    chart.xAxis.axisLabel('Code Coverage (in percent)');
+    chart.yAxis.axisLabel('Method Complexity');
+
+    d3.select('#methodComplexity svg')
+      .datum(getComplexityData([[0,1,"<a href=\"ContentModerationService.php.html#22\">App\\Domains\\Post\\Services\\ContentModerationService::__construct<\/a>"],[0,5,"<a href=\"ContentModerationService.php.html#35\">App\\Domains\\Post\\Services\\ContentModerationService::moderateContent<\/a>"],[0,5,"<a href=\"ContentModerationService.php.html#88\">App\\Domains\\Post\\Services\\ContentModerationService::checkSecurity<\/a>"],[0,5,"<a href=\"ContentModerationService.php.html#124\">App\\Domains\\Post\\Services\\ContentModerationService::checkQuality<\/a>"],[0,4,"<a href=\"ContentModerationService.php.html#174\">App\\Domains\\Post\\Services\\ContentModerationService::checkSensitiveWords<\/a>"],[0,8,"<a href=\"ContentModerationService.php.html#199\">App\\Domains\\Post\\Services\\ContentModerationService::calculateSpamScore<\/a>"],[0,8,"<a href=\"ContentModerationService.php.html#241\">App\\Domains\\Post\\Services\\ContentModerationService::determineFinalStatus<\/a>"],[0,2,"<a href=\"ContentModerationService.php.html#272\">App\\Domains\\Post\\Services\\ContentModerationService::isRepetitiveContent<\/a>"],[0,2,"<a href=\"ContentModerationService.php.html#289\">App\\Domains\\Post\\Services\\ContentModerationService::isAllCaps<\/a>"],[0,2,"<a href=\"ContentModerationService.php.html#302\">App\\Domains\\Post\\Services\\ContentModerationService::getUpperCaseRatio<\/a>"],[0,2,"<a href=\"ContentModerationService.php.html#317\">App\\Domains\\Post\\Services\\ContentModerationService::hasExcessiveRepetition<\/a>"],[0,3,"<a href=\"ContentModerationService.php.html#327\">App\\Domains\\Post\\Services\\ContentModerationService::hasSuspiciousUrls<\/a>"],[0,1,"<a href=\"ContentModerationService.php.html#349\">App\\Domains\\Post\\Services\\ContentModerationService::getSensitiveWordSeverity<\/a>"],[0,1,"<a href=\"ContentModerationService.php.html#367\">App\\Domains\\Post\\Services\\ContentModerationService::getDefaultConfig<\/a>"],[100,1,"<a href=\"PostCacheKeyService.php.html#22\">App\\Domains\\Post\\Services\\PostCacheKeyService::buildKey<\/a>"],[100,1,"<a href=\"PostCacheKeyService.php.html#36\">App\\Domains\\Post\\Services\\PostCacheKeyService::pattern<\/a>"],[100,1,"<a href=\"PostCacheKeyService.php.html#44\">App\\Domains\\Post\\Services\\PostCacheKeyService::post<\/a>"],[100,1,"<a href=\"PostCacheKeyService.php.html#49\">App\\Domains\\Post\\Services\\PostCacheKeyService::postByUuid<\/a>"],[100,1,"<a href=\"PostCacheKeyService.php.html#54\">App\\Domains\\Post\\Services\\PostCacheKeyService::postList<\/a>"],[100,1,"<a href=\"PostCacheKeyService.php.html#59\">App\\Domains\\Post\\Services\\PostCacheKeyService::pinnedPosts<\/a>"],[0,1,"<a href=\"PostCacheKeyService.php.html#64\">App\\Domains\\Post\\Services\\PostCacheKeyService::postsByCategory<\/a>"],[100,1,"<a href=\"PostCacheKeyService.php.html#69\">App\\Domains\\Post\\Services\\PostCacheKeyService::postTags<\/a>"],[100,1,"<a href=\"PostCacheKeyService.php.html#74\">App\\Domains\\Post\\Services\\PostCacheKeyService::postViews<\/a>"],[100,1,"<a href=\"PostCacheKeyService.php.html#79\">App\\Domains\\Post\\Services\\PostCacheKeyService::tagPosts<\/a>"],[100,1,"<a href=\"PostCacheKeyService.php.html#85\">App\\Domains\\Post\\Services\\PostCacheKeyService::userPattern<\/a>"],[0,1,"<a href=\"PostCacheKeyService.php.html#90\">App\\Domains\\Post\\Services\\PostCacheKeyService::postPattern<\/a>"],[100,1,"<a href=\"PostCacheKeyService.php.html#95\">App\\Domains\\Post\\Services\\PostCacheKeyService::postsListPattern<\/a>"],[100,1,"<a href=\"PostService.php.html#23\">App\\Domains\\Post\\Services\\PostService::__construct<\/a>"],[100,1,"<a href=\"PostService.php.html#27\">App\\Domains\\Post\\Services\\PostService::createPost<\/a>"],[100,5,"<a href=\"PostService.php.html#38\">App\\Domains\\Post\\Services\\PostService::updatePost<\/a>"],[100,3,"<a href=\"PostService.php.html#75\">App\\Domains\\Post\\Services\\PostService::deletePost<\/a>"],[100,2,"<a href=\"PostService.php.html#88\">App\\Domains\\Post\\Services\\PostService::findById<\/a>"],[100,1,"<a href=\"PostService.php.html#105\">App\\Domains\\Post\\Services\\PostService::listPosts<\/a>"],[100,1,"<a href=\"PostService.php.html#124\">App\\Domains\\Post\\Services\\PostService::getPinnedPosts<\/a>"],[100,3,"<a href=\"PostService.php.html#129\">App\\Domains\\Post\\Services\\PostService::setPinned<\/a>"],[100,2,"<a href=\"PostService.php.html#147\">App\\Domains\\Post\\Services\\PostService::setTags<\/a>"],[100,3,"<a href=\"PostService.php.html#160\">App\\Domains\\Post\\Services\\PostService::recordView<\/a>"],[0,1,"<a href=\"RichTextProcessorService.php.html#26\">App\\Domains\\Post\\Services\\RichTextProcessorService::__construct<\/a>"],[0,1,"<a href=\"RichTextProcessorService.php.html#35\">App\\Domains\\Post\\Services\\RichTextProcessorService::initializePurifiers<\/a>"],[0,5,"<a href=\"RichTextProcessorService.php.html#96\">App\\Domains\\Post\\Services\\RichTextProcessorService::processContent<\/a>"],[0,1,"<a href=\"RichTextProcessorService.php.html#135\">App\\Domains\\Post\\Services\\RichTextProcessorService::processCKEditorContent<\/a>"],[0,1,"<a href=\"RichTextProcessorService.php.html#147\">App\\Domains\\Post\\Services\\RichTextProcessorService::preprocessCKEditorContent<\/a>"],[0,5,"<a href=\"RichTextProcessorService.php.html#166\">App\\Domains\\Post\\Services\\RichTextProcessorService::getAllowedElements<\/a>"],[0,2,"<a href=\"RichTextProcessorService.php.html#192\">App\\Domains\\Post\\Services\\RichTextProcessorService::generateStatistics<\/a>"],[0,2,"<a href=\"RichTextProcessorService.php.html#210\">App\\Domains\\Post\\Services\\RichTextProcessorService::generatePreview<\/a>"],[0,4,"<a href=\"RichTextProcessorService.php.html#229\">App\\Domains\\Post\\Services\\RichTextProcessorService::validateSecurity<\/a>"],[0,2,"<a href=\"RichTextProcessorService.php.html#271\">App\\Domains\\Post\\Services\\RichTextProcessorService::getCachePath<\/a>"]], 'Method Complexity'))
+      .transition()
+      .duration(500)
+      .call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  function getComplexityData(data, label) {
+    var values = [];
+    $.each(data, function(key) {
+      var value = Math.round(data[key][0]*100) / 100;
+      values.push({
+        x: value,
+        y: data[key][1],
+        class: data[key][2],
+        size: 0.05,
+        shape: 'diamond'
+      });
+    });
+
+    return [
+      {
+        key: label,
+        values: values,
+        color: "#4572A7"
+      }
+    ];
+  }
+});
+  </script>
+ </body>
+</html>

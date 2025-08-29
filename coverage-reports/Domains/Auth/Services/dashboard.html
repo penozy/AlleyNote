@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Dashboard for /var/www/html/app/Domains/Auth/Services</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="../../../_css/bootstrap.min.css?v=11.0.10" rel="stylesheet" type="text/css">
+  <link href="../../../_css/nv.d3.min.css?v=11.0.10" rel="stylesheet" type="text/css">
+  <link href="../../../_css/style.css?v=11.0.10" rel="stylesheet" type="text/css">
+  <link href="../../../_css/custom.css" rel="stylesheet" type="text/css">
+ </head>
+ <body>
+  <header>
+   <div class="container-fluid">
+    <div class="row">
+     <div class="col-md-12">
+      <nav aria-label="breadcrumb">
+       <ol class="breadcrumb">
+         <li class="breadcrumb-item"><a href="../../../index.html">/var/www/html/app</a></li>
+         <li class="breadcrumb-item"><a href="../../index.html">Domains</a></li>
+         <li class="breadcrumb-item"><a href="../index.html">Auth</a></li>
+         <li class="breadcrumb-item"><a href="index.html">Services</a></li>
+         <li class="breadcrumb-item active">(Dashboard)</li>
+
+       </ol>
+      </nav>
+     </div>
+    </div>
+   </div>
+  </header>
+  <div class="container-fluid">
+   <div class="row">
+    <div class="col-md-12">
+     <h2>Classes</h2>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Coverage Distribution</h3>
+     <div id="classCoverageDistribution" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Complexity</h3>
+     <div id="classComplexity" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Insufficient Coverage</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Class</th>
+         <th class="text-right">Coverage</th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="AuthorizationService.php.html#12">App\Domains\Auth\Services\AuthorizationService</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="PasswordManagementService.php.html#17">App\Domains\Auth\Services\PasswordManagementService</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="PasswordSecurityService.php.html#11">App\Domains\Auth\Services\PasswordSecurityService</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="RefreshTokenService.php.html#33">AlleyNote\Domains\Auth\Services\RefreshTokenService</a></td><td class="text-right">27%</td></tr>
+       <tr><td><a href="AuthenticationService.php.html#32">AlleyNote\Domains\Auth\Services\AuthenticationService</a></td><td class="text-right">65%</td></tr>
+       <tr><td><a href="Advanced/PwnedPasswordService.php.html#11">App\Domains\Auth\Services\Advanced\PwnedPasswordService</a></td><td class="text-right">69%</td></tr>
+       <tr><td><a href="JwtTokenService.php.html#29">AlleyNote\Domains\Auth\Services\JwtTokenService</a></td><td class="text-right">84%</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Project Risks</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Class</th>
+         <th class="text-right"><abbr title="Change Risk Anti-Patterns (CRAP) Index">CRAP</abbr></th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="PasswordSecurityService.php.html#11">App\Domains\Auth\Services\PasswordSecurityService</a></td><td class="text-right">2862</td></tr>
+       <tr><td><a href="AuthorizationService.php.html#12">App\Domains\Auth\Services\AuthorizationService</a></td><td class="text-right">1260</td></tr>
+       <tr><td><a href="RefreshTokenService.php.html#33">AlleyNote\Domains\Auth\Services\RefreshTokenService</a></td><td class="text-right">884</td></tr>
+       <tr><td><a href="PasswordManagementService.php.html#17">App\Domains\Auth\Services\PasswordManagementService</a></td><td class="text-right">156</td></tr>
+       <tr><td><a href="AuthenticationService.php.html#32">AlleyNote\Domains\Auth\Services\AuthenticationService</a></td><td class="text-right">91</td></tr>
+       <tr><td><a href="JwtTokenService.php.html#29">AlleyNote\Domains\Auth\Services\JwtTokenService</a></td><td class="text-right">44</td></tr>
+       <tr><td><a href="Advanced/PwnedPasswordService.php.html#11">App\Domains\Auth\Services\Advanced\PwnedPasswordService</a></td><td class="text-right">38</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-12">
+     <h2>Methods</h2>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Coverage Distribution</h3>
+     <div id="methodCoverageDistribution" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Complexity</h3>
+     <div id="methodComplexity" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Insufficient Coverage</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Method</th>
+         <th class="text-right">Coverage</th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="AuthenticationService.php.html#250"><abbr title="AlleyNote\Domains\Auth\Services\AuthenticationService::getUserFromToken">getUserFromToken</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="AuthorizationService.php.html#20"><abbr title="App\Domains\Auth\Services\AuthorizationService::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="AuthorizationService.php.html#26"><abbr title="App\Domains\Auth\Services\AuthorizationService::hasPermission">hasPermission</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="AuthorizationService.php.html#37"><abbr title="App\Domains\Auth\Services\AuthorizationService::hasRole">hasRole</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="AuthorizationService.php.html#48"><abbr title="App\Domains\Auth\Services\AuthorizationService::can">can</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="AuthorizationService.php.html#61"><abbr title="App\Domains\Auth\Services\AuthorizationService::assignRole">assignRole</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="AuthorizationService.php.html#95"><abbr title="App\Domains\Auth\Services\AuthorizationService::removeRole">removeRole</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="AuthorizationService.php.html#116"><abbr title="App\Domains\Auth\Services\AuthorizationService::givePermission">givePermission</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="AuthorizationService.php.html#150"><abbr title="App\Domains\Auth\Services\AuthorizationService::revokePermission">revokePermission</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="AuthorizationService.php.html#171"><abbr title="App\Domains\Auth\Services\AuthorizationService::getUserRoles">getUserRoles</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="AuthorizationService.php.html#184"><abbr title="App\Domains\Auth\Services\AuthorizationService::getUserPermissions">getUserPermissions</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="AuthorizationService.php.html#211"><abbr title="App\Domains\Auth\Services\AuthorizationService::isSuperAdmin">isSuperAdmin</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="AuthorizationService.php.html#216"><abbr title="App\Domains\Auth\Services\AuthorizationService::canUploadAttachment">canUploadAttachment</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="AuthorizationService.php.html#227"><abbr title="App\Domains\Auth\Services\AuthorizationService::canDeleteAttachment">canDeleteAttachment</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="AuthorizationService.php.html#238"><abbr title="App\Domains\Auth\Services\AuthorizationService::canAccessPost">canAccessPost</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="AuthorizationService.php.html#251"><abbr title="App\Domains\Auth\Services\AuthorizationService::canAccessAttachment">canAccessAttachment</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="AuthorizationService.php.html#269"><abbr title="App\Domains\Auth\Services\AuthorizationService::clearUserCache">clearUserCache</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="PasswordManagementService.php.html#19"><abbr title="App\Domains\Auth\Services\PasswordManagementService::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="PasswordManagementService.php.html#33"><abbr title="App\Domains\Auth\Services\PasswordManagementService::changePassword">changePassword</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="PasswordManagementService.php.html#60"><abbr title="App\Domains\Auth\Services\PasswordManagementService::resetPassword">resetPassword</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="PasswordManagementService.php.html#75"><abbr title="App\Domains\Auth\Services\PasswordManagementService::checkPasswordStrength">checkPasswordStrength</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="PasswordManagementService.php.html#86"><abbr title="App\Domains\Auth\Services\PasswordManagementService::generateSecurePassword">generateSecurePassword</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="PasswordManagementService.php.html#97"><abbr title="App\Domains\Auth\Services\PasswordManagementService::needsRehash">needsRehash</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="PasswordManagementService.php.html#109"><abbr title="App\Domains\Auth\Services\PasswordManagementService::upgradePasswordHash">upgradePasswordHash</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="PasswordSecurityService.php.html#53"><abbr title="App\Domains\Auth\Services\PasswordSecurityService::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="PasswordSecurityService.php.html#58"><abbr title="App\Domains\Auth\Services\PasswordSecurityService::hashPassword">hashPassword</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="PasswordSecurityService.php.html#86"><abbr title="App\Domains\Auth\Services\PasswordSecurityService::verifyPassword">verifyPassword</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="PasswordSecurityService.php.html#91"><abbr title="App\Domains\Auth\Services\PasswordSecurityService::needsRehash">needsRehash</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="PasswordSecurityService.php.html#115"><abbr title="App\Domains\Auth\Services\PasswordSecurityService::validatePassword">validatePassword</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="PasswordSecurityService.php.html#152"><abbr title="App\Domains\Auth\Services\PasswordSecurityService::generateSecurePassword">generateSecurePassword</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="PasswordSecurityService.php.html#184"><abbr title="App\Domains\Auth\Services\PasswordSecurityService::calculatePasswordStrength">calculatePasswordStrength</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="PasswordSecurityService.php.html#268"><abbr title="App\Domains\Auth\Services\PasswordSecurityService::validatePasswordComplexity">validatePasswordComplexity</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="PasswordSecurityService.php.html#303"><abbr title="App\Domains\Auth\Services\PasswordSecurityService::isCommonPassword">isCommonPassword</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="PasswordSecurityService.php.html#341"><abbr title="App\Domains\Auth\Services\PasswordSecurityService::hasExcessiveRepetition">hasExcessiveRepetition</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="PasswordSecurityService.php.html#347"><abbr title="App\Domains\Auth\Services\PasswordSecurityService::hasSequentialChars">hasSequentialChars</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="RefreshTokenService.php.html#71"><abbr title="AlleyNote\Domains\Auth\Services\RefreshTokenService::createRefreshToken">createRefreshToken</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="RefreshTokenService.php.html#151"><abbr title="AlleyNote\Domains\Auth\Services\RefreshTokenService::refreshAccessToken">refreshAccessToken</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="RefreshTokenService.php.html#259"><abbr title="AlleyNote\Domains\Auth\Services\RefreshTokenService::revokeAllUserTokens">revokeAllUserTokens</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="RefreshTokenService.php.html#303"><abbr title="AlleyNote\Domains\Auth\Services\RefreshTokenService::revokeDeviceTokens">revokeDeviceTokens</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="RefreshTokenService.php.html#396"><abbr title="AlleyNote\Domains\Auth\Services\RefreshTokenService::validateRefreshToken">validateRefreshToken</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="RefreshTokenService.php.html#423"><abbr title="AlleyNote\Domains\Auth\Services\RefreshTokenService::enforceTokenLimits">enforceTokenLimits</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="RefreshTokenService.php.html#442"><abbr title="AlleyNote\Domains\Auth\Services\RefreshTokenService::verifyDeviceMatchFromData">verifyDeviceMatchFromData</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="RefreshTokenService.php.html#451"><abbr title="AlleyNote\Domains\Auth\Services\RefreshTokenService::performTokenRotationFromData">performTokenRotationFromData</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="RefreshTokenService.php.html#482"><abbr title="AlleyNote\Domains\Auth\Services\RefreshTokenService::verifyDeviceConsistency">verifyDeviceConsistency</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="RefreshTokenService.php.html#538"><abbr title="AlleyNote\Domains\Auth\Services\RefreshTokenService::shouldVerifyDeviceConsistency">shouldVerifyDeviceConsistency</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="RefreshTokenService.php.html#547"><abbr title="AlleyNote\Domains\Auth\Services\RefreshTokenService::getCleanupBatchSize">getCleanupBatchSize</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="RefreshTokenService.php.html#555"><abbr title="AlleyNote\Domains\Auth\Services\RefreshTokenService::getMinCleanupInterval">getMinCleanupInterval</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="RefreshTokenService.php.html#563"><abbr title="AlleyNote\Domains\Auth\Services\RefreshTokenService::getRotationGracePeriod">getRotationGracePeriod</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="AuthenticationService.php.html#197"><abbr title="AlleyNote\Domains\Auth\Services\AuthenticationService::revokeAllUserTokens">revokeAllUserTokens</abbr></a></td><td class="text-right">33%</td></tr>
+       <tr><td><a href="AuthenticationService.php.html#206"><abbr title="AlleyNote\Domains\Auth\Services\AuthenticationService::revokeDeviceTokens">revokeDeviceTokens</abbr></a></td><td class="text-right">33%</td></tr>
+       <tr><td><a href="AuthenticationService.php.html#229"><abbr title="AlleyNote\Domains\Auth\Services\AuthenticationService::cleanupExpiredTokens">cleanupExpiredTokens</abbr></a></td><td class="text-right">33%</td></tr>
+       <tr><td><a href="AuthenticationService.php.html#238"><abbr title="AlleyNote\Domains\Auth\Services\AuthenticationService::cleanupRevokedTokens">cleanupRevokedTokens</abbr></a></td><td class="text-right">33%</td></tr>
+       <tr><td><a href="Advanced/PwnedPasswordService.php.html#94"><abbr title="App\Domains\Auth\Services\Advanced\PwnedPasswordService::fetchHashesFromApi">fetchHashesFromApi</abbr></a></td><td class="text-right">42%</td></tr>
+       <tr><td><a href="Advanced/PwnedPasswordService.php.html#162"><abbr title="App\Domains\Auth\Services\Advanced\PwnedPasswordService::getApiStatus">getApiStatus</abbr></a></td><td class="text-right">50%</td></tr>
+       <tr><td><a href="AuthenticationService.php.html#186"><abbr title="AlleyNote\Domains\Auth\Services\AuthenticationService::revokeRefreshToken">revokeRefreshToken</abbr></a></td><td class="text-right">50%</td></tr>
+       <tr><td><a href="JwtTokenService.php.html#248"><abbr title="AlleyNote\Domains\Auth\Services\JwtTokenService::isTokenOwnedBy">isTokenOwnedBy</abbr></a></td><td class="text-right">50%</td></tr>
+       <tr><td><a href="Advanced/PwnedPasswordService.php.html#40"><abbr title="App\Domains\Auth\Services\Advanced\PwnedPasswordService::isPasswordPwned">isPasswordPwned</abbr></a></td><td class="text-right">54%</td></tr>
+       <tr><td><a href="JwtTokenService.php.html#259"><abbr title="AlleyNote\Domains\Auth\Services\JwtTokenService::isTokenFromDevice">isTokenFromDevice</abbr></a></td><td class="text-right">60%</td></tr>
+       <tr><td><a href="SessionSecurityService.php.html#136"><abbr title="App\Domains\Auth\Services\SessionSecurityService::validateSessionIp">validateSessionIp</abbr></a></td><td class="text-right">66%</td></tr>
+       <tr><td><a href="SessionSecurityService.php.html#148"><abbr title="App\Domains\Auth\Services\SessionSecurityService::validateSessionUserAgent">validateSessionUserAgent</abbr></a></td><td class="text-right">66%</td></tr>
+       <tr><td><a href="SessionSecurityService.php.html#191"><abbr title="App\Domains\Auth\Services\SessionSecurityService::isIpVerificationExpired">isIpVerificationExpired</abbr></a></td><td class="text-right">66%</td></tr>
+       <tr><td><a href="JwtTokenService.php.html#295"><abbr title="AlleyNote\Domains\Auth\Services\JwtTokenService::createJwtPayloadFromArray">createJwtPayloadFromArray</abbr></a></td><td class="text-right">69%</td></tr>
+       <tr><td><a href="AuthenticationService.php.html#108"><abbr title="AlleyNote\Domains\Auth\Services\AuthenticationService::refresh">refresh</abbr></a></td><td class="text-right">75%</td></tr>
+       <tr><td><a href="JwtTokenService.php.html#124"><abbr title="AlleyNote\Domains\Auth\Services\JwtTokenService::validateRefreshToken">validateRefreshToken</abbr></a></td><td class="text-right">77%</td></tr>
+       <tr><td><a href="RefreshTokenService.php.html#505"><abbr title="AlleyNote\Domains\Auth\Services\RefreshTokenService::addToBlacklist">addToBlacklist</abbr></a></td><td class="text-right">77%</td></tr>
+       <tr><td><a href="AuthenticationService.php.html#138"><abbr title="AlleyNote\Domains\Auth\Services\AuthenticationService::logout">logout</abbr></a></td><td class="text-right">80%</td></tr>
+       <tr><td><a href="SessionSecurityService.php.html#78"><abbr title="App\Domains\Auth\Services\SessionSecurityService::isSessionValid">isSessionValid</abbr></a></td><td class="text-right">83%</td></tr>
+       <tr><td><a href="AuthenticationService.php.html#42"><abbr title="AlleyNote\Domains\Auth\Services\AuthenticationService::login">login</abbr></a></td><td class="text-right">87%</td></tr>
+       <tr><td><a href="SessionSecurityService.php.html#203"><abbr title="App\Domains\Auth\Services\SessionSecurityService::performSecurityCheck">performSecurityCheck</abbr></a></td><td class="text-right">88%</td></tr>
+       <tr><td><a href="JwtTokenService.php.html#38"><abbr title="AlleyNote\Domains\Auth\Services\JwtTokenService::generateTokenPair">generateTokenPair</abbr></a></td><td class="text-right">89%</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Project Risks</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Method</th>
+         <th class="text-right"><abbr title="Change Risk Anti-Patterns (CRAP) Index">CRAP</abbr></th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="PasswordSecurityService.php.html#184"><abbr title="App\Domains\Auth\Services\PasswordSecurityService::calculatePasswordStrength">calculatePasswordStrength</abbr></a></td><td class="text-right">306</td></tr>
+       <tr><td><a href="PasswordSecurityService.php.html#268"><abbr title="App\Domains\Auth\Services\PasswordSecurityService::validatePasswordComplexity">validatePasswordComplexity</abbr></a></td><td class="text-right">56</td></tr>
+       <tr><td><a href="RefreshTokenService.php.html#151"><abbr title="AlleyNote\Domains\Auth\Services\RefreshTokenService::refreshAccessToken">refreshAccessToken</abbr></a></td><td class="text-right">56</td></tr>
+       <tr><td><a href="PasswordSecurityService.php.html#115"><abbr title="App\Domains\Auth\Services\PasswordSecurityService::validatePassword">validatePassword</abbr></a></td><td class="text-right">42</td></tr>
+       <tr><td><a href="RefreshTokenService.php.html#259"><abbr title="AlleyNote\Domains\Auth\Services\RefreshTokenService::revokeAllUserTokens">revokeAllUserTokens</abbr></a></td><td class="text-right">42</td></tr>
+       <tr><td><a href="AuthorizationService.php.html#61"><abbr title="App\Domains\Auth\Services\AuthorizationService::assignRole">assignRole</abbr></a></td><td class="text-right">30</td></tr>
+       <tr><td><a href="AuthorizationService.php.html#116"><abbr title="App\Domains\Auth\Services\AuthorizationService::givePermission">givePermission</abbr></a></td><td class="text-right">30</td></tr>
+       <tr><td><a href="PasswordSecurityService.php.html#303"><abbr title="App\Domains\Auth\Services\PasswordSecurityService::isCommonPassword">isCommonPassword</abbr></a></td><td class="text-right">30</td></tr>
+       <tr><td><a href="PasswordSecurityService.php.html#347"><abbr title="App\Domains\Auth\Services\PasswordSecurityService::hasSequentialChars">hasSequentialChars</abbr></a></td><td class="text-right">30</td></tr>
+       <tr><td><a href="AuthenticationService.php.html#250"><abbr title="AlleyNote\Domains\Auth\Services\AuthenticationService::getUserFromToken">getUserFromToken</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="PasswordManagementService.php.html#109"><abbr title="App\Domains\Auth\Services\PasswordManagementService::upgradePasswordHash">upgradePasswordHash</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="PasswordSecurityService.php.html#152"><abbr title="App\Domains\Auth\Services\PasswordSecurityService::generateSecurePassword">generateSecurePassword</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="RefreshTokenService.php.html#396"><abbr title="AlleyNote\Domains\Auth\Services\RefreshTokenService::validateRefreshToken">validateRefreshToken</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="AuthorizationService.php.html#95"><abbr title="App\Domains\Auth\Services\AuthorizationService::removeRole">removeRole</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="AuthorizationService.php.html#150"><abbr title="App\Domains\Auth\Services\AuthorizationService::revokePermission">revokePermission</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="AuthorizationService.php.html#238"><abbr title="App\Domains\Auth\Services\AuthorizationService::canAccessPost">canAccessPost</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="AuthorizationService.php.html#251"><abbr title="App\Domains\Auth\Services\AuthorizationService::canAccessAttachment">canAccessAttachment</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="PasswordManagementService.php.html#33"><abbr title="App\Domains\Auth\Services\PasswordManagementService::changePassword">changePassword</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="PasswordSecurityService.php.html#58"><abbr title="App\Domains\Auth\Services\PasswordSecurityService::hashPassword">hashPassword</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="PasswordSecurityService.php.html#91"><abbr title="App\Domains\Auth\Services\PasswordSecurityService::needsRehash">needsRehash</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="RefreshTokenService.php.html#71"><abbr title="AlleyNote\Domains\Auth\Services\RefreshTokenService::createRefreshToken">createRefreshToken</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="RefreshTokenService.php.html#482"><abbr title="AlleyNote\Domains\Auth\Services\RefreshTokenService::verifyDeviceConsistency">verifyDeviceConsistency</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="JwtTokenService.php.html#295"><abbr title="AlleyNote\Domains\Auth\Services\JwtTokenService::createJwtPayloadFromArray">createJwtPayloadFromArray</abbr></a></td><td class="text-right">9</td></tr>
+       <tr><td><a href="AuthenticationService.php.html#42"><abbr title="AlleyNote\Domains\Auth\Services\AuthenticationService::login">login</abbr></a></td><td class="text-right">8</td></tr>
+       <tr><td><a href="Advanced/PwnedPasswordService.php.html#40"><abbr title="App\Domains\Auth\Services\Advanced\PwnedPasswordService::isPasswordPwned">isPasswordPwned</abbr></a></td><td class="text-right">7</td></tr>
+       <tr><td><a href="SessionSecurityService.php.html#78"><abbr title="App\Domains\Auth\Services\SessionSecurityService::isSessionValid">isSessionValid</abbr></a></td><td class="text-right">7</td></tr>
+       <tr><td><a href="SessionSecurityService.php.html#203"><abbr title="App\Domains\Auth\Services\SessionSecurityService::performSecurityCheck">performSecurityCheck</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="AuthorizationService.php.html#48"><abbr title="App\Domains\Auth\Services\AuthorizationService::can">can</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="AuthorizationService.php.html#216"><abbr title="App\Domains\Auth\Services\AuthorizationService::canUploadAttachment">canUploadAttachment</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="AuthorizationService.php.html#227"><abbr title="App\Domains\Auth\Services\AuthorizationService::canDeleteAttachment">canDeleteAttachment</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="RefreshTokenService.php.html#303"><abbr title="AlleyNote\Domains\Auth\Services\RefreshTokenService::revokeDeviceTokens">revokeDeviceTokens</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="RefreshTokenService.php.html#423"><abbr title="AlleyNote\Domains\Auth\Services\RefreshTokenService::enforceTokenLimits">enforceTokenLimits</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="RefreshTokenService.php.html#442"><abbr title="AlleyNote\Domains\Auth\Services\RefreshTokenService::verifyDeviceMatchFromData">verifyDeviceMatchFromData</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="RefreshTokenService.php.html#451"><abbr title="AlleyNote\Domains\Auth\Services\RefreshTokenService::performTokenRotationFromData">performTokenRotationFromData</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="JwtTokenService.php.html#124"><abbr title="AlleyNote\Domains\Auth\Services\JwtTokenService::validateRefreshToken">validateRefreshToken</abbr></a></td><td class="text-right">5</td></tr>
+       <tr><td><a href="AuthenticationService.php.html#138"><abbr title="AlleyNote\Domains\Auth\Services\AuthenticationService::logout">logout</abbr></a></td><td class="text-right">5</td></tr>
+       <tr><td><a href="Advanced/PwnedPasswordService.php.html#94"><abbr title="App\Domains\Auth\Services\Advanced\PwnedPasswordService::fetchHashesFromApi">fetchHashesFromApi</abbr></a></td><td class="text-right">4</td></tr>
+       <tr><td><a href="AuthenticationService.php.html#197"><abbr title="AlleyNote\Domains\Auth\Services\AuthenticationService::revokeAllUserTokens">revokeAllUserTokens</abbr></a></td><td class="text-right">3</td></tr>
+       <tr><td><a href="AuthenticationService.php.html#206"><abbr title="AlleyNote\Domains\Auth\Services\AuthenticationService::revokeDeviceTokens">revokeDeviceTokens</abbr></a></td><td class="text-right">3</td></tr>
+       <tr><td><a href="AuthenticationService.php.html#229"><abbr title="AlleyNote\Domains\Auth\Services\AuthenticationService::cleanupExpiredTokens">cleanupExpiredTokens</abbr></a></td><td class="text-right">3</td></tr>
+       <tr><td><a href="AuthenticationService.php.html#238"><abbr title="AlleyNote\Domains\Auth\Services\AuthenticationService::cleanupRevokedTokens">cleanupRevokedTokens</abbr></a></td><td class="text-right">3</td></tr>
+       <tr><td><a href="AuthenticationService.php.html#108"><abbr title="AlleyNote\Domains\Auth\Services\AuthenticationService::refresh">refresh</abbr></a></td><td class="text-right">3</td></tr>
+       <tr><td><a href="JwtTokenService.php.html#38"><abbr title="AlleyNote\Domains\Auth\Services\JwtTokenService::generateTokenPair">generateTokenPair</abbr></a></td><td class="text-right">3</td></tr>
+       <tr><td><a href="Advanced/PwnedPasswordService.php.html#162"><abbr title="App\Domains\Auth\Services\Advanced\PwnedPasswordService::getApiStatus">getApiStatus</abbr></a></td><td class="text-right">2</td></tr>
+       <tr><td><a href="AuthenticationService.php.html#186"><abbr title="AlleyNote\Domains\Auth\Services\AuthenticationService::revokeRefreshToken">revokeRefreshToken</abbr></a></td><td class="text-right">2</td></tr>
+       <tr><td><a href="JwtTokenService.php.html#248"><abbr title="AlleyNote\Domains\Auth\Services\JwtTokenService::isTokenOwnedBy">isTokenOwnedBy</abbr></a></td><td class="text-right">2</td></tr>
+       <tr><td><a href="JwtTokenService.php.html#259"><abbr title="AlleyNote\Domains\Auth\Services\JwtTokenService::isTokenFromDevice">isTokenFromDevice</abbr></a></td><td class="text-right">2</td></tr>
+       <tr><td><a href="SessionSecurityService.php.html#136"><abbr title="App\Domains\Auth\Services\SessionSecurityService::validateSessionIp">validateSessionIp</abbr></a></td><td class="text-right">2</td></tr>
+       <tr><td><a href="SessionSecurityService.php.html#148"><abbr title="App\Domains\Auth\Services\SessionSecurityService::validateSessionUserAgent">validateSessionUserAgent</abbr></a></td><td class="text-right">2</td></tr>
+       <tr><td><a href="SessionSecurityService.php.html#191"><abbr title="App\Domains\Auth\Services\SessionSecurityService::isIpVerificationExpired">isIpVerificationExpired</abbr></a></td><td class="text-right">2</td></tr>
+       <tr><td><a href="RefreshTokenService.php.html#505"><abbr title="AlleyNote\Domains\Auth\Services\RefreshTokenService::addToBlacklist">addToBlacklist</abbr></a></td><td class="text-right">2</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+   </div>
+   <footer>
+    <hr/>
+    <p>
+     <small>Generated by <a href="https://github.com/sebastianbergmann/php-code-coverage" target="_top">php-code-coverage 11.0.10</a> using <a href="https://www.php.net/" target="_top">PHP 8.4.11</a> and <a href="https://phpunit.de/">PHPUnit 11.5.34</a> at Fri Aug 29 9:23:06 CST 2025.</small>
+    </p>
+   </footer>
+  </div>
+  <script src="../../../_js/jquery.min.js?v=11.0.10" type="text/javascript"></script>
+  <script src="../../../_js/d3.min.js?v=11.0.10" type="text/javascript"></script>
+  <script src="../../../_js/nv.d3.min.js?v=11.0.10" type="text/javascript"></script>
+  <script type="text/javascript">
+$(document).ready(function() {
+  nv.addGraph(function() {
+    var chart = nv.models.multiBarChart();
+    chart.tooltips(false)
+      .showControls(false)
+      .showLegend(false)
+      .reduceXTicks(false)
+      .staggerLabels(true)
+      .yAxis.tickFormat(d3.format('d'));
+
+    d3.select('#classCoverageDistribution svg')
+      .datum(getCoverageDistributionData([3,0,0,1,0,0,0,2,0,1,3,0], "Class Coverage"))
+      .transition().duration(500).call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  nv.addGraph(function() {
+    var chart = nv.models.multiBarChart();
+    chart.tooltips(false)
+      .showControls(false)
+      .showLegend(false)
+      .reduceXTicks(false)
+      .staggerLabels(true)
+      .yAxis.tickFormat(d3.format('d'));
+
+    d3.select('#methodCoverageDistribution svg')
+      .datum(getCoverageDistributionData([48,0,0,0,4,1,4,5,3,5,2,56], "Method Coverage"))
+      .transition().duration(500).call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  function getCoverageDistributionData(data, label) {
+    var labels = [
+      '0%',
+      '0-10%',
+      '10-20%',
+      '20-30%',
+      '30-40%',
+      '40-50%',
+      '50-60%',
+      '60-70%',
+      '70-80%',
+      '80-90%',
+      '90-100%',
+      '100%'
+    ];
+    var values = [];
+    $.each(labels, function(key) {
+      values.push({x: labels[key], y: data[key]});
+    });
+
+    return [
+      {
+        key: label,
+        values: values,
+        color: "#4572A7"
+      }
+    ];
+  }
+  nv.addGraph(function() {
+    var chart = nv.models.scatterChart()
+      .showDistX(true)
+      .showDistY(true)
+      .showLegend(false)
+      .forceX([0, 100]);
+    chart.tooltipContent(function(graph) {
+      return '<p>' + graph.point.class + '</p>';
+    });
+
+    chart.xAxis.axisLabel('Code Coverage (in percent)');
+    chart.yAxis.axisLabel('Cyclomatic Complexity');
+
+    d3.select('#classComplexity svg')
+      .datum(getComplexityData([[69.33333333333334,23,"<a href=\"Advanced\/PwnedPasswordService.php.html#11\">App\\Domains\\Auth\\Services\\Advanced\\PwnedPasswordService<\/a>"],[97.87234042553192,19,"<a href=\"AuthService.php.html#15\">App\\Domains\\Auth\\Services\\AuthService<\/a>"],[65.85365853658537,37,"<a href=\"AuthenticationService.php.html#32\">AlleyNote\\Domains\\Auth\\Services\\AuthenticationService<\/a>"],[0,35,"<a href=\"AuthorizationService.php.html#12\">App\\Domains\\Auth\\Services\\AuthorizationService<\/a>"],[84.24242424242424,39,"<a href=\"JwtTokenService.php.html#29\">AlleyNote\\Domains\\Auth\\Services\\JwtTokenService<\/a>"],[0,12,"<a href=\"PasswordManagementService.php.html#17\">App\\Domains\\Auth\\Services\\PasswordManagementService<\/a>"],[0,53,"<a href=\"PasswordSecurityService.php.html#11\">App\\Domains\\Auth\\Services\\PasswordSecurityService<\/a>"],[27.615062761506277,47,"<a href=\"RefreshTokenService.php.html#33\">AlleyNote\\Domains\\Auth\\Services\\RefreshTokenService<\/a>"],[91.30434782608695,35,"<a href=\"SessionSecurityService.php.html#9\">App\\Domains\\Auth\\Services\\SessionSecurityService<\/a>"],[99.63636363636364,56,"<a href=\"TokenBlacklistService.php.html#23\">AlleyNote\\Domains\\Auth\\Services\\TokenBlacklistService<\/a>"]], 'Class Complexity'))
+      .transition()
+      .duration(500)
+      .call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  nv.addGraph(function() {
+    var chart = nv.models.scatterChart()
+      .showDistX(true)
+      .showDistY(true)
+      .showLegend(false)
+      .forceX([0, 100]);
+    chart.tooltipContent(function(graph) {
+      return '<p>' + graph.point.class + '</p>';
+    });
+
+    chart.xAxis.axisLabel('Code Coverage (in percent)');
+    chart.yAxis.axisLabel('Method Complexity');
+
+    d3.select('#methodComplexity svg')
+      .datum(getComplexityData([[100,1,"<a href=\"Advanced\/PwnedPasswordService.php.html#23\">App\\Domains\\Auth\\Services\\Advanced\\PwnedPasswordService::__construct<\/a>"],[54.83870967741935,5,"<a href=\"Advanced\/PwnedPasswordService.php.html#40\">App\\Domains\\Auth\\Services\\Advanced\\PwnedPasswordService::isPasswordPwned<\/a>"],[42.857142857142854,3,"<a href=\"Advanced\/PwnedPasswordService.php.html#94\">App\\Domains\\Auth\\Services\\Advanced\\PwnedPasswordService::fetchHashesFromApi<\/a>"],[100,4,"<a href=\"Advanced\/PwnedPasswordService.php.html#115\">App\\Domains\\Auth\\Services\\Advanced\\PwnedPasswordService::findHashInList<\/a>"],[100,2,"<a href=\"Advanced\/PwnedPasswordService.php.html#132\">App\\Domains\\Auth\\Services\\Advanced\\PwnedPasswordService::isInCache<\/a>"],[100,1,"<a href=\"Advanced\/PwnedPasswordService.php.html#138\">App\\Domains\\Auth\\Services\\Advanced\\PwnedPasswordService::getFromCache<\/a>"],[100,1,"<a href=\"Advanced\/PwnedPasswordService.php.html#143\">App\\Domains\\Auth\\Services\\Advanced\\PwnedPasswordService::setCache<\/a>"],[100,1,"<a href=\"Advanced\/PwnedPasswordService.php.html#154\">App\\Domains\\Auth\\Services\\Advanced\\PwnedPasswordService::clearCache<\/a>"],[50,2,"<a href=\"Advanced\/PwnedPasswordService.php.html#162\">App\\Domains\\Auth\\Services\\Advanced\\PwnedPasswordService::getApiStatus<\/a>"],[100,3,"<a href=\"Advanced\/PwnedPasswordService.php.html#182\">App\\Domains\\Auth\\Services\\Advanced\\PwnedPasswordService::checkMultiplePasswords<\/a>"],[100,1,"<a href=\"AuthService.php.html#17\">App\\Domains\\Auth\\Services\\AuthService::__construct<\/a>"],[100,5,"<a href=\"AuthService.php.html#24\">App\\Domains\\Auth\\Services\\AuthService::register<\/a>"],[95.83333333333334,8,"<a href=\"AuthService.php.html#74\">App\\Domains\\Auth\\Services\\AuthService::login<\/a>"],[100,5,"<a href=\"AuthService.php.html#143\">App\\Domains\\Auth\\Services\\AuthService::logout<\/a>"],[100,1,"<a href=\"AuthenticationService.php.html#36\">AlleyNote\\Domains\\Auth\\Services\\AuthenticationService::__construct<\/a>"],[87.5,8,"<a href=\"AuthenticationService.php.html#42\">AlleyNote\\Domains\\Auth\\Services\\AuthenticationService::login<\/a>"],[75,3,"<a href=\"AuthenticationService.php.html#108\">AlleyNote\\Domains\\Auth\\Services\\AuthenticationService::refresh<\/a>"],[80,5,"<a href=\"AuthenticationService.php.html#138\">AlleyNote\\Domains\\Auth\\Services\\AuthenticationService::logout<\/a>"],[100,2,"<a href=\"AuthenticationService.php.html#164\">AlleyNote\\Domains\\Auth\\Services\\AuthenticationService::validateAccessToken<\/a>"],[100,2,"<a href=\"AuthenticationService.php.html#175\">AlleyNote\\Domains\\Auth\\Services\\AuthenticationService::validateRefreshToken<\/a>"],[50,2,"<a href=\"AuthenticationService.php.html#186\">AlleyNote\\Domains\\Auth\\Services\\AuthenticationService::revokeRefreshToken<\/a>"],[33.33333333333333,2,"<a href=\"AuthenticationService.php.html#197\">AlleyNote\\Domains\\Auth\\Services\\AuthenticationService::revokeAllUserTokens<\/a>"],[33.33333333333333,2,"<a href=\"AuthenticationService.php.html#206\">AlleyNote\\Domains\\Auth\\Services\\AuthenticationService::revokeDeviceTokens<\/a>"],[100,2,"<a href=\"AuthenticationService.php.html#215\">AlleyNote\\Domains\\Auth\\Services\\AuthenticationService::getUserTokenStats<\/a>"],[33.33333333333333,2,"<a href=\"AuthenticationService.php.html#229\">AlleyNote\\Domains\\Auth\\Services\\AuthenticationService::cleanupExpiredTokens<\/a>"],[33.33333333333333,2,"<a href=\"AuthenticationService.php.html#238\">AlleyNote\\Domains\\Auth\\Services\\AuthenticationService::cleanupRevokedTokens<\/a>"],[0,4,"<a href=\"AuthenticationService.php.html#250\">AlleyNote\\Domains\\Auth\\Services\\AuthenticationService::getUserFromToken<\/a>"],[0,1,"<a href=\"AuthorizationService.php.html#20\">App\\Domains\\Auth\\Services\\AuthorizationService::__construct<\/a>"],[0,1,"<a href=\"AuthorizationService.php.html#26\">App\\Domains\\Auth\\Services\\AuthorizationService::hasPermission<\/a>"],[0,1,"<a href=\"AuthorizationService.php.html#37\">App\\Domains\\Auth\\Services\\AuthorizationService::hasRole<\/a>"],[0,2,"<a href=\"AuthorizationService.php.html#48\">App\\Domains\\Auth\\Services\\AuthorizationService::can<\/a>"],[0,5,"<a href=\"AuthorizationService.php.html#61\">App\\Domains\\Auth\\Services\\AuthorizationService::assignRole<\/a>"],[0,3,"<a href=\"AuthorizationService.php.html#95\">App\\Domains\\Auth\\Services\\AuthorizationService::removeRole<\/a>"],[0,5,"<a href=\"AuthorizationService.php.html#116\">App\\Domains\\Auth\\Services\\AuthorizationService::givePermission<\/a>"],[0,3,"<a href=\"AuthorizationService.php.html#150\">App\\Domains\\Auth\\Services\\AuthorizationService::revokePermission<\/a>"],[0,1,"<a href=\"AuthorizationService.php.html#171\">App\\Domains\\Auth\\Services\\AuthorizationService::getUserRoles<\/a>"],[0,1,"<a href=\"AuthorizationService.php.html#184\">App\\Domains\\Auth\\Services\\AuthorizationService::getUserPermissions<\/a>"],[0,1,"<a href=\"AuthorizationService.php.html#211\">App\\Domains\\Auth\\Services\\AuthorizationService::isSuperAdmin<\/a>"],[0,2,"<a href=\"AuthorizationService.php.html#216\">App\\Domains\\Auth\\Services\\AuthorizationService::canUploadAttachment<\/a>"],[0,2,"<a href=\"AuthorizationService.php.html#227\">App\\Domains\\Auth\\Services\\AuthorizationService::canDeleteAttachment<\/a>"],[0,3,"<a href=\"AuthorizationService.php.html#238\">App\\Domains\\Auth\\Services\\AuthorizationService::canAccessPost<\/a>"],[0,3,"<a href=\"AuthorizationService.php.html#251\">App\\Domains\\Auth\\Services\\AuthorizationService::canAccessAttachment<\/a>"],[0,1,"<a href=\"AuthorizationService.php.html#269\">App\\Domains\\Auth\\Services\\AuthorizationService::clearUserCache<\/a>"],[100,1,"<a href=\"JwtTokenService.php.html#31\">AlleyNote\\Domains\\Auth\\Services\\JwtTokenService::__construct<\/a>"],[89.58333333333334,3,"<a href=\"JwtTokenService.php.html#38\">AlleyNote\\Domains\\Auth\\Services\\JwtTokenService::generateTokenPair<\/a>"],[100,3,"<a href=\"JwtTokenService.php.html#107\">AlleyNote\\Domains\\Auth\\Services\\JwtTokenService::validateAccessToken<\/a>"],[77.27272727272727,5,"<a href=\"JwtTokenService.php.html#124\">AlleyNote\\Domains\\Auth\\Services\\JwtTokenService::validateRefreshToken<\/a>"],[100,1,"<a href=\"JwtTokenService.php.html#161\">AlleyNote\\Domains\\Auth\\Services\\JwtTokenService::extractPayload<\/a>"],[100,1,"<a href=\"JwtTokenService.php.html#168\">AlleyNote\\Domains\\Auth\\Services\\JwtTokenService::refreshTokens<\/a>"],[100,3,"<a href=\"JwtTokenService.php.html#182\">AlleyNote\\Domains\\Auth\\Services\\JwtTokenService::revokeToken<\/a>"],[100,1,"<a href=\"JwtTokenService.php.html#212\">AlleyNote\\Domains\\Auth\\Services\\JwtTokenService::revokeAllUserTokens<\/a>"],[100,2,"<a href=\"JwtTokenService.php.html#217\">AlleyNote\\Domains\\Auth\\Services\\JwtTokenService::isTokenRevoked<\/a>"],[100,2,"<a href=\"JwtTokenService.php.html#228\">AlleyNote\\Domains\\Auth\\Services\\JwtTokenService::getTokenRemainingTime<\/a>"],[100,2,"<a href=\"JwtTokenService.php.html#241\">AlleyNote\\Domains\\Auth\\Services\\JwtTokenService::isTokenNearExpiry<\/a>"],[50,2,"<a href=\"JwtTokenService.php.html#248\">AlleyNote\\Domains\\Auth\\Services\\JwtTokenService::isTokenOwnedBy<\/a>"],[60,2,"<a href=\"JwtTokenService.php.html#259\">AlleyNote\\Domains\\Auth\\Services\\JwtTokenService::isTokenFromDevice<\/a>"],[100,1,"<a href=\"JwtTokenService.php.html#271\">AlleyNote\\Domains\\Auth\\Services\\JwtTokenService::getAlgorithm<\/a>"],[100,1,"<a href=\"JwtTokenService.php.html#276\">AlleyNote\\Domains\\Auth\\Services\\JwtTokenService::getAccessTokenTtl<\/a>"],[100,1,"<a href=\"JwtTokenService.php.html#281\">AlleyNote\\Domains\\Auth\\Services\\JwtTokenService::getRefreshTokenTtl<\/a>"],[69.23076923076923,8,"<a href=\"JwtTokenService.php.html#295\">AlleyNote\\Domains\\Auth\\Services\\JwtTokenService::createJwtPayloadFromArray<\/a>"],[0,1,"<a href=\"PasswordManagementService.php.html#19\">App\\Domains\\Auth\\Services\\PasswordManagementService::__construct<\/a>"],[0,3,"<a href=\"PasswordManagementService.php.html#33\">App\\Domains\\Auth\\Services\\PasswordManagementService::changePassword<\/a>"],[0,1,"<a href=\"PasswordManagementService.php.html#60\">App\\Domains\\Auth\\Services\\PasswordManagementService::resetPassword<\/a>"],[0,1,"<a href=\"PasswordManagementService.php.html#75\">App\\Domains\\Auth\\Services\\PasswordManagementService::checkPasswordStrength<\/a>"],[0,1,"<a href=\"PasswordManagementService.php.html#86\">App\\Domains\\Auth\\Services\\PasswordManagementService::generateSecurePassword<\/a>"],[0,1,"<a href=\"PasswordManagementService.php.html#97\">App\\Domains\\Auth\\Services\\PasswordManagementService::needsRehash<\/a>"],[0,4,"<a href=\"PasswordManagementService.php.html#109\">App\\Domains\\Auth\\Services\\PasswordManagementService::upgradePasswordHash<\/a>"],[0,1,"<a href=\"PasswordSecurityService.php.html#53\">App\\Domains\\Auth\\Services\\PasswordSecurityService::__construct<\/a>"],[0,3,"<a href=\"PasswordSecurityService.php.html#58\">App\\Domains\\Auth\\Services\\PasswordSecurityService::hashPassword<\/a>"],[0,1,"<a href=\"PasswordSecurityService.php.html#86\">App\\Domains\\Auth\\Services\\PasswordSecurityService::verifyPassword<\/a>"],[0,3,"<a href=\"PasswordSecurityService.php.html#91\">App\\Domains\\Auth\\Services\\PasswordSecurityService::needsRehash<\/a>"],[0,6,"<a href=\"PasswordSecurityService.php.html#115\">App\\Domains\\Auth\\Services\\PasswordSecurityService::validatePassword<\/a>"],[0,4,"<a href=\"PasswordSecurityService.php.html#152\">App\\Domains\\Auth\\Services\\PasswordSecurityService::generateSecurePassword<\/a>"],[0,17,"<a href=\"PasswordSecurityService.php.html#184\">App\\Domains\\Auth\\Services\\PasswordSecurityService::calculatePasswordStrength<\/a>"],[0,7,"<a href=\"PasswordSecurityService.php.html#268\">App\\Domains\\Auth\\Services\\PasswordSecurityService::validatePasswordComplexity<\/a>"],[0,5,"<a href=\"PasswordSecurityService.php.html#303\">App\\Domains\\Auth\\Services\\PasswordSecurityService::isCommonPassword<\/a>"],[0,1,"<a href=\"PasswordSecurityService.php.html#341\">App\\Domains\\Auth\\Services\\PasswordSecurityService::hasExcessiveRepetition<\/a>"],[0,5,"<a href=\"PasswordSecurityService.php.html#347\">App\\Domains\\Auth\\Services\\PasswordSecurityService::hasSequentialChars<\/a>"],[100,1,"<a href=\"RefreshTokenService.php.html#55\">AlleyNote\\Domains\\Auth\\Services\\RefreshTokenService::__construct<\/a>"],[0,3,"<a href=\"RefreshTokenService.php.html#71\">AlleyNote\\Domains\\Auth\\Services\\RefreshTokenService::createRefreshToken<\/a>"],[0,7,"<a href=\"RefreshTokenService.php.html#151\">AlleyNote\\Domains\\Auth\\Services\\RefreshTokenService::refreshAccessToken<\/a>"],[100,3,"<a href=\"RefreshTokenService.php.html#224\">AlleyNote\\Domains\\Auth\\Services\\RefreshTokenService::revokeToken<\/a>"],[0,6,"<a href=\"RefreshTokenService.php.html#259\">AlleyNote\\Domains\\Auth\\Services\\RefreshTokenService::revokeAllUserTokens<\/a>"],[0,2,"<a href=\"RefreshTokenService.php.html#303\">AlleyNote\\Domains\\Auth\\Services\\RefreshTokenService::revokeDeviceTokens<\/a>"],[100,3,"<a href=\"RefreshTokenService.php.html#330\">AlleyNote\\Domains\\Auth\\Services\\RefreshTokenService::cleanupExpiredTokens<\/a>"],[100,3,"<a href=\"RefreshTokenService.php.html#357\">AlleyNote\\Domains\\Auth\\Services\\RefreshTokenService::getUserTokenStats<\/a>"],[0,4,"<a href=\"RefreshTokenService.php.html#396\">AlleyNote\\Domains\\Auth\\Services\\RefreshTokenService::validateRefreshToken<\/a>"],[0,2,"<a href=\"RefreshTokenService.php.html#423\">AlleyNote\\Domains\\Auth\\Services\\RefreshTokenService::enforceTokenLimits<\/a>"],[0,2,"<a href=\"RefreshTokenService.php.html#442\">AlleyNote\\Domains\\Auth\\Services\\RefreshTokenService::verifyDeviceMatchFromData<\/a>"],[0,2,"<a href=\"RefreshTokenService.php.html#451\">AlleyNote\\Domains\\Auth\\Services\\RefreshTokenService::performTokenRotationFromData<\/a>"],[0,3,"<a href=\"RefreshTokenService.php.html#482\">AlleyNote\\Domains\\Auth\\Services\\RefreshTokenService::verifyDeviceConsistency<\/a>"],[77.27272727272727,2,"<a href=\"RefreshTokenService.php.html#505\">AlleyNote\\Domains\\Auth\\Services\\RefreshTokenService::addToBlacklist<\/a>"],[0,1,"<a href=\"RefreshTokenService.php.html#538\">AlleyNote\\Domains\\Auth\\Services\\RefreshTokenService::shouldVerifyDeviceConsistency<\/a>"],[0,1,"<a href=\"RefreshTokenService.php.html#547\">AlleyNote\\Domains\\Auth\\Services\\RefreshTokenService::getCleanupBatchSize<\/a>"],[0,1,"<a href=\"RefreshTokenService.php.html#555\">AlleyNote\\Domains\\Auth\\Services\\RefreshTokenService::getMinCleanupInterval<\/a>"],[0,1,"<a href=\"RefreshTokenService.php.html#563\">AlleyNote\\Domains\\Auth\\Services\\RefreshTokenService::getRotationGracePeriod<\/a>"],[100,3,"<a href=\"SessionSecurityService.php.html#14\">App\\Domains\\Auth\\Services\\SessionSecurityService::initializeSecureSession<\/a>"],[100,2,"<a href=\"SessionSecurityService.php.html#40\">App\\Domains\\Auth\\Services\\SessionSecurityService::regenerateSessionId<\/a>"],[100,3,"<a href=\"SessionSecurityService.php.html#50\">App\\Domains\\Auth\\Services\\SessionSecurityService::destroySession<\/a>"],[83.33333333333334,7,"<a href=\"SessionSecurityService.php.html#78\">App\\Domains\\Auth\\Services\\SessionSecurityService::isSessionValid<\/a>"],[100,2,"<a href=\"SessionSecurityService.php.html#110\">App\\Domains\\Auth\\Services\\SessionSecurityService::updateActivity<\/a>"],[100,1,"<a href=\"SessionSecurityService.php.html#120\">App\\Domains\\Auth\\Services\\SessionSecurityService::setUserSession<\/a>"],[66.66666666666666,2,"<a href=\"SessionSecurityService.php.html#136\">App\\Domains\\Auth\\Services\\SessionSecurityService::validateSessionIp<\/a>"],[66.66666666666666,2,"<a href=\"SessionSecurityService.php.html#148\">App\\Domains\\Auth\\Services\\SessionSecurityService::validateSessionUserAgent<\/a>"],[100,2,"<a href=\"SessionSecurityService.php.html#160\">App\\Domains\\Auth\\Services\\SessionSecurityService::requiresIpVerification<\/a>"],[100,1,"<a href=\"SessionSecurityService.php.html#168\">App\\Domains\\Auth\\Services\\SessionSecurityService::markIpChangeDetected<\/a>"],[100,2,"<a href=\"SessionSecurityService.php.html#178\">App\\Domains\\Auth\\Services\\SessionSecurityService::confirmIpChange<\/a>"],[66.66666666666666,2,"<a href=\"SessionSecurityService.php.html#191\">App\\Domains\\Auth\\Services\\SessionSecurityService::isIpVerificationExpired<\/a>"],[88.88888888888889,6,"<a href=\"SessionSecurityService.php.html#203\">App\\Domains\\Auth\\Services\\SessionSecurityService::performSecurityCheck<\/a>"],[100,1,"<a href=\"TokenBlacklistService.php.html#45\">AlleyNote\\Domains\\Auth\\Services\\TokenBlacklistService::__construct<\/a>"],[100,4,"<a href=\"TokenBlacklistService.php.html#63\">AlleyNote\\Domains\\Auth\\Services\\TokenBlacklistService::blacklistToken<\/a>"],[100,3,"<a href=\"TokenBlacklistService.php.html#118\">AlleyNote\\Domains\\Auth\\Services\\TokenBlacklistService::isTokenBlacklisted<\/a>"],[100,4,"<a href=\"TokenBlacklistService.php.html#143\">AlleyNote\\Domains\\Auth\\Services\\TokenBlacklistService::batchCheckBlacklist<\/a>"],[100,3,"<a href=\"TokenBlacklistService.php.html#176\">AlleyNote\\Domains\\Auth\\Services\\TokenBlacklistService::blacklistUserTokens<\/a>"],[100,3,"<a href=\"TokenBlacklistService.php.html#213\">AlleyNote\\Domains\\Auth\\Services\\TokenBlacklistService::blacklistDeviceTokens<\/a>"],[100,4,"<a href=\"TokenBlacklistService.php.html#248\">AlleyNote\\Domains\\Auth\\Services\\TokenBlacklistService::removeFromBlacklist<\/a>"],[94.11764705882352,4,"<a href=\"TokenBlacklistService.php.html#280\">AlleyNote\\Domains\\Auth\\Services\\TokenBlacklistService::batchRemoveFromBlacklist<\/a>"],[100,2,"<a href=\"TokenBlacklistService.php.html#317\">AlleyNote\\Domains\\Auth\\Services\\TokenBlacklistService::autoCleanup<\/a>"],[100,2,"<a href=\"TokenBlacklistService.php.html#365\">AlleyNote\\Domains\\Auth\\Services\\TokenBlacklistService::getStatistics<\/a>"],[100,3,"<a href=\"TokenBlacklistService.php.html#394\">AlleyNote\\Domains\\Auth\\Services\\TokenBlacklistService::getUserStatistics<\/a>"],[100,6,"<a href=\"TokenBlacklistService.php.html#423\">AlleyNote\\Domains\\Auth\\Services\\TokenBlacklistService::searchBlacklistEntries<\/a>"],[100,2,"<a href=\"TokenBlacklistService.php.html#467\">AlleyNote\\Domains\\Auth\\Services\\TokenBlacklistService::getRecentHighPriorityEntries<\/a>"],[100,2,"<a href=\"TokenBlacklistService.php.html#486\">AlleyNote\\Domains\\Auth\\Services\\TokenBlacklistService::optimize<\/a>"],[100,7,"<a href=\"TokenBlacklistService.php.html#511\">AlleyNote\\Domains\\Auth\\Services\\TokenBlacklistService::getHealthStatus<\/a>"],[100,2,"<a href=\"TokenBlacklistService.php.html#570\">AlleyNote\\Domains\\Auth\\Services\\TokenBlacklistService::validateTokenType<\/a>"],[100,2,"<a href=\"TokenBlacklistService.php.html#586\">AlleyNote\\Domains\\Auth\\Services\\TokenBlacklistService::validateReason<\/a>"],[100,1,"<a href=\"TokenBlacklistService.php.html#615\">AlleyNote\\Domains\\Auth\\Services\\TokenBlacklistService::logBlacklistAction<\/a>"],[100,1,"<a href=\"TokenBlacklistService.php.html#635\">AlleyNote\\Domains\\Auth\\Services\\TokenBlacklistService::logHighPriorityBlacklist<\/a>"]], 'Method Complexity'))
+      .transition()
+      .duration(500)
+      .call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  function getComplexityData(data, label) {
+    var values = [];
+    $.each(data, function(key) {
+      var value = Math.round(data[key][0]*100) / 100;
+      values.push({
+        x: value,
+        y: data[key][1],
+        class: data[key][2],
+        size: 0.05,
+        shape: 'diamond'
+      });
+    });
+
+    return [
+      {
+        key: label,
+        values: values,
+        color: "#4572A7"
+      }
+    ];
+  }
+});
+  </script>
+ </body>
+</html>

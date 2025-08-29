@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Dashboard for /var/www/html/app/Domains/Auth/Exceptions</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="../../../_css/bootstrap.min.css?v=11.0.10" rel="stylesheet" type="text/css">
+  <link href="../../../_css/nv.d3.min.css?v=11.0.10" rel="stylesheet" type="text/css">
+  <link href="../../../_css/style.css?v=11.0.10" rel="stylesheet" type="text/css">
+  <link href="../../../_css/custom.css" rel="stylesheet" type="text/css">
+ </head>
+ <body>
+  <header>
+   <div class="container-fluid">
+    <div class="row">
+     <div class="col-md-12">
+      <nav aria-label="breadcrumb">
+       <ol class="breadcrumb">
+         <li class="breadcrumb-item"><a href="../../../index.html">/var/www/html/app</a></li>
+         <li class="breadcrumb-item"><a href="../../index.html">Domains</a></li>
+         <li class="breadcrumb-item"><a href="../index.html">Auth</a></li>
+         <li class="breadcrumb-item"><a href="index.html">Exceptions</a></li>
+         <li class="breadcrumb-item active">(Dashboard)</li>
+
+       </ol>
+      </nav>
+     </div>
+    </div>
+   </div>
+  </header>
+  <div class="container-fluid">
+   <div class="row">
+    <div class="col-md-12">
+     <h2>Classes</h2>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Coverage Distribution</h3>
+     <div id="classCoverageDistribution" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Complexity</h3>
+     <div id="classComplexity" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Insufficient Coverage</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Class</th>
+         <th class="text-right">Coverage</th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="ForbiddenException.php.html#9">App\Domains\Auth\Exceptions\ForbiddenException</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="JwtConfigurationException.php.html#14">AlleyNote\Domains\Auth\Exceptions\JwtConfigurationException</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="TokenValidationException.php.html#14">AlleyNote\Domains\Auth\Exceptions\TokenValidationException</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="UnauthorizedException.php.html#9">App\Domains\Auth\Exceptions\UnauthorizedException</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="TokenParsingException.php.html#14">AlleyNote\Domains\Auth\Exceptions\TokenParsingException</a></td><td class="text-right">36%</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Project Risks</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Class</th>
+         <th class="text-right"><abbr title="Change Risk Anti-Patterns (CRAP) Index">CRAP</abbr></th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="JwtConfigurationException.php.html#14">AlleyNote\Domains\Auth\Exceptions\JwtConfigurationException</a></td><td class="text-right">272</td></tr>
+       <tr><td><a href="ForbiddenException.php.html#9">App\Domains\Auth\Exceptions\ForbiddenException</a></td><td class="text-right">156</td></tr>
+       <tr><td><a href="TokenValidationException.php.html#14">AlleyNote\Domains\Auth\Exceptions\TokenValidationException</a></td><td class="text-right">156</td></tr>
+       <tr><td><a href="UnauthorizedException.php.html#9">App\Domains\Auth\Exceptions\UnauthorizedException</a></td><td class="text-right">110</td></tr>
+       <tr><td><a href="TokenParsingException.php.html#14">AlleyNote\Domains\Auth\Exceptions\TokenParsingException</a></td><td class="text-right">55</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-12">
+     <h2>Methods</h2>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Coverage Distribution</h3>
+     <div id="methodCoverageDistribution" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Complexity</h3>
+     <div id="methodComplexity" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Insufficient Coverage</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Method</th>
+         <th class="text-right">Coverage</th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="ForbiddenException.php.html#11"><abbr title="App\Domains\Auth\Exceptions\ForbiddenException::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ForbiddenException.php.html#20"><abbr title="App\Domains\Auth\Exceptions\ForbiddenException::insufficientPermissions">insufficientPermissions</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ForbiddenException.php.html#25"><abbr title="App\Domains\Auth\Exceptions\ForbiddenException::notOwner">notOwner</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ForbiddenException.php.html#30"><abbr title="App\Domains\Auth\Exceptions\ForbiddenException::adminRequired">adminRequired</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ForbiddenException.php.html#35"><abbr title="App\Domains\Auth\Exceptions\ForbiddenException::moderatorRequired">moderatorRequired</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ForbiddenException.php.html#40"><abbr title="App\Domains\Auth\Exceptions\ForbiddenException::csrfTokenMismatch">csrfTokenMismatch</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ForbiddenException.php.html#45"><abbr title="App\Domains\Auth\Exceptions\ForbiddenException::ipBlocked">ipBlocked</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ForbiddenException.php.html#50"><abbr title="App\Domains\Auth\Exceptions\ForbiddenException::rateLimitExceeded">rateLimitExceeded</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ForbiddenException.php.html#55"><abbr title="App\Domains\Auth\Exceptions\ForbiddenException::maintenanceMode">maintenanceMode</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ForbiddenException.php.html#60"><abbr title="App\Domains\Auth\Exceptions\ForbiddenException::resourceLocked">resourceLocked</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ForbiddenException.php.html#65"><abbr title="App\Domains\Auth\Exceptions\ForbiddenException::featureDisabled">featureDisabled</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="JwtConfigurationException.php.html#55"><abbr title="AlleyNote\Domains\Auth\Exceptions\JwtConfigurationException::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="JwtConfigurationException.php.html#72"><abbr title="AlleyNote\Domains\Auth\Exceptions\JwtConfigurationException::getReason">getReason</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="JwtConfigurationException.php.html#80"><abbr title="AlleyNote\Domains\Auth\Exceptions\JwtConfigurationException::getUserFriendlyMessage">getUserFriendlyMessage</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="JwtConfigurationException.php.html#101"><abbr title="AlleyNote\Domains\Auth\Exceptions\JwtConfigurationException::invalidKeyFormat">invalidKeyFormat</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="JwtConfigurationException.php.html#111"><abbr title="AlleyNote\Domains\Auth\Exceptions\JwtConfigurationException::keyFileNotReadable">keyFileNotReadable</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="JwtConfigurationException.php.html#121"><abbr title="AlleyNote\Domains\Auth\Exceptions\JwtConfigurationException::invalidPrivateKeyFormat">invalidPrivateKeyFormat</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="JwtConfigurationException.php.html#129"><abbr title="AlleyNote\Domains\Auth\Exceptions\JwtConfigurationException::invalidPublicKeyFormat">invalidPublicKeyFormat</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="JwtConfigurationException.php.html#137"><abbr title="AlleyNote\Domains\Auth\Exceptions\JwtConfigurationException::keyMismatch">keyMismatch</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="TokenParsingException.php.html#64"><abbr title="AlleyNote\Domains\Auth\Exceptions\TokenParsingException::getReason">getReason</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="TokenParsingException.php.html#72"><abbr title="AlleyNote\Domains\Auth\Exceptions\TokenParsingException::getUserFriendlyMessage">getUserFriendlyMessage</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="TokenParsingException.php.html#88"><abbr title="AlleyNote\Domains\Auth\Exceptions\TokenParsingException::emptyToken">emptyToken</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="TokenParsingException.php.html#106"><abbr title="AlleyNote\Domains\Auth\Exceptions\TokenParsingException::jsonDecodeError">jsonDecodeError</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="TokenParsingException.php.html#114"><abbr title="AlleyNote\Domains\Auth\Exceptions\TokenParsingException::base64DecodeError">base64DecodeError</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="TokenValidationException.php.html#49"><abbr title="AlleyNote\Domains\Auth\Exceptions\TokenValidationException::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="TokenValidationException.php.html#66"><abbr title="AlleyNote\Domains\Auth\Exceptions\TokenValidationException::getReason">getReason</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="TokenValidationException.php.html#74"><abbr title="AlleyNote\Domains\Auth\Exceptions\TokenValidationException::getUserFriendlyMessage">getUserFriendlyMessage</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="TokenValidationException.php.html#91"><abbr title="AlleyNote\Domains\Auth\Exceptions\TokenValidationException::invalidSignature">invalidSignature</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="TokenValidationException.php.html#99"><abbr title="AlleyNote\Domains\Auth\Exceptions\TokenValidationException::invalidIssuer">invalidIssuer</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="TokenValidationException.php.html#112"><abbr title="AlleyNote\Domains\Auth\Exceptions\TokenValidationException::invalidAudience">invalidAudience</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="UnauthorizedException.php.html#11"><abbr title="App\Domains\Auth\Exceptions\UnauthorizedException::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="UnauthorizedException.php.html#20"><abbr title="App\Domains\Auth\Exceptions\UnauthorizedException::notLoggedIn">notLoggedIn</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="UnauthorizedException.php.html#25"><abbr title="App\Domains\Auth\Exceptions\UnauthorizedException::invalidCredentials">invalidCredentials</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="UnauthorizedException.php.html#30"><abbr title="App\Domains\Auth\Exceptions\UnauthorizedException::tokenExpired">tokenExpired</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="UnauthorizedException.php.html#35"><abbr title="App\Domains\Auth\Exceptions\UnauthorizedException::tokenInvalid">tokenInvalid</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="UnauthorizedException.php.html#40"><abbr title="App\Domains\Auth\Exceptions\UnauthorizedException::sessionExpired">sessionExpired</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="UnauthorizedException.php.html#45"><abbr title="App\Domains\Auth\Exceptions\UnauthorizedException::accountDisabled">accountDisabled</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="UnauthorizedException.php.html#50"><abbr title="App\Domains\Auth\Exceptions\UnauthorizedException::accountLocked">accountLocked</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="UnauthorizedException.php.html#55"><abbr title="App\Domains\Auth\Exceptions\UnauthorizedException::emailNotVerified">emailNotVerified</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="RefreshTokenException.php.html#93"><abbr title="AlleyNote\Domains\Auth\Exceptions\RefreshTokenException::buildDefaultMessage">buildDefaultMessage</abbr></a></td><td class="text-right">65%</td></tr>
+       <tr><td><a href="AuthenticationException.php.html#85"><abbr title="AlleyNote\Domains\Auth\Exceptions\AuthenticationException::buildDefaultMessage">buildDefaultMessage</abbr></a></td><td class="text-right">87%</td></tr>
+       <tr><td><a href="AuthenticationException.php.html#108"><abbr title="AlleyNote\Domains\Auth\Exceptions\AuthenticationException::getUserFriendlyMessage">getUserFriendlyMessage</abbr></a></td><td class="text-right">88%</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Project Risks</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Method</th>
+         <th class="text-right"><abbr title="Change Risk Anti-Patterns (CRAP) Index">CRAP</abbr></th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="JwtConfigurationException.php.html#80"><abbr title="AlleyNote\Domains\Auth\Exceptions\JwtConfigurationException::getUserFriendlyMessage">getUserFriendlyMessage</abbr></a></td><td class="text-right">72</td></tr>
+       <tr><td><a href="TokenValidationException.php.html#74"><abbr title="AlleyNote\Domains\Auth\Exceptions\TokenValidationException::getUserFriendlyMessage">getUserFriendlyMessage</abbr></a></td><td class="text-right">56</td></tr>
+       <tr><td><a href="TokenParsingException.php.html#72"><abbr title="AlleyNote\Domains\Auth\Exceptions\TokenParsingException::getUserFriendlyMessage">getUserFriendlyMessage</abbr></a></td><td class="text-right">42</td></tr>
+       <tr><td><a href="RefreshTokenException.php.html#93"><abbr title="AlleyNote\Domains\Auth\Exceptions\RefreshTokenException::buildDefaultMessage">buildDefaultMessage</abbr></a></td><td class="text-right">34</td></tr>
+       <tr><td><a href="AuthenticationException.php.html#85"><abbr title="AlleyNote\Domains\Auth\Exceptions\AuthenticationException::buildDefaultMessage">buildDefaultMessage</abbr></a></td><td class="text-right">15</td></tr>
+       <tr><td><a href="AuthenticationException.php.html#108"><abbr title="AlleyNote\Domains\Auth\Exceptions\AuthenticationException::getUserFriendlyMessage">getUserFriendlyMessage</abbr></a></td><td class="text-right">15</td></tr>
+       <tr><td><a href="ForbiddenException.php.html#11"><abbr title="App\Domains\Auth\Exceptions\ForbiddenException::__construct">__construct</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="JwtConfigurationException.php.html#101"><abbr title="AlleyNote\Domains\Auth\Exceptions\JwtConfigurationException::invalidKeyFormat">invalidKeyFormat</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="UnauthorizedException.php.html#11"><abbr title="App\Domains\Auth\Exceptions\UnauthorizedException::__construct">__construct</abbr></a></td><td class="text-right">6</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+   </div>
+   <footer>
+    <hr/>
+    <p>
+     <small>Generated by <a href="https://github.com/sebastianbergmann/php-code-coverage" target="_top">php-code-coverage 11.0.10</a> using <a href="https://www.php.net/" target="_top">PHP 8.4.11</a> and <a href="https://phpunit.de/">PHPUnit 11.5.34</a> at Fri Aug 29 9:23:06 CST 2025.</small>
+    </p>
+   </footer>
+  </div>
+  <script src="../../../_js/jquery.min.js?v=11.0.10" type="text/javascript"></script>
+  <script src="../../../_js/d3.min.js?v=11.0.10" type="text/javascript"></script>
+  <script src="../../../_js/nv.d3.min.js?v=11.0.10" type="text/javascript"></script>
+  <script type="text/javascript">
+$(document).ready(function() {
+  nv.addGraph(function() {
+    var chart = nv.models.multiBarChart();
+    chart.tooltips(false)
+      .showControls(false)
+      .showLegend(false)
+      .reduceXTicks(false)
+      .staggerLabels(true)
+      .yAxis.tickFormat(d3.format('d'));
+
+    d3.select('#classCoverageDistribution svg')
+      .datum(getCoverageDistributionData([4,0,0,0,1,0,0,0,0,0,2,4], "Class Coverage"))
+      .transition().duration(500).call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  nv.addGraph(function() {
+    var chart = nv.models.multiBarChart();
+    chart.tooltips(false)
+      .showControls(false)
+      .showLegend(false)
+      .reduceXTicks(false)
+      .staggerLabels(true)
+      .yAxis.tickFormat(d3.format('d'));
+
+    d3.select('#methodCoverageDistribution svg')
+      .datum(getCoverageDistributionData([39,0,0,0,0,0,0,1,0,2,0,112], "Method Coverage"))
+      .transition().duration(500).call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  function getCoverageDistributionData(data, label) {
+    var labels = [
+      '0%',
+      '0-10%',
+      '10-20%',
+      '20-30%',
+      '30-40%',
+      '40-50%',
+      '50-60%',
+      '60-70%',
+      '70-80%',
+      '80-90%',
+      '90-100%',
+      '100%'
+    ];
+    var values = [];
+    $.each(labels, function(key) {
+      values.push({x: labels[key], y: data[key]});
+    });
+
+    return [
+      {
+        key: label,
+        values: values,
+        color: "#4572A7"
+      }
+    ];
+  }
+  nv.addGraph(function() {
+    var chart = nv.models.scatterChart()
+      .showDistX(true)
+      .showDistY(true)
+      .showLegend(false)
+      .forceX([0, 100]);
+    chart.tooltipContent(function(graph) {
+      return '<p>' + graph.point.class + '</p>';
+    });
+
+    chart.xAxis.axisLabel('Code Coverage (in percent)');
+    chart.yAxis.axisLabel('Cyclomatic Complexity');
+
+    d3.select('#classComplexity svg')
+      .datum(getComplexityData([[96.94656488549617,63,"<a href=\"AuthenticationException.php.html#16\">AlleyNote\\Domains\\Auth\\Exceptions\\AuthenticationException<\/a>"],[0,12,"<a href=\"ForbiddenException.php.html#9\">App\\Domains\\Auth\\Exceptions\\ForbiddenException<\/a>"],[100,39,"<a href=\"InvalidTokenException.php.html#16\">AlleyNote\\Domains\\Auth\\Exceptions\\InvalidTokenException<\/a>"],[0,16,"<a href=\"JwtConfigurationException.php.html#14\">AlleyNote\\Domains\\Auth\\Exceptions\\JwtConfigurationException<\/a>"],[100,11,"<a href=\"JwtException.php.html#18\">AlleyNote\\Domains\\Auth\\Exceptions\\JwtException<\/a>"],[93.69369369369369,53,"<a href=\"RefreshTokenException.php.html#16\">AlleyNote\\Domains\\Auth\\Exceptions\\RefreshTokenException<\/a>"],[100,23,"<a href=\"TokenExpiredException.php.html#16\">AlleyNote\\Domains\\Auth\\Exceptions\\TokenExpiredException<\/a>"],[100,40,"<a href=\"TokenGenerationException.php.html#16\">AlleyNote\\Domains\\Auth\\Exceptions\\TokenGenerationException<\/a>"],[36.84210526315789,13,"<a href=\"TokenParsingException.php.html#14\">AlleyNote\\Domains\\Auth\\Exceptions\\TokenParsingException<\/a>"],[0,12,"<a href=\"TokenValidationException.php.html#14\">AlleyNote\\Domains\\Auth\\Exceptions\\TokenValidationException<\/a>"],[0,10,"<a href=\"UnauthorizedException.php.html#9\">App\\Domains\\Auth\\Exceptions\\UnauthorizedException<\/a>"]], 'Class Complexity'))
+      .transition()
+      .duration(500)
+      .call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  nv.addGraph(function() {
+    var chart = nv.models.scatterChart()
+      .showDistX(true)
+      .showDistY(true)
+      .showLegend(false)
+      .forceX([0, 100]);
+    chart.tooltipContent(function(graph) {
+      return '<p>' + graph.point.class + '</p>';
+    });
+
+    chart.xAxis.axisLabel('Code Coverage (in percent)');
+    chart.yAxis.axisLabel('Method Complexity');
+
+    d3.select('#methodComplexity svg')
+      .datum(getComplexityData([[100,2,"<a href=\"AuthenticationException.php.html#64\">AlleyNote\\Domains\\Auth\\Exceptions\\AuthenticationException::__construct<\/a>"],[87.5,15,"<a href=\"AuthenticationException.php.html#85\">AlleyNote\\Domains\\Auth\\Exceptions\\AuthenticationException::buildDefaultMessage<\/a>"],[88.23529411764706,15,"<a href=\"AuthenticationException.php.html#108\">AlleyNote\\Domains\\Auth\\Exceptions\\AuthenticationException::getUserFriendlyMessage<\/a>"],[100,1,"<a href=\"AuthenticationException.php.html#133\">AlleyNote\\Domains\\Auth\\Exceptions\\AuthenticationException::getReason<\/a>"],[100,1,"<a href=\"AuthenticationException.php.html#141\">AlleyNote\\Domains\\Auth\\Exceptions\\AuthenticationException::getAttemptId<\/a>"],[100,1,"<a href=\"AuthenticationException.php.html#149\">AlleyNote\\Domains\\Auth\\Exceptions\\AuthenticationException::getUserId<\/a>"],[100,1,"<a href=\"AuthenticationException.php.html#157\">AlleyNote\\Domains\\Auth\\Exceptions\\AuthenticationException::getUsername<\/a>"],[100,1,"<a href=\"AuthenticationException.php.html#165\">AlleyNote\\Domains\\Auth\\Exceptions\\AuthenticationException::getIpAddress<\/a>"],[100,1,"<a href=\"AuthenticationException.php.html#173\">AlleyNote\\Domains\\Auth\\Exceptions\\AuthenticationException::getAttemptCount<\/a>"],[100,1,"<a href=\"AuthenticationException.php.html#181\">AlleyNote\\Domains\\Auth\\Exceptions\\AuthenticationException::getLockoutUntil<\/a>"],[100,1,"<a href=\"AuthenticationException.php.html#191\">AlleyNote\\Domains\\Auth\\Exceptions\\AuthenticationException::isReason<\/a>"],[100,1,"<a href=\"AuthenticationException.php.html#199\">AlleyNote\\Domains\\Auth\\Exceptions\\AuthenticationException::isAccountRelated<\/a>"],[100,1,"<a href=\"AuthenticationException.php.html#212\">AlleyNote\\Domains\\Auth\\Exceptions\\AuthenticationException::isCredentialsRelated<\/a>"],[100,1,"<a href=\"AuthenticationException.php.html#224\">AlleyNote\\Domains\\Auth\\Exceptions\\AuthenticationException::isTokenRelated<\/a>"],[100,1,"<a href=\"AuthenticationException.php.html#237\">AlleyNote\\Domains\\Auth\\Exceptions\\AuthenticationException::isSecurityRelated<\/a>"],[100,1,"<a href=\"AuthenticationException.php.html#248\">AlleyNote\\Domains\\Auth\\Exceptions\\AuthenticationException::isRetryable<\/a>"],[100,1,"<a href=\"AuthenticationException.php.html#260\">AlleyNote\\Domains\\Auth\\Exceptions\\AuthenticationException::requiresAccountAction<\/a>"],[100,3,"<a href=\"AuthenticationException.php.html#274\">AlleyNote\\Domains\\Auth\\Exceptions\\AuthenticationException::invalidCredentials<\/a>"],[100,1,"<a href=\"AuthenticationException.php.html#294\">AlleyNote\\Domains\\Auth\\Exceptions\\AuthenticationException::accountLocked<\/a>"],[100,1,"<a href=\"AuthenticationException.php.html#310\">AlleyNote\\Domains\\Auth\\Exceptions\\AuthenticationException::accountDisabled<\/a>"],[100,2,"<a href=\"AuthenticationException.php.html#324\">AlleyNote\\Domains\\Auth\\Exceptions\\AuthenticationException::accountNotVerified<\/a>"],[100,2,"<a href=\"AuthenticationException.php.html#342\">AlleyNote\\Domains\\Auth\\Exceptions\\AuthenticationException::tooManyAttempts<\/a>"],[100,1,"<a href=\"AuthenticationException.php.html#367\">AlleyNote\\Domains\\Auth\\Exceptions\\AuthenticationException::userNotFound<\/a>"],[100,1,"<a href=\"AuthenticationException.php.html#380\">AlleyNote\\Domains\\Auth\\Exceptions\\AuthenticationException::passwordExpired<\/a>"],[100,1,"<a href=\"AuthenticationException.php.html#394\">AlleyNote\\Domains\\Auth\\Exceptions\\AuthenticationException::missingCredentials<\/a>"],[100,1,"<a href=\"AuthenticationException.php.html#407\">AlleyNote\\Domains\\Auth\\Exceptions\\AuthenticationException::invalidToken<\/a>"],[100,2,"<a href=\"AuthenticationException.php.html#420\">AlleyNote\\Domains\\Auth\\Exceptions\\AuthenticationException::tokenRequired<\/a>"],[100,2,"<a href=\"AuthenticationException.php.html#434\">AlleyNote\\Domains\\Auth\\Exceptions\\AuthenticationException::insufficientPrivileges<\/a>"],[0,2,"<a href=\"ForbiddenException.php.html#11\">App\\Domains\\Auth\\Exceptions\\ForbiddenException::__construct<\/a>"],[0,1,"<a href=\"ForbiddenException.php.html#20\">App\\Domains\\Auth\\Exceptions\\ForbiddenException::insufficientPermissions<\/a>"],[0,1,"<a href=\"ForbiddenException.php.html#25\">App\\Domains\\Auth\\Exceptions\\ForbiddenException::notOwner<\/a>"],[0,1,"<a href=\"ForbiddenException.php.html#30\">App\\Domains\\Auth\\Exceptions\\ForbiddenException::adminRequired<\/a>"],[0,1,"<a href=\"ForbiddenException.php.html#35\">App\\Domains\\Auth\\Exceptions\\ForbiddenException::moderatorRequired<\/a>"],[0,1,"<a href=\"ForbiddenException.php.html#40\">App\\Domains\\Auth\\Exceptions\\ForbiddenException::csrfTokenMismatch<\/a>"],[0,1,"<a href=\"ForbiddenException.php.html#45\">App\\Domains\\Auth\\Exceptions\\ForbiddenException::ipBlocked<\/a>"],[0,1,"<a href=\"ForbiddenException.php.html#50\">App\\Domains\\Auth\\Exceptions\\ForbiddenException::rateLimitExceeded<\/a>"],[0,1,"<a href=\"ForbiddenException.php.html#55\">App\\Domains\\Auth\\Exceptions\\ForbiddenException::maintenanceMode<\/a>"],[0,1,"<a href=\"ForbiddenException.php.html#60\">App\\Domains\\Auth\\Exceptions\\ForbiddenException::resourceLocked<\/a>"],[0,1,"<a href=\"ForbiddenException.php.html#65\">App\\Domains\\Auth\\Exceptions\\ForbiddenException::featureDisabled<\/a>"],[100,2,"<a href=\"InvalidTokenException.php.html#66\">AlleyNote\\Domains\\Auth\\Exceptions\\InvalidTokenException::__construct<\/a>"],[100,12,"<a href=\"InvalidTokenException.php.html#89\">AlleyNote\\Domains\\Auth\\Exceptions\\InvalidTokenException::buildDefaultMessage<\/a>"],[100,8,"<a href=\"InvalidTokenException.php.html#110\">AlleyNote\\Domains\\Auth\\Exceptions\\InvalidTokenException::getUserFriendlyMessage<\/a>"],[100,1,"<a href=\"InvalidTokenException.php.html#132\">AlleyNote\\Domains\\Auth\\Exceptions\\InvalidTokenException::getReason<\/a>"],[100,1,"<a href=\"InvalidTokenException.php.html#140\">AlleyNote\\Domains\\Auth\\Exceptions\\InvalidTokenException::getTokenType<\/a>"],[100,1,"<a href=\"InvalidTokenException.php.html#150\">AlleyNote\\Domains\\Auth\\Exceptions\\InvalidTokenException::isReason<\/a>"],[100,1,"<a href=\"InvalidTokenException.php.html#158\">AlleyNote\\Domains\\Auth\\Exceptions\\InvalidTokenException::isAccessTokenInvalid<\/a>"],[100,1,"<a href=\"InvalidTokenException.php.html#166\">AlleyNote\\Domains\\Auth\\Exceptions\\InvalidTokenException::isRefreshTokenInvalid<\/a>"],[100,1,"<a href=\"InvalidTokenException.php.html#174\">AlleyNote\\Domains\\Auth\\Exceptions\\InvalidTokenException::isSignatureRelated<\/a>"],[100,1,"<a href=\"InvalidTokenException.php.html#185\">AlleyNote\\Domains\\Auth\\Exceptions\\InvalidTokenException::isFormatRelated<\/a>"],[100,1,"<a href=\"InvalidTokenException.php.html#196\">AlleyNote\\Domains\\Auth\\Exceptions\\InvalidTokenException::isClaimsRelated<\/a>"],[100,1,"<a href=\"InvalidTokenException.php.html#212\">AlleyNote\\Domains\\Auth\\Exceptions\\InvalidTokenException::malformed<\/a>"],[100,1,"<a href=\"InvalidTokenException.php.html#223\">AlleyNote\\Domains\\Auth\\Exceptions\\InvalidTokenException::signatureInvalid<\/a>"],[100,1,"<a href=\"InvalidTokenException.php.html#235\">AlleyNote\\Domains\\Auth\\Exceptions\\InvalidTokenException::algorithmMismatch<\/a>"],[100,1,"<a href=\"InvalidTokenException.php.html#253\">AlleyNote\\Domains\\Auth\\Exceptions\\InvalidTokenException::issuerInvalid<\/a>"],[100,1,"<a href=\"InvalidTokenException.php.html#271\">AlleyNote\\Domains\\Auth\\Exceptions\\InvalidTokenException::audienceInvalid<\/a>"],[100,1,"<a href=\"InvalidTokenException.php.html#287\">AlleyNote\\Domains\\Auth\\Exceptions\\InvalidTokenException::subjectMissing<\/a>"],[100,1,"<a href=\"InvalidTokenException.php.html#298\">AlleyNote\\Domains\\Auth\\Exceptions\\InvalidTokenException::claimsInvalid<\/a>"],[100,1,"<a href=\"InvalidTokenException.php.html#311\">AlleyNote\\Domains\\Auth\\Exceptions\\InvalidTokenException::blacklisted<\/a>"],[100,1,"<a href=\"InvalidTokenException.php.html#324\">AlleyNote\\Domains\\Auth\\Exceptions\\InvalidTokenException::notBefore<\/a>"],[0,1,"<a href=\"JwtConfigurationException.php.html#55\">AlleyNote\\Domains\\Auth\\Exceptions\\JwtConfigurationException::__construct<\/a>"],[0,1,"<a href=\"JwtConfigurationException.php.html#72\">AlleyNote\\Domains\\Auth\\Exceptions\\JwtConfigurationException::getReason<\/a>"],[0,8,"<a href=\"JwtConfigurationException.php.html#80\">AlleyNote\\Domains\\Auth\\Exceptions\\JwtConfigurationException::getUserFriendlyMessage<\/a>"],[0,2,"<a href=\"JwtConfigurationException.php.html#101\">AlleyNote\\Domains\\Auth\\Exceptions\\JwtConfigurationException::invalidKeyFormat<\/a>"],[0,1,"<a href=\"JwtConfigurationException.php.html#111\">AlleyNote\\Domains\\Auth\\Exceptions\\JwtConfigurationException::keyFileNotReadable<\/a>"],[0,1,"<a href=\"JwtConfigurationException.php.html#121\">AlleyNote\\Domains\\Auth\\Exceptions\\JwtConfigurationException::invalidPrivateKeyFormat<\/a>"],[0,1,"<a href=\"JwtConfigurationException.php.html#129\">AlleyNote\\Domains\\Auth\\Exceptions\\JwtConfigurationException::invalidPublicKeyFormat<\/a>"],[0,1,"<a href=\"JwtConfigurationException.php.html#137\">AlleyNote\\Domains\\Auth\\Exceptions\\JwtConfigurationException::keyMismatch<\/a>"],[100,1,"<a href=\"JwtException.php.html#40\">AlleyNote\\Domains\\Auth\\Exceptions\\JwtException::__construct<\/a>"],[100,1,"<a href=\"JwtException.php.html#55\">AlleyNote\\Domains\\Auth\\Exceptions\\JwtException::getContext<\/a>"],[100,1,"<a href=\"JwtException.php.html#65\">AlleyNote\\Domains\\Auth\\Exceptions\\JwtException::setContext<\/a>"],[100,1,"<a href=\"JwtException.php.html#78\">AlleyNote\\Domains\\Auth\\Exceptions\\JwtException::addContext<\/a>"],[100,1,"<a href=\"JwtException.php.html#88\">AlleyNote\\Domains\\Auth\\Exceptions\\JwtException::getErrorType<\/a>"],[100,1,"<a href=\"JwtException.php.html#98\">AlleyNote\\Domains\\Auth\\Exceptions\\JwtException::getErrorDetails<\/a>"],[100,1,"<a href=\"JwtException.php.html#115\">AlleyNote\\Domains\\Auth\\Exceptions\\JwtException::getUserFriendlyMessage<\/a>"],[100,1,"<a href=\"JwtException.php.html#125\">AlleyNote\\Domains\\Auth\\Exceptions\\JwtException::isType<\/a>"],[100,1,"<a href=\"JwtException.php.html#135\">AlleyNote\\Domains\\Auth\\Exceptions\\JwtException::toArray<\/a>"],[100,2,"<a href=\"JwtException.php.html#152\">AlleyNote\\Domains\\Auth\\Exceptions\\JwtException::__toString<\/a>"],[100,2,"<a href=\"RefreshTokenException.php.html#72\">AlleyNote\\Domains\\Auth\\Exceptions\\RefreshTokenException::__construct<\/a>"],[65,19,"<a href=\"RefreshTokenException.php.html#93\">AlleyNote\\Domains\\Auth\\Exceptions\\RefreshTokenException::buildDefaultMessage<\/a>"],[100,11,"<a href=\"RefreshTokenException.php.html#120\">AlleyNote\\Domains\\Auth\\Exceptions\\RefreshTokenException::getUserFriendlyMessage<\/a>"],[100,1,"<a href=\"RefreshTokenException.php.html#142\">AlleyNote\\Domains\\Auth\\Exceptions\\RefreshTokenException::getReason<\/a>"],[100,1,"<a href=\"RefreshTokenException.php.html#150\">AlleyNote\\Domains\\Auth\\Exceptions\\RefreshTokenException::getOperationId<\/a>"],[100,1,"<a href=\"RefreshTokenException.php.html#158\">AlleyNote\\Domains\\Auth\\Exceptions\\RefreshTokenException::getUserId<\/a>"],[100,1,"<a href=\"RefreshTokenException.php.html#166\">AlleyNote\\Domains\\Auth\\Exceptions\\RefreshTokenException::getTokenId<\/a>"],[100,1,"<a href=\"RefreshTokenException.php.html#176\">AlleyNote\\Domains\\Auth\\Exceptions\\RefreshTokenException::getDeviceInfo<\/a>"],[100,1,"<a href=\"RefreshTokenException.php.html#186\">AlleyNote\\Domains\\Auth\\Exceptions\\RefreshTokenException::isReason<\/a>"],[100,1,"<a href=\"RefreshTokenException.php.html#194\">AlleyNote\\Domains\\Auth\\Exceptions\\RefreshTokenException::isSecurityRelated<\/a>"],[100,1,"<a href=\"RefreshTokenException.php.html#208\">AlleyNote\\Domains\\Auth\\Exceptions\\RefreshTokenException::isDatabaseRelated<\/a>"],[100,1,"<a href=\"RefreshTokenException.php.html#219\">AlleyNote\\Domains\\Auth\\Exceptions\\RefreshTokenException::isRetryable<\/a>"],[100,1,"<a href=\"RefreshTokenException.php.html#231\">AlleyNote\\Domains\\Auth\\Exceptions\\RefreshTokenException::requiresReauth<\/a>"],[100,2,"<a href=\"RefreshTokenException.php.html#242\">AlleyNote\\Domains\\Auth\\Exceptions\\RefreshTokenException::notFound<\/a>"],[100,1,"<a href=\"RefreshTokenException.php.html#259\">AlleyNote\\Domains\\Auth\\Exceptions\\RefreshTokenException::revoked<\/a>"],[100,1,"<a href=\"RefreshTokenException.php.html#275\">AlleyNote\\Domains\\Auth\\Exceptions\\RefreshTokenException::alreadyUsed<\/a>"],[100,1,"<a href=\"RefreshTokenException.php.html#291\">AlleyNote\\Domains\\Auth\\Exceptions\\RefreshTokenException::deviceMismatch<\/a>"],[100,1,"<a href=\"RefreshTokenException.php.html#310\">AlleyNote\\Domains\\Auth\\Exceptions\\RefreshTokenException::userMismatch<\/a>"],[100,1,"<a href=\"RefreshTokenException.php.html#325\">AlleyNote\\Domains\\Auth\\Exceptions\\RefreshTokenException::storageFailed<\/a>"],[100,1,"<a href=\"RefreshTokenException.php.html#339\">AlleyNote\\Domains\\Auth\\Exceptions\\RefreshTokenException::deletionFailed<\/a>"],[100,1,"<a href=\"RefreshTokenException.php.html#353\">AlleyNote\\Domains\\Auth\\Exceptions\\RefreshTokenException::rotationFailed<\/a>"],[100,1,"<a href=\"RefreshTokenException.php.html#368\">AlleyNote\\Domains\\Auth\\Exceptions\\RefreshTokenException::limitExceeded<\/a>"],[100,1,"<a href=\"RefreshTokenException.php.html#384\">AlleyNote\\Domains\\Auth\\Exceptions\\RefreshTokenException::familyMismatch<\/a>"],[100,3,"<a href=\"TokenExpiredException.php.html#43\">AlleyNote\\Domains\\Auth\\Exceptions\\TokenExpiredException::__construct<\/a>"],[100,3,"<a href=\"TokenExpiredException.php.html#75\">AlleyNote\\Domains\\Auth\\Exceptions\\TokenExpiredException::buildDefaultMessage<\/a>"],[100,8,"<a href=\"TokenExpiredException.php.html#94\">AlleyNote\\Domains\\Auth\\Exceptions\\TokenExpiredException::formatDuration<\/a>"],[100,2,"<a href=\"TokenExpiredException.php.html#120\">AlleyNote\\Domains\\Auth\\Exceptions\\TokenExpiredException::getUserFriendlyMessage<\/a>"],[100,1,"<a href=\"TokenExpiredException.php.html#134\">AlleyNote\\Domains\\Auth\\Exceptions\\TokenExpiredException::isAccessTokenExpired<\/a>"],[100,1,"<a href=\"TokenExpiredException.php.html#142\">AlleyNote\\Domains\\Auth\\Exceptions\\TokenExpiredException::isRefreshTokenExpired<\/a>"],[100,1,"<a href=\"TokenExpiredException.php.html#150\">AlleyNote\\Domains\\Auth\\Exceptions\\TokenExpiredException::getTokenType<\/a>"],[100,1,"<a href=\"TokenExpiredException.php.html#158\">AlleyNote\\Domains\\Auth\\Exceptions\\TokenExpiredException::getExpiredAt<\/a>"],[100,1,"<a href=\"TokenExpiredException.php.html#166\">AlleyNote\\Domains\\Auth\\Exceptions\\TokenExpiredException::getExpiredDuration<\/a>"],[100,1,"<a href=\"TokenExpiredException.php.html#177\">AlleyNote\\Domains\\Auth\\Exceptions\\TokenExpiredException::accessToken<\/a>"],[100,1,"<a href=\"TokenExpiredException.php.html#188\">AlleyNote\\Domains\\Auth\\Exceptions\\TokenExpiredException::refreshToken<\/a>"],[100,2,"<a href=\"TokenGenerationException.php.html#62\">AlleyNote\\Domains\\Auth\\Exceptions\\TokenGenerationException::__construct<\/a>"],[100,10,"<a href=\"TokenGenerationException.php.html#86\">AlleyNote\\Domains\\Auth\\Exceptions\\TokenGenerationException::buildDefaultMessage<\/a>"],[100,7,"<a href=\"TokenGenerationException.php.html#105\">AlleyNote\\Domains\\Auth\\Exceptions\\TokenGenerationException::getUserFriendlyMessage<\/a>"],[100,1,"<a href=\"TokenGenerationException.php.html#124\">AlleyNote\\Domains\\Auth\\Exceptions\\TokenGenerationException::getReason<\/a>"],[100,1,"<a href=\"TokenGenerationException.php.html#132\">AlleyNote\\Domains\\Auth\\Exceptions\\TokenGenerationException::getTokenType<\/a>"],[100,1,"<a href=\"TokenGenerationException.php.html#140\">AlleyNote\\Domains\\Auth\\Exceptions\\TokenGenerationException::getGenerationAttemptId<\/a>"],[100,1,"<a href=\"TokenGenerationException.php.html#150\">AlleyNote\\Domains\\Auth\\Exceptions\\TokenGenerationException::isReason<\/a>"],[100,1,"<a href=\"TokenGenerationException.php.html#158\">AlleyNote\\Domains\\Auth\\Exceptions\\TokenGenerationException::isAccessTokenGeneration<\/a>"],[100,1,"<a href=\"TokenGenerationException.php.html#166\">AlleyNote\\Domains\\Auth\\Exceptions\\TokenGenerationException::isRefreshTokenGeneration<\/a>"],[100,1,"<a href=\"TokenGenerationException.php.html#174\">AlleyNote\\Domains\\Auth\\Exceptions\\TokenGenerationException::isKeyRelated<\/a>"],[100,1,"<a href=\"TokenGenerationException.php.html#185\">AlleyNote\\Domains\\Auth\\Exceptions\\TokenGenerationException::isDataRelated<\/a>"],[100,1,"<a href=\"TokenGenerationException.php.html#196\">AlleyNote\\Domains\\Auth\\Exceptions\\TokenGenerationException::isSystemConfigurationError<\/a>"],[100,1,"<a href=\"TokenGenerationException.php.html#208\">AlleyNote\\Domains\\Auth\\Exceptions\\TokenGenerationException::isRetryable<\/a>"],[100,2,"<a href=\"TokenGenerationException.php.html#222\">AlleyNote\\Domains\\Auth\\Exceptions\\TokenGenerationException::keyInvalid<\/a>"],[100,1,"<a href=\"TokenGenerationException.php.html#234\">AlleyNote\\Domains\\Auth\\Exceptions\\TokenGenerationException::keyMissing<\/a>"],[100,1,"<a href=\"TokenGenerationException.php.html#245\">AlleyNote\\Domains\\Auth\\Exceptions\\TokenGenerationException::payloadInvalid<\/a>"],[100,1,"<a href=\"TokenGenerationException.php.html#258\">AlleyNote\\Domains\\Auth\\Exceptions\\TokenGenerationException::algorithmUnsupported<\/a>"],[100,1,"<a href=\"TokenGenerationException.php.html#271\">AlleyNote\\Domains\\Auth\\Exceptions\\TokenGenerationException::claimsInvalid<\/a>"],[100,2,"<a href=\"TokenGenerationException.php.html#284\">AlleyNote\\Domains\\Auth\\Exceptions\\TokenGenerationException::signatureFailed<\/a>"],[100,1,"<a href=\"TokenGenerationException.php.html#297\">AlleyNote\\Domains\\Auth\\Exceptions\\TokenGenerationException::resourceExhausted<\/a>"],[100,2,"<a href=\"TokenGenerationException.php.html#310\">AlleyNote\\Domains\\Auth\\Exceptions\\TokenGenerationException::encodingFailed<\/a>"],[100,1,"<a href=\"TokenParsingException.php.html#47\">AlleyNote\\Domains\\Auth\\Exceptions\\TokenParsingException::__construct<\/a>"],[0,1,"<a href=\"TokenParsingException.php.html#64\">AlleyNote\\Domains\\Auth\\Exceptions\\TokenParsingException::getReason<\/a>"],[0,6,"<a href=\"TokenParsingException.php.html#72\">AlleyNote\\Domains\\Auth\\Exceptions\\TokenParsingException::getUserFriendlyMessage<\/a>"],[0,1,"<a href=\"TokenParsingException.php.html#88\">AlleyNote\\Domains\\Auth\\Exceptions\\TokenParsingException::emptyToken<\/a>"],[100,2,"<a href=\"TokenParsingException.php.html#96\">AlleyNote\\Domains\\Auth\\Exceptions\\TokenParsingException::invalidFormat<\/a>"],[0,1,"<a href=\"TokenParsingException.php.html#106\">AlleyNote\\Domains\\Auth\\Exceptions\\TokenParsingException::jsonDecodeError<\/a>"],[0,1,"<a href=\"TokenParsingException.php.html#114\">AlleyNote\\Domains\\Auth\\Exceptions\\TokenParsingException::base64DecodeError<\/a>"],[0,1,"<a href=\"TokenValidationException.php.html#49\">AlleyNote\\Domains\\Auth\\Exceptions\\TokenValidationException::__construct<\/a>"],[0,1,"<a href=\"TokenValidationException.php.html#66\">AlleyNote\\Domains\\Auth\\Exceptions\\TokenValidationException::getReason<\/a>"],[0,7,"<a href=\"TokenValidationException.php.html#74\">AlleyNote\\Domains\\Auth\\Exceptions\\TokenValidationException::getUserFriendlyMessage<\/a>"],[0,1,"<a href=\"TokenValidationException.php.html#91\">AlleyNote\\Domains\\Auth\\Exceptions\\TokenValidationException::invalidSignature<\/a>"],[0,1,"<a href=\"TokenValidationException.php.html#99\">AlleyNote\\Domains\\Auth\\Exceptions\\TokenValidationException::invalidIssuer<\/a>"],[0,1,"<a href=\"TokenValidationException.php.html#112\">AlleyNote\\Domains\\Auth\\Exceptions\\TokenValidationException::invalidAudience<\/a>"],[0,2,"<a href=\"UnauthorizedException.php.html#11\">App\\Domains\\Auth\\Exceptions\\UnauthorizedException::__construct<\/a>"],[0,1,"<a href=\"UnauthorizedException.php.html#20\">App\\Domains\\Auth\\Exceptions\\UnauthorizedException::notLoggedIn<\/a>"],[0,1,"<a href=\"UnauthorizedException.php.html#25\">App\\Domains\\Auth\\Exceptions\\UnauthorizedException::invalidCredentials<\/a>"],[0,1,"<a href=\"UnauthorizedException.php.html#30\">App\\Domains\\Auth\\Exceptions\\UnauthorizedException::tokenExpired<\/a>"],[0,1,"<a href=\"UnauthorizedException.php.html#35\">App\\Domains\\Auth\\Exceptions\\UnauthorizedException::tokenInvalid<\/a>"],[0,1,"<a href=\"UnauthorizedException.php.html#40\">App\\Domains\\Auth\\Exceptions\\UnauthorizedException::sessionExpired<\/a>"],[0,1,"<a href=\"UnauthorizedException.php.html#45\">App\\Domains\\Auth\\Exceptions\\UnauthorizedException::accountDisabled<\/a>"],[0,1,"<a href=\"UnauthorizedException.php.html#50\">App\\Domains\\Auth\\Exceptions\\UnauthorizedException::accountLocked<\/a>"],[0,1,"<a href=\"UnauthorizedException.php.html#55\">App\\Domains\\Auth\\Exceptions\\UnauthorizedException::emailNotVerified<\/a>"]], 'Method Complexity'))
+      .transition()
+      .duration(500)
+      .call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  function getComplexityData(data, label) {
+    var values = [];
+    $.each(data, function(key) {
+      var value = Math.round(data[key][0]*100) / 100;
+      values.push({
+        x: value,
+        y: data[key][1],
+        class: data[key][2],
+        size: 0.05,
+        shape: 'diamond'
+      });
+    });
+
+    return [
+      {
+        key: label,
+        values: values,
+        color: "#4572A7"
+      }
+    ];
+  }
+});
+  </script>
+ </body>
+</html>

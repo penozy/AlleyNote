@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Dashboard for /var/www/html/app/Domains/Auth/Entities</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="../../../_css/bootstrap.min.css?v=11.0.10" rel="stylesheet" type="text/css">
+  <link href="../../../_css/nv.d3.min.css?v=11.0.10" rel="stylesheet" type="text/css">
+  <link href="../../../_css/style.css?v=11.0.10" rel="stylesheet" type="text/css">
+  <link href="../../../_css/custom.css" rel="stylesheet" type="text/css">
+ </head>
+ <body>
+  <header>
+   <div class="container-fluid">
+    <div class="row">
+     <div class="col-md-12">
+      <nav aria-label="breadcrumb">
+       <ol class="breadcrumb">
+         <li class="breadcrumb-item"><a href="../../../index.html">/var/www/html/app</a></li>
+         <li class="breadcrumb-item"><a href="../../index.html">Domains</a></li>
+         <li class="breadcrumb-item"><a href="../index.html">Auth</a></li>
+         <li class="breadcrumb-item"><a href="index.html">Entities</a></li>
+         <li class="breadcrumb-item active">(Dashboard)</li>
+
+       </ol>
+      </nav>
+     </div>
+    </div>
+   </div>
+  </header>
+  <div class="container-fluid">
+   <div class="row">
+    <div class="col-md-12">
+     <h2>Classes</h2>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Coverage Distribution</h3>
+     <div id="classCoverageDistribution" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Complexity</h3>
+     <div id="classComplexity" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Insufficient Coverage</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Class</th>
+         <th class="text-right">Coverage</th>
+        </tr>
+       </thead>
+       <tbody>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Project Risks</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Class</th>
+         <th class="text-right"><abbr title="Change Risk Anti-Patterns (CRAP) Index">CRAP</abbr></th>
+        </tr>
+       </thead>
+       <tbody>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-12">
+     <h2>Methods</h2>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Coverage Distribution</h3>
+     <div id="methodCoverageDistribution" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Complexity</h3>
+     <div id="methodComplexity" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Insufficient Coverage</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Method</th>
+         <th class="text-right">Coverage</th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="RefreshToken.php.html#171"><abbr title="AlleyNote\Domains\Auth\Entities\RefreshToken::getParentTokenJti">getParentTokenJti</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="RefreshToken.php.html#179"><abbr title="AlleyNote\Domains\Auth\Entities\RefreshToken::getCreatedAt">getCreatedAt</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="RefreshToken.php.html#492"><abbr title="AlleyNote\Domains\Auth\Entities\RefreshToken::validateRevokedData">validateRevokedData</abbr></a></td><td class="text-right">71%</td></tr>
+       <tr><td><a href="RefreshToken.php.html#443"><abbr title="AlleyNote\Domains\Auth\Entities\RefreshToken::validateTokenHash">validateTokenHash</abbr></a></td><td class="text-right">75%</td></tr>
+       <tr><td><a href="RefreshToken.php.html#477"><abbr title="AlleyNote\Domains\Auth\Entities\RefreshToken::validateExpirationTime">validateExpirationTime</abbr></a></td><td class="text-right">75%</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Project Risks</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Method</th>
+         <th class="text-right"><abbr title="Change Risk Anti-Patterns (CRAP) Index">CRAP</abbr></th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="RefreshToken.php.html#492"><abbr title="AlleyNote\Domains\Auth\Entities\RefreshToken::validateRevokedData">validateRevokedData</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="RefreshToken.php.html#179"><abbr title="AlleyNote\Domains\Auth\Entities\RefreshToken::getCreatedAt">getCreatedAt</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="RefreshToken.php.html#443"><abbr title="AlleyNote\Domains\Auth\Entities\RefreshToken::validateTokenHash">validateTokenHash</abbr></a></td><td class="text-right">3</td></tr>
+       <tr><td><a href="RefreshToken.php.html#477"><abbr title="AlleyNote\Domains\Auth\Entities\RefreshToken::validateExpirationTime">validateExpirationTime</abbr></a></td><td class="text-right">2</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+   </div>
+   <footer>
+    <hr/>
+    <p>
+     <small>Generated by <a href="https://github.com/sebastianbergmann/php-code-coverage" target="_top">php-code-coverage 11.0.10</a> using <a href="https://www.php.net/" target="_top">PHP 8.4.11</a> and <a href="https://phpunit.de/">PHPUnit 11.5.34</a> at Fri Aug 29 9:23:06 CST 2025.</small>
+    </p>
+   </footer>
+  </div>
+  <script src="../../../_js/jquery.min.js?v=11.0.10" type="text/javascript"></script>
+  <script src="../../../_js/d3.min.js?v=11.0.10" type="text/javascript"></script>
+  <script src="../../../_js/nv.d3.min.js?v=11.0.10" type="text/javascript"></script>
+  <script type="text/javascript">
+$(document).ready(function() {
+  nv.addGraph(function() {
+    var chart = nv.models.multiBarChart();
+    chart.tooltips(false)
+      .showControls(false)
+      .showLegend(false)
+      .reduceXTicks(false)
+      .staggerLabels(true)
+      .yAxis.tickFormat(d3.format('d'));
+
+    d3.select('#classCoverageDistribution svg')
+      .datum(getCoverageDistributionData([0,0,0,0,0,0,0,0,0,0,1,0], "Class Coverage"))
+      .transition().duration(500).call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  nv.addGraph(function() {
+    var chart = nv.models.multiBarChart();
+    chart.tooltips(false)
+      .showControls(false)
+      .showLegend(false)
+      .reduceXTicks(false)
+      .staggerLabels(true)
+      .yAxis.tickFormat(d3.format('d'));
+
+    d3.select('#methodCoverageDistribution svg')
+      .datum(getCoverageDistributionData([2,0,0,0,0,0,0,0,3,0,0,30], "Method Coverage"))
+      .transition().duration(500).call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  function getCoverageDistributionData(data, label) {
+    var labels = [
+      '0%',
+      '0-10%',
+      '10-20%',
+      '20-30%',
+      '30-40%',
+      '40-50%',
+      '50-60%',
+      '60-70%',
+      '70-80%',
+      '80-90%',
+      '90-100%',
+      '100%'
+    ];
+    var values = [];
+    $.each(labels, function(key) {
+      values.push({x: labels[key], y: data[key]});
+    });
+
+    return [
+      {
+        key: label,
+        values: values,
+        color: "#4572A7"
+      }
+    ];
+  }
+  nv.addGraph(function() {
+    var chart = nv.models.scatterChart()
+      .showDistX(true)
+      .showDistY(true)
+      .showLegend(false)
+      .forceX([0, 100]);
+    chart.tooltipContent(function(graph) {
+      return '<p>' + graph.point.class + '</p>';
+    });
+
+    chart.xAxis.axisLabel('Code Coverage (in percent)');
+    chart.yAxis.axisLabel('Cyclomatic Complexity');
+
+    d3.select('#classComplexity svg')
+      .datum(getComplexityData([[96.02649006622516,57,"<a href=\"RefreshToken.php.html#18\">AlleyNote\\Domains\\Auth\\Entities\\RefreshToken<\/a>"]], 'Class Complexity'))
+      .transition()
+      .duration(500)
+      .call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  nv.addGraph(function() {
+    var chart = nv.models.scatterChart()
+      .showDistX(true)
+      .showDistY(true)
+      .showLegend(false)
+      .forceX([0, 100]);
+    chart.tooltipContent(function(graph) {
+      return '<p>' + graph.point.class + '</p>';
+    });
+
+    chart.xAxis.axisLabel('Code Coverage (in percent)');
+    chart.yAxis.axisLabel('Method Complexity');
+
+    d3.select('#methodComplexity svg')
+      .datum(getComplexityData([[100,1,"<a href=\"RefreshToken.php.html#65\">AlleyNote\\Domains\\Auth\\Entities\\RefreshToken::__construct<\/a>"],[100,1,"<a href=\"RefreshToken.php.html#91\">AlleyNote\\Domains\\Auth\\Entities\\RefreshToken::getId<\/a>"],[100,1,"<a href=\"RefreshToken.php.html#99\">AlleyNote\\Domains\\Auth\\Entities\\RefreshToken::getJti<\/a>"],[100,1,"<a href=\"RefreshToken.php.html#107\">AlleyNote\\Domains\\Auth\\Entities\\RefreshToken::getUserId<\/a>"],[100,1,"<a href=\"RefreshToken.php.html#115\">AlleyNote\\Domains\\Auth\\Entities\\RefreshToken::getTokenHash<\/a>"],[100,1,"<a href=\"RefreshToken.php.html#123\">AlleyNote\\Domains\\Auth\\Entities\\RefreshToken::getExpiresAt<\/a>"],[100,1,"<a href=\"RefreshToken.php.html#131\">AlleyNote\\Domains\\Auth\\Entities\\RefreshToken::getDeviceInfo<\/a>"],[100,1,"<a href=\"RefreshToken.php.html#139\">AlleyNote\\Domains\\Auth\\Entities\\RefreshToken::getStatus<\/a>"],[100,1,"<a href=\"RefreshToken.php.html#147\">AlleyNote\\Domains\\Auth\\Entities\\RefreshToken::getRevokedReason<\/a>"],[100,2,"<a href=\"RefreshToken.php.html#155\">AlleyNote\\Domains\\Auth\\Entities\\RefreshToken::getRevokedAt<\/a>"],[100,2,"<a href=\"RefreshToken.php.html#163\">AlleyNote\\Domains\\Auth\\Entities\\RefreshToken::getLastUsedAt<\/a>"],[0,1,"<a href=\"RefreshToken.php.html#171\">AlleyNote\\Domains\\Auth\\Entities\\RefreshToken::getParentTokenJti<\/a>"],[0,2,"<a href=\"RefreshToken.php.html#179\">AlleyNote\\Domains\\Auth\\Entities\\RefreshToken::getCreatedAt<\/a>"],[100,2,"<a href=\"RefreshToken.php.html#187\">AlleyNote\\Domains\\Auth\\Entities\\RefreshToken::getUpdatedAt<\/a>"],[100,1,"<a href=\"RefreshToken.php.html#195\">AlleyNote\\Domains\\Auth\\Entities\\RefreshToken::isExpired<\/a>"],[100,1,"<a href=\"RefreshToken.php.html#205\">AlleyNote\\Domains\\Auth\\Entities\\RefreshToken::isRevoked<\/a>"],[100,2,"<a href=\"RefreshToken.php.html#213\">AlleyNote\\Domains\\Auth\\Entities\\RefreshToken::isValid<\/a>"],[100,2,"<a href=\"RefreshToken.php.html#221\">AlleyNote\\Domains\\Auth\\Entities\\RefreshToken::canBeRefreshed<\/a>"],[100,2,"<a href=\"RefreshToken.php.html#234\">AlleyNote\\Domains\\Auth\\Entities\\RefreshToken::markAsRevoked<\/a>"],[100,1,"<a href=\"RefreshToken.php.html#266\">AlleyNote\\Domains\\Auth\\Entities\\RefreshToken::markAsUsed<\/a>"],[100,1,"<a href=\"RefreshToken.php.html#294\">AlleyNote\\Domains\\Auth\\Entities\\RefreshToken::updateLastUsed<\/a>"],[100,1,"<a href=\"RefreshToken.php.html#318\">AlleyNote\\Domains\\Auth\\Entities\\RefreshToken::equals<\/a>"],[100,1,"<a href=\"RefreshToken.php.html#326\">AlleyNote\\Domains\\Auth\\Entities\\RefreshToken::belongsToUser<\/a>"],[100,1,"<a href=\"RefreshToken.php.html#334\">AlleyNote\\Domains\\Auth\\Entities\\RefreshToken::belongsToDevice<\/a>"],[100,2,"<a href=\"RefreshToken.php.html#342\">AlleyNote\\Domains\\Auth\\Entities\\RefreshToken::getRemainingTime<\/a>"],[100,1,"<a href=\"RefreshToken.php.html#359\">AlleyNote\\Domains\\Auth\\Entities\\RefreshToken::isNearExpiry<\/a>"],[100,1,"<a href=\"RefreshToken.php.html#369\">AlleyNote\\Domains\\Auth\\Entities\\RefreshToken::jsonSerialize<\/a>"],[100,1,"<a href=\"RefreshToken.php.html#392\">AlleyNote\\Domains\\Auth\\Entities\\RefreshToken::toArray<\/a>"],[100,5,"<a href=\"RefreshToken.php.html#414\">AlleyNote\\Domains\\Auth\\Entities\\RefreshToken::validateJti<\/a>"],[100,2,"<a href=\"RefreshToken.php.html#433\">AlleyNote\\Domains\\Auth\\Entities\\RefreshToken::validateUserId<\/a>"],[75,3,"<a href=\"RefreshToken.php.html#443\">AlleyNote\\Domains\\Auth\\Entities\\RefreshToken::validateTokenHash<\/a>"],[100,2,"<a href=\"RefreshToken.php.html#458\">AlleyNote\\Domains\\Auth\\Entities\\RefreshToken::validateStatus<\/a>"],[75,2,"<a href=\"RefreshToken.php.html#477\">AlleyNote\\Domains\\Auth\\Entities\\RefreshToken::validateExpirationTime<\/a>"],[71.42857142857143,6,"<a href=\"RefreshToken.php.html#492\">AlleyNote\\Domains\\Auth\\Entities\\RefreshToken::validateRevokedData<\/a>"],[100,1,"<a href=\"RefreshToken.php.html#510\">AlleyNote\\Domains\\Auth\\Entities\\RefreshToken::__toString<\/a>"]], 'Method Complexity'))
+      .transition()
+      .duration(500)
+      .call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  function getComplexityData(data, label) {
+    var values = [];
+    $.each(data, function(key) {
+      var value = Math.round(data[key][0]*100) / 100;
+      values.push({
+        x: value,
+        y: data[key][1],
+        class: data[key][2],
+        size: 0.05,
+        shape: 'diamond'
+      });
+    });
+
+    return [
+      {
+        key: label,
+        values: values,
+        color: "#4572A7"
+      }
+    ];
+  }
+});
+  </script>
+ </body>
+</html>

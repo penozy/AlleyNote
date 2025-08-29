@@ -10,6 +10,7 @@ use App\Domains\Attachment\Services\AttachmentService;
 use App\Domains\Auth\Services\AuthorizationService;
 use App\Domains\Post\Models\Post;
 use App\Domains\Post\Repositories\PostRepository;
+use App\Domains\Security\Contracts\ActivityLoggingServiceInterface;
 use App\Infrastructure\Services\CacheService;
 use App\Shared\Exceptions\ValidationException;
 use Mockery;
@@ -26,13 +27,15 @@ class AttachmentServiceTest extends TestCase
 
     protected string $uploadDir;
 
-    protected App\Domains\Attachment\Repositories\AttachmentRepository|MockInterface $attachmentRepo;
+    protected AttachmentRepository|MockInterface $attachmentRepo;
 
-    protected App\Domains\Post\Repositories\PostRepository|MockInterface $postRepo;
+    protected PostRepository|MockInterface $postRepo;
 
     protected CacheService|MockInterface $attachmentCache;
 
     protected AuthorizationService|MockInterface $authService;
+
+    protected ActivityLoggingServiceInterface|MockInterface $activityLogger;
 
     protected function setUp(): void
     {
@@ -46,11 +49,13 @@ class AttachmentServiceTest extends TestCase
         $this->postRepo = Mockery::mock(PostRepository::class);
         $this->attachmentCache = Mockery::mock(CacheService::class);
         $this->authService = Mockery::mock(AuthorizationService::class);
+        $this->activityLogger = Mockery::mock(ActivityLoggingServiceInterface::class);
 
         $this->service = new AttachmentService(
             $this->attachmentRepo,
             $this->postRepo,
             $this->authService,
+            $this->activityLogger,
             $this->uploadDir,
         );
 
@@ -76,6 +81,13 @@ class AttachmentServiceTest extends TestCase
 
         $this->attachmentRepo->shouldReceive('delete')
             ->andReturn(true)
+            ->byDefault();
+
+        // 設置 ActivityLogger mock 期望
+        $this->activityLogger->shouldReceive('logSuccess')
+            ->byDefault();
+
+        $this->activityLogger->shouldReceive('logFailure')
             ->byDefault();
     }
 

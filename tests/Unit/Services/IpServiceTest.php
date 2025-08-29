@@ -4,10 +4,12 @@ declare(strict_types=1);
 
 namespace Tests\Unit\Services;
 
+use App\Domains\Security\Contracts\ActivityLoggingServiceInterface;
 use App\Domains\Security\Contracts\IpRepositoryInterface;
 use App\Domains\Security\DTOs\CreateIpRuleDTO;
 use App\Domains\Security\Models\IpList;
 use App\Domains\Security\Services\IpService;
+use App\Domains\Security\Services\SuspiciousActivityDetector;
 use App\Shared\Contracts\ValidatorInterface;
 use App\Shared\Exceptions\ValidationException;
 use App\Shared\Validation\ValidationResult;
@@ -23,6 +25,10 @@ class IpServiceTest extends TestCase
 
     private ValidatorInterface $validator;
 
+    private SuspiciousActivityDetector $suspiciousActivityDetector;
+
+    private ActivityLoggingServiceInterface $activityLogger;
+
     private IpService $service;
 
     protected function setUp(): void
@@ -30,6 +36,8 @@ class IpServiceTest extends TestCase
         parent::setUp();
         $this->repository = Mockery::mock(IpRepositoryInterface::class);
         $this->validator = Mockery::mock(ValidatorInterface::class);
+        $this->suspiciousActivityDetector = Mockery::mock(SuspiciousActivityDetector::class);
+        $this->activityLogger = Mockery::mock(ActivityLoggingServiceInterface::class);
 
         // 設定 Validator Mock 的通用預期
         $this->validator->shouldReceive('addRule')
@@ -39,7 +47,21 @@ class IpServiceTest extends TestCase
             ->zeroOrMoreTimes()
             ->andReturnSelf();
 
-        $this->service = new IpService($this->repository);
+        // 設定 ActivityLogger Mock 的通用預期
+        $this->activityLogger->shouldReceive('log')
+            ->zeroOrMoreTimes();
+        $this->activityLogger->shouldReceive('logSuccess')
+            ->zeroOrMoreTimes();
+        $this->activityLogger->shouldReceive('logFailure')
+            ->zeroOrMoreTimes();
+        $this->activityLogger->shouldReceive('logSecurityEvent')
+            ->zeroOrMoreTimes();
+
+        $this->service = new IpService(
+            $this->repository,
+            $this->activityLogger,
+            $this->validator
+        );
     }
 
     public function testCanCreateIpRule(): void

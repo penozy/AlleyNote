@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Dashboard for /var/www/html/app/Domains/Security/Services</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="../../../_css/bootstrap.min.css?v=11.0.10" rel="stylesheet" type="text/css">
+  <link href="../../../_css/nv.d3.min.css?v=11.0.10" rel="stylesheet" type="text/css">
+  <link href="../../../_css/style.css?v=11.0.10" rel="stylesheet" type="text/css">
+  <link href="../../../_css/custom.css" rel="stylesheet" type="text/css">
+ </head>
+ <body>
+  <header>
+   <div class="container-fluid">
+    <div class="row">
+     <div class="col-md-12">
+      <nav aria-label="breadcrumb">
+       <ol class="breadcrumb">
+         <li class="breadcrumb-item"><a href="../../../index.html">/var/www/html/app</a></li>
+         <li class="breadcrumb-item"><a href="../../index.html">Domains</a></li>
+         <li class="breadcrumb-item"><a href="../index.html">Security</a></li>
+         <li class="breadcrumb-item"><a href="index.html">Services</a></li>
+         <li class="breadcrumb-item active">(Dashboard)</li>
+
+       </ol>
+      </nav>
+     </div>
+    </div>
+   </div>
+  </header>
+  <div class="container-fluid">
+   <div class="row">
+    <div class="col-md-12">
+     <h2>Classes</h2>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Coverage Distribution</h3>
+     <div id="classCoverageDistribution" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Complexity</h3>
+     <div id="classComplexity" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Insufficient Coverage</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Class</th>
+         <th class="text-right">Coverage</th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="Advanced/SecurityTestService.php.html#17">App\Domains\Security\Services\Advanced\SecurityTestService</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Content/XssProtectionExtensionService.php.html#16">App\Domains\Security\Services\Content\XssProtectionExtensionService</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Core/CsrfProtectionService.php.html#14">App\Domains\Security\Services\Core\CsrfProtectionService</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Core/XssProtectionService.php.html#14">App\Domains\Security\Services\Core\XssProtectionService</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Error/ErrorHandlerService.php.html#19">App\Domains\Security\Services\Error\ErrorHandlerService</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Headers/SecurityHeaderService.php.html#15">App\Domains\Security\Services\Headers\SecurityHeaderService</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="IpService.php.html#18">App\Domains\Security\Services\IpService</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Secrets/SecretsManager.php.html#10">App\Domains\Security\Services\Secrets\SecretsManager</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="SuspiciousActivityDetector.php.html#24">App\Domains\Security\Services\SuspiciousActivityDetector</a></td><td class="text-right">69%</td></tr>
+       <tr><td><a href="ActivityLoggingService.php.html#21">App\Domains\Security\Services\ActivityLoggingService</a></td><td class="text-right">77%</td></tr>
+       <tr><td><a href="Logging/LoggingSecurityService.php.html#18">App\Domains\Security\Services\Logging\LoggingSecurityService</a></td><td class="text-right">79%</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Project Risks</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Class</th>
+         <th class="text-right"><abbr title="Change Risk Anti-Patterns (CRAP) Index">CRAP</abbr></th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="Secrets/SecretsManager.php.html#10">App\Domains\Security\Services\Secrets\SecretsManager</a></td><td class="text-right">4422</td></tr>
+       <tr><td><a href="Error/ErrorHandlerService.php.html#19">App\Domains\Security\Services\Error\ErrorHandlerService</a></td><td class="text-right">3540</td></tr>
+       <tr><td><a href="Advanced/SecurityTestService.php.html#17">App\Domains\Security\Services\Advanced\SecurityTestService</a></td><td class="text-right">2550</td></tr>
+       <tr><td><a href="Content/XssProtectionExtensionService.php.html#16">App\Domains\Security\Services\Content\XssProtectionExtensionService</a></td><td class="text-right">2450</td></tr>
+       <tr><td><a href="Headers/SecurityHeaderService.php.html#15">App\Domains\Security\Services\Headers\SecurityHeaderService</a></td><td class="text-right">2256</td></tr>
+       <tr><td><a href="Core/CsrfProtectionService.php.html#14">App\Domains\Security\Services\Core\CsrfProtectionService</a></td><td class="text-right">2070</td></tr>
+       <tr><td><a href="Core/XssProtectionService.php.html#14">App\Domains\Security\Services\Core\XssProtectionService</a></td><td class="text-right">2070</td></tr>
+       <tr><td><a href="IpService.php.html#18">App\Domains\Security\Services\IpService</a></td><td class="text-right">756</td></tr>
+       <tr><td><a href="SuspiciousActivityDetector.php.html#24">App\Domains\Security\Services\SuspiciousActivityDetector</a></td><td class="text-right">255</td></tr>
+       <tr><td><a href="Logging/LoggingSecurityService.php.html#18">App\Domains\Security\Services\Logging\LoggingSecurityService</a></td><td class="text-right">56</td></tr>
+       <tr><td><a href="ActivityLoggingService.php.html#21">App\Domains\Security\Services\ActivityLoggingService</a></td><td class="text-right">38</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-12">
+     <h2>Methods</h2>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Coverage Distribution</h3>
+     <div id="methodCoverageDistribution" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Complexity</h3>
+     <div id="methodComplexity" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Insufficient Coverage</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Method</th>
+         <th class="text-right">Coverage</th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="Advanced/SecurityTestService.php.html#35"><abbr title="App\Domains\Security\Services\Advanced\SecurityTestService::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Advanced/SecurityTestService.php.html#53"><abbr title="App\Domains\Security\Services\Advanced\SecurityTestService::runAllTests">runAllTests</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Advanced/SecurityTestService.php.html#70"><abbr title="App\Domains\Security\Services\Advanced\SecurityTestService::testSessionSecurity">testSessionSecurity</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Advanced/SecurityTestService.php.html#132"><abbr title="App\Domains\Security\Services\Advanced\SecurityTestService::testAuthorization">testAuthorization</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Advanced/SecurityTestService.php.html#182"><abbr title="App\Domains\Security\Services\Advanced\SecurityTestService::testFileSecurity">testFileSecurity</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Advanced/SecurityTestService.php.html#234"><abbr title="App\Domains\Security\Services\Advanced\SecurityTestService::testSecurityHeaders">testSecurityHeaders</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Advanced/SecurityTestService.php.html#297"><abbr title="App\Domains\Security\Services\Advanced\SecurityTestService::testErrorHandling">testErrorHandling</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Advanced/SecurityTestService.php.html#340"><abbr title="App\Domains\Security\Services\Advanced\SecurityTestService::testPasswordSecurity">testPasswordSecurity</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Advanced/SecurityTestService.php.html#415"><abbr title="App\Domains\Security\Services\Advanced\SecurityTestService::testSecretsManagement">testSecretsManagement</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Advanced/SecurityTestService.php.html#470"><abbr title="App\Domains\Security\Services\Advanced\SecurityTestService::testSystemSecurity">testSystemSecurity</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Advanced/SecurityTestService.php.html#536"><abbr title="App\Domains\Security\Services\Advanced\SecurityTestService::generateSecurityReport">generateSecurityReport</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Advanced/SecurityTestService.php.html#577"><abbr title="App\Domains\Security\Services\Advanced\SecurityTestService::createMockUploadedFile">createMockUploadedFile</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Advanced/SecurityTestService.php.html#608"><abbr title="App\Domains\Security\Services\Advanced\SecurityTestService::getSecurityLevel">getSecurityLevel</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Advanced/SecurityTestService.php.html#621"><abbr title="App\Domains\Security\Services\Advanced\SecurityTestService::getRecommendations">getRecommendations</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Content/XssProtectionExtensionService.php.html#26"><abbr title="App\Domains\Security\Services\Content\XssProtectionExtensionService::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Content/XssProtectionExtensionService.php.html#41"><abbr title="App\Domains\Security\Services\Content\XssProtectionExtensionService::protectByContext">protectByContext</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Content/XssProtectionExtensionService.php.html#90"><abbr title="App\Domains\Security\Services\Content\XssProtectionExtensionService::protectRichTextEditor">protectRichTextEditor</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Content/XssProtectionExtensionService.php.html#119"><abbr title="App\Domains\Security\Services\Content\XssProtectionExtensionService::protectUserBio">protectUserBio</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Content/XssProtectionExtensionService.php.html#139"><abbr title="App\Domains\Security\Services\Content\XssProtectionExtensionService::protectPostTitle">protectPostTitle</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Content/XssProtectionExtensionService.php.html#162"><abbr title="App\Domains\Security\Services\Content\XssProtectionExtensionService::protectPostContent">protectPostContent</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Content/XssProtectionExtensionService.php.html#196"><abbr title="App\Domains\Security\Services\Content\XssProtectionExtensionService::protectComment">protectComment</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Content/XssProtectionExtensionService.php.html#221"><abbr title="App\Domains\Security\Services\Content\XssProtectionExtensionService::protectSearchQuery">protectSearchQuery</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Content/XssProtectionExtensionService.php.html#247"><abbr title="App\Domains\Security\Services\Content\XssProtectionExtensionService::protectUrlParameter">protectUrlParameter</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Content/XssProtectionExtensionService.php.html#264"><abbr title="App\Domains\Security\Services\Content\XssProtectionExtensionService::protectJsonData">protectJsonData</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Content/XssProtectionExtensionService.php.html#296"><abbr title="App\Domains\Security\Services\Content\XssProtectionExtensionService::protectFileUpload">protectFileUpload</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Content/XssProtectionExtensionService.php.html#329"><abbr title="App\Domains\Security\Services\Content\XssProtectionExtensionService::protectGeneric">protectGeneric</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Content/XssProtectionExtensionService.php.html#346"><abbr title="App\Domains\Security\Services\Content\XssProtectionExtensionService::cleanJsonRecursively">cleanJsonRecursively</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Content/XssProtectionExtensionService.php.html#362"><abbr title="App\Domains\Security\Services\Content\XssProtectionExtensionService::cleanFilename">cleanFilename</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Content/XssProtectionExtensionService.php.html#381"><abbr title="App\Domains\Security\Services\Content\XssProtectionExtensionService::calculateSecurityScore">calculateSecurityScore</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Content/XssProtectionExtensionService.php.html#411"><abbr title="App\Domains\Security\Services\Content\XssProtectionExtensionService::getDefaultConfig">getDefaultConfig</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Core/CsrfProtectionService.php.html#24"><abbr title="App\Domains\Security\Services\Core\CsrfProtectionService::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Core/CsrfProtectionService.php.html#28"><abbr title="App\Domains\Security\Services\Core\CsrfProtectionService::generateToken">generateToken</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Core/CsrfProtectionService.php.html#69"><abbr title="App\Domains\Security\Services\Core\CsrfProtectionService::validateToken">validateToken</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Core/CsrfProtectionService.php.html#110"><abbr title="App\Domains\Security\Services\Core\CsrfProtectionService::validateTokenFromPool">validateTokenFromPool</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Core/CsrfProtectionService.php.html#145"><abbr title="App\Domains\Security\Services\Core\CsrfProtectionService::validateSingleToken">validateSingleToken</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Core/CsrfProtectionService.php.html#167"><abbr title="App\Domains\Security\Services\Core\CsrfProtectionService::cleanExpiredTokens">cleanExpiredTokens</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Core/CsrfProtectionService.php.html#205"><abbr title="App\Domains\Security\Services\Core\CsrfProtectionService::limitPoolSize">limitPoolSize</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Core/CsrfProtectionService.php.html#245"><abbr title="App\Domains\Security\Services\Core\CsrfProtectionService::isTokenValid">isTokenValid</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Core/CsrfProtectionService.php.html#278"><abbr title="App\Domains\Security\Services\Core\CsrfProtectionService::initializeTokenPool">initializeTokenPool</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Core/CsrfProtectionService.php.html#306"><abbr title="App\Domains\Security\Services\Core\CsrfProtectionService::getTokenPoolStatus">getTokenPoolStatus</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Core/CsrfProtectionService.php.html#340"><abbr title="App\Domains\Security\Services\Core\CsrfProtectionService::logCsrfValidationFailure">logCsrfValidationFailure</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Core/XssProtectionService.php.html#20"><abbr title="App\Domains\Security\Services\Core\XssProtectionService::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Core/XssProtectionService.php.html#29"><abbr title="App\Domains\Security\Services\Core\XssProtectionService::initializePurifiers">initializePurifiers</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Core/XssProtectionService.php.html#54"><abbr title="App\Domains\Security\Services\Core\XssProtectionService::clean">clean</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Core/XssProtectionService.php.html#73"><abbr title="App\Domains\Security\Services\Core\XssProtectionService::cleanHtml">cleanHtml</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Core/XssProtectionService.php.html#92"><abbr title="App\Domains\Security\Services\Core\XssProtectionService::cleanStrict">cleanStrict</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Core/XssProtectionService.php.html#111"><abbr title="App\Domains\Security\Services\Core\XssProtectionService::cleanArray">cleanArray</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Core/XssProtectionService.php.html#151"><abbr title="App\Domains\Security\Services\Core\XssProtectionService::cleanHtmlArray">cleanHtmlArray</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Core/XssProtectionService.php.html#191"><abbr title="App\Domains\Security\Services\Core\XssProtectionService::cleanForJs">cleanForJs</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Core/XssProtectionService.php.html#213"><abbr title="App\Domains\Security\Services\Core\XssProtectionService::cleanForUrl">cleanForUrl</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Core/XssProtectionService.php.html#234"><abbr title="App\Domains\Security\Services\Core\XssProtectionService::detectXss">detectXss</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Core/XssProtectionService.php.html#295"><abbr title="App\Domains\Security\Services\Core\XssProtectionService::getRiskLevel">getRiskLevel</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Core/XssProtectionService.php.html#314"><abbr title="App\Domains\Security\Services\Core\XssProtectionService::getHighestRiskLevel">getHighestRiskLevel</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Core/XssProtectionService.php.html#330"><abbr title="App\Domains\Security\Services\Core\XssProtectionService::containsSuspiciousJsContent">containsSuspiciousJsContent</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Core/XssProtectionService.php.html#347"><abbr title="App\Domains\Security\Services\Core\XssProtectionService::logXssAttempt">logXssAttempt</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Core/XssProtectionService.php.html#371"><abbr title="App\Domains\Security\Services\Core\XssProtectionService::getAllowedHtmlTags">getAllowedHtmlTags</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Core/XssProtectionService.php.html#381"><abbr title="App\Domains\Security\Services\Core\XssProtectionService::getCachePath">getCachePath</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Error/ErrorHandlerService.php.html#27"><abbr title="App\Domains\Security\Services\Error\ErrorHandlerService::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Error/ErrorHandlerService.php.html#56"><abbr title="App\Domains\Security\Services\Error\ErrorHandlerService::handleException">handleException</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Error/ErrorHandlerService.php.html#79"><abbr title="App\Domains\Security\Services\Error\ErrorHandlerService::logSecurityEvent">logSecurityEvent</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Error/ErrorHandlerService.php.html#118"><abbr title="App\Domains\Security\Services\Error\ErrorHandlerService::logAuthenticationAttempt">logAuthenticationAttempt</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Error/ErrorHandlerService.php.html#155"><abbr title="App\Domains\Security\Services\Error\ErrorHandlerService::logSuspiciousActivity">logSuspiciousActivity</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Error/ErrorHandlerService.php.html#165"><abbr title="App\Domains\Security\Services\Error\ErrorHandlerService::sanitizeLogData">sanitizeLogData</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Error/ErrorHandlerService.php.html#189"><abbr title="App\Domains\Security\Services\Error\ErrorHandlerService::initializeLogger">initializeLogger</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Error/ErrorHandlerService.php.html#246"><abbr title="App\Domains\Security\Services\Error\ErrorHandlerService::registerErrorHandlers">registerErrorHandlers</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Error/ErrorHandlerService.php.html#258"><abbr title="App\Domains\Security\Services\Error\ErrorHandlerService::globalExceptionHandler">globalExceptionHandler</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Error/ErrorHandlerService.php.html#271"><abbr title="App\Domains\Security\Services\Error\ErrorHandlerService::globalErrorHandler">globalErrorHandler</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Error/ErrorHandlerService.php.html#287"><abbr title="App\Domains\Security\Services\Error\ErrorHandlerService::shutdownHandler">shutdownHandler</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Error/ErrorHandlerService.php.html#304"><abbr title="App\Domains\Security\Services\Error\ErrorHandlerService::logException">logException</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Error/ErrorHandlerService.php.html#317"><abbr title="App\Domains\Security\Services\Error\ErrorHandlerService::getPublicErrorMessage">getPublicErrorMessage</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Error/ErrorHandlerService.php.html#328"><abbr title="App\Domains\Security\Services\Error\ErrorHandlerService::getErrorCode">getErrorCode</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Error/ErrorHandlerService.php.html#339"><abbr title="App\Domains\Security\Services\Error\ErrorHandlerService::isSensitiveKey">isSensitiveKey</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Error/ErrorHandlerService.php.html#352"><abbr title="App\Domains\Security\Services\Error\ErrorHandlerService::containsSensitiveData">containsSensitiveData</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Error/ErrorHandlerService.php.html#372"><abbr title="App\Domains\Security\Services\Error\ErrorHandlerService::truncateString">truncateString</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Headers/SecurityHeaderService.php.html#21"><abbr title="App\Domains\Security\Services\Headers\SecurityHeaderService::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Headers/SecurityHeaderService.php.html#29"><abbr title="App\Domains\Security\Services\Headers\SecurityHeaderService::setSecurityHeaders">setSecurityHeaders</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Headers/SecurityHeaderService.php.html#96"><abbr title="App\Domains\Security\Services\Headers\SecurityHeaderService::generateNonce">generateNonce</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Headers/SecurityHeaderService.php.html#108"><abbr title="App\Domains\Security\Services\Headers\SecurityHeaderService::getCurrentNonce">getCurrentNonce</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Headers/SecurityHeaderService.php.html#116"><abbr title="App\Domains\Security\Services\Headers\SecurityHeaderService::handleCSPReport">handleCSPReport</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Headers/SecurityHeaderService.php.html#152"><abbr title="App\Domains\Security\Services\Headers\SecurityHeaderService::logCSPViolation">logCSPViolation</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Headers/SecurityHeaderService.php.html#205"><abbr title="App\Domains\Security\Services\Headers\SecurityHeaderService::sendToMonitoring">sendToMonitoring</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Headers/SecurityHeaderService.php.html#225"><abbr title="App\Domains\Security\Services\Headers\SecurityHeaderService::removeServerSignature">removeServerSignature</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Headers/SecurityHeaderService.php.html#237"><abbr title="App\Domains\Security\Services\Headers\SecurityHeaderService::buildCSP">buildCSP</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Headers/SecurityHeaderService.php.html#265"><abbr title="App\Domains\Security\Services\Headers\SecurityHeaderService::buildPermissionsPolicy">buildPermissionsPolicy</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Headers/SecurityHeaderService.php.html#280"><abbr title="App\Domains\Security\Services\Headers\SecurityHeaderService::isHTTPS">isHTTPS</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Headers/SecurityHeaderService.php.html#287"><abbr title="App\Domains\Security\Services\Headers\SecurityHeaderService::getDefaultConfig">getDefaultConfig</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="IpService.php.html#20"><abbr title="App\Domains\Security\Services\IpService::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="IpService.php.html#26"><abbr title="App\Domains\Security\Services\IpService::createIpRule">createIpRule</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="IpService.php.html#47"><abbr title="App\Domains\Security\Services\IpService::isIpAllowed">isIpAllowed</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="IpService.php.html#73"><abbr title="App\Domains\Security\Services\IpService::blockIp">blockIp</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="IpService.php.html#109"><abbr title="App\Domains\Security\Services\IpService::unblockIp">unblockIp</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="IpService.php.html#138"><abbr title="App\Domains\Security\Services\IpService::getRulesByType">getRulesByType</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="IpService.php.html#150"><abbr title="App\Domains\Security\Services\IpService::logIpRuleActivity">logIpRuleActivity</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="IpService.php.html#179"><abbr title="App\Domains\Security\Services\IpService::logIpAccessActivity">logIpAccessActivity</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Logging/LoggingSecurityService.php.html#145"><abbr title="App\Domains\Security\Services\Logging\LoggingSecurityService::info">info</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Logging/LoggingSecurityService.php.html#151"><abbr title="App\Domains\Security\Services\Logging\LoggingSecurityService::warning">warning</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Logging/LoggingSecurityService.php.html#157"><abbr title="App\Domains\Security\Services\Logging\LoggingSecurityService::error">error</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Logging/LoggingSecurityService.php.html#319"><abbr title="App\Domains\Security\Services\Logging\LoggingSecurityService::verifyLogFilePermissions">verifyLogFilePermissions</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Secrets/SecretsManager.php.html#18"><abbr title="App\Domains\Security\Services\Secrets\SecretsManager::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Secrets/SecretsManager.php.html#23"><abbr title="App\Domains\Security\Services\Secrets\SecretsManager::load">load</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Secrets/SecretsManager.php.html#40"><abbr title="App\Domains\Security\Services\Secrets\SecretsManager::get">get</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Secrets/SecretsManager.php.html#68"><abbr title="App\Domains\Security\Services\Secrets\SecretsManager::set">set</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Secrets/SecretsManager.php.html#78"><abbr title="App\Domains\Security\Services\Secrets\SecretsManager::has">has</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Secrets/SecretsManager.php.html#83"><abbr title="App\Domains\Security\Services\Secrets\SecretsManager::getRequired">getRequired</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Secrets/SecretsManager.php.html#94"><abbr title="App\Domains\Security\Services\Secrets\SecretsManager::validateRequiredSecrets">validateRequiredSecrets</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Secrets/SecretsManager.php.html#111"><abbr title="App\Domains\Security\Services\Secrets\SecretsManager::isProduction">isProduction</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Secrets/SecretsManager.php.html#116"><abbr title="App\Domains\Security\Services\Secrets\SecretsManager::isDevelopment">isDevelopment</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Secrets/SecretsManager.php.html#121"><abbr title="App\Domains\Security\Services\Secrets\SecretsManager::getSecretsSummary">getSecretsSummary</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Secrets/SecretsManager.php.html#161"><abbr title="App\Domains\Security\Services\Secrets\SecretsManager::generateSecret">generateSecret</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Secrets/SecretsManager.php.html#166"><abbr title="App\Domains\Security\Services\Secrets\SecretsManager::validateEnvFile">validateEnvFile</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Secrets/SecretsManager.php.html#223"><abbr title="App\Domains\Security\Services\Secrets\SecretsManager::loadFromEnvironment">loadFromEnvironment</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Secrets/SecretsManager.php.html#237"><abbr title="App\Domains\Security\Services\Secrets\SecretsManager::loadFromFile">loadFromFile</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Secrets/SecretsManager.php.html#273"><abbr title="App\Domains\Security\Services\Secrets\SecretsManager::parseValue">parseValue</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Secrets/SecretsManager.php.html#293"><abbr title="App\Domains\Security\Services\Secrets\SecretsManager::isSensitiveKey">isSensitiveKey</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="SuspiciousActivityDetector.php.html#621"><abbr title="App\Domains\Security\Services\SuspiciousActivityDetector::calculateSeverityByFrequency">calculateSeverityByFrequency</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="SuspiciousActivityDetector.php.html#738"><abbr title="App\Domains\Security\Services\SuspiciousActivityDetector::triggerAlert">triggerAlert</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="SuspiciousActivityDetector.php.html#559"><abbr title="App\Domains\Security\Services\SuspiciousActivityDetector::detectIpReputationIssues">detectIpReputationIssues</abbr></a></td><td class="text-right">15%</td></tr>
+       <tr><td><a href="SuspiciousActivityDetector.php.html#414"><abbr title="App\Domains\Security\Services\SuspiciousActivityDetector::analyzeGlobalPatterns">analyzeGlobalPatterns</abbr></a></td><td class="text-right">17%</td></tr>
+       <tr><td><a href="SuspiciousActivityDetector.php.html#494"><abbr title="App\Domains\Security\Services\SuspiciousActivityDetector::detectFrequencyAnomalies">detectFrequencyAnomalies</abbr></a></td><td class="text-right">30%</td></tr>
+       <tr><td><a href="SuspiciousActivityDetector.php.html#527"><abbr title="App\Domains\Security\Services\SuspiciousActivityDetector::detectPatternAnomalies">detectPatternAnomalies</abbr></a></td><td class="text-right">36%</td></tr>
+       <tr><td><a href="ActivityLoggingService.php.html#148"><abbr title="App\Domains\Security\Services\ActivityLoggingService::logBatch">logBatch</abbr></a></td><td class="text-right">42%</td></tr>
+       <tr><td><a href="ActivityLoggingService.php.html#219"><abbr title="App\Domains\Security\Services\ActivityLoggingService::cleanup">cleanup</abbr></a></td><td class="text-right">58%</td></tr>
+       <tr><td><a href="SuspiciousActivityDetector.php.html#603"><abbr title="App\Domains\Security\Services\SuspiciousActivityDetector::calculateSeverityByFailures">calculateSeverityByFailures</abbr></a></td><td class="text-right">62%</td></tr>
+       <tr><td><a href="Logging/LoggingSecurityService.php.html#108"><abbr title="App\Domains\Security\Services\Logging\LoggingSecurityService::ensureLogDirectory">ensureLogDirectory</abbr></a></td><td class="text-right">66%</td></tr>
+       <tr><td><a href="SuspiciousActivityDetector.php.html#685"><abbr title="App\Domains\Security\Services\SuspiciousActivityDetector::logDetectionActivity">logDetectionActivity</abbr></a></td><td class="text-right">68%</td></tr>
+       <tr><td><a href="SuspiciousActivityDetector.php.html#456"><abbr title="App\Domains\Security\Services\SuspiciousActivityDetector::detectFailureRateAnomalies">detectFailureRateAnomalies</abbr></a></td><td class="text-right">72%</td></tr>
+       <tr><td><a href="SuspiciousActivityDetector.php.html#655"><abbr title="App\Domains\Security\Services\SuspiciousActivityDetector::generateRecommendedAction">generateRecommendedAction</abbr></a></td><td class="text-right">75%</td></tr>
+       <tr><td><a href="SuspiciousActivityDetector.php.html#319"><abbr title="App\Domains\Security\Services\SuspiciousActivityDetector::analyzeIpActivities">analyzeIpActivities</abbr></a></td><td class="text-right">75%</td></tr>
+       <tr><td><a href="ActivityLoggingService.php.html#40"><abbr title="App\Domains\Security\Services\ActivityLoggingService::log">log</abbr></a></td><td class="text-right">78%</td></tr>
+       <tr><td><a href="SuspiciousActivityDetector.php.html#225"><abbr title="App\Domains\Security\Services\SuspiciousActivityDetector::analyzeUserActivities">analyzeUserActivities</abbr></a></td><td class="text-right">81%</td></tr>
+       <tr><td><a href="Logging/LoggingSecurityService.php.html#285"><abbr title="App\Domains\Security\Services\Logging\LoggingSecurityService::enrichSecurityContext">enrichSecurityContext</abbr></a></td><td class="text-right">85%</td></tr>
+       <tr><td><a href="SuspiciousActivityDetector.php.html#582"><abbr title="App\Domains\Security\Services\SuspiciousActivityDetector::isSuspiciousIpRange">isSuspiciousIpRange</abbr></a></td><td class="text-right">88%</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Project Risks</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Method</th>
+         <th class="text-right"><abbr title="Change Risk Anti-Patterns (CRAP) Index">CRAP</abbr></th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="Headers/SecurityHeaderService.php.html#29"><abbr title="App\Domains\Security\Services\Headers\SecurityHeaderService::setSecurityHeaders">setSecurityHeaders</abbr></a></td><td class="text-right">240</td></tr>
+       <tr><td><a href="Secrets/SecretsManager.php.html#166"><abbr title="App\Domains\Security\Services\Secrets\SecretsManager::validateEnvFile">validateEnvFile</abbr></a></td><td class="text-right">182</td></tr>
+       <tr><td><a href="Secrets/SecretsManager.php.html#237"><abbr title="App\Domains\Security\Services\Secrets\SecretsManager::loadFromFile">loadFromFile</abbr></a></td><td class="text-right">156</td></tr>
+       <tr><td><a href="Content/XssProtectionExtensionService.php.html#41"><abbr title="App\Domains\Security\Services\Content\XssProtectionExtensionService::protectByContext">protectByContext</abbr></a></td><td class="text-right">132</td></tr>
+       <tr><td><a href="Core/CsrfProtectionService.php.html#245"><abbr title="App\Domains\Security\Services\Core\CsrfProtectionService::isTokenValid">isTokenValid</abbr></a></td><td class="text-right">110</td></tr>
+       <tr><td><a href="Headers/SecurityHeaderService.php.html#237"><abbr title="App\Domains\Security\Services\Headers\SecurityHeaderService::buildCSP">buildCSP</abbr></a></td><td class="text-right">56</td></tr>
+       <tr><td><a href="IpService.php.html#179"><abbr title="App\Domains\Security\Services\IpService::logIpAccessActivity">logIpAccessActivity</abbr></a></td><td class="text-right">56</td></tr>
+       <tr><td><a href="Advanced/SecurityTestService.php.html#234"><abbr title="App\Domains\Security\Services\Advanced\SecurityTestService::testSecurityHeaders">testSecurityHeaders</abbr></a></td><td class="text-right">42</td></tr>
+       <tr><td><a href="Advanced/SecurityTestService.php.html#415"><abbr title="App\Domains\Security\Services\Advanced\SecurityTestService::testSecretsManagement">testSecretsManagement</abbr></a></td><td class="text-right">42</td></tr>
+       <tr><td><a href="Content/XssProtectionExtensionService.php.html#381"><abbr title="App\Domains\Security\Services\Content\XssProtectionExtensionService::calculateSecurityScore">calculateSecurityScore</abbr></a></td><td class="text-right">42</td></tr>
+       <tr><td><a href="Core/CsrfProtectionService.php.html#69"><abbr title="App\Domains\Security\Services\Core\CsrfProtectionService::validateToken">validateToken</abbr></a></td><td class="text-right">42</td></tr>
+       <tr><td><a href="Error/ErrorHandlerService.php.html#118"><abbr title="App\Domains\Security\Services\Error\ErrorHandlerService::logAuthenticationAttempt">logAuthenticationAttempt</abbr></a></td><td class="text-right">42</td></tr>
+       <tr><td><a href="Error/ErrorHandlerService.php.html#165"><abbr title="App\Domains\Security\Services\Error\ErrorHandlerService::sanitizeLogData">sanitizeLogData</abbr></a></td><td class="text-right">42</td></tr>
+       <tr><td><a href="Error/ErrorHandlerService.php.html#317"><abbr title="App\Domains\Security\Services\Error\ErrorHandlerService::getPublicErrorMessage">getPublicErrorMessage</abbr></a></td><td class="text-right">42</td></tr>
+       <tr><td><a href="Error/ErrorHandlerService.php.html#328"><abbr title="App\Domains\Security\Services\Error\ErrorHandlerService::getErrorCode">getErrorCode</abbr></a></td><td class="text-right">42</td></tr>
+       <tr><td><a href="Advanced/SecurityTestService.php.html#340"><abbr title="App\Domains\Security\Services\Advanced\SecurityTestService::testPasswordSecurity">testPasswordSecurity</abbr></a></td><td class="text-right">30</td></tr>
+       <tr><td><a href="Advanced/SecurityTestService.php.html#470"><abbr title="App\Domains\Security\Services\Advanced\SecurityTestService::testSystemSecurity">testSystemSecurity</abbr></a></td><td class="text-right">30</td></tr>
+       <tr><td><a href="Advanced/SecurityTestService.php.html#536"><abbr title="App\Domains\Security\Services\Advanced\SecurityTestService::generateSecurityReport">generateSecurityReport</abbr></a></td><td class="text-right">30</td></tr>
+       <tr><td><a href="Core/CsrfProtectionService.php.html#110"><abbr title="App\Domains\Security\Services\Core\CsrfProtectionService::validateTokenFromPool">validateTokenFromPool</abbr></a></td><td class="text-right">30</td></tr>
+       <tr><td><a href="Core/CsrfProtectionService.php.html#145"><abbr title="App\Domains\Security\Services\Core\CsrfProtectionService::validateSingleToken">validateSingleToken</abbr></a></td><td class="text-right">30</td></tr>
+       <tr><td><a href="Core/CsrfProtectionService.php.html#167"><abbr title="App\Domains\Security\Services\Core\CsrfProtectionService::cleanExpiredTokens">cleanExpiredTokens</abbr></a></td><td class="text-right">30</td></tr>
+       <tr><td><a href="Core/XssProtectionService.php.html#111"><abbr title="App\Domains\Security\Services\Core\XssProtectionService::cleanArray">cleanArray</abbr></a></td><td class="text-right">30</td></tr>
+       <tr><td><a href="Core/XssProtectionService.php.html#151"><abbr title="App\Domains\Security\Services\Core\XssProtectionService::cleanHtmlArray">cleanHtmlArray</abbr></a></td><td class="text-right">30</td></tr>
+       <tr><td><a href="Error/ErrorHandlerService.php.html#271"><abbr title="App\Domains\Security\Services\Error\ErrorHandlerService::globalErrorHandler">globalErrorHandler</abbr></a></td><td class="text-right">30</td></tr>
+       <tr><td><a href="Error/ErrorHandlerService.php.html#352"><abbr title="App\Domains\Security\Services\Error\ErrorHandlerService::containsSensitiveData">containsSensitiveData</abbr></a></td><td class="text-right">30</td></tr>
+       <tr><td><a href="Headers/SecurityHeaderService.php.html#116"><abbr title="App\Domains\Security\Services\Headers\SecurityHeaderService::handleCSPReport">handleCSPReport</abbr></a></td><td class="text-right">30</td></tr>
+       <tr><td><a href="Headers/SecurityHeaderService.php.html#280"><abbr title="App\Domains\Security\Services\Headers\SecurityHeaderService::isHTTPS">isHTTPS</abbr></a></td><td class="text-right">30</td></tr>
+       <tr><td><a href="Logging/LoggingSecurityService.php.html#319"><abbr title="App\Domains\Security\Services\Logging\LoggingSecurityService::verifyLogFilePermissions">verifyLogFilePermissions</abbr></a></td><td class="text-right">30</td></tr>
+       <tr><td><a href="Secrets/SecretsManager.php.html#40"><abbr title="App\Domains\Security\Services\Secrets\SecretsManager::get">get</abbr></a></td><td class="text-right">30</td></tr>
+       <tr><td><a href="Secrets/SecretsManager.php.html#94"><abbr title="App\Domains\Security\Services\Secrets\SecretsManager::validateRequiredSecrets">validateRequiredSecrets</abbr></a></td><td class="text-right">30</td></tr>
+       <tr><td><a href="Secrets/SecretsManager.php.html#121"><abbr title="App\Domains\Security\Services\Secrets\SecretsManager::getSecretsSummary">getSecretsSummary</abbr></a></td><td class="text-right">30</td></tr>
+       <tr><td><a href="Secrets/SecretsManager.php.html#223"><abbr title="App\Domains\Security\Services\Secrets\SecretsManager::loadFromEnvironment">loadFromEnvironment</abbr></a></td><td class="text-right">30</td></tr>
+       <tr><td><a href="Secrets/SecretsManager.php.html#273"><abbr title="App\Domains\Security\Services\Secrets\SecretsManager::parseValue">parseValue</abbr></a></td><td class="text-right">30</td></tr>
+       <tr><td><a href="Advanced/SecurityTestService.php.html#70"><abbr title="App\Domains\Security\Services\Advanced\SecurityTestService::testSessionSecurity">testSessionSecurity</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="Advanced/SecurityTestService.php.html#608"><abbr title="App\Domains\Security\Services\Advanced\SecurityTestService::getSecurityLevel">getSecurityLevel</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="Core/CsrfProtectionService.php.html#205"><abbr title="App\Domains\Security\Services\Core\CsrfProtectionService::limitPoolSize">limitPoolSize</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="Core/XssProtectionService.php.html#191"><abbr title="App\Domains\Security\Services\Core\XssProtectionService::cleanForJs">cleanForJs</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="Core/XssProtectionService.php.html#234"><abbr title="App\Domains\Security\Services\Core\XssProtectionService::detectXss">detectXss</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="IpService.php.html#47"><abbr title="App\Domains\Security\Services\IpService::isIpAllowed">isIpAllowed</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="IpService.php.html#109"><abbr title="App\Domains\Security\Services\IpService::unblockIp">unblockIp</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="IpService.php.html#150"><abbr title="App\Domains\Security\Services\IpService::logIpRuleActivity">logIpRuleActivity</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="ActivityLoggingService.php.html#148"><abbr title="App\Domains\Security\Services\ActivityLoggingService::logBatch">logBatch</abbr></a></td><td class="text-right">16</td></tr>
+       <tr><td><a href="Advanced/SecurityTestService.php.html#132"><abbr title="App\Domains\Security\Services\Advanced\SecurityTestService::testAuthorization">testAuthorization</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Advanced/SecurityTestService.php.html#182"><abbr title="App\Domains\Security\Services\Advanced\SecurityTestService::testFileSecurity">testFileSecurity</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Advanced/SecurityTestService.php.html#297"><abbr title="App\Domains\Security\Services\Advanced\SecurityTestService::testErrorHandling">testErrorHandling</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Advanced/SecurityTestService.php.html#621"><abbr title="App\Domains\Security\Services\Advanced\SecurityTestService::getRecommendations">getRecommendations</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Content/XssProtectionExtensionService.php.html#139"><abbr title="App\Domains\Security\Services\Content\XssProtectionExtensionService::protectPostTitle">protectPostTitle</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Content/XssProtectionExtensionService.php.html#196"><abbr title="App\Domains\Security\Services\Content\XssProtectionExtensionService::protectComment">protectComment</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Content/XssProtectionExtensionService.php.html#221"><abbr title="App\Domains\Security\Services\Content\XssProtectionExtensionService::protectSearchQuery">protectSearchQuery</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Content/XssProtectionExtensionService.php.html#264"><abbr title="App\Domains\Security\Services\Content\XssProtectionExtensionService::protectJsonData">protectJsonData</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Content/XssProtectionExtensionService.php.html#296"><abbr title="App\Domains\Security\Services\Content\XssProtectionExtensionService::protectFileUpload">protectFileUpload</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Content/XssProtectionExtensionService.php.html#346"><abbr title="App\Domains\Security\Services\Content\XssProtectionExtensionService::cleanJsonRecursively">cleanJsonRecursively</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Core/CsrfProtectionService.php.html#306"><abbr title="App\Domains\Security\Services\Core\CsrfProtectionService::getTokenPoolStatus">getTokenPoolStatus</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Core/XssProtectionService.php.html#54"><abbr title="App\Domains\Security\Services\Core\XssProtectionService::clean">clean</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Core/XssProtectionService.php.html#73"><abbr title="App\Domains\Security\Services\Core\XssProtectionService::cleanHtml">cleanHtml</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Core/XssProtectionService.php.html#92"><abbr title="App\Domains\Security\Services\Core\XssProtectionService::cleanStrict">cleanStrict</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Core/XssProtectionService.php.html#213"><abbr title="App\Domains\Security\Services\Core\XssProtectionService::cleanForUrl">cleanForUrl</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Core/XssProtectionService.php.html#295"><abbr title="App\Domains\Security\Services\Core\XssProtectionService::getRiskLevel">getRiskLevel</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Core/XssProtectionService.php.html#314"><abbr title="App\Domains\Security\Services\Core\XssProtectionService::getHighestRiskLevel">getHighestRiskLevel</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Core/XssProtectionService.php.html#330"><abbr title="App\Domains\Security\Services\Core\XssProtectionService::containsSuspiciousJsContent">containsSuspiciousJsContent</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Error/ErrorHandlerService.php.html#56"><abbr title="App\Domains\Security\Services\Error\ErrorHandlerService::handleException">handleException</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Error/ErrorHandlerService.php.html#79"><abbr title="App\Domains\Security\Services\Error\ErrorHandlerService::logSecurityEvent">logSecurityEvent</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Error/ErrorHandlerService.php.html#189"><abbr title="App\Domains\Security\Services\Error\ErrorHandlerService::initializeLogger">initializeLogger</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Error/ErrorHandlerService.php.html#287"><abbr title="App\Domains\Security\Services\Error\ErrorHandlerService::shutdownHandler">shutdownHandler</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Error/ErrorHandlerService.php.html#339"><abbr title="App\Domains\Security\Services\Error\ErrorHandlerService::isSensitiveKey">isSensitiveKey</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Headers/SecurityHeaderService.php.html#152"><abbr title="App\Domains\Security\Services\Headers\SecurityHeaderService::logCSPViolation">logCSPViolation</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Headers/SecurityHeaderService.php.html#265"><abbr title="App\Domains\Security\Services\Headers\SecurityHeaderService::buildPermissionsPolicy">buildPermissionsPolicy</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="IpService.php.html#26"><abbr title="App\Domains\Security\Services\IpService::createIpRule">createIpRule</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Secrets/SecretsManager.php.html#23"><abbr title="App\Domains\Security\Services\Secrets\SecretsManager::load">load</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Secrets/SecretsManager.php.html#83"><abbr title="App\Domains\Security\Services\Secrets\SecretsManager::getRequired">getRequired</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Secrets/SecretsManager.php.html#293"><abbr title="App\Domains\Security\Services\Secrets\SecretsManager::isSensitiveKey">isSensitiveKey</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="SuspiciousActivityDetector.php.html#621"><abbr title="App\Domains\Security\Services\SuspiciousActivityDetector::calculateSeverityByFrequency">calculateSeverityByFrequency</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="SuspiciousActivityDetector.php.html#655"><abbr title="App\Domains\Security\Services\SuspiciousActivityDetector::generateRecommendedAction">generateRecommendedAction</abbr></a></td><td class="text-right">11</td></tr>
+       <tr><td><a href="SuspiciousActivityDetector.php.html#225"><abbr title="App\Domains\Security\Services\SuspiciousActivityDetector::analyzeUserActivities">analyzeUserActivities</abbr></a></td><td class="text-right">10</td></tr>
+       <tr><td><a href="SuspiciousActivityDetector.php.html#319"><abbr title="App\Domains\Security\Services\SuspiciousActivityDetector::analyzeIpActivities">analyzeIpActivities</abbr></a></td><td class="text-right">10</td></tr>
+       <tr><td><a href="SuspiciousActivityDetector.php.html#494"><abbr title="App\Domains\Security\Services\SuspiciousActivityDetector::detectFrequencyAnomalies">detectFrequencyAnomalies</abbr></a></td><td class="text-right">9</td></tr>
+       <tr><td><a href="SuspiciousActivityDetector.php.html#527"><abbr title="App\Domains\Security\Services\SuspiciousActivityDetector::detectPatternAnomalies">detectPatternAnomalies</abbr></a></td><td class="text-right">8</td></tr>
+       <tr><td><a href="SuspiciousActivityDetector.php.html#414"><abbr title="App\Domains\Security\Services\SuspiciousActivityDetector::analyzeGlobalPatterns">analyzeGlobalPatterns</abbr></a></td><td class="text-right">7</td></tr>
+       <tr><td><a href="Content/XssProtectionExtensionService.php.html#90"><abbr title="App\Domains\Security\Services\Content\XssProtectionExtensionService::protectRichTextEditor">protectRichTextEditor</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Content/XssProtectionExtensionService.php.html#119"><abbr title="App\Domains\Security\Services\Content\XssProtectionExtensionService::protectUserBio">protectUserBio</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Content/XssProtectionExtensionService.php.html#162"><abbr title="App\Domains\Security\Services\Content\XssProtectionExtensionService::protectPostContent">protectPostContent</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Content/XssProtectionExtensionService.php.html#247"><abbr title="App\Domains\Security\Services\Content\XssProtectionExtensionService::protectUrlParameter">protectUrlParameter</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Content/XssProtectionExtensionService.php.html#329"><abbr title="App\Domains\Security\Services\Content\XssProtectionExtensionService::protectGeneric">protectGeneric</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Content/XssProtectionExtensionService.php.html#362"><abbr title="App\Domains\Security\Services\Content\XssProtectionExtensionService::cleanFilename">cleanFilename</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Core/CsrfProtectionService.php.html#28"><abbr title="App\Domains\Security\Services\Core\CsrfProtectionService::generateToken">generateToken</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Core/CsrfProtectionService.php.html#278"><abbr title="App\Domains\Security\Services\Core\CsrfProtectionService::initializeTokenPool">initializeTokenPool</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Core/CsrfProtectionService.php.html#340"><abbr title="App\Domains\Security\Services\Core\CsrfProtectionService::logCsrfValidationFailure">logCsrfValidationFailure</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Core/XssProtectionService.php.html#381"><abbr title="App\Domains\Security\Services\Core\XssProtectionService::getCachePath">getCachePath</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Error/ErrorHandlerService.php.html#27"><abbr title="App\Domains\Security\Services\Error\ErrorHandlerService::__construct">__construct</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Error/ErrorHandlerService.php.html#258"><abbr title="App\Domains\Security\Services\Error\ErrorHandlerService::globalExceptionHandler">globalExceptionHandler</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Error/ErrorHandlerService.php.html#304"><abbr title="App\Domains\Security\Services\Error\ErrorHandlerService::logException">logException</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Error/ErrorHandlerService.php.html#372"><abbr title="App\Domains\Security\Services\Error\ErrorHandlerService::truncateString">truncateString</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Headers/SecurityHeaderService.php.html#96"><abbr title="App\Domains\Security\Services\Headers\SecurityHeaderService::generateNonce">generateNonce</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Headers/SecurityHeaderService.php.html#205"><abbr title="App\Domains\Security\Services\Headers\SecurityHeaderService::sendToMonitoring">sendToMonitoring</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Headers/SecurityHeaderService.php.html#225"><abbr title="App\Domains\Security\Services\Headers\SecurityHeaderService::removeServerSignature">removeServerSignature</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="IpService.php.html#73"><abbr title="App\Domains\Security\Services\IpService::blockIp">blockIp</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="IpService.php.html#138"><abbr title="App\Domains\Security\Services\IpService::getRulesByType">getRulesByType</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Secrets/SecretsManager.php.html#18"><abbr title="App\Domains\Security\Services\Secrets\SecretsManager::__construct">__construct</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="ActivityLoggingService.php.html#40"><abbr title="App\Domains\Security\Services\ActivityLoggingService::log">log</abbr></a></td><td class="text-right">5</td></tr>
+       <tr><td><a href="Logging/LoggingSecurityService.php.html#285"><abbr title="App\Domains\Security\Services\Logging\LoggingSecurityService::enrichSecurityContext">enrichSecurityContext</abbr></a></td><td class="text-right">5</td></tr>
+       <tr><td><a href="SuspiciousActivityDetector.php.html#603"><abbr title="App\Domains\Security\Services\SuspiciousActivityDetector::calculateSeverityByFailures">calculateSeverityByFailures</abbr></a></td><td class="text-right">4</td></tr>
+       <tr><td><a href="SuspiciousActivityDetector.php.html#559"><abbr title="App\Domains\Security\Services\SuspiciousActivityDetector::detectIpReputationIssues">detectIpReputationIssues</abbr></a></td><td class="text-right">4</td></tr>
+       <tr><td><a href="SuspiciousActivityDetector.php.html#456"><abbr title="App\Domains\Security\Services\SuspiciousActivityDetector::detectFailureRateAnomalies">detectFailureRateAnomalies</abbr></a></td><td class="text-right">4</td></tr>
+       <tr><td><a href="SuspiciousActivityDetector.php.html#685"><abbr title="App\Domains\Security\Services\SuspiciousActivityDetector::logDetectionActivity">logDetectionActivity</abbr></a></td><td class="text-right">3</td></tr>
+       <tr><td><a href="SuspiciousActivityDetector.php.html#582"><abbr title="App\Domains\Security\Services\SuspiciousActivityDetector::isSuspiciousIpRange">isSuspiciousIpRange</abbr></a></td><td class="text-right">3</td></tr>
+       <tr><td><a href="ActivityLoggingService.php.html#219"><abbr title="App\Domains\Security\Services\ActivityLoggingService::cleanup">cleanup</abbr></a></td><td class="text-right">2</td></tr>
+       <tr><td><a href="Logging/LoggingSecurityService.php.html#108"><abbr title="App\Domains\Security\Services\Logging\LoggingSecurityService::ensureLogDirectory">ensureLogDirectory</abbr></a></td><td class="text-right">2</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+   </div>
+   <footer>
+    <hr/>
+    <p>
+     <small>Generated by <a href="https://github.com/sebastianbergmann/php-code-coverage" target="_top">php-code-coverage 11.0.10</a> using <a href="https://www.php.net/" target="_top">PHP 8.4.11</a> and <a href="https://phpunit.de/">PHPUnit 11.5.34</a> at Fri Aug 29 9:23:06 CST 2025.</small>
+    </p>
+   </footer>
+  </div>
+  <script src="../../../_js/jquery.min.js?v=11.0.10" type="text/javascript"></script>
+  <script src="../../../_js/d3.min.js?v=11.0.10" type="text/javascript"></script>
+  <script src="../../../_js/nv.d3.min.js?v=11.0.10" type="text/javascript"></script>
+  <script type="text/javascript">
+$(document).ready(function() {
+  nv.addGraph(function() {
+    var chart = nv.models.multiBarChart();
+    chart.tooltips(false)
+      .showControls(false)
+      .showLegend(false)
+      .reduceXTicks(false)
+      .staggerLabels(true)
+      .yAxis.tickFormat(d3.format('d'));
+
+    d3.select('#classCoverageDistribution svg')
+      .datum(getCoverageDistributionData([8,0,0,0,0,0,0,1,2,0,0,0], "Class Coverage"))
+      .transition().duration(500).call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  nv.addGraph(function() {
+    var chart = nv.models.multiBarChart();
+    chart.tooltips(false)
+      .showControls(false)
+      .showLegend(false)
+      .reduceXTicks(false)
+      .staggerLabels(true)
+      .yAxis.tickFormat(d3.format('d'));
+
+    d3.select('#methodCoverageDistribution svg')
+      .datum(getCoverageDistributionData([116,0,2,0,2,1,1,3,4,3,2,35], "Method Coverage"))
+      .transition().duration(500).call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  function getCoverageDistributionData(data, label) {
+    var labels = [
+      '0%',
+      '0-10%',
+      '10-20%',
+      '20-30%',
+      '30-40%',
+      '40-50%',
+      '50-60%',
+      '60-70%',
+      '70-80%',
+      '80-90%',
+      '90-100%',
+      '100%'
+    ];
+    var values = [];
+    $.each(labels, function(key) {
+      values.push({x: labels[key], y: data[key]});
+    });
+
+    return [
+      {
+        key: label,
+        values: values,
+        color: "#4572A7"
+      }
+    ];
+  }
+  nv.addGraph(function() {
+    var chart = nv.models.scatterChart()
+      .showDistX(true)
+      .showDistY(true)
+      .showLegend(false)
+      .forceX([0, 100]);
+    chart.tooltipContent(function(graph) {
+      return '<p>' + graph.point.class + '</p>';
+    });
+
+    chart.xAxis.axisLabel('Code Coverage (in percent)');
+    chart.yAxis.axisLabel('Cyclomatic Complexity');
+
+    d3.select('#classComplexity svg')
+      .datum(getComplexityData([[77.41935483870968,29,"<a href=\"ActivityLoggingService.php.html#21\">App\\Domains\\Security\\Services\\ActivityLoggingService<\/a>"],[0,50,"<a href=\"Advanced\/SecurityTestService.php.html#17\">App\\Domains\\Security\\Services\\Advanced\\SecurityTestService<\/a>"],[0,49,"<a href=\"Content\/XssProtectionExtensionService.php.html#16\">App\\Domains\\Security\\Services\\Content\\XssProtectionExtensionService<\/a>"],[0,45,"<a href=\"Core\/CsrfProtectionService.php.html#14\">App\\Domains\\Security\\Services\\Core\\CsrfProtectionService<\/a>"],[0,45,"<a href=\"Core\/XssProtectionService.php.html#14\">App\\Domains\\Security\\Services\\Core\\XssProtectionService<\/a>"],[0,59,"<a href=\"Error\/ErrorHandlerService.php.html#19\">App\\Domains\\Security\\Services\\Error\\ErrorHandlerService<\/a>"],[0,47,"<a href=\"Headers\/SecurityHeaderService.php.html#15\">App\\Domains\\Security\\Services\\Headers\\SecurityHeaderService<\/a>"],[0,27,"<a href=\"IpService.php.html#18\">App\\Domains\\Security\\Services\\IpService<\/a>"],[79.69924812030075,42,"<a href=\"Logging\/LoggingSecurityService.php.html#18\">App\\Domains\\Security\\Services\\Logging\\LoggingSecurityService<\/a>"],[0,66,"<a href=\"Secrets\/SecretsManager.php.html#10\">App\\Domains\\Security\\Services\\Secrets\\SecretsManager<\/a>"],[69.82543640897757,80,"<a href=\"SuspiciousActivityDetector.php.html#24\">App\\Domains\\Security\\Services\\SuspiciousActivityDetector<\/a>"]], 'Class Complexity'))
+      .transition()
+      .duration(500)
+      .call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  nv.addGraph(function() {
+    var chart = nv.models.scatterChart()
+      .showDistX(true)
+      .showDistY(true)
+      .showLegend(false)
+      .forceX([0, 100]);
+    chart.tooltipContent(function(graph) {
+      return '<p>' + graph.point.class + '</p>';
+    });
+
+    chart.xAxis.axisLabel('Code Coverage (in percent)');
+    chart.yAxis.axisLabel('Method Complexity');
+
+    d3.select('#methodComplexity svg')
+      .datum(getComplexityData([[100,1,"<a href=\"ActivityLoggingService.php.html#32\">App\\Domains\\Security\\Services\\ActivityLoggingService::__construct<\/a>"],[78.26086956521739,5,"<a href=\"ActivityLoggingService.php.html#40\">App\\Domains\\Security\\Services\\ActivityLoggingService::log<\/a>"],[100,2,"<a href=\"ActivityLoggingService.php.html#85\">App\\Domains\\Security\\Services\\ActivityLoggingService::logSuccess<\/a>"],[100,2,"<a href=\"ActivityLoggingService.php.html#111\">App\\Domains\\Security\\Services\\ActivityLoggingService::logFailure<\/a>"],[100,1,"<a href=\"ActivityLoggingService.php.html#130\">App\\Domains\\Security\\Services\\ActivityLoggingService::logSecurityEvent<\/a>"],[42.10526315789473,7,"<a href=\"ActivityLoggingService.php.html#148\">App\\Domains\\Security\\Services\\ActivityLoggingService::logBatch<\/a>"],[100,1,"<a href=\"ActivityLoggingService.php.html#187\">App\\Domains\\Security\\Services\\ActivityLoggingService::enableLogging<\/a>"],[100,1,"<a href=\"ActivityLoggingService.php.html#195\">App\\Domains\\Security\\Services\\ActivityLoggingService::disableLogging<\/a>"],[100,1,"<a href=\"ActivityLoggingService.php.html#203\">App\\Domains\\Security\\Services\\ActivityLoggingService::isLoggingEnabled<\/a>"],[100,1,"<a href=\"ActivityLoggingService.php.html#211\">App\\Domains\\Security\\Services\\ActivityLoggingService::setLogLevel<\/a>"],[58.333333333333336,2,"<a href=\"ActivityLoggingService.php.html#219\">App\\Domains\\Security\\Services\\ActivityLoggingService::cleanup<\/a>"],[100,1,"<a href=\"ActivityLoggingService.php.html#244\">App\\Domains\\Security\\Services\\ActivityLoggingService::shouldLogBasedOnSeverity<\/a>"],[100,4,"<a href=\"ActivityLoggingService.php.html#254\">App\\Domains\\Security\\Services\\ActivityLoggingService::determineSecurityEventStatus<\/a>"],[0,1,"<a href=\"Advanced\/SecurityTestService.php.html#35\">App\\Domains\\Security\\Services\\Advanced\\SecurityTestService::__construct<\/a>"],[0,1,"<a href=\"Advanced\/SecurityTestService.php.html#53\">App\\Domains\\Security\\Services\\Advanced\\SecurityTestService::runAllTests<\/a>"],[0,4,"<a href=\"Advanced\/SecurityTestService.php.html#70\">App\\Domains\\Security\\Services\\Advanced\\SecurityTestService::testSessionSecurity<\/a>"],[0,3,"<a href=\"Advanced\/SecurityTestService.php.html#132\">App\\Domains\\Security\\Services\\Advanced\\SecurityTestService::testAuthorization<\/a>"],[0,3,"<a href=\"Advanced\/SecurityTestService.php.html#182\">App\\Domains\\Security\\Services\\Advanced\\SecurityTestService::testFileSecurity<\/a>"],[0,6,"<a href=\"Advanced\/SecurityTestService.php.html#234\">App\\Domains\\Security\\Services\\Advanced\\SecurityTestService::testSecurityHeaders<\/a>"],[0,3,"<a href=\"Advanced\/SecurityTestService.php.html#297\">App\\Domains\\Security\\Services\\Advanced\\SecurityTestService::testErrorHandling<\/a>"],[0,5,"<a href=\"Advanced\/SecurityTestService.php.html#340\">App\\Domains\\Security\\Services\\Advanced\\SecurityTestService::testPasswordSecurity<\/a>"],[0,6,"<a href=\"Advanced\/SecurityTestService.php.html#415\">App\\Domains\\Security\\Services\\Advanced\\SecurityTestService::testSecretsManagement<\/a>"],[0,5,"<a href=\"Advanced\/SecurityTestService.php.html#470\">App\\Domains\\Security\\Services\\Advanced\\SecurityTestService::testSystemSecurity<\/a>"],[0,5,"<a href=\"Advanced\/SecurityTestService.php.html#536\">App\\Domains\\Security\\Services\\Advanced\\SecurityTestService::generateSecurityReport<\/a>"],[0,1,"<a href=\"Advanced\/SecurityTestService.php.html#577\">App\\Domains\\Security\\Services\\Advanced\\SecurityTestService::createMockUploadedFile<\/a>"],[0,4,"<a href=\"Advanced\/SecurityTestService.php.html#608\">App\\Domains\\Security\\Services\\Advanced\\SecurityTestService::getSecurityLevel<\/a>"],[0,3,"<a href=\"Advanced\/SecurityTestService.php.html#621\">App\\Domains\\Security\\Services\\Advanced\\SecurityTestService::getRecommendations<\/a>"],[0,1,"<a href=\"Content\/XssProtectionExtensionService.php.html#26\">App\\Domains\\Security\\Services\\Content\\XssProtectionExtensionService::__construct<\/a>"],[0,11,"<a href=\"Content\/XssProtectionExtensionService.php.html#41\">App\\Domains\\Security\\Services\\Content\\XssProtectionExtensionService::protectByContext<\/a>"],[0,2,"<a href=\"Content\/XssProtectionExtensionService.php.html#90\">App\\Domains\\Security\\Services\\Content\\XssProtectionExtensionService::protectRichTextEditor<\/a>"],[0,2,"<a href=\"Content\/XssProtectionExtensionService.php.html#119\">App\\Domains\\Security\\Services\\Content\\XssProtectionExtensionService::protectUserBio<\/a>"],[0,3,"<a href=\"Content\/XssProtectionExtensionService.php.html#139\">App\\Domains\\Security\\Services\\Content\\XssProtectionExtensionService::protectPostTitle<\/a>"],[0,2,"<a href=\"Content\/XssProtectionExtensionService.php.html#162\">App\\Domains\\Security\\Services\\Content\\XssProtectionExtensionService::protectPostContent<\/a>"],[0,3,"<a href=\"Content\/XssProtectionExtensionService.php.html#196\">App\\Domains\\Security\\Services\\Content\\XssProtectionExtensionService::protectComment<\/a>"],[0,3,"<a href=\"Content\/XssProtectionExtensionService.php.html#221\">App\\Domains\\Security\\Services\\Content\\XssProtectionExtensionService::protectSearchQuery<\/a>"],[0,2,"<a href=\"Content\/XssProtectionExtensionService.php.html#247\">App\\Domains\\Security\\Services\\Content\\XssProtectionExtensionService::protectUrlParameter<\/a>"],[0,3,"<a href=\"Content\/XssProtectionExtensionService.php.html#264\">App\\Domains\\Security\\Services\\Content\\XssProtectionExtensionService::protectJsonData<\/a>"],[0,3,"<a href=\"Content\/XssProtectionExtensionService.php.html#296\">App\\Domains\\Security\\Services\\Content\\XssProtectionExtensionService::protectFileUpload<\/a>"],[0,2,"<a href=\"Content\/XssProtectionExtensionService.php.html#329\">App\\Domains\\Security\\Services\\Content\\XssProtectionExtensionService::protectGeneric<\/a>"],[0,3,"<a href=\"Content\/XssProtectionExtensionService.php.html#346\">App\\Domains\\Security\\Services\\Content\\XssProtectionExtensionService::cleanJsonRecursively<\/a>"],[0,2,"<a href=\"Content\/XssProtectionExtensionService.php.html#362\">App\\Domains\\Security\\Services\\Content\\XssProtectionExtensionService::cleanFilename<\/a>"],[0,6,"<a href=\"Content\/XssProtectionExtensionService.php.html#381\">App\\Domains\\Security\\Services\\Content\\XssProtectionExtensionService::calculateSecurityScore<\/a>"],[0,1,"<a href=\"Content\/XssProtectionExtensionService.php.html#411\">App\\Domains\\Security\\Services\\Content\\XssProtectionExtensionService::getDefaultConfig<\/a>"],[0,1,"<a href=\"Core\/CsrfProtectionService.php.html#24\">App\\Domains\\Security\\Services\\Core\\CsrfProtectionService::__construct<\/a>"],[0,2,"<a href=\"Core\/CsrfProtectionService.php.html#28\">App\\Domains\\Security\\Services\\Core\\CsrfProtectionService::generateToken<\/a>"],[0,6,"<a href=\"Core\/CsrfProtectionService.php.html#69\">App\\Domains\\Security\\Services\\Core\\CsrfProtectionService::validateToken<\/a>"],[0,5,"<a href=\"Core\/CsrfProtectionService.php.html#110\">App\\Domains\\Security\\Services\\Core\\CsrfProtectionService::validateTokenFromPool<\/a>"],[0,5,"<a href=\"Core\/CsrfProtectionService.php.html#145\">App\\Domains\\Security\\Services\\Core\\CsrfProtectionService::validateSingleToken<\/a>"],[0,5,"<a href=\"Core\/CsrfProtectionService.php.html#167\">App\\Domains\\Security\\Services\\Core\\CsrfProtectionService::cleanExpiredTokens<\/a>"],[0,4,"<a href=\"Core\/CsrfProtectionService.php.html#205\">App\\Domains\\Security\\Services\\Core\\CsrfProtectionService::limitPoolSize<\/a>"],[0,10,"<a href=\"Core\/CsrfProtectionService.php.html#245\">App\\Domains\\Security\\Services\\Core\\CsrfProtectionService::isTokenValid<\/a>"],[0,2,"<a href=\"Core\/CsrfProtectionService.php.html#278\">App\\Domains\\Security\\Services\\Core\\CsrfProtectionService::initializeTokenPool<\/a>"],[0,3,"<a href=\"Core\/CsrfProtectionService.php.html#306\">App\\Domains\\Security\\Services\\Core\\CsrfProtectionService::getTokenPoolStatus<\/a>"],[0,2,"<a href=\"Core\/CsrfProtectionService.php.html#340\">App\\Domains\\Security\\Services\\Core\\CsrfProtectionService::logCsrfValidationFailure<\/a>"],[0,1,"<a href=\"Core\/XssProtectionService.php.html#20\">App\\Domains\\Security\\Services\\Core\\XssProtectionService::__construct<\/a>"],[0,1,"<a href=\"Core\/XssProtectionService.php.html#29\">App\\Domains\\Security\\Services\\Core\\XssProtectionService::initializePurifiers<\/a>"],[0,3,"<a href=\"Core\/XssProtectionService.php.html#54\">App\\Domains\\Security\\Services\\Core\\XssProtectionService::clean<\/a>"],[0,3,"<a href=\"Core\/XssProtectionService.php.html#73\">App\\Domains\\Security\\Services\\Core\\XssProtectionService::cleanHtml<\/a>"],[0,3,"<a href=\"Core\/XssProtectionService.php.html#92\">App\\Domains\\Security\\Services\\Core\\XssProtectionService::cleanStrict<\/a>"],[0,5,"<a href=\"Core\/XssProtectionService.php.html#111\">App\\Domains\\Security\\Services\\Core\\XssProtectionService::cleanArray<\/a>"],[0,5,"<a href=\"Core\/XssProtectionService.php.html#151\">App\\Domains\\Security\\Services\\Core\\XssProtectionService::cleanHtmlArray<\/a>"],[0,4,"<a href=\"Core\/XssProtectionService.php.html#191\">App\\Domains\\Security\\Services\\Core\\XssProtectionService::cleanForJs<\/a>"],[0,3,"<a href=\"Core\/XssProtectionService.php.html#213\">App\\Domains\\Security\\Services\\Core\\XssProtectionService::cleanForUrl<\/a>"],[0,4,"<a href=\"Core\/XssProtectionService.php.html#234\">App\\Domains\\Security\\Services\\Core\\XssProtectionService::detectXss<\/a>"],[0,3,"<a href=\"Core\/XssProtectionService.php.html#295\">App\\Domains\\Security\\Services\\Core\\XssProtectionService::getRiskLevel<\/a>"],[0,3,"<a href=\"Core\/XssProtectionService.php.html#314\">App\\Domains\\Security\\Services\\Core\\XssProtectionService::getHighestRiskLevel<\/a>"],[0,3,"<a href=\"Core\/XssProtectionService.php.html#330\">App\\Domains\\Security\\Services\\Core\\XssProtectionService::containsSuspiciousJsContent<\/a>"],[0,1,"<a href=\"Core\/XssProtectionService.php.html#347\">App\\Domains\\Security\\Services\\Core\\XssProtectionService::logXssAttempt<\/a>"],[0,1,"<a href=\"Core\/XssProtectionService.php.html#371\">App\\Domains\\Security\\Services\\Core\\XssProtectionService::getAllowedHtmlTags<\/a>"],[0,2,"<a href=\"Core\/XssProtectionService.php.html#381\">App\\Domains\\Security\\Services\\Core\\XssProtectionService::getCachePath<\/a>"],[0,2,"<a href=\"Error\/ErrorHandlerService.php.html#27\">App\\Domains\\Security\\Services\\Error\\ErrorHandlerService::__construct<\/a>"],[0,3,"<a href=\"Error\/ErrorHandlerService.php.html#56\">App\\Domains\\Security\\Services\\Error\\ErrorHandlerService::handleException<\/a>"],[0,3,"<a href=\"Error\/ErrorHandlerService.php.html#79\">App\\Domains\\Security\\Services\\Error\\ErrorHandlerService::logSecurityEvent<\/a>"],[0,6,"<a href=\"Error\/ErrorHandlerService.php.html#118\">App\\Domains\\Security\\Services\\Error\\ErrorHandlerService::logAuthenticationAttempt<\/a>"],[0,1,"<a href=\"Error\/ErrorHandlerService.php.html#155\">App\\Domains\\Security\\Services\\Error\\ErrorHandlerService::logSuspiciousActivity<\/a>"],[0,6,"<a href=\"Error\/ErrorHandlerService.php.html#165\">App\\Domains\\Security\\Services\\Error\\ErrorHandlerService::sanitizeLogData<\/a>"],[0,3,"<a href=\"Error\/ErrorHandlerService.php.html#189\">App\\Domains\\Security\\Services\\Error\\ErrorHandlerService::initializeLogger<\/a>"],[0,1,"<a href=\"Error\/ErrorHandlerService.php.html#246\">App\\Domains\\Security\\Services\\Error\\ErrorHandlerService::registerErrorHandlers<\/a>"],[0,2,"<a href=\"Error\/ErrorHandlerService.php.html#258\">App\\Domains\\Security\\Services\\Error\\ErrorHandlerService::globalExceptionHandler<\/a>"],[0,5,"<a href=\"Error\/ErrorHandlerService.php.html#271\">App\\Domains\\Security\\Services\\Error\\ErrorHandlerService::globalErrorHandler<\/a>"],[0,3,"<a href=\"Error\/ErrorHandlerService.php.html#287\">App\\Domains\\Security\\Services\\Error\\ErrorHandlerService::shutdownHandler<\/a>"],[0,2,"<a href=\"Error\/ErrorHandlerService.php.html#304\">App\\Domains\\Security\\Services\\Error\\ErrorHandlerService::logException<\/a>"],[0,6,"<a href=\"Error\/ErrorHandlerService.php.html#317\">App\\Domains\\Security\\Services\\Error\\ErrorHandlerService::getPublicErrorMessage<\/a>"],[0,6,"<a href=\"Error\/ErrorHandlerService.php.html#328\">App\\Domains\\Security\\Services\\Error\\ErrorHandlerService::getErrorCode<\/a>"],[0,3,"<a href=\"Error\/ErrorHandlerService.php.html#339\">App\\Domains\\Security\\Services\\Error\\ErrorHandlerService::isSensitiveKey<\/a>"],[0,5,"<a href=\"Error\/ErrorHandlerService.php.html#352\">App\\Domains\\Security\\Services\\Error\\ErrorHandlerService::containsSensitiveData<\/a>"],[0,2,"<a href=\"Error\/ErrorHandlerService.php.html#372\">App\\Domains\\Security\\Services\\Error\\ErrorHandlerService::truncateString<\/a>"],[0,1,"<a href=\"Headers\/SecurityHeaderService.php.html#21\">App\\Domains\\Security\\Services\\Headers\\SecurityHeaderService::__construct<\/a>"],[0,15,"<a href=\"Headers\/SecurityHeaderService.php.html#29\">App\\Domains\\Security\\Services\\Headers\\SecurityHeaderService::setSecurityHeaders<\/a>"],[0,2,"<a href=\"Headers\/SecurityHeaderService.php.html#96\">App\\Domains\\Security\\Services\\Headers\\SecurityHeaderService::generateNonce<\/a>"],[0,1,"<a href=\"Headers\/SecurityHeaderService.php.html#108\">App\\Domains\\Security\\Services\\Headers\\SecurityHeaderService::getCurrentNonce<\/a>"],[0,5,"<a href=\"Headers\/SecurityHeaderService.php.html#116\">App\\Domains\\Security\\Services\\Headers\\SecurityHeaderService::handleCSPReport<\/a>"],[0,3,"<a href=\"Headers\/SecurityHeaderService.php.html#152\">App\\Domains\\Security\\Services\\Headers\\SecurityHeaderService::logCSPViolation<\/a>"],[0,2,"<a href=\"Headers\/SecurityHeaderService.php.html#205\">App\\Domains\\Security\\Services\\Headers\\SecurityHeaderService::sendToMonitoring<\/a>"],[0,2,"<a href=\"Headers\/SecurityHeaderService.php.html#225\">App\\Domains\\Security\\Services\\Headers\\SecurityHeaderService::removeServerSignature<\/a>"],[0,7,"<a href=\"Headers\/SecurityHeaderService.php.html#237\">App\\Domains\\Security\\Services\\Headers\\SecurityHeaderService::buildCSP<\/a>"],[0,3,"<a href=\"Headers\/SecurityHeaderService.php.html#265\">App\\Domains\\Security\\Services\\Headers\\SecurityHeaderService::buildPermissionsPolicy<\/a>"],[0,5,"<a href=\"Headers\/SecurityHeaderService.php.html#280\">App\\Domains\\Security\\Services\\Headers\\SecurityHeaderService::isHTTPS<\/a>"],[0,1,"<a href=\"Headers\/SecurityHeaderService.php.html#287\">App\\Domains\\Security\\Services\\Headers\\SecurityHeaderService::getDefaultConfig<\/a>"],[0,1,"<a href=\"IpService.php.html#20\">App\\Domains\\Security\\Services\\IpService::__construct<\/a>"],[0,3,"<a href=\"IpService.php.html#26\">App\\Domains\\Security\\Services\\IpService::createIpRule<\/a>"],[0,4,"<a href=\"IpService.php.html#47\">App\\Domains\\Security\\Services\\IpService::isIpAllowed<\/a>"],[0,2,"<a href=\"IpService.php.html#73\">App\\Domains\\Security\\Services\\IpService::blockIp<\/a>"],[0,4,"<a href=\"IpService.php.html#109\">App\\Domains\\Security\\Services\\IpService::unblockIp<\/a>"],[0,2,"<a href=\"IpService.php.html#138\">App\\Domains\\Security\\Services\\IpService::getRulesByType<\/a>"],[0,4,"<a href=\"IpService.php.html#150\">App\\Domains\\Security\\Services\\IpService::logIpRuleActivity<\/a>"],[0,7,"<a href=\"IpService.php.html#179\">App\\Domains\\Security\\Services\\IpService::logIpAccessActivity<\/a>"],[100,1,"<a href=\"Logging\/LoggingSecurityService.php.html#57\">App\\Domains\\Security\\Services\\Logging\\LoggingSecurityService::__construct<\/a>"],[100,1,"<a href=\"Logging\/LoggingSecurityService.php.html#65\">App\\Domains\\Security\\Services\\Logging\\LoggingSecurityService::initializeLoggers<\/a>"],[66.66666666666666,2,"<a href=\"Logging\/LoggingSecurityService.php.html#108\">App\\Domains\\Security\\Services\\Logging\\LoggingSecurityService::ensureLogDirectory<\/a>"],[92.3076923076923,4,"<a href=\"Logging\/LoggingSecurityService.php.html#119\">App\\Domains\\Security\\Services\\Logging\\LoggingSecurityService::setLogFilePermissions<\/a>"],[0,1,"<a href=\"Logging\/LoggingSecurityService.php.html#145\">App\\Domains\\Security\\Services\\Logging\\LoggingSecurityService::info<\/a>"],[0,1,"<a href=\"Logging\/LoggingSecurityService.php.html#151\">App\\Domains\\Security\\Services\\Logging\\LoggingSecurityService::warning<\/a>"],[0,1,"<a href=\"Logging\/LoggingSecurityService.php.html#157\">App\\Domains\\Security\\Services\\Logging\\LoggingSecurityService::error<\/a>"],[100,1,"<a href=\"Logging\/LoggingSecurityService.php.html#166\">App\\Domains\\Security\\Services\\Logging\\LoggingSecurityService::logSecurityEvent<\/a>"],[100,1,"<a href=\"Logging\/LoggingSecurityService.php.html#177\">App\\Domains\\Security\\Services\\Logging\\LoggingSecurityService::logCriticalSecurityEvent<\/a>"],[100,1,"<a href=\"Logging\/LoggingSecurityService.php.html#191\">App\\Domains\\Security\\Services\\Logging\\LoggingSecurityService::logRequest<\/a>"],[100,1,"<a href=\"Logging\/LoggingSecurityService.php.html#202\">App\\Domains\\Security\\Services\\Logging\\LoggingSecurityService::logAuthenticationFailure<\/a>"],[100,1,"<a href=\"Logging\/LoggingSecurityService.php.html#213\">App\\Domains\\Security\\Services\\Logging\\LoggingSecurityService::logAuthorizationFailure<\/a>"],[100,3,"<a href=\"Logging\/LoggingSecurityService.php.html#227\">App\\Domains\\Security\\Services\\Logging\\LoggingSecurityService::applyRequestWhitelist<\/a>"],[100,1,"<a href=\"Logging\/LoggingSecurityService.php.html#243\">App\\Domains\\Security\\Services\\Logging\\LoggingSecurityService::sanitizeContext<\/a>"],[100,8,"<a href=\"Logging\/LoggingSecurityService.php.html#251\">App\\Domains\\Security\\Services\\Logging\\LoggingSecurityService::recursiveSanitize<\/a>"],[85.71428571428571,5,"<a href=\"Logging\/LoggingSecurityService.php.html#285\">App\\Domains\\Security\\Services\\Logging\\LoggingSecurityService::enrichSecurityContext<\/a>"],[100,2,"<a href=\"Logging\/LoggingSecurityService.php.html#304\">App\\Domains\\Security\\Services\\Logging\\LoggingSecurityService::enrichRequestContext<\/a>"],[0,5,"<a href=\"Logging\/LoggingSecurityService.php.html#319\">App\\Domains\\Security\\Services\\Logging\\LoggingSecurityService::verifyLogFilePermissions<\/a>"],[100,2,"<a href=\"Logging\/LoggingSecurityService.php.html#356\">App\\Domains\\Security\\Services\\Logging\\LoggingSecurityService::getLogStatistics<\/a>"],[0,2,"<a href=\"Secrets\/SecretsManager.php.html#18\">App\\Domains\\Security\\Services\\Secrets\\SecretsManager::__construct<\/a>"],[0,3,"<a href=\"Secrets\/SecretsManager.php.html#23\">App\\Domains\\Security\\Services\\Secrets\\SecretsManager::load<\/a>"],[0,5,"<a href=\"Secrets\/SecretsManager.php.html#40\">App\\Domains\\Security\\Services\\Secrets\\SecretsManager::get<\/a>"],[0,1,"<a href=\"Secrets\/SecretsManager.php.html#68\">App\\Domains\\Security\\Services\\Secrets\\SecretsManager::set<\/a>"],[0,1,"<a href=\"Secrets\/SecretsManager.php.html#78\">App\\Domains\\Security\\Services\\Secrets\\SecretsManager::has<\/a>"],[0,3,"<a href=\"Secrets\/SecretsManager.php.html#83\">App\\Domains\\Security\\Services\\Secrets\\SecretsManager::getRequired<\/a>"],[0,5,"<a href=\"Secrets\/SecretsManager.php.html#94\">App\\Domains\\Security\\Services\\Secrets\\SecretsManager::validateRequiredSecrets<\/a>"],[0,1,"<a href=\"Secrets\/SecretsManager.php.html#111\">App\\Domains\\Security\\Services\\Secrets\\SecretsManager::isProduction<\/a>"],[0,1,"<a href=\"Secrets\/SecretsManager.php.html#116\">App\\Domains\\Security\\Services\\Secrets\\SecretsManager::isDevelopment<\/a>"],[0,5,"<a href=\"Secrets\/SecretsManager.php.html#121\">App\\Domains\\Security\\Services\\Secrets\\SecretsManager::getSecretsSummary<\/a>"],[0,1,"<a href=\"Secrets\/SecretsManager.php.html#161\">App\\Domains\\Security\\Services\\Secrets\\SecretsManager::generateSecret<\/a>"],[0,13,"<a href=\"Secrets\/SecretsManager.php.html#166\">App\\Domains\\Security\\Services\\Secrets\\SecretsManager::validateEnvFile<\/a>"],[0,5,"<a href=\"Secrets\/SecretsManager.php.html#223\">App\\Domains\\Security\\Services\\Secrets\\SecretsManager::loadFromEnvironment<\/a>"],[0,12,"<a href=\"Secrets\/SecretsManager.php.html#237\">App\\Domains\\Security\\Services\\Secrets\\SecretsManager::loadFromFile<\/a>"],[0,5,"<a href=\"Secrets\/SecretsManager.php.html#273\">App\\Domains\\Security\\Services\\Secrets\\SecretsManager::parseValue<\/a>"],[0,3,"<a href=\"Secrets\/SecretsManager.php.html#293\">App\\Domains\\Security\\Services\\Secrets\\SecretsManager::isSensitiveKey<\/a>"],[100,1,"<a href=\"SuspiciousActivityDetector.php.html#59\">App\\Domains\\Security\\Services\\SuspiciousActivityDetector::__construct<\/a>"],[100,2,"<a href=\"SuspiciousActivityDetector.php.html#70\">App\\Domains\\Security\\Services\\SuspiciousActivityDetector::initializeDefaults<\/a>"],[100,2,"<a href=\"SuspiciousActivityDetector.php.html#85\">App\\Domains\\Security\\Services\\SuspiciousActivityDetector::detectSuspiciousActivity<\/a>"],[100,2,"<a href=\"SuspiciousActivityDetector.php.html#137\">App\\Domains\\Security\\Services\\SuspiciousActivityDetector::detectSuspiciousIpActivity<\/a>"],[93.75,3,"<a href=\"SuspiciousActivityDetector.php.html#189\">App\\Domains\\Security\\Services\\SuspiciousActivityDetector::detectGlobalSuspiciousPatterns<\/a>"],[81.81818181818183,10,"<a href=\"SuspiciousActivityDetector.php.html#225\">App\\Domains\\Security\\Services\\SuspiciousActivityDetector::analyzeUserActivities<\/a>"],[75.40983606557377,9,"<a href=\"SuspiciousActivityDetector.php.html#319\">App\\Domains\\Security\\Services\\SuspiciousActivityDetector::analyzeIpActivities<\/a>"],[17.857142857142858,3,"<a href=\"SuspiciousActivityDetector.php.html#414\">App\\Domains\\Security\\Services\\SuspiciousActivityDetector::analyzeGlobalPatterns<\/a>"],[72,4,"<a href=\"SuspiciousActivityDetector.php.html#456\">App\\Domains\\Security\\Services\\SuspiciousActivityDetector::detectFailureRateAnomalies<\/a>"],[30,4,"<a href=\"SuspiciousActivityDetector.php.html#494\">App\\Domains\\Security\\Services\\SuspiciousActivityDetector::detectFrequencyAnomalies<\/a>"],[36.84210526315789,4,"<a href=\"SuspiciousActivityDetector.php.html#527\">App\\Domains\\Security\\Services\\SuspiciousActivityDetector::detectPatternAnomalies<\/a>"],[15.384615384615385,2,"<a href=\"SuspiciousActivityDetector.php.html#559\">App\\Domains\\Security\\Services\\SuspiciousActivityDetector::detectIpReputationIssues<\/a>"],[88.88888888888889,3,"<a href=\"SuspiciousActivityDetector.php.html#582\">App\\Domains\\Security\\Services\\SuspiciousActivityDetector::isSuspiciousIpRange<\/a>"],[62.5,4,"<a href=\"SuspiciousActivityDetector.php.html#603\">App\\Domains\\Security\\Services\\SuspiciousActivityDetector::calculateSeverityByFailures<\/a>"],[0,3,"<a href=\"SuspiciousActivityDetector.php.html#621\">App\\Domains\\Security\\Services\\SuspiciousActivityDetector::calculateSeverityByFrequency<\/a>"],[100,2,"<a href=\"SuspiciousActivityDetector.php.html#637\">App\\Domains\\Security\\Services\\SuspiciousActivityDetector::escalateSeverity<\/a>"],[75,10,"<a href=\"SuspiciousActivityDetector.php.html#655\">App\\Domains\\Security\\Services\\SuspiciousActivityDetector::generateRecommendedAction<\/a>"],[68.18181818181817,3,"<a href=\"SuspiciousActivityDetector.php.html#685\">App\\Domains\\Security\\Services\\SuspiciousActivityDetector::logDetectionActivity<\/a>"],[100,1,"<a href=\"SuspiciousActivityDetector.php.html#717\">App\\Domains\\Security\\Services\\SuspiciousActivityDetector::setFailureThreshold<\/a>"],[100,1,"<a href=\"SuspiciousActivityDetector.php.html#725\">App\\Domains\\Security\\Services\\SuspiciousActivityDetector::setFrequencyThreshold<\/a>"],[100,1,"<a href=\"SuspiciousActivityDetector.php.html#733\">App\\Domains\\Security\\Services\\SuspiciousActivityDetector::shouldTriggerAlert<\/a>"],[0,1,"<a href=\"SuspiciousActivityDetector.php.html#738\">App\\Domains\\Security\\Services\\SuspiciousActivityDetector::triggerAlert<\/a>"],[100,1,"<a href=\"SuspiciousActivityDetector.php.html#750\">App\\Domains\\Security\\Services\\SuspiciousActivityDetector::getThresholdConfiguration<\/a>"],[100,1,"<a href=\"SuspiciousActivityDetector.php.html#758\">App\\Domains\\Security\\Services\\SuspiciousActivityDetector::resetThresholdsToDefaults<\/a>"],[100,1,"<a href=\"SuspiciousActivityDetector.php.html#764\">App\\Domains\\Security\\Services\\SuspiciousActivityDetector::enableDetection<\/a>"],[100,1,"<a href=\"SuspiciousActivityDetector.php.html#769\">App\\Domains\\Security\\Services\\SuspiciousActivityDetector::disableDetection<\/a>"],[100,1,"<a href=\"SuspiciousActivityDetector.php.html#774\">App\\Domains\\Security\\Services\\SuspiciousActivityDetector::isDetectionEnabled<\/a>"]], 'Method Complexity'))
+      .transition()
+      .duration(500)
+      .call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  function getComplexityData(data, label) {
+    var values = [];
+    $.each(data, function(key) {
+      var value = Math.round(data[key][0]*100) / 100;
+      values.push({
+        x: value,
+        y: data[key][1],
+        class: data[key][2],
+        size: 0.05,
+        shape: 'diamond'
+      });
+    });
+
+    return [
+      {
+        key: label,
+        values: values,
+        color: "#4572A7"
+      }
+    ];
+  }
+});
+  </script>
+ </body>
+</html>

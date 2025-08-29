@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Dashboard for /var/www/html/app/Domains/Security/Services/Core</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="../../../../_css/bootstrap.min.css?v=11.0.10" rel="stylesheet" type="text/css">
+  <link href="../../../../_css/nv.d3.min.css?v=11.0.10" rel="stylesheet" type="text/css">
+  <link href="../../../../_css/style.css?v=11.0.10" rel="stylesheet" type="text/css">
+  <link href="../../../../_css/custom.css" rel="stylesheet" type="text/css">
+ </head>
+ <body>
+  <header>
+   <div class="container-fluid">
+    <div class="row">
+     <div class="col-md-12">
+      <nav aria-label="breadcrumb">
+       <ol class="breadcrumb">
+         <li class="breadcrumb-item"><a href="../../../../index.html">/var/www/html/app</a></li>
+         <li class="breadcrumb-item"><a href="../../../index.html">Domains</a></li>
+         <li class="breadcrumb-item"><a href="../../index.html">Security</a></li>
+         <li class="breadcrumb-item"><a href="../index.html">Services</a></li>
+         <li class="breadcrumb-item"><a href="index.html">Core</a></li>
+         <li class="breadcrumb-item active">(Dashboard)</li>
+
+       </ol>
+      </nav>
+     </div>
+    </div>
+   </div>
+  </header>
+  <div class="container-fluid">
+   <div class="row">
+    <div class="col-md-12">
+     <h2>Classes</h2>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Coverage Distribution</h3>
+     <div id="classCoverageDistribution" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Complexity</h3>
+     <div id="classComplexity" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Insufficient Coverage</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Class</th>
+         <th class="text-right">Coverage</th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="CsrfProtectionService.php.html#14">App\Domains\Security\Services\Core\CsrfProtectionService</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="XssProtectionService.php.html#14">App\Domains\Security\Services\Core\XssProtectionService</a></td><td class="text-right">0%</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Project Risks</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Class</th>
+         <th class="text-right"><abbr title="Change Risk Anti-Patterns (CRAP) Index">CRAP</abbr></th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="CsrfProtectionService.php.html#14">App\Domains\Security\Services\Core\CsrfProtectionService</a></td><td class="text-right">2070</td></tr>
+       <tr><td><a href="XssProtectionService.php.html#14">App\Domains\Security\Services\Core\XssProtectionService</a></td><td class="text-right">2070</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-12">
+     <h2>Methods</h2>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Coverage Distribution</h3>
+     <div id="methodCoverageDistribution" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Complexity</h3>
+     <div id="methodComplexity" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Insufficient Coverage</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Method</th>
+         <th class="text-right">Coverage</th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="CsrfProtectionService.php.html#24"><abbr title="App\Domains\Security\Services\Core\CsrfProtectionService::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CsrfProtectionService.php.html#28"><abbr title="App\Domains\Security\Services\Core\CsrfProtectionService::generateToken">generateToken</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CsrfProtectionService.php.html#69"><abbr title="App\Domains\Security\Services\Core\CsrfProtectionService::validateToken">validateToken</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CsrfProtectionService.php.html#110"><abbr title="App\Domains\Security\Services\Core\CsrfProtectionService::validateTokenFromPool">validateTokenFromPool</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CsrfProtectionService.php.html#145"><abbr title="App\Domains\Security\Services\Core\CsrfProtectionService::validateSingleToken">validateSingleToken</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CsrfProtectionService.php.html#167"><abbr title="App\Domains\Security\Services\Core\CsrfProtectionService::cleanExpiredTokens">cleanExpiredTokens</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CsrfProtectionService.php.html#205"><abbr title="App\Domains\Security\Services\Core\CsrfProtectionService::limitPoolSize">limitPoolSize</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CsrfProtectionService.php.html#245"><abbr title="App\Domains\Security\Services\Core\CsrfProtectionService::isTokenValid">isTokenValid</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CsrfProtectionService.php.html#278"><abbr title="App\Domains\Security\Services\Core\CsrfProtectionService::initializeTokenPool">initializeTokenPool</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CsrfProtectionService.php.html#306"><abbr title="App\Domains\Security\Services\Core\CsrfProtectionService::getTokenPoolStatus">getTokenPoolStatus</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CsrfProtectionService.php.html#340"><abbr title="App\Domains\Security\Services\Core\CsrfProtectionService::logCsrfValidationFailure">logCsrfValidationFailure</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="XssProtectionService.php.html#20"><abbr title="App\Domains\Security\Services\Core\XssProtectionService::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="XssProtectionService.php.html#29"><abbr title="App\Domains\Security\Services\Core\XssProtectionService::initializePurifiers">initializePurifiers</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="XssProtectionService.php.html#54"><abbr title="App\Domains\Security\Services\Core\XssProtectionService::clean">clean</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="XssProtectionService.php.html#73"><abbr title="App\Domains\Security\Services\Core\XssProtectionService::cleanHtml">cleanHtml</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="XssProtectionService.php.html#92"><abbr title="App\Domains\Security\Services\Core\XssProtectionService::cleanStrict">cleanStrict</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="XssProtectionService.php.html#111"><abbr title="App\Domains\Security\Services\Core\XssProtectionService::cleanArray">cleanArray</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="XssProtectionService.php.html#151"><abbr title="App\Domains\Security\Services\Core\XssProtectionService::cleanHtmlArray">cleanHtmlArray</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="XssProtectionService.php.html#191"><abbr title="App\Domains\Security\Services\Core\XssProtectionService::cleanForJs">cleanForJs</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="XssProtectionService.php.html#213"><abbr title="App\Domains\Security\Services\Core\XssProtectionService::cleanForUrl">cleanForUrl</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="XssProtectionService.php.html#234"><abbr title="App\Domains\Security\Services\Core\XssProtectionService::detectXss">detectXss</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="XssProtectionService.php.html#295"><abbr title="App\Domains\Security\Services\Core\XssProtectionService::getRiskLevel">getRiskLevel</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="XssProtectionService.php.html#314"><abbr title="App\Domains\Security\Services\Core\XssProtectionService::getHighestRiskLevel">getHighestRiskLevel</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="XssProtectionService.php.html#330"><abbr title="App\Domains\Security\Services\Core\XssProtectionService::containsSuspiciousJsContent">containsSuspiciousJsContent</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="XssProtectionService.php.html#347"><abbr title="App\Domains\Security\Services\Core\XssProtectionService::logXssAttempt">logXssAttempt</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="XssProtectionService.php.html#371"><abbr title="App\Domains\Security\Services\Core\XssProtectionService::getAllowedHtmlTags">getAllowedHtmlTags</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="XssProtectionService.php.html#381"><abbr title="App\Domains\Security\Services\Core\XssProtectionService::getCachePath">getCachePath</abbr></a></td><td class="text-right">0%</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Project Risks</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Method</th>
+         <th class="text-right"><abbr title="Change Risk Anti-Patterns (CRAP) Index">CRAP</abbr></th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="CsrfProtectionService.php.html#245"><abbr title="App\Domains\Security\Services\Core\CsrfProtectionService::isTokenValid">isTokenValid</abbr></a></td><td class="text-right">110</td></tr>
+       <tr><td><a href="CsrfProtectionService.php.html#69"><abbr title="App\Domains\Security\Services\Core\CsrfProtectionService::validateToken">validateToken</abbr></a></td><td class="text-right">42</td></tr>
+       <tr><td><a href="CsrfProtectionService.php.html#110"><abbr title="App\Domains\Security\Services\Core\CsrfProtectionService::validateTokenFromPool">validateTokenFromPool</abbr></a></td><td class="text-right">30</td></tr>
+       <tr><td><a href="CsrfProtectionService.php.html#145"><abbr title="App\Domains\Security\Services\Core\CsrfProtectionService::validateSingleToken">validateSingleToken</abbr></a></td><td class="text-right">30</td></tr>
+       <tr><td><a href="CsrfProtectionService.php.html#167"><abbr title="App\Domains\Security\Services\Core\CsrfProtectionService::cleanExpiredTokens">cleanExpiredTokens</abbr></a></td><td class="text-right">30</td></tr>
+       <tr><td><a href="XssProtectionService.php.html#111"><abbr title="App\Domains\Security\Services\Core\XssProtectionService::cleanArray">cleanArray</abbr></a></td><td class="text-right">30</td></tr>
+       <tr><td><a href="XssProtectionService.php.html#151"><abbr title="App\Domains\Security\Services\Core\XssProtectionService::cleanHtmlArray">cleanHtmlArray</abbr></a></td><td class="text-right">30</td></tr>
+       <tr><td><a href="CsrfProtectionService.php.html#205"><abbr title="App\Domains\Security\Services\Core\CsrfProtectionService::limitPoolSize">limitPoolSize</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="XssProtectionService.php.html#191"><abbr title="App\Domains\Security\Services\Core\XssProtectionService::cleanForJs">cleanForJs</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="XssProtectionService.php.html#234"><abbr title="App\Domains\Security\Services\Core\XssProtectionService::detectXss">detectXss</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="CsrfProtectionService.php.html#306"><abbr title="App\Domains\Security\Services\Core\CsrfProtectionService::getTokenPoolStatus">getTokenPoolStatus</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="XssProtectionService.php.html#54"><abbr title="App\Domains\Security\Services\Core\XssProtectionService::clean">clean</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="XssProtectionService.php.html#73"><abbr title="App\Domains\Security\Services\Core\XssProtectionService::cleanHtml">cleanHtml</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="XssProtectionService.php.html#92"><abbr title="App\Domains\Security\Services\Core\XssProtectionService::cleanStrict">cleanStrict</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="XssProtectionService.php.html#213"><abbr title="App\Domains\Security\Services\Core\XssProtectionService::cleanForUrl">cleanForUrl</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="XssProtectionService.php.html#295"><abbr title="App\Domains\Security\Services\Core\XssProtectionService::getRiskLevel">getRiskLevel</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="XssProtectionService.php.html#314"><abbr title="App\Domains\Security\Services\Core\XssProtectionService::getHighestRiskLevel">getHighestRiskLevel</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="XssProtectionService.php.html#330"><abbr title="App\Domains\Security\Services\Core\XssProtectionService::containsSuspiciousJsContent">containsSuspiciousJsContent</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="CsrfProtectionService.php.html#28"><abbr title="App\Domains\Security\Services\Core\CsrfProtectionService::generateToken">generateToken</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="CsrfProtectionService.php.html#278"><abbr title="App\Domains\Security\Services\Core\CsrfProtectionService::initializeTokenPool">initializeTokenPool</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="CsrfProtectionService.php.html#340"><abbr title="App\Domains\Security\Services\Core\CsrfProtectionService::logCsrfValidationFailure">logCsrfValidationFailure</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="XssProtectionService.php.html#381"><abbr title="App\Domains\Security\Services\Core\XssProtectionService::getCachePath">getCachePath</abbr></a></td><td class="text-right">6</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+   </div>
+   <footer>
+    <hr/>
+    <p>
+     <small>Generated by <a href="https://github.com/sebastianbergmann/php-code-coverage" target="_top">php-code-coverage 11.0.10</a> using <a href="https://www.php.net/" target="_top">PHP 8.4.11</a> and <a href="https://phpunit.de/">PHPUnit 11.5.34</a> at Fri Aug 29 9:23:06 CST 2025.</small>
+    </p>
+   </footer>
+  </div>
+  <script src="../../../../_js/jquery.min.js?v=11.0.10" type="text/javascript"></script>
+  <script src="../../../../_js/d3.min.js?v=11.0.10" type="text/javascript"></script>
+  <script src="../../../../_js/nv.d3.min.js?v=11.0.10" type="text/javascript"></script>
+  <script type="text/javascript">
+$(document).ready(function() {
+  nv.addGraph(function() {
+    var chart = nv.models.multiBarChart();
+    chart.tooltips(false)
+      .showControls(false)
+      .showLegend(false)
+      .reduceXTicks(false)
+      .staggerLabels(true)
+      .yAxis.tickFormat(d3.format('d'));
+
+    d3.select('#classCoverageDistribution svg')
+      .datum(getCoverageDistributionData([2,0,0,0,0,0,0,0,0,0,0,0], "Class Coverage"))
+      .transition().duration(500).call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  nv.addGraph(function() {
+    var chart = nv.models.multiBarChart();
+    chart.tooltips(false)
+      .showControls(false)
+      .showLegend(false)
+      .reduceXTicks(false)
+      .staggerLabels(true)
+      .yAxis.tickFormat(d3.format('d'));
+
+    d3.select('#methodCoverageDistribution svg')
+      .datum(getCoverageDistributionData([27,0,0,0,0,0,0,0,0,0,0,0], "Method Coverage"))
+      .transition().duration(500).call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  function getCoverageDistributionData(data, label) {
+    var labels = [
+      '0%',
+      '0-10%',
+      '10-20%',
+      '20-30%',
+      '30-40%',
+      '40-50%',
+      '50-60%',
+      '60-70%',
+      '70-80%',
+      '80-90%',
+      '90-100%',
+      '100%'
+    ];
+    var values = [];
+    $.each(labels, function(key) {
+      values.push({x: labels[key], y: data[key]});
+    });
+
+    return [
+      {
+        key: label,
+        values: values,
+        color: "#4572A7"
+      }
+    ];
+  }
+  nv.addGraph(function() {
+    var chart = nv.models.scatterChart()
+      .showDistX(true)
+      .showDistY(true)
+      .showLegend(false)
+      .forceX([0, 100]);
+    chart.tooltipContent(function(graph) {
+      return '<p>' + graph.point.class + '</p>';
+    });
+
+    chart.xAxis.axisLabel('Code Coverage (in percent)');
+    chart.yAxis.axisLabel('Cyclomatic Complexity');
+
+    d3.select('#classComplexity svg')
+      .datum(getComplexityData([[0,45,"<a href=\"CsrfProtectionService.php.html#14\">App\\Domains\\Security\\Services\\Core\\CsrfProtectionService<\/a>"],[0,45,"<a href=\"XssProtectionService.php.html#14\">App\\Domains\\Security\\Services\\Core\\XssProtectionService<\/a>"]], 'Class Complexity'))
+      .transition()
+      .duration(500)
+      .call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  nv.addGraph(function() {
+    var chart = nv.models.scatterChart()
+      .showDistX(true)
+      .showDistY(true)
+      .showLegend(false)
+      .forceX([0, 100]);
+    chart.tooltipContent(function(graph) {
+      return '<p>' + graph.point.class + '</p>';
+    });
+
+    chart.xAxis.axisLabel('Code Coverage (in percent)');
+    chart.yAxis.axisLabel('Method Complexity');
+
+    d3.select('#methodComplexity svg')
+      .datum(getComplexityData([[0,1,"<a href=\"CsrfProtectionService.php.html#24\">App\\Domains\\Security\\Services\\Core\\CsrfProtectionService::__construct<\/a>"],[0,2,"<a href=\"CsrfProtectionService.php.html#28\">App\\Domains\\Security\\Services\\Core\\CsrfProtectionService::generateToken<\/a>"],[0,6,"<a href=\"CsrfProtectionService.php.html#69\">App\\Domains\\Security\\Services\\Core\\CsrfProtectionService::validateToken<\/a>"],[0,5,"<a href=\"CsrfProtectionService.php.html#110\">App\\Domains\\Security\\Services\\Core\\CsrfProtectionService::validateTokenFromPool<\/a>"],[0,5,"<a href=\"CsrfProtectionService.php.html#145\">App\\Domains\\Security\\Services\\Core\\CsrfProtectionService::validateSingleToken<\/a>"],[0,5,"<a href=\"CsrfProtectionService.php.html#167\">App\\Domains\\Security\\Services\\Core\\CsrfProtectionService::cleanExpiredTokens<\/a>"],[0,4,"<a href=\"CsrfProtectionService.php.html#205\">App\\Domains\\Security\\Services\\Core\\CsrfProtectionService::limitPoolSize<\/a>"],[0,10,"<a href=\"CsrfProtectionService.php.html#245\">App\\Domains\\Security\\Services\\Core\\CsrfProtectionService::isTokenValid<\/a>"],[0,2,"<a href=\"CsrfProtectionService.php.html#278\">App\\Domains\\Security\\Services\\Core\\CsrfProtectionService::initializeTokenPool<\/a>"],[0,3,"<a href=\"CsrfProtectionService.php.html#306\">App\\Domains\\Security\\Services\\Core\\CsrfProtectionService::getTokenPoolStatus<\/a>"],[0,2,"<a href=\"CsrfProtectionService.php.html#340\">App\\Domains\\Security\\Services\\Core\\CsrfProtectionService::logCsrfValidationFailure<\/a>"],[0,1,"<a href=\"XssProtectionService.php.html#20\">App\\Domains\\Security\\Services\\Core\\XssProtectionService::__construct<\/a>"],[0,1,"<a href=\"XssProtectionService.php.html#29\">App\\Domains\\Security\\Services\\Core\\XssProtectionService::initializePurifiers<\/a>"],[0,3,"<a href=\"XssProtectionService.php.html#54\">App\\Domains\\Security\\Services\\Core\\XssProtectionService::clean<\/a>"],[0,3,"<a href=\"XssProtectionService.php.html#73\">App\\Domains\\Security\\Services\\Core\\XssProtectionService::cleanHtml<\/a>"],[0,3,"<a href=\"XssProtectionService.php.html#92\">App\\Domains\\Security\\Services\\Core\\XssProtectionService::cleanStrict<\/a>"],[0,5,"<a href=\"XssProtectionService.php.html#111\">App\\Domains\\Security\\Services\\Core\\XssProtectionService::cleanArray<\/a>"],[0,5,"<a href=\"XssProtectionService.php.html#151\">App\\Domains\\Security\\Services\\Core\\XssProtectionService::cleanHtmlArray<\/a>"],[0,4,"<a href=\"XssProtectionService.php.html#191\">App\\Domains\\Security\\Services\\Core\\XssProtectionService::cleanForJs<\/a>"],[0,3,"<a href=\"XssProtectionService.php.html#213\">App\\Domains\\Security\\Services\\Core\\XssProtectionService::cleanForUrl<\/a>"],[0,4,"<a href=\"XssProtectionService.php.html#234\">App\\Domains\\Security\\Services\\Core\\XssProtectionService::detectXss<\/a>"],[0,3,"<a href=\"XssProtectionService.php.html#295\">App\\Domains\\Security\\Services\\Core\\XssProtectionService::getRiskLevel<\/a>"],[0,3,"<a href=\"XssProtectionService.php.html#314\">App\\Domains\\Security\\Services\\Core\\XssProtectionService::getHighestRiskLevel<\/a>"],[0,3,"<a href=\"XssProtectionService.php.html#330\">App\\Domains\\Security\\Services\\Core\\XssProtectionService::containsSuspiciousJsContent<\/a>"],[0,1,"<a href=\"XssProtectionService.php.html#347\">App\\Domains\\Security\\Services\\Core\\XssProtectionService::logXssAttempt<\/a>"],[0,1,"<a href=\"XssProtectionService.php.html#371\">App\\Domains\\Security\\Services\\Core\\XssProtectionService::getAllowedHtmlTags<\/a>"],[0,2,"<a href=\"XssProtectionService.php.html#381\">App\\Domains\\Security\\Services\\Core\\XssProtectionService::getCachePath<\/a>"]], 'Method Complexity'))
+      .transition()
+      .duration(500)
+      .call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  function getComplexityData(data, label) {
+    var values = [];
+    $.each(data, function(key) {
+      var value = Math.round(data[key][0]*100) / 100;
+      values.push({
+        x: value,
+        y: data[key][1],
+        class: data[key][2],
+        size: 0.05,
+        shape: 'diamond'
+      });
+    });
+
+    return [
+      {
+        key: label,
+        values: values,
+        color: "#4572A7"
+      }
+    ];
+  }
+});
+  </script>
+ </body>
+</html>

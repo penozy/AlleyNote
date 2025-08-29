@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Dashboard for /var/www/html/app/Infrastructure/Routing</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="../../_css/bootstrap.min.css?v=11.0.10" rel="stylesheet" type="text/css">
+  <link href="../../_css/nv.d3.min.css?v=11.0.10" rel="stylesheet" type="text/css">
+  <link href="../../_css/style.css?v=11.0.10" rel="stylesheet" type="text/css">
+  <link href="../../_css/custom.css" rel="stylesheet" type="text/css">
+ </head>
+ <body>
+  <header>
+   <div class="container-fluid">
+    <div class="row">
+     <div class="col-md-12">
+      <nav aria-label="breadcrumb">
+       <ol class="breadcrumb">
+         <li class="breadcrumb-item"><a href="../../index.html">/var/www/html/app</a></li>
+         <li class="breadcrumb-item"><a href="../index.html">Infrastructure</a></li>
+         <li class="breadcrumb-item"><a href="index.html">Routing</a></li>
+         <li class="breadcrumb-item active">(Dashboard)</li>
+
+       </ol>
+      </nav>
+     </div>
+    </div>
+   </div>
+  </header>
+  <div class="container-fluid">
+   <div class="row">
+    <div class="col-md-12">
+     <h2>Classes</h2>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Coverage Distribution</h3>
+     <div id="classCoverageDistribution" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Complexity</h3>
+     <div id="classComplexity" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Insufficient Coverage</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Class</th>
+         <th class="text-right">Coverage</th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="Cache/FileRouteCache.php.html#15">App\Infrastructure\Routing\Cache\FileRouteCache</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Cache/MemoryRouteCache.php.html#15">App\Infrastructure\Routing\Cache\MemoryRouteCache</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Cache/RedisRouteCache.php.html#17">App\Infrastructure\Routing\Cache\RedisRouteCache</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Cache/RouteCacheFactory.php.html#15">App\Infrastructure\Routing\Cache\RouteCacheFactory</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Exceptions/RouteConfigurationException.php.html#14">App\Infrastructure\Routing\Exceptions\RouteConfigurationException</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Middleware/AbstractMiddleware.php.html#17">App\Infrastructure\Routing\Middleware\AbstractMiddleware</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Middleware/MiddlewareManager.php.html#19">App\Infrastructure\Routing\Middleware\MiddlewareManager</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Middleware/RouteInfoMiddleware.php.html#16">App\Infrastructure\Routing\Middleware\RouteInfoMiddleware</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Middleware/RouteParametersMiddleware.php.html#16">App\Infrastructure\Routing\Middleware\RouteParametersMiddleware</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Core/Router.php.html#22">App\Infrastructure\Routing\Core\Router</a></td><td class="text-right">16%</td></tr>
+       <tr><td><a href="Middleware/MiddlewareResolver.php.html#16">App\Infrastructure\Routing\Middleware\MiddlewareResolver</a></td><td class="text-right">19%</td></tr>
+       <tr><td><a href="ControllerResolver.php.html#23">App\Infrastructure\Routing\ControllerResolver</a></td><td class="text-right">20%</td></tr>
+       <tr><td><a href="Core/RouteCollection.php.html#16">App\Infrastructure\Routing\Core\RouteCollection</a></td><td class="text-right">21%</td></tr>
+       <tr><td><a href="Middleware/MiddlewareDispatcher.php.html#18">App\Infrastructure\Routing\Middleware\MiddlewareDispatcher</a></td><td class="text-right">45%</td></tr>
+       <tr><td><a href="Core/Route.php.html#18">App\Infrastructure\Routing\Core\Route</a></td><td class="text-right">46%</td></tr>
+       <tr><td><a href="RouteDispatcher.php.html#20">App\Infrastructure\Routing\RouteDispatcher</a></td><td class="text-right">47%</td></tr>
+       <tr><td><a href="RouteLoader.php.html#17">App\Infrastructure\Routing\RouteLoader</a></td><td class="text-right">52%</td></tr>
+       <tr><td><a href="RouteValidator.php.html#14">App\Infrastructure\Routing\RouteValidator</a></td><td class="text-right">53%</td></tr>
+       <tr><td><a href="Contracts/RouteMatchResult.php.html#12">App\Infrastructure\Routing\Contracts\RouteMatchResult</a></td><td class="text-right">62%</td></tr>
+       <tr><td><a href="Providers/RoutingServiceProvider.php.html#23">App\Infrastructure\Routing\Providers\RoutingServiceProvider</a></td><td class="text-right">69%</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Project Risks</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Class</th>
+         <th class="text-right"><abbr title="Change Risk Anti-Patterns (CRAP) Index">CRAP</abbr></th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="ControllerResolver.php.html#23">App\Infrastructure\Routing\ControllerResolver</a></td><td class="text-right">1932</td></tr>
+       <tr><td><a href="Core/Router.php.html#22">App\Infrastructure\Routing\Core\Router</a></td><td class="text-right">1245</td></tr>
+       <tr><td><a href="Cache/FileRouteCache.php.html#15">App\Infrastructure\Routing\Cache\FileRouteCache</a></td><td class="text-right">930</td></tr>
+       <tr><td><a href="Cache/RedisRouteCache.php.html#17">App\Infrastructure\Routing\Cache\RedisRouteCache</a></td><td class="text-right">930</td></tr>
+       <tr><td><a href="Cache/MemoryRouteCache.php.html#15">App\Infrastructure\Routing\Cache\MemoryRouteCache</a></td><td class="text-right">552</td></tr>
+       <tr><td><a href="Cache/RouteCacheFactory.php.html#15">App\Infrastructure\Routing\Cache\RouteCacheFactory</a></td><td class="text-right">552</td></tr>
+       <tr><td><a href="Core/RouteCollection.php.html#16">App\Infrastructure\Routing\Core\RouteCollection</a></td><td class="text-right">528</td></tr>
+       <tr><td><a href="Middleware/MiddlewareManager.php.html#19">App\Infrastructure\Routing\Middleware\MiddlewareManager</a></td><td class="text-right">462</td></tr>
+       <tr><td><a href="Core/Route.php.html#18">App\Infrastructure\Routing\Core\Route</a></td><td class="text-right">337</td></tr>
+       <tr><td><a href="Middleware/RouteInfoMiddleware.php.html#16">App\Infrastructure\Routing\Middleware\RouteInfoMiddleware</a></td><td class="text-right">210</td></tr>
+       <tr><td><a href="Middleware/MiddlewareResolver.php.html#16">App\Infrastructure\Routing\Middleware\MiddlewareResolver</a></td><td class="text-right">187</td></tr>
+       <tr><td><a href="Middleware/AbstractMiddleware.php.html#17">App\Infrastructure\Routing\Middleware\AbstractMiddleware</a></td><td class="text-right">182</td></tr>
+       <tr><td><a href="RouteValidator.php.html#14">App\Infrastructure\Routing\RouteValidator</a></td><td class="text-right">147</td></tr>
+       <tr><td><a href="RouteLoader.php.html#17">App\Infrastructure\Routing\RouteLoader</a></td><td class="text-right">110</td></tr>
+       <tr><td><a href="Middleware/RouteParametersMiddleware.php.html#16">App\Infrastructure\Routing\Middleware\RouteParametersMiddleware</a></td><td class="text-right">72</td></tr>
+       <tr><td><a href="Exceptions/RouteConfigurationException.php.html#14">App\Infrastructure\Routing\Exceptions\RouteConfigurationException</a></td><td class="text-right">56</td></tr>
+       <tr><td><a href="RouteDispatcher.php.html#20">App\Infrastructure\Routing\RouteDispatcher</a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="Providers/RoutingServiceProvider.php.html#23">App\Infrastructure\Routing\Providers\RoutingServiceProvider</a></td><td class="text-right">19</td></tr>
+       <tr><td><a href="Middleware/MiddlewareDispatcher.php.html#18">App\Infrastructure\Routing\Middleware\MiddlewareDispatcher</a></td><td class="text-right">6</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-12">
+     <h2>Methods</h2>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Coverage Distribution</h3>
+     <div id="methodCoverageDistribution" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Complexity</h3>
+     <div id="methodComplexity" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Insufficient Coverage</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Method</th>
+         <th class="text-right">Coverage</th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="Cache/FileRouteCache.php.html#27"><abbr title="App\Infrastructure\Routing\Cache\FileRouteCache::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Cache/FileRouteCache.php.html#34"><abbr title="App\Infrastructure\Routing\Cache\FileRouteCache::isValid">isValid</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Cache/FileRouteCache.php.html#53"><abbr title="App\Infrastructure\Routing\Cache\FileRouteCache::load">load</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Cache/FileRouteCache.php.html#85"><abbr title="App\Infrastructure\Routing\Cache\FileRouteCache::store">store</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Cache/FileRouteCache.php.html#101"><abbr title="App\Infrastructure\Routing\Cache\FileRouteCache::clear">clear</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Cache/FileRouteCache.php.html#127"><abbr title="App\Infrastructure\Routing\Cache\FileRouteCache::getCachePath">getCachePath</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Cache/FileRouteCache.php.html#132"><abbr title="App\Infrastructure\Routing\Cache\FileRouteCache::setTtl">setTtl</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Cache/FileRouteCache.php.html#137"><abbr title="App\Infrastructure\Routing\Cache\FileRouteCache::getTtl">getTtl</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Cache/FileRouteCache.php.html#142"><abbr title="App\Infrastructure\Routing\Cache\FileRouteCache::getStats">getStats</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Cache/FileRouteCache.php.html#150"><abbr title="App\Infrastructure\Routing\Cache\FileRouteCache::getCacheFile">getCacheFile</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Cache/FileRouteCache.php.html#158"><abbr title="App\Infrastructure\Routing\Cache\FileRouteCache::getStatsFile">getStatsFile</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Cache/FileRouteCache.php.html#166"><abbr title="App\Infrastructure\Routing\Cache\FileRouteCache::ensureCacheDirectory">ensureCacheDirectory</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Cache/FileRouteCache.php.html#176"><abbr title="App\Infrastructure\Routing\Cache\FileRouteCache::loadStats">loadStats</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Cache/FileRouteCache.php.html#193"><abbr title="App\Infrastructure\Routing\Cache\FileRouteCache::saveStats">saveStats</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Cache/MemoryRouteCache.php.html#31"><abbr title="App\Infrastructure\Routing\Cache\MemoryRouteCache::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Cache/MemoryRouteCache.php.html#36"><abbr title="App\Infrastructure\Routing\Cache\MemoryRouteCache::isValid">isValid</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Cache/MemoryRouteCache.php.html#56"><abbr title="App\Infrastructure\Routing\Cache\MemoryRouteCache::load">load</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Cache/MemoryRouteCache.php.html#79"><abbr title="App\Infrastructure\Routing\Cache\MemoryRouteCache::store">store</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Cache/MemoryRouteCache.php.html#92"><abbr title="App\Infrastructure\Routing\Cache\MemoryRouteCache::clear">clear</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Cache/MemoryRouteCache.php.html#109"><abbr title="App\Infrastructure\Routing\Cache\MemoryRouteCache::getCachePath">getCachePath</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Cache/MemoryRouteCache.php.html#114"><abbr title="App\Infrastructure\Routing\Cache\MemoryRouteCache::setTtl">setTtl</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Cache/MemoryRouteCache.php.html#119"><abbr title="App\Infrastructure\Routing\Cache\MemoryRouteCache::getTtl">getTtl</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Cache/MemoryRouteCache.php.html#124"><abbr title="App\Infrastructure\Routing\Cache\MemoryRouteCache::getStats">getStats</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Cache/MemoryRouteCache.php.html#132"><abbr title="App\Infrastructure\Routing\Cache\MemoryRouteCache::getCache">getCache</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Cache/MemoryRouteCache.php.html#140"><abbr title="App\Infrastructure\Routing\Cache\MemoryRouteCache::getTimestamps">getTimestamps</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Cache/MemoryRouteCache.php.html#148"><abbr title="App\Infrastructure\Routing\Cache\MemoryRouteCache::isItemExpired">isItemExpired</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Cache/MemoryRouteCache.php.html#166"><abbr title="App\Infrastructure\Routing\Cache\MemoryRouteCache::cleanupExpired">cleanupExpired</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Cache/RedisRouteCache.php.html#33"><abbr title="App\Infrastructure\Routing\Cache\RedisRouteCache::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Cache/RedisRouteCache.php.html#40"><abbr title="App\Infrastructure\Routing\Cache\RedisRouteCache::isValid">isValid</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Cache/RedisRouteCache.php.html#52"><abbr title="App\Infrastructure\Routing\Cache\RedisRouteCache::load">load</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Cache/RedisRouteCache.php.html#86"><abbr title="App\Infrastructure\Routing\Cache\RedisRouteCache::store">store</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Cache/RedisRouteCache.php.html#110"><abbr title="App\Infrastructure\Routing\Cache\RedisRouteCache::clear">clear</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Cache/RedisRouteCache.php.html#137"><abbr title="App\Infrastructure\Routing\Cache\RedisRouteCache::getCachePath">getCachePath</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Cache/RedisRouteCache.php.html#142"><abbr title="App\Infrastructure\Routing\Cache\RedisRouteCache::setTtl">setTtl</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Cache/RedisRouteCache.php.html#147"><abbr title="App\Infrastructure\Routing\Cache\RedisRouteCache::getTtl">getTtl</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Cache/RedisRouteCache.php.html#152"><abbr title="App\Infrastructure\Routing\Cache\RedisRouteCache::getStats">getStats</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Cache/RedisRouteCache.php.html#160"><abbr title="App\Infrastructure\Routing\Cache\RedisRouteCache::getRedis">getRedis</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Cache/RedisRouteCache.php.html#168"><abbr title="App\Infrastructure\Routing\Cache\RedisRouteCache::isConnected">isConnected</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Cache/RedisRouteCache.php.html#180"><abbr title="App\Infrastructure\Routing\Cache\RedisRouteCache::getCacheKey">getCacheKey</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Cache/RedisRouteCache.php.html#188"><abbr title="App\Infrastructure\Routing\Cache\RedisRouteCache::loadStats">loadStats</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Cache/RedisRouteCache.php.html#206"><abbr title="App\Infrastructure\Routing\Cache\RedisRouteCache::saveStats">saveStats</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Cache/RouteCacheFactory.php.html#31"><abbr title="App\Infrastructure\Routing\Cache\RouteCacheFactory::create">create</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Cache/RouteCacheFactory.php.html#54"><abbr title="App\Infrastructure\Routing\Cache\RouteCacheFactory::createFileCache">createFileCache</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Cache/RouteCacheFactory.php.html#71"><abbr title="App\Infrastructure\Routing\Cache\RouteCacheFactory::createMemoryCache">createMemoryCache</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Cache/RouteCacheFactory.php.html#87"><abbr title="App\Infrastructure\Routing\Cache\RouteCacheFactory::getSupportedDrivers">getSupportedDrivers</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Cache/RouteCacheFactory.php.html#95"><abbr title="App\Infrastructure\Routing\Cache\RouteCacheFactory::isDriverSupported">isDriverSupported</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Cache/RouteCacheFactory.php.html#103"><abbr title="App\Infrastructure\Routing\Cache\RouteCacheFactory::getDriverClass">getDriverClass</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Cache/RouteCacheFactory.php.html#111"><abbr title="App\Infrastructure\Routing\Cache\RouteCacheFactory::createDefault">createDefault</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Cache/RouteCacheFactory.php.html#122"><abbr title="App\Infrastructure\Routing\Cache\RouteCacheFactory::validateConfig">validateConfig</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Contracts/RouteMatchResult.php.html#50"><abbr title="App\Infrastructure\Routing\Contracts\RouteMatchResult::getParameter">getParameter</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Contracts/RouteMatchResult.php.html#58"><abbr title="App\Infrastructure\Routing\Contracts\RouteMatchResult::getError">getError</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Contracts/RouteMatchResult.php.html#76"><abbr title="App\Infrastructure\Routing\Contracts\RouteMatchResult::failed">failed</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ControllerResolver.php.html#81"><abbr title="App\Infrastructure\Routing\ControllerResolver::createResponse">createResponse</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ControllerResolver.php.html#344"><abbr title="App\Infrastructure\Routing\ControllerResolver::handleStringHandler">handleStringHandler</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ControllerResolver.php.html#419"><abbr title="App\Infrastructure\Routing\ControllerResolver::resolveConstructorArguments">resolveConstructorArguments</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ControllerResolver.php.html#458"><abbr title="App\Infrastructure\Routing\ControllerResolver::resolveMethodArguments">resolveMethodArguments</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ControllerResolver.php.html#529"><abbr title="App\Infrastructure\Routing\ControllerResolver::convertParameter">convertParameter</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Core/Route.php.html#48"><abbr title="App\Infrastructure\Routing\Core\Route::getPattern">getPattern</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Core/Route.php.html#63"><abbr title="App\Infrastructure\Routing\Core\Route::addMiddleware">addMiddleware</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Core/Route.php.html#70"><abbr title="App\Infrastructure\Routing\Core\Route::addMiddlewares">addMiddlewares</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Core/Route.php.html#128"><abbr title="App\Infrastructure\Routing\Core\Route::generateUrl">generateUrl</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Core/Route.php.html#157"><abbr title="App\Infrastructure\Routing\Core\Route::withAttributes">withAttributes</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Core/Route.php.html#247"><abbr title="App\Infrastructure\Routing\Core\Route::get">get</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Core/Route.php.html#252"><abbr title="App\Infrastructure\Routing\Core\Route::post">post</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Core/Route.php.html#257"><abbr title="App\Infrastructure\Routing\Core\Route::put">put</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Core/Route.php.html#262"><abbr title="App\Infrastructure\Routing\Core\Route::patch">patch</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Core/Route.php.html#267"><abbr title="App\Infrastructure\Routing\Core\Route::delete">delete</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Core/Route.php.html#272"><abbr title="App\Infrastructure\Routing\Core\Route::any">any</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Core/Route.php.html#277"><abbr title="App\Infrastructure\Routing\Core\Route::match">match</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Core/RouteCollection.php.html#46"><abbr title="App\Infrastructure\Routing\Core\RouteCollection::addRoutes">addRoutes</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Core/RouteCollection.php.html#55"><abbr title="App\Infrastructure\Routing\Core\RouteCollection::getByName">getByName</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Core/RouteCollection.php.html#60"><abbr title="App\Infrastructure\Routing\Core\RouteCollection::all">all</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Core/RouteCollection.php.html#87"><abbr title="App\Infrastructure\Routing\Core\RouteCollection::has">has</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Core/RouteCollection.php.html#92"><abbr title="App\Infrastructure\Routing\Core\RouteCollection::remove">remove</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Core/RouteCollection.php.html#118"><abbr title="App\Infrastructure\Routing\Core\RouteCollection::clear">clear</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Core/RouteCollection.php.html#125"><abbr title="App\Infrastructure\Routing\Core\RouteCollection::count">count</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Core/RouteCollection.php.html#130"><abbr title="App\Infrastructure\Routing\Core\RouteCollection::toArray">toArray</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Core/RouteCollection.php.html#147"><abbr title="App\Infrastructure\Routing\Core\RouteCollection::fromArray">fromArray</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Core/RouteCollection.php.html#179"><abbr title="App\Infrastructure\Routing\Core\RouteCollection::serializeHandler">serializeHandler</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Core/Router.php.html#38"><abbr title="App\Infrastructure\Routing\Core\Router::get">get</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Core/Router.php.html#43"><abbr title="App\Infrastructure\Routing\Core\Router::post">post</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Core/Router.php.html#48"><abbr title="App\Infrastructure\Routing\Core\Router::put">put</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Core/Router.php.html#53"><abbr title="App\Infrastructure\Routing\Core\Router::patch">patch</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Core/Router.php.html#58"><abbr title="App\Infrastructure\Routing\Core\Router::delete">delete</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Core/Router.php.html#63"><abbr title="App\Infrastructure\Routing\Core\Router::options">options</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Core/Router.php.html#92"><abbr title="App\Infrastructure\Routing\Core\Router::any">any</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Core/Router.php.html#97"><abbr title="App\Infrastructure\Routing\Core\Router::group">group</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Core/Router.php.html#134"><abbr title="App\Infrastructure\Routing\Core\Router::getRoutes">getRoutes</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Core/Router.php.html#139"><abbr title="App\Infrastructure\Routing\Core\Router::url">url</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Core/Router.php.html#162"><abbr title="App\Infrastructure\Routing\Core\Router::setCache">setCache</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Core/Router.php.html#167"><abbr title="App\Infrastructure\Routing\Core\Router::getCache">getCache</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Core/Router.php.html#175"><abbr title="App\Infrastructure\Routing\Core\Router::cacheRoutes">cacheRoutes</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Core/Router.php.html#184"><abbr title="App\Infrastructure\Routing\Core\Router::setMiddlewareManager">setMiddlewareManager</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Core/Router.php.html#189"><abbr title="App\Infrastructure\Routing\Core\Router::getMiddlewareManager">getMiddlewareManager</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Core/Router.php.html#194"><abbr title="App\Infrastructure\Routing\Core\Router::addGlobalMiddleware">addGlobalMiddleware</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Core/Router.php.html#201"><abbr title="App\Infrastructure\Routing\Core\Router::addGlobalMiddlewares">addGlobalMiddlewares</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Core/Router.php.html#211"><abbr title="App\Infrastructure\Routing\Core\Router::applyPrefix">applyPrefix</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Core/Router.php.html#234"><abbr title="App\Infrastructure\Routing\Core\Router::mergeGroupAttributes">mergeGroupAttributes</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Exceptions/RouteConfigurationException.php.html#19"><abbr title="App\Infrastructure\Routing\Exceptions\RouteConfigurationException::fileNotFound">fileNotFound</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Exceptions/RouteConfigurationException.php.html#27"><abbr title="App\Infrastructure\Routing\Exceptions\RouteConfigurationException::unreadableFile">unreadableFile</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Exceptions/RouteConfigurationException.php.html#35"><abbr title="App\Infrastructure\Routing\Exceptions\RouteConfigurationException::invalidRouteDefinition">invalidRouteDefinition</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Exceptions/RouteConfigurationException.php.html#43"><abbr title="App\Infrastructure\Routing\Exceptions\RouteConfigurationException::duplicateRoute">duplicateRoute</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Exceptions/RouteConfigurationException.php.html#51"><abbr title="App\Infrastructure\Routing\Exceptions\RouteConfigurationException::invalidHandler">invalidHandler</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Exceptions/RouteConfigurationException.php.html#61"><abbr title="App\Infrastructure\Routing\Exceptions\RouteConfigurationException::syntaxError">syntaxError</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Middleware/AbstractMiddleware.php.html#41"><abbr title="App\Infrastructure\Routing\Middleware\AbstractMiddleware::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Middleware/AbstractMiddleware.php.html#51"><abbr title="App\Infrastructure\Routing\Middleware\AbstractMiddleware::process">process</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Middleware/AbstractMiddleware.php.html#71"><abbr title="App\Infrastructure\Routing\Middleware\AbstractMiddleware::execute">execute</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Middleware/AbstractMiddleware.php.html#76"><abbr title="App\Infrastructure\Routing\Middleware\AbstractMiddleware::getPriority">getPriority</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Middleware/AbstractMiddleware.php.html#81"><abbr title="App\Infrastructure\Routing\Middleware\AbstractMiddleware::getName">getName</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Middleware/AbstractMiddleware.php.html#86"><abbr title="App\Infrastructure\Routing\Middleware\AbstractMiddleware::shouldProcess">shouldProcess</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Middleware/AbstractMiddleware.php.html#96"><abbr title="App\Infrastructure\Routing\Middleware\AbstractMiddleware::setPriority">setPriority</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Middleware/AbstractMiddleware.php.html#108"><abbr title="App\Infrastructure\Routing\Middleware\AbstractMiddleware::setName">setName</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Middleware/AbstractMiddleware.php.html#118"><abbr title="App\Infrastructure\Routing\Middleware\AbstractMiddleware::enable">enable</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Middleware/AbstractMiddleware.php.html#128"><abbr title="App\Infrastructure\Routing\Middleware\AbstractMiddleware::disable">disable</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Middleware/AbstractMiddleware.php.html#138"><abbr title="App\Infrastructure\Routing\Middleware\AbstractMiddleware::isEnabled">isEnabled</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Middleware/MiddlewareDispatcher.php.html#51"><abbr title="App\Infrastructure\Routing\Middleware\MiddlewareDispatcher::createMiddlewareHandler">createMiddlewareHandler</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Middleware/MiddlewareManager.php.html#38"><abbr title="App\Infrastructure\Routing\Middleware\MiddlewareManager::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Middleware/MiddlewareManager.php.html#43"><abbr title="App\Infrastructure\Routing\Middleware\MiddlewareManager::add">add</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Middleware/MiddlewareManager.php.html#50"><abbr title="App\Infrastructure\Routing\Middleware\MiddlewareManager::addMultiple">addMultiple</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Middleware/MiddlewareManager.php.html#61"><abbr title="App\Infrastructure\Routing\Middleware\MiddlewareManager::remove">remove</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Middleware/MiddlewareManager.php.html#68"><abbr title="App\Infrastructure\Routing\Middleware\MiddlewareManager::clear">clear</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Middleware/MiddlewareManager.php.html#75"><abbr title="App\Infrastructure\Routing\Middleware\MiddlewareManager::has">has</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Middleware/MiddlewareManager.php.html#80"><abbr title="App\Infrastructure\Routing\Middleware\MiddlewareManager::get">get</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Middleware/MiddlewareManager.php.html#85"><abbr title="App\Infrastructure\Routing\Middleware\MiddlewareManager::getAll">getAll</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Middleware/MiddlewareManager.php.html#90"><abbr title="App\Infrastructure\Routing\Middleware\MiddlewareManager::getSorted">getSorted</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Middleware/MiddlewareManager.php.html#102"><abbr title="App\Infrastructure\Routing\Middleware\MiddlewareManager::process">process</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Middleware/MiddlewareManager.php.html#117"><abbr title="App\Infrastructure\Routing\Middleware\MiddlewareManager::count">count</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Middleware/MiddlewareManager.php.html#127"><abbr title="App\Infrastructure\Routing\Middleware\MiddlewareManager::getNames">getNames</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Middleware/MiddlewareManager.php.html#137"><abbr title="App\Infrastructure\Routing\Middleware\MiddlewareManager::setPriorities">setPriorities</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Middleware/MiddlewareManager.php.html#154"><abbr title="App\Infrastructure\Routing\Middleware\MiddlewareManager::setStates">setStates</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Middleware/MiddlewareResolver.php.html#89"><abbr title="App\Infrastructure\Routing\Middleware\MiddlewareResolver::resolveMultiple">resolveMultiple</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Middleware/MiddlewareResolver.php.html#105"><abbr title="App\Infrastructure\Routing\Middleware\MiddlewareResolver::canResolve">canResolve</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Middleware/MiddlewareResolver.php.html#133"><abbr title="App\Infrastructure\Routing\Middleware\MiddlewareResolver::getAliases">getAliases</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Middleware/MiddlewareResolver.php.html#141"><abbr title="App\Infrastructure\Routing\Middleware\MiddlewareResolver::registerAlias">registerAlias</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Middleware/RouteInfoMiddleware.php.html#49"><abbr title="App\Infrastructure\Routing\Middleware\RouteInfoMiddleware::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Middleware/RouteInfoMiddleware.php.html#63"><abbr title="App\Infrastructure\Routing\Middleware\RouteInfoMiddleware::execute">execute</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Middleware/RouteInfoMiddleware.php.html#102"><abbr title="App\Infrastructure\Routing\Middleware\RouteInfoMiddleware::setRouteName">setRouteName</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Middleware/RouteInfoMiddleware.php.html#114"><abbr title="App\Infrastructure\Routing\Middleware\RouteInfoMiddleware::setRoutePattern">setRoutePattern</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Middleware/RouteInfoMiddleware.php.html#126"><abbr title="App\Infrastructure\Routing\Middleware\RouteInfoMiddleware::setMethods">setMethods</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Middleware/RouteInfoMiddleware.php.html#138"><abbr title="App\Infrastructure\Routing\Middleware\RouteInfoMiddleware::setHandler">setHandler</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Middleware/RouteInfoMiddleware.php.html#148"><abbr title="App\Infrastructure\Routing\Middleware\RouteInfoMiddleware::getRouteName">getRouteName</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Middleware/RouteInfoMiddleware.php.html#156"><abbr title="App\Infrastructure\Routing\Middleware\RouteInfoMiddleware::getRoutePattern">getRoutePattern</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Middleware/RouteInfoMiddleware.php.html#166"><abbr title="App\Infrastructure\Routing\Middleware\RouteInfoMiddleware::getMethods">getMethods</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Middleware/RouteInfoMiddleware.php.html#174"><abbr title="App\Infrastructure\Routing\Middleware\RouteInfoMiddleware::getHandler">getHandler</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Middleware/RouteParametersMiddleware.php.html#31"><abbr title="App\Infrastructure\Routing\Middleware\RouteParametersMiddleware::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Middleware/RouteParametersMiddleware.php.html#37"><abbr title="App\Infrastructure\Routing\Middleware\RouteParametersMiddleware::execute">execute</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Middleware/RouteParametersMiddleware.php.html#57"><abbr title="App\Infrastructure\Routing\Middleware\RouteParametersMiddleware::setParameters">setParameters</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Middleware/RouteParametersMiddleware.php.html#70"><abbr title="App\Infrastructure\Routing\Middleware\RouteParametersMiddleware::addParameter">addParameter</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Middleware/RouteParametersMiddleware.php.html#82"><abbr title="App\Infrastructure\Routing\Middleware\RouteParametersMiddleware::getParameters">getParameters</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Middleware/RouteParametersMiddleware.php.html#92"><abbr title="App\Infrastructure\Routing\Middleware\RouteParametersMiddleware::removeParameter">removeParameter</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Middleware/RouteParametersMiddleware.php.html#102"><abbr title="App\Infrastructure\Routing\Middleware\RouteParametersMiddleware::clearParameters">clearParameters</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Providers/RoutingServiceProvider.php.html#149"><abbr title="App\Infrastructure\Routing\Providers\RoutingServiceProvider::getRoutingStats">getRoutingStats</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="RouteDispatcher.php.html#81"><abbr title="App\Infrastructure\Routing\RouteDispatcher::handleNotFound">handleNotFound</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="RouteDispatcher.php.html#108"><abbr title="App\Infrastructure\Routing\RouteDispatcher::create">create</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="RouteLoader.php.html#173"><abbr title="App\Infrastructure\Routing\RouteLoader::getLoadedRoutes">getLoadedRoutes</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="RouteLoader.php.html#181"><abbr title="App\Infrastructure\Routing\RouteLoader::getRouteStats">getRouteStats</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="RouteLoader.php.html#204"><abbr title="App\Infrastructure\Routing\RouteLoader::clearRoutes">clearRoutes</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="RouteLoader.php.html#214"><abbr title="App\Infrastructure\Routing\RouteLoader::getRoutesByGroup">getRoutesByGroup</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="RouteLoader.php.html#224"><abbr title="App\Infrastructure\Routing\RouteLoader::findRoutes">findRoutes</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="RouteValidator.php.html#206"><abbr title="App\Infrastructure\Routing\RouteValidator::getRegisteredRoutes">getRegisteredRoutes</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Middleware/MiddlewareResolver.php.html#39"><abbr title="App\Infrastructure\Routing\Middleware\MiddlewareResolver::resolve">resolve</abbr></a></td><td class="text-right">22%</td></tr>
+       <tr><td><a href="ControllerResolver.php.html#380"><abbr title="App\Infrastructure\Routing\ControllerResolver::resolveController">resolveController</abbr></a></td><td class="text-right">28%</td></tr>
+       <tr><td><a href="ControllerResolver.php.html#358"><abbr title="App\Infrastructure\Routing\ControllerResolver::handleArrayHandler">handleArrayHandler</abbr></a></td><td class="text-right">33%</td></tr>
+       <tr><td><a href="RouteLoader.php.html#67"><abbr title="App\Infrastructure\Routing\RouteLoader::loadRouteFile">loadRouteFile</abbr></a></td><td class="text-right">35%</td></tr>
+       <tr><td><a href="RouteValidator.php.html#66"><abbr title="App\Infrastructure\Routing\RouteValidator::validateHttpMethods">validateHttpMethods</abbr></a></td><td class="text-right">36%</td></tr>
+       <tr><td><a href="RouteValidator.php.html#99"><abbr title="App\Infrastructure\Routing\RouteValidator::validatePath">validatePath</abbr></a></td><td class="text-right">36%</td></tr>
+       <tr><td><a href="RouteValidator.php.html#49"><abbr title="App\Infrastructure\Routing\RouteValidator::validateRouteStructure">validateRouteStructure</abbr></a></td><td class="text-right">42%</td></tr>
+       <tr><td><a href="Providers/RoutingServiceProvider.php.html#116"><abbr title="App\Infrastructure\Routing\Providers\RoutingServiceProvider::loadRoutes">loadRoutes</abbr></a></td><td class="text-right">46%</td></tr>
+       <tr><td><a href="ControllerResolver.php.html#209"><abbr title="App\Infrastructure\Routing\ControllerResolver::createJsonResponse">createJsonResponse</abbr></a></td><td class="text-right">47%</td></tr>
+       <tr><td><a href="Core/Router.php.html#111"><abbr title="App\Infrastructure\Routing\Core\Router::dispatch">dispatch</abbr></a></td><td class="text-right">55%</td></tr>
+       <tr><td><a href="Core/Route.php.html#186"><abbr title="App\Infrastructure\Routing\Core\Route::middleware">middleware</abbr></a></td><td class="text-right">57%</td></tr>
+       <tr><td><a href="Middleware/MiddlewareDispatcher.php.html#30"><abbr title="App\Infrastructure\Routing\Middleware\MiddlewareDispatcher::buildChain">buildChain</abbr></a></td><td class="text-right">60%</td></tr>
+       <tr><td><a href="RouteLoader.php.html#108"><abbr title="App\Infrastructure\Routing\RouteLoader::processArrayRoutes">processArrayRoutes</abbr></a></td><td class="text-right">61%</td></tr>
+       <tr><td><a href="ControllerResolver.php.html#60"><abbr title="App\Infrastructure\Routing\ControllerResolver::handleCallable">handleCallable</abbr></a></td><td class="text-right">66%</td></tr>
+       <tr><td><a href="Core/Router.php.html#68"><abbr title="App\Infrastructure\Routing\Core\Router::map">map</abbr></a></td><td class="text-right">66%</td></tr>
+       <tr><td><a href="RouteValidator.php.html#134"><abbr title="App\Infrastructure\Routing\RouteValidator::validateHandler">validateHandler</abbr></a></td><td class="text-right">66%</td></tr>
+       <tr><td><a href="ControllerResolver.php.html#32"><abbr title="App\Infrastructure\Routing\ControllerResolver::resolve">resolve</abbr></a></td><td class="text-right">75%</td></tr>
+       <tr><td><a href="RouteLoader.php.html#33"><abbr title="App\Infrastructure\Routing\RouteLoader::addRouteFile">addRouteFile</abbr></a></td><td class="text-right">77%</td></tr>
+       <tr><td><a href="Core/Route.php.html#114"><abbr title="App\Infrastructure\Routing\Core\Route::matches">matches</abbr></a></td><td class="text-right">80%</td></tr>
+       <tr><td><a href="Core/RouteCollection.php.html#72"><abbr title="App\Infrastructure\Routing\Core\RouteCollection::match">match</abbr></a></td><td class="text-right">85%</td></tr>
+       <tr><td><a href="Core/Route.php.html#94"><abbr title="App\Infrastructure\Routing\Core\Route::matchesPath">matchesPath</abbr></a></td><td class="text-right">87%</td></tr>
+       <tr><td><a href="Core/RouteCollection.php.html#27"><abbr title="App\Infrastructure\Routing\Core\RouteCollection::add">add</abbr></a></td><td class="text-right">87%</td></tr>
+       <tr><td><a href="RouteValidator.php.html#178"><abbr title="App\Infrastructure\Routing\RouteValidator::checkDuplicateRoute">checkDuplicateRoute</abbr></a></td><td class="text-right">87%</td></tr>
+       <tr><td><a href="RouteDispatcher.php.html#36"><abbr title="App\Infrastructure\Routing\RouteDispatcher::dispatch">dispatch</abbr></a></td><td class="text-right">89%</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Project Risks</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Method</th>
+         <th class="text-right"><abbr title="Change Risk Anti-Patterns (CRAP) Index">CRAP</abbr></th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="ControllerResolver.php.html#458"><abbr title="App\Infrastructure\Routing\ControllerResolver::resolveMethodArguments">resolveMethodArguments</abbr></a></td><td class="text-right">306</td></tr>
+       <tr><td><a href="Cache/RouteCacheFactory.php.html#122"><abbr title="App\Infrastructure\Routing\Cache\RouteCacheFactory::validateConfig">validateConfig</abbr></a></td><td class="text-right">132</td></tr>
+       <tr><td><a href="ControllerResolver.php.html#419"><abbr title="App\Infrastructure\Routing\ControllerResolver::resolveConstructorArguments">resolveConstructorArguments</abbr></a></td><td class="text-right">72</td></tr>
+       <tr><td><a href="Core/Router.php.html#234"><abbr title="App\Infrastructure\Routing\Core\Router::mergeGroupAttributes">mergeGroupAttributes</abbr></a></td><td class="text-right">72</td></tr>
+       <tr><td><a href="ControllerResolver.php.html#529"><abbr title="App\Infrastructure\Routing\ControllerResolver::convertParameter">convertParameter</abbr></a></td><td class="text-right">56</td></tr>
+       <tr><td><a href="Core/Route.php.html#128"><abbr title="App\Infrastructure\Routing\Core\Route::generateUrl">generateUrl</abbr></a></td><td class="text-right">42</td></tr>
+       <tr><td><a href="Core/RouteCollection.php.html#179"><abbr title="App\Infrastructure\Routing\Core\RouteCollection::serializeHandler">serializeHandler</abbr></a></td><td class="text-right">42</td></tr>
+       <tr><td><a href="Middleware/MiddlewareResolver.php.html#39"><abbr title="App\Infrastructure\Routing\Middleware\MiddlewareResolver::resolve">resolve</abbr></a></td><td class="text-right">37</td></tr>
+       <tr><td><a href="Cache/FileRouteCache.php.html#34"><abbr title="App\Infrastructure\Routing\Cache\FileRouteCache::isValid">isValid</abbr></a></td><td class="text-right">30</td></tr>
+       <tr><td><a href="Cache/MemoryRouteCache.php.html#36"><abbr title="App\Infrastructure\Routing\Cache\MemoryRouteCache::isValid">isValid</abbr></a></td><td class="text-right">30</td></tr>
+       <tr><td><a href="Middleware/RouteInfoMiddleware.php.html#63"><abbr title="App\Infrastructure\Routing\Middleware\RouteInfoMiddleware::execute">execute</abbr></a></td><td class="text-right">30</td></tr>
+       <tr><td><a href="Cache/FileRouteCache.php.html#53"><abbr title="App\Infrastructure\Routing\Cache\FileRouteCache::load">load</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="Cache/FileRouteCache.php.html#101"><abbr title="App\Infrastructure\Routing\Cache\FileRouteCache::clear">clear</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="Cache/FileRouteCache.php.html#176"><abbr title="App\Infrastructure\Routing\Cache\FileRouteCache::loadStats">loadStats</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="Cache/RedisRouteCache.php.html#52"><abbr title="App\Infrastructure\Routing\Cache\RedisRouteCache::load">load</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="Cache/RedisRouteCache.php.html#86"><abbr title="App\Infrastructure\Routing\Cache\RedisRouteCache::store">store</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="Cache/RedisRouteCache.php.html#188"><abbr title="App\Infrastructure\Routing\Cache\RedisRouteCache::loadStats">loadStats</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="Cache/RouteCacheFactory.php.html#31"><abbr title="App\Infrastructure\Routing\Cache\RouteCacheFactory::create">create</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="ControllerResolver.php.html#81"><abbr title="App\Infrastructure\Routing\ControllerResolver::createResponse">createResponse</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="Core/Route.php.html#70"><abbr title="App\Infrastructure\Routing\Core\Route::addMiddlewares">addMiddlewares</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="Core/Route.php.html#157"><abbr title="App\Infrastructure\Routing\Core\Route::withAttributes">withAttributes</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="Core/RouteCollection.php.html#92"><abbr title="App\Infrastructure\Routing\Core\RouteCollection::remove">remove</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="Core/RouteCollection.php.html#147"><abbr title="App\Infrastructure\Routing\Core\RouteCollection::fromArray">fromArray</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="Core/Router.php.html#139"><abbr title="App\Infrastructure\Routing\Core\Router::url">url</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="Middleware/MiddlewareManager.php.html#154"><abbr title="App\Infrastructure\Routing\Middleware\MiddlewareManager::setStates">setStates</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="Middleware/MiddlewareResolver.php.html#105"><abbr title="App\Infrastructure\Routing\Middleware\MiddlewareResolver::canResolve">canResolve</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="RouteValidator.php.html#99"><abbr title="App\Infrastructure\Routing\RouteValidator::validatePath">validatePath</abbr></a></td><td class="text-right">19</td></tr>
+       <tr><td><a href="RouteValidator.php.html#134"><abbr title="App\Infrastructure\Routing\RouteValidator::validateHandler">validateHandler</abbr></a></td><td class="text-right">19</td></tr>
+       <tr><td><a href="ControllerResolver.php.html#380"><abbr title="App\Infrastructure\Routing\ControllerResolver::resolveController">resolveController</abbr></a></td><td class="text-right">19</td></tr>
+       <tr><td><a href="Cache/MemoryRouteCache.php.html#56"><abbr title="App\Infrastructure\Routing\Cache\MemoryRouteCache::load">load</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Cache/MemoryRouteCache.php.html#148"><abbr title="App\Infrastructure\Routing\Cache\MemoryRouteCache::isItemExpired">isItemExpired</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Cache/MemoryRouteCache.php.html#166"><abbr title="App\Infrastructure\Routing\Cache\MemoryRouteCache::cleanupExpired">cleanupExpired</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Cache/RedisRouteCache.php.html#40"><abbr title="App\Infrastructure\Routing\Cache\RedisRouteCache::isValid">isValid</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Cache/RedisRouteCache.php.html#110"><abbr title="App\Infrastructure\Routing\Cache\RedisRouteCache::clear">clear</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Cache/RedisRouteCache.php.html#206"><abbr title="App\Infrastructure\Routing\Cache\RedisRouteCache::saveStats">saveStats</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Core/RouteCollection.php.html#46"><abbr title="App\Infrastructure\Routing\Core\RouteCollection::addRoutes">addRoutes</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Core/Router.php.html#211"><abbr title="App\Infrastructure\Routing\Core\Router::applyPrefix">applyPrefix</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Middleware/AbstractMiddleware.php.html#51"><abbr title="App\Infrastructure\Routing\Middleware\AbstractMiddleware::process">process</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Middleware/MiddlewareManager.php.html#50"><abbr title="App\Infrastructure\Routing\Middleware\MiddlewareManager::addMultiple">addMultiple</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Middleware/MiddlewareManager.php.html#137"><abbr title="App\Infrastructure\Routing\Middleware\MiddlewareManager::setPriorities">setPriorities</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="RouteLoader.php.html#181"><abbr title="App\Infrastructure\Routing\RouteLoader::getRouteStats">getRouteStats</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="RouteLoader.php.html#67"><abbr title="App\Infrastructure\Routing\RouteLoader::loadRouteFile">loadRouteFile</abbr></a></td><td class="text-right">11</td></tr>
+       <tr><td><a href="Providers/RoutingServiceProvider.php.html#116"><abbr title="App\Infrastructure\Routing\Providers\RoutingServiceProvider::loadRoutes">loadRoutes</abbr></a></td><td class="text-right">11</td></tr>
+       <tr><td><a href="RouteValidator.php.html#66"><abbr title="App\Infrastructure\Routing\RouteValidator::validateHttpMethods">validateHttpMethods</abbr></a></td><td class="text-right">11</td></tr>
+       <tr><td><a href="ControllerResolver.php.html#209"><abbr title="App\Infrastructure\Routing\ControllerResolver::createJsonResponse">createJsonResponse</abbr></a></td><td class="text-right">11</td></tr>
+       <tr><td><a href="Core/Router.php.html#111"><abbr title="App\Infrastructure\Routing\Core\Router::dispatch">dispatch</abbr></a></td><td class="text-right">7</td></tr>
+       <tr><td><a href="RouteLoader.php.html#108"><abbr title="App\Infrastructure\Routing\RouteLoader::processArrayRoutes">processArrayRoutes</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Cache/FileRouteCache.php.html#85"><abbr title="App\Infrastructure\Routing\Cache\FileRouteCache::store">store</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Cache/FileRouteCache.php.html#166"><abbr title="App\Infrastructure\Routing\Cache\FileRouteCache::ensureCacheDirectory">ensureCacheDirectory</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Cache/FileRouteCache.php.html#193"><abbr title="App\Infrastructure\Routing\Cache\FileRouteCache::saveStats">saveStats</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Cache/RedisRouteCache.php.html#168"><abbr title="App\Infrastructure\Routing\Cache\RedisRouteCache::isConnected">isConnected</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Cache/RouteCacheFactory.php.html#54"><abbr title="App\Infrastructure\Routing\Cache\RouteCacheFactory::createFileCache">createFileCache</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Cache/RouteCacheFactory.php.html#71"><abbr title="App\Infrastructure\Routing\Cache\RouteCacheFactory::createMemoryCache">createMemoryCache</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="ControllerResolver.php.html#344"><abbr title="App\Infrastructure\Routing\ControllerResolver::handleStringHandler">handleStringHandler</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Core/RouteCollection.php.html#130"><abbr title="App\Infrastructure\Routing\Core\RouteCollection::toArray">toArray</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Core/Router.php.html#175"><abbr title="App\Infrastructure\Routing\Core\Router::cacheRoutes">cacheRoutes</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Core/Router.php.html#194"><abbr title="App\Infrastructure\Routing\Core\Router::addGlobalMiddleware">addGlobalMiddleware</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Core/Router.php.html#201"><abbr title="App\Infrastructure\Routing\Core\Router::addGlobalMiddlewares">addGlobalMiddlewares</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Exceptions/RouteConfigurationException.php.html#51"><abbr title="App\Infrastructure\Routing\Exceptions\RouteConfigurationException::invalidHandler">invalidHandler</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Middleware/AbstractMiddleware.php.html#41"><abbr title="App\Infrastructure\Routing\Middleware\AbstractMiddleware::__construct">__construct</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Middleware/MiddlewareResolver.php.html#89"><abbr title="App\Infrastructure\Routing\Middleware\MiddlewareResolver::resolveMultiple">resolveMultiple</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Middleware/RouteParametersMiddleware.php.html#37"><abbr title="App\Infrastructure\Routing\Middleware\RouteParametersMiddleware::execute">execute</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Providers/RoutingServiceProvider.php.html#149"><abbr title="App\Infrastructure\Routing\Providers\RoutingServiceProvider::getRoutingStats">getRoutingStats</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="RouteDispatcher.php.html#81"><abbr title="App\Infrastructure\Routing\RouteDispatcher::handleNotFound">handleNotFound</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Core/Router.php.html#68"><abbr title="App\Infrastructure\Routing\Core\Router::map">map</abbr></a></td><td class="text-right">5</td></tr>
+       <tr><td><a href="ControllerResolver.php.html#32"><abbr title="App\Infrastructure\Routing\ControllerResolver::resolve">resolve</abbr></a></td><td class="text-right">5</td></tr>
+       <tr><td><a href="Core/Route.php.html#186"><abbr title="App\Infrastructure\Routing\Core\Route::middleware">middleware</abbr></a></td><td class="text-right">5</td></tr>
+       <tr><td><a href="RouteDispatcher.php.html#36"><abbr title="App\Infrastructure\Routing\RouteDispatcher::dispatch">dispatch</abbr></a></td><td class="text-right">5</td></tr>
+       <tr><td><a href="RouteValidator.php.html#49"><abbr title="App\Infrastructure\Routing\RouteValidator::validateRouteStructure">validateRouteStructure</abbr></a></td><td class="text-right">4</td></tr>
+       <tr><td><a href="Core/RouteCollection.php.html#27"><abbr title="App\Infrastructure\Routing\Core\RouteCollection::add">add</abbr></a></td><td class="text-right">4</td></tr>
+       <tr><td><a href="ControllerResolver.php.html#60"><abbr title="App\Infrastructure\Routing\ControllerResolver::handleCallable">handleCallable</abbr></a></td><td class="text-right">3</td></tr>
+       <tr><td><a href="ControllerResolver.php.html#358"><abbr title="App\Infrastructure\Routing\ControllerResolver::handleArrayHandler">handleArrayHandler</abbr></a></td><td class="text-right">3</td></tr>
+       <tr><td><a href="RouteLoader.php.html#33"><abbr title="App\Infrastructure\Routing\RouteLoader::addRouteFile">addRouteFile</abbr></a></td><td class="text-right">3</td></tr>
+       <tr><td><a href="Core/RouteCollection.php.html#72"><abbr title="App\Infrastructure\Routing\Core\RouteCollection::match">match</abbr></a></td><td class="text-right">3</td></tr>
+       <tr><td><a href="Core/Route.php.html#94"><abbr title="App\Infrastructure\Routing\Core\Route::matchesPath">matchesPath</abbr></a></td><td class="text-right">3</td></tr>
+       <tr><td><a href="RouteValidator.php.html#178"><abbr title="App\Infrastructure\Routing\RouteValidator::checkDuplicateRoute">checkDuplicateRoute</abbr></a></td><td class="text-right">3</td></tr>
+       <tr><td><a href="Middleware/MiddlewareDispatcher.php.html#30"><abbr title="App\Infrastructure\Routing\Middleware\MiddlewareDispatcher::buildChain">buildChain</abbr></a></td><td class="text-right">2</td></tr>
+       <tr><td><a href="Core/Route.php.html#114"><abbr title="App\Infrastructure\Routing\Core\Route::matches">matches</abbr></a></td><td class="text-right">2</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+   </div>
+   <footer>
+    <hr/>
+    <p>
+     <small>Generated by <a href="https://github.com/sebastianbergmann/php-code-coverage" target="_top">php-code-coverage 11.0.10</a> using <a href="https://www.php.net/" target="_top">PHP 8.4.11</a> and <a href="https://phpunit.de/">PHPUnit 11.5.34</a> at Fri Aug 29 9:23:06 CST 2025.</small>
+    </p>
+   </footer>
+  </div>
+  <script src="../../_js/jquery.min.js?v=11.0.10" type="text/javascript"></script>
+  <script src="../../_js/d3.min.js?v=11.0.10" type="text/javascript"></script>
+  <script src="../../_js/nv.d3.min.js?v=11.0.10" type="text/javascript"></script>
+  <script type="text/javascript">
+$(document).ready(function() {
+  nv.addGraph(function() {
+    var chart = nv.models.multiBarChart();
+    chart.tooltips(false)
+      .showControls(false)
+      .showLegend(false)
+      .reduceXTicks(false)
+      .staggerLabels(true)
+      .yAxis.tickFormat(d3.format('d'));
+
+    d3.select('#classCoverageDistribution svg')
+      .datum(getCoverageDistributionData([9,0,2,2,0,3,2,2,0,0,0,1], "Class Coverage"))
+      .transition().duration(500).call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  nv.addGraph(function() {
+    var chart = nv.models.multiBarChart();
+    chart.tooltips(false)
+      .showControls(false)
+      .showLegend(false)
+      .reduceXTicks(false)
+      .staggerLabels(true)
+      .yAxis.tickFormat(d3.format('d'));
+
+    d3.select('#methodCoverageDistribution svg')
+      .datum(getCoverageDistributionData([160,0,0,2,4,3,2,5,2,6,0,36], "Method Coverage"))
+      .transition().duration(500).call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  function getCoverageDistributionData(data, label) {
+    var labels = [
+      '0%',
+      '0-10%',
+      '10-20%',
+      '20-30%',
+      '30-40%',
+      '40-50%',
+      '50-60%',
+      '60-70%',
+      '70-80%',
+      '80-90%',
+      '90-100%',
+      '100%'
+    ];
+    var values = [];
+    $.each(labels, function(key) {
+      values.push({x: labels[key], y: data[key]});
+    });
+
+    return [
+      {
+        key: label,
+        values: values,
+        color: "#4572A7"
+      }
+    ];
+  }
+  nv.addGraph(function() {
+    var chart = nv.models.scatterChart()
+      .showDistX(true)
+      .showDistY(true)
+      .showLegend(false)
+      .forceX([0, 100]);
+    chart.tooltipContent(function(graph) {
+      return '<p>' + graph.point.class + '</p>';
+    });
+
+    chart.xAxis.axisLabel('Code Coverage (in percent)');
+    chart.yAxis.axisLabel('Cyclomatic Complexity');
+
+    d3.select('#classComplexity svg')
+      .datum(getComplexityData([[0,30,"<a href=\"Cache\/FileRouteCache.php.html#15\">App\\Infrastructure\\Routing\\Cache\\FileRouteCache<\/a>"],[0,23,"<a href=\"Cache\/MemoryRouteCache.php.html#15\">App\\Infrastructure\\Routing\\Cache\\MemoryRouteCache<\/a>"],[0,30,"<a href=\"Cache\/RedisRouteCache.php.html#17\">App\\Infrastructure\\Routing\\Cache\\RedisRouteCache<\/a>"],[0,23,"<a href=\"Cache\/RouteCacheFactory.php.html#15\">App\\Infrastructure\\Routing\\Cache\\RouteCacheFactory<\/a>"],[100,2,"<a href=\"ClosureRequestHandler.php.html#17\">App\\Infrastructure\\Routing\\ClosureRequestHandler<\/a>"],[62.5,8,"<a href=\"Contracts\/RouteMatchResult.php.html#12\">App\\Infrastructure\\Routing\\Contracts\\RouteMatchResult<\/a>"],[20.46783625730994,61,"<a href=\"ControllerResolver.php.html#23\">App\\Infrastructure\\Routing\\ControllerResolver<\/a>"],[46.666666666666664,44,"<a href=\"Core\/Route.php.html#18\">App\\Infrastructure\\Routing\\Core\\Route<\/a>"],[21.428571428571427,32,"<a href=\"Core\/RouteCollection.php.html#16\">App\\Infrastructure\\Routing\\Core\\RouteCollection<\/a>"],[16,45,"<a href=\"Core\/Router.php.html#22\">App\\Infrastructure\\Routing\\Core\\Router<\/a>"],[0,7,"<a href=\"Exceptions\/RouteConfigurationException.php.html#14\">App\\Infrastructure\\Routing\\Exceptions\\RouteConfigurationException<\/a>"],[0,13,"<a href=\"Middleware\/AbstractMiddleware.php.html#17\">App\\Infrastructure\\Routing\\Middleware\\AbstractMiddleware<\/a>"],[45.45454545454545,4,"<a href=\"Middleware\/MiddlewareDispatcher.php.html#18\">App\\Infrastructure\\Routing\\Middleware\\MiddlewareDispatcher<\/a>"],[0,21,"<a href=\"Middleware\/MiddlewareManager.php.html#19\">App\\Infrastructure\\Routing\\Middleware\\MiddlewareManager<\/a>"],[19.444444444444446,18,"<a href=\"Middleware\/MiddlewareResolver.php.html#16\">App\\Infrastructure\\Routing\\Middleware\\MiddlewareResolver<\/a>"],[0,14,"<a href=\"Middleware\/RouteInfoMiddleware.php.html#16\">App\\Infrastructure\\Routing\\Middleware\\RouteInfoMiddleware<\/a>"],[0,8,"<a href=\"Middleware\/RouteParametersMiddleware.php.html#16\">App\\Infrastructure\\Routing\\Middleware\\RouteParametersMiddleware<\/a>"],[69.23076923076923,14,"<a href=\"Providers\/RoutingServiceProvider.php.html#23\">App\\Infrastructure\\Routing\\Providers\\RoutingServiceProvider<\/a>"],[47.368421052631575,9,"<a href=\"RouteDispatcher.php.html#20\">App\\Infrastructure\\Routing\\RouteDispatcher<\/a>"],[52.702702702702695,28,"<a href=\"RouteLoader.php.html#17\">App\\Infrastructure\\Routing\\RouteLoader<\/a>"],[53.84615384615385,34,"<a href=\"RouteValidator.php.html#14\">App\\Infrastructure\\Routing\\RouteValidator<\/a>"]], 'Class Complexity'))
+      .transition()
+      .duration(500)
+      .call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  nv.addGraph(function() {
+    var chart = nv.models.scatterChart()
+      .showDistX(true)
+      .showDistY(true)
+      .showLegend(false)
+      .forceX([0, 100]);
+    chart.tooltipContent(function(graph) {
+      return '<p>' + graph.point.class + '</p>';
+    });
+
+    chart.xAxis.axisLabel('Code Coverage (in percent)');
+    chart.yAxis.axisLabel('Method Complexity');
+
+    d3.select('#methodComplexity svg')
+      .datum(getComplexityData([[0,1,"<a href=\"Cache\/FileRouteCache.php.html#27\">App\\Infrastructure\\Routing\\Cache\\FileRouteCache::__construct<\/a>"],[0,5,"<a href=\"Cache\/FileRouteCache.php.html#34\">App\\Infrastructure\\Routing\\Cache\\FileRouteCache::isValid<\/a>"],[0,4,"<a href=\"Cache\/FileRouteCache.php.html#53\">App\\Infrastructure\\Routing\\Cache\\FileRouteCache::load<\/a>"],[0,2,"<a href=\"Cache\/FileRouteCache.php.html#85\">App\\Infrastructure\\Routing\\Cache\\FileRouteCache::store<\/a>"],[0,4,"<a href=\"Cache\/FileRouteCache.php.html#101\">App\\Infrastructure\\Routing\\Cache\\FileRouteCache::clear<\/a>"],[0,1,"<a href=\"Cache\/FileRouteCache.php.html#127\">App\\Infrastructure\\Routing\\Cache\\FileRouteCache::getCachePath<\/a>"],[0,1,"<a href=\"Cache\/FileRouteCache.php.html#132\">App\\Infrastructure\\Routing\\Cache\\FileRouteCache::setTtl<\/a>"],[0,1,"<a href=\"Cache\/FileRouteCache.php.html#137\">App\\Infrastructure\\Routing\\Cache\\FileRouteCache::getTtl<\/a>"],[0,1,"<a href=\"Cache\/FileRouteCache.php.html#142\">App\\Infrastructure\\Routing\\Cache\\FileRouteCache::getStats<\/a>"],[0,1,"<a href=\"Cache\/FileRouteCache.php.html#150\">App\\Infrastructure\\Routing\\Cache\\FileRouteCache::getCacheFile<\/a>"],[0,1,"<a href=\"Cache\/FileRouteCache.php.html#158\">App\\Infrastructure\\Routing\\Cache\\FileRouteCache::getStatsFile<\/a>"],[0,2,"<a href=\"Cache\/FileRouteCache.php.html#166\">App\\Infrastructure\\Routing\\Cache\\FileRouteCache::ensureCacheDirectory<\/a>"],[0,4,"<a href=\"Cache\/FileRouteCache.php.html#176\">App\\Infrastructure\\Routing\\Cache\\FileRouteCache::loadStats<\/a>"],[0,2,"<a href=\"Cache\/FileRouteCache.php.html#193\">App\\Infrastructure\\Routing\\Cache\\FileRouteCache::saveStats<\/a>"],[0,1,"<a href=\"Cache\/MemoryRouteCache.php.html#31\">App\\Infrastructure\\Routing\\Cache\\MemoryRouteCache::__construct<\/a>"],[0,5,"<a href=\"Cache\/MemoryRouteCache.php.html#36\">App\\Infrastructure\\Routing\\Cache\\MemoryRouteCache::isValid<\/a>"],[0,3,"<a href=\"Cache\/MemoryRouteCache.php.html#56\">App\\Infrastructure\\Routing\\Cache\\MemoryRouteCache::load<\/a>"],[0,1,"<a href=\"Cache\/MemoryRouteCache.php.html#79\">App\\Infrastructure\\Routing\\Cache\\MemoryRouteCache::store<\/a>"],[0,1,"<a href=\"Cache\/MemoryRouteCache.php.html#92\">App\\Infrastructure\\Routing\\Cache\\MemoryRouteCache::clear<\/a>"],[0,1,"<a href=\"Cache\/MemoryRouteCache.php.html#109\">App\\Infrastructure\\Routing\\Cache\\MemoryRouteCache::getCachePath<\/a>"],[0,1,"<a href=\"Cache\/MemoryRouteCache.php.html#114\">App\\Infrastructure\\Routing\\Cache\\MemoryRouteCache::setTtl<\/a>"],[0,1,"<a href=\"Cache\/MemoryRouteCache.php.html#119\">App\\Infrastructure\\Routing\\Cache\\MemoryRouteCache::getTtl<\/a>"],[0,1,"<a href=\"Cache\/MemoryRouteCache.php.html#124\">App\\Infrastructure\\Routing\\Cache\\MemoryRouteCache::getStats<\/a>"],[0,1,"<a href=\"Cache\/MemoryRouteCache.php.html#132\">App\\Infrastructure\\Routing\\Cache\\MemoryRouteCache::getCache<\/a>"],[0,1,"<a href=\"Cache\/MemoryRouteCache.php.html#140\">App\\Infrastructure\\Routing\\Cache\\MemoryRouteCache::getTimestamps<\/a>"],[0,3,"<a href=\"Cache\/MemoryRouteCache.php.html#148\">App\\Infrastructure\\Routing\\Cache\\MemoryRouteCache::isItemExpired<\/a>"],[0,3,"<a href=\"Cache\/MemoryRouteCache.php.html#166\">App\\Infrastructure\\Routing\\Cache\\MemoryRouteCache::cleanupExpired<\/a>"],[0,1,"<a href=\"Cache\/RedisRouteCache.php.html#33\">App\\Infrastructure\\Routing\\Cache\\RedisRouteCache::__construct<\/a>"],[0,3,"<a href=\"Cache\/RedisRouteCache.php.html#40\">App\\Infrastructure\\Routing\\Cache\\RedisRouteCache::isValid<\/a>"],[0,4,"<a href=\"Cache\/RedisRouteCache.php.html#52\">App\\Infrastructure\\Routing\\Cache\\RedisRouteCache::load<\/a>"],[0,4,"<a href=\"Cache\/RedisRouteCache.php.html#86\">App\\Infrastructure\\Routing\\Cache\\RedisRouteCache::store<\/a>"],[0,3,"<a href=\"Cache\/RedisRouteCache.php.html#110\">App\\Infrastructure\\Routing\\Cache\\RedisRouteCache::clear<\/a>"],[0,1,"<a href=\"Cache\/RedisRouteCache.php.html#137\">App\\Infrastructure\\Routing\\Cache\\RedisRouteCache::getCachePath<\/a>"],[0,1,"<a href=\"Cache\/RedisRouteCache.php.html#142\">App\\Infrastructure\\Routing\\Cache\\RedisRouteCache::setTtl<\/a>"],[0,1,"<a href=\"Cache\/RedisRouteCache.php.html#147\">App\\Infrastructure\\Routing\\Cache\\RedisRouteCache::getTtl<\/a>"],[0,1,"<a href=\"Cache\/RedisRouteCache.php.html#152\">App\\Infrastructure\\Routing\\Cache\\RedisRouteCache::getStats<\/a>"],[0,1,"<a href=\"Cache\/RedisRouteCache.php.html#160\">App\\Infrastructure\\Routing\\Cache\\RedisRouteCache::getRedis<\/a>"],[0,2,"<a href=\"Cache\/RedisRouteCache.php.html#168\">App\\Infrastructure\\Routing\\Cache\\RedisRouteCache::isConnected<\/a>"],[0,1,"<a href=\"Cache\/RedisRouteCache.php.html#180\">App\\Infrastructure\\Routing\\Cache\\RedisRouteCache::getCacheKey<\/a>"],[0,4,"<a href=\"Cache\/RedisRouteCache.php.html#188\">App\\Infrastructure\\Routing\\Cache\\RedisRouteCache::loadStats<\/a>"],[0,3,"<a href=\"Cache\/RedisRouteCache.php.html#206\">App\\Infrastructure\\Routing\\Cache\\RedisRouteCache::saveStats<\/a>"],[0,4,"<a href=\"Cache\/RouteCacheFactory.php.html#31\">App\\Infrastructure\\Routing\\Cache\\RouteCacheFactory::create<\/a>"],[0,2,"<a href=\"Cache\/RouteCacheFactory.php.html#54\">App\\Infrastructure\\Routing\\Cache\\RouteCacheFactory::createFileCache<\/a>"],[0,2,"<a href=\"Cache\/RouteCacheFactory.php.html#71\">App\\Infrastructure\\Routing\\Cache\\RouteCacheFactory::createMemoryCache<\/a>"],[0,1,"<a href=\"Cache\/RouteCacheFactory.php.html#87\">App\\Infrastructure\\Routing\\Cache\\RouteCacheFactory::getSupportedDrivers<\/a>"],[0,1,"<a href=\"Cache\/RouteCacheFactory.php.html#95\">App\\Infrastructure\\Routing\\Cache\\RouteCacheFactory::isDriverSupported<\/a>"],[0,1,"<a href=\"Cache\/RouteCacheFactory.php.html#103\">App\\Infrastructure\\Routing\\Cache\\RouteCacheFactory::getDriverClass<\/a>"],[0,1,"<a href=\"Cache\/RouteCacheFactory.php.html#111\">App\\Infrastructure\\Routing\\Cache\\RouteCacheFactory::createDefault<\/a>"],[0,11,"<a href=\"Cache\/RouteCacheFactory.php.html#122\">App\\Infrastructure\\Routing\\Cache\\RouteCacheFactory::validateConfig<\/a>"],[100,1,"<a href=\"ClosureRequestHandler.php.html#19\">App\\Infrastructure\\Routing\\ClosureRequestHandler::__construct<\/a>"],[100,1,"<a href=\"ClosureRequestHandler.php.html#26\">App\\Infrastructure\\Routing\\ClosureRequestHandler::handle<\/a>"],[100,1,"<a href=\"Contracts\/RouteMatchResult.php.html#14\">App\\Infrastructure\\Routing\\Contracts\\RouteMatchResult::__construct<\/a>"],[100,1,"<a href=\"Contracts\/RouteMatchResult.php.html#24\">App\\Infrastructure\\Routing\\Contracts\\RouteMatchResult::isMatched<\/a>"],[100,1,"<a href=\"Contracts\/RouteMatchResult.php.html#32\">App\\Infrastructure\\Routing\\Contracts\\RouteMatchResult::getRoute<\/a>"],[100,1,"<a href=\"Contracts\/RouteMatchResult.php.html#42\">App\\Infrastructure\\Routing\\Contracts\\RouteMatchResult::getParameters<\/a>"],[0,1,"<a href=\"Contracts\/RouteMatchResult.php.html#50\">App\\Infrastructure\\Routing\\Contracts\\RouteMatchResult::getParameter<\/a>"],[0,1,"<a href=\"Contracts\/RouteMatchResult.php.html#58\">App\\Infrastructure\\Routing\\Contracts\\RouteMatchResult::getError<\/a>"],[100,1,"<a href=\"Contracts\/RouteMatchResult.php.html#68\">App\\Infrastructure\\Routing\\Contracts\\RouteMatchResult::success<\/a>"],[0,1,"<a href=\"Contracts\/RouteMatchResult.php.html#76\">App\\Infrastructure\\Routing\\Contracts\\RouteMatchResult::failed<\/a>"],[100,1,"<a href=\"ControllerResolver.php.html#25\">App\\Infrastructure\\Routing\\ControllerResolver::__construct<\/a>"],[75,5,"<a href=\"ControllerResolver.php.html#32\">App\\Infrastructure\\Routing\\ControllerResolver::resolve<\/a>"],[66.66666666666666,3,"<a href=\"ControllerResolver.php.html#60\">App\\Infrastructure\\Routing\\ControllerResolver::handleCallable<\/a>"],[0,4,"<a href=\"ControllerResolver.php.html#81\">App\\Infrastructure\\Routing\\ControllerResolver::createResponse<\/a>"],[47.368421052631575,6,"<a href=\"ControllerResolver.php.html#209\">App\\Infrastructure\\Routing\\ControllerResolver::createJsonResponse<\/a>"],[0,2,"<a href=\"ControllerResolver.php.html#344\">App\\Infrastructure\\Routing\\ControllerResolver::handleStringHandler<\/a>"],[33.33333333333333,2,"<a href=\"ControllerResolver.php.html#358\">App\\Infrastructure\\Routing\\ControllerResolver::handleArrayHandler<\/a>"],[28.57142857142857,6,"<a href=\"ControllerResolver.php.html#380\">App\\Infrastructure\\Routing\\ControllerResolver::resolveController<\/a>"],[0,8,"<a href=\"ControllerResolver.php.html#419\">App\\Infrastructure\\Routing\\ControllerResolver::resolveConstructorArguments<\/a>"],[0,17,"<a href=\"ControllerResolver.php.html#458\">App\\Infrastructure\\Routing\\ControllerResolver::resolveMethodArguments<\/a>"],[0,7,"<a href=\"ControllerResolver.php.html#529\">App\\Infrastructure\\Routing\\ControllerResolver::convertParameter<\/a>"],[100,1,"<a href=\"Core\/Route.php.html#35\">App\\Infrastructure\\Routing\\Core\\Route::__construct<\/a>"],[100,1,"<a href=\"Core\/Route.php.html#43\">App\\Infrastructure\\Routing\\Core\\Route::getMethods<\/a>"],[0,1,"<a href=\"Core\/Route.php.html#48\">App\\Infrastructure\\Routing\\Core\\Route::getPattern<\/a>"],[100,1,"<a href=\"Core\/Route.php.html#53\">App\\Infrastructure\\Routing\\Core\\Route::getName<\/a>"],[100,1,"<a href=\"Core\/Route.php.html#58\">App\\Infrastructure\\Routing\\Core\\Route::getHandler<\/a>"],[0,1,"<a href=\"Core\/Route.php.html#63\">App\\Infrastructure\\Routing\\Core\\Route::addMiddleware<\/a>"],[0,4,"<a href=\"Core\/Route.php.html#70\">App\\Infrastructure\\Routing\\Core\\Route::addMiddlewares<\/a>"],[100,1,"<a href=\"Core\/Route.php.html#84\">App\\Infrastructure\\Routing\\Core\\Route::getMiddlewares<\/a>"],[100,1,"<a href=\"Core\/Route.php.html#89\">App\\Infrastructure\\Routing\\Core\\Route::matchesMethod<\/a>"],[87.5,3,"<a href=\"Core\/Route.php.html#94\">App\\Infrastructure\\Routing\\Core\\Route::matchesPath<\/a>"],[80,2,"<a href=\"Core\/Route.php.html#114\">App\\Infrastructure\\Routing\\Core\\Route::matches<\/a>"],[0,6,"<a href=\"Core\/Route.php.html#128\">App\\Infrastructure\\Routing\\Core\\Route::generateUrl<\/a>"],[0,4,"<a href=\"Core\/Route.php.html#157\">App\\Infrastructure\\Routing\\Core\\Route::withAttributes<\/a>"],[100,1,"<a href=\"Core\/Route.php.html#174\">App\\Infrastructure\\Routing\\Core\\Route::setName<\/a>"],[57.14285714285714,4,"<a href=\"Core\/Route.php.html#186\">App\\Infrastructure\\Routing\\Core\\Route::middleware<\/a>"],[100,2,"<a href=\"Core\/Route.php.html#200\">App\\Infrastructure\\Routing\\Core\\Route::extractParameters<\/a>"],[100,2,"<a href=\"Core\/Route.php.html#210\">App\\Infrastructure\\Routing\\Core\\Route::compile<\/a>"],[100,1,"<a href=\"Core\/Route.php.html#239\">App\\Infrastructure\\Routing\\Core\\Route::extractParameterNames<\/a>"],[0,1,"<a href=\"Core\/Route.php.html#247\">App\\Infrastructure\\Routing\\Core\\Route::get<\/a>"],[0,1,"<a href=\"Core\/Route.php.html#252\">App\\Infrastructure\\Routing\\Core\\Route::post<\/a>"],[0,1,"<a href=\"Core\/Route.php.html#257\">App\\Infrastructure\\Routing\\Core\\Route::put<\/a>"],[0,1,"<a href=\"Core\/Route.php.html#262\">App\\Infrastructure\\Routing\\Core\\Route::patch<\/a>"],[0,1,"<a href=\"Core\/Route.php.html#267\">App\\Infrastructure\\Routing\\Core\\Route::delete<\/a>"],[0,1,"<a href=\"Core\/Route.php.html#272\">App\\Infrastructure\\Routing\\Core\\Route::any<\/a>"],[0,1,"<a href=\"Core\/Route.php.html#277\">App\\Infrastructure\\Routing\\Core\\Route::match<\/a>"],[87.5,4,"<a href=\"Core\/RouteCollection.php.html#27\">App\\Infrastructure\\Routing\\Core\\RouteCollection::add<\/a>"],[0,3,"<a href=\"Core\/RouteCollection.php.html#46\">App\\Infrastructure\\Routing\\Core\\RouteCollection::addRoutes<\/a>"],[0,1,"<a href=\"Core\/RouteCollection.php.html#55\">App\\Infrastructure\\Routing\\Core\\RouteCollection::getByName<\/a>"],[0,1,"<a href=\"Core\/RouteCollection.php.html#60\">App\\Infrastructure\\Routing\\Core\\RouteCollection::all<\/a>"],[100,1,"<a href=\"Core\/RouteCollection.php.html#65\">App\\Infrastructure\\Routing\\Core\\RouteCollection::getByMethod<\/a>"],[85.71428571428571,3,"<a href=\"Core\/RouteCollection.php.html#72\">App\\Infrastructure\\Routing\\Core\\RouteCollection::match<\/a>"],[0,1,"<a href=\"Core\/RouteCollection.php.html#87\">App\\Infrastructure\\Routing\\Core\\RouteCollection::has<\/a>"],[0,4,"<a href=\"Core\/RouteCollection.php.html#92\">App\\Infrastructure\\Routing\\Core\\RouteCollection::remove<\/a>"],[0,1,"<a href=\"Core\/RouteCollection.php.html#118\">App\\Infrastructure\\Routing\\Core\\RouteCollection::clear<\/a>"],[0,1,"<a href=\"Core\/RouteCollection.php.html#125\">App\\Infrastructure\\Routing\\Core\\RouteCollection::count<\/a>"],[0,2,"<a href=\"Core\/RouteCollection.php.html#130\">App\\Infrastructure\\Routing\\Core\\RouteCollection::toArray<\/a>"],[0,4,"<a href=\"Core\/RouteCollection.php.html#147\">App\\Infrastructure\\Routing\\Core\\RouteCollection::fromArray<\/a>"],[0,6,"<a href=\"Core\/RouteCollection.php.html#179\">App\\Infrastructure\\Routing\\Core\\RouteCollection::serializeHandler<\/a>"],[100,1,"<a href=\"Core\/Router.php.html#33\">App\\Infrastructure\\Routing\\Core\\Router::__construct<\/a>"],[0,1,"<a href=\"Core\/Router.php.html#38\">App\\Infrastructure\\Routing\\Core\\Router::get<\/a>"],[0,1,"<a href=\"Core\/Router.php.html#43\">App\\Infrastructure\\Routing\\Core\\Router::post<\/a>"],[0,1,"<a href=\"Core\/Router.php.html#48\">App\\Infrastructure\\Routing\\Core\\Router::put<\/a>"],[0,1,"<a href=\"Core\/Router.php.html#53\">App\\Infrastructure\\Routing\\Core\\Router::patch<\/a>"],[0,1,"<a href=\"Core\/Router.php.html#58\">App\\Infrastructure\\Routing\\Core\\Router::delete<\/a>"],[0,1,"<a href=\"Core\/Router.php.html#63\">App\\Infrastructure\\Routing\\Core\\Router::options<\/a>"],[66.66666666666666,5,"<a href=\"Core\/Router.php.html#68\">App\\Infrastructure\\Routing\\Core\\Router::map<\/a>"],[0,1,"<a href=\"Core\/Router.php.html#92\">App\\Infrastructure\\Routing\\Core\\Router::any<\/a>"],[0,1,"<a href=\"Core\/Router.php.html#97\">App\\Infrastructure\\Routing\\Core\\Router::group<\/a>"],[55.55555555555556,5,"<a href=\"Core\/Router.php.html#111\">App\\Infrastructure\\Routing\\Core\\Router::dispatch<\/a>"],[0,1,"<a href=\"Core\/Router.php.html#134\">App\\Infrastructure\\Routing\\Core\\Router::getRoutes<\/a>"],[0,4,"<a href=\"Core\/Router.php.html#139\">App\\Infrastructure\\Routing\\Core\\Router::url<\/a>"],[0,1,"<a href=\"Core\/Router.php.html#162\">App\\Infrastructure\\Routing\\Core\\Router::setCache<\/a>"],[0,1,"<a href=\"Core\/Router.php.html#167\">App\\Infrastructure\\Routing\\Core\\Router::getCache<\/a>"],[0,2,"<a href=\"Core\/Router.php.html#175\">App\\Infrastructure\\Routing\\Core\\Router::cacheRoutes<\/a>"],[0,1,"<a href=\"Core\/Router.php.html#184\">App\\Infrastructure\\Routing\\Core\\Router::setMiddlewareManager<\/a>"],[0,1,"<a href=\"Core\/Router.php.html#189\">App\\Infrastructure\\Routing\\Core\\Router::getMiddlewareManager<\/a>"],[0,2,"<a href=\"Core\/Router.php.html#194\">App\\Infrastructure\\Routing\\Core\\Router::addGlobalMiddleware<\/a>"],[0,2,"<a href=\"Core\/Router.php.html#201\">App\\Infrastructure\\Routing\\Core\\Router::addGlobalMiddlewares<\/a>"],[0,3,"<a href=\"Core\/Router.php.html#211\">App\\Infrastructure\\Routing\\Core\\Router::applyPrefix<\/a>"],[0,8,"<a href=\"Core\/Router.php.html#234\">App\\Infrastructure\\Routing\\Core\\Router::mergeGroupAttributes<\/a>"],[0,1,"<a href=\"Exceptions\/RouteConfigurationException.php.html#19\">App\\Infrastructure\\Routing\\Exceptions\\RouteConfigurationException::fileNotFound<\/a>"],[0,1,"<a href=\"Exceptions\/RouteConfigurationException.php.html#27\">App\\Infrastructure\\Routing\\Exceptions\\RouteConfigurationException::unreadableFile<\/a>"],[0,1,"<a href=\"Exceptions\/RouteConfigurationException.php.html#35\">App\\Infrastructure\\Routing\\Exceptions\\RouteConfigurationException::invalidRouteDefinition<\/a>"],[0,1,"<a href=\"Exceptions\/RouteConfigurationException.php.html#43\">App\\Infrastructure\\Routing\\Exceptions\\RouteConfigurationException::duplicateRoute<\/a>"],[0,2,"<a href=\"Exceptions\/RouteConfigurationException.php.html#51\">App\\Infrastructure\\Routing\\Exceptions\\RouteConfigurationException::invalidHandler<\/a>"],[0,1,"<a href=\"Exceptions\/RouteConfigurationException.php.html#61\">App\\Infrastructure\\Routing\\Exceptions\\RouteConfigurationException::syntaxError<\/a>"],[0,2,"<a href=\"Middleware\/AbstractMiddleware.php.html#41\">App\\Infrastructure\\Routing\\Middleware\\AbstractMiddleware::__construct<\/a>"],[0,3,"<a href=\"Middleware\/AbstractMiddleware.php.html#51\">App\\Infrastructure\\Routing\\Middleware\\AbstractMiddleware::process<\/a>"],[0,0,"<a href=\"Middleware\/AbstractMiddleware.php.html#71\">App\\Infrastructure\\Routing\\Middleware\\AbstractMiddleware::execute<\/a>"],[0,1,"<a href=\"Middleware\/AbstractMiddleware.php.html#76\">App\\Infrastructure\\Routing\\Middleware\\AbstractMiddleware::getPriority<\/a>"],[0,1,"<a href=\"Middleware\/AbstractMiddleware.php.html#81\">App\\Infrastructure\\Routing\\Middleware\\AbstractMiddleware::getName<\/a>"],[0,1,"<a href=\"Middleware\/AbstractMiddleware.php.html#86\">App\\Infrastructure\\Routing\\Middleware\\AbstractMiddleware::shouldProcess<\/a>"],[0,1,"<a href=\"Middleware\/AbstractMiddleware.php.html#96\">App\\Infrastructure\\Routing\\Middleware\\AbstractMiddleware::setPriority<\/a>"],[0,1,"<a href=\"Middleware\/AbstractMiddleware.php.html#108\">App\\Infrastructure\\Routing\\Middleware\\AbstractMiddleware::setName<\/a>"],[0,1,"<a href=\"Middleware\/AbstractMiddleware.php.html#118\">App\\Infrastructure\\Routing\\Middleware\\AbstractMiddleware::enable<\/a>"],[0,1,"<a href=\"Middleware\/AbstractMiddleware.php.html#128\">App\\Infrastructure\\Routing\\Middleware\\AbstractMiddleware::disable<\/a>"],[0,1,"<a href=\"Middleware\/AbstractMiddleware.php.html#138\">App\\Infrastructure\\Routing\\Middleware\\AbstractMiddleware::isEnabled<\/a>"],[100,1,"<a href=\"Middleware\/MiddlewareDispatcher.php.html#20\">App\\Infrastructure\\Routing\\Middleware\\MiddlewareDispatcher::dispatch<\/a>"],[60,2,"<a href=\"Middleware\/MiddlewareDispatcher.php.html#30\">App\\Infrastructure\\Routing\\Middleware\\MiddlewareDispatcher::buildChain<\/a>"],[0,1,"<a href=\"Middleware\/MiddlewareDispatcher.php.html#51\">App\\Infrastructure\\Routing\\Middleware\\MiddlewareDispatcher::createMiddlewareHandler<\/a>"],[0,1,"<a href=\"Middleware\/MiddlewareManager.php.html#38\">App\\Infrastructure\\Routing\\Middleware\\MiddlewareManager::__construct<\/a>"],[0,1,"<a href=\"Middleware\/MiddlewareManager.php.html#43\">App\\Infrastructure\\Routing\\Middleware\\MiddlewareManager::add<\/a>"],[0,3,"<a href=\"Middleware\/MiddlewareManager.php.html#50\">App\\Infrastructure\\Routing\\Middleware\\MiddlewareManager::addMultiple<\/a>"],[0,1,"<a href=\"Middleware\/MiddlewareManager.php.html#61\">App\\Infrastructure\\Routing\\Middleware\\MiddlewareManager::remove<\/a>"],[0,1,"<a href=\"Middleware\/MiddlewareManager.php.html#68\">App\\Infrastructure\\Routing\\Middleware\\MiddlewareManager::clear<\/a>"],[0,1,"<a href=\"Middleware\/MiddlewareManager.php.html#75\">App\\Infrastructure\\Routing\\Middleware\\MiddlewareManager::has<\/a>"],[0,1,"<a href=\"Middleware\/MiddlewareManager.php.html#80\">App\\Infrastructure\\Routing\\Middleware\\MiddlewareManager::get<\/a>"],[0,1,"<a href=\"Middleware\/MiddlewareManager.php.html#85\">App\\Infrastructure\\Routing\\Middleware\\MiddlewareManager::getAll<\/a>"],[0,1,"<a href=\"Middleware\/MiddlewareManager.php.html#90\">App\\Infrastructure\\Routing\\Middleware\\MiddlewareManager::getSorted<\/a>"],[0,1,"<a href=\"Middleware\/MiddlewareManager.php.html#102\">App\\Infrastructure\\Routing\\Middleware\\MiddlewareManager::process<\/a>"],[0,1,"<a href=\"Middleware\/MiddlewareManager.php.html#117\">App\\Infrastructure\\Routing\\Middleware\\MiddlewareManager::count<\/a>"],[0,1,"<a href=\"Middleware\/MiddlewareManager.php.html#127\">App\\Infrastructure\\Routing\\Middleware\\MiddlewareManager::getNames<\/a>"],[0,3,"<a href=\"Middleware\/MiddlewareManager.php.html#137\">App\\Infrastructure\\Routing\\Middleware\\MiddlewareManager::setPriorities<\/a>"],[0,4,"<a href=\"Middleware\/MiddlewareManager.php.html#154\">App\\Infrastructure\\Routing\\Middleware\\MiddlewareManager::setStates<\/a>"],[100,1,"<a href=\"Middleware\/MiddlewareResolver.php.html#29\">App\\Infrastructure\\Routing\\Middleware\\MiddlewareResolver::__construct<\/a>"],[22.727272727272727,8,"<a href=\"Middleware\/MiddlewareResolver.php.html#39\">App\\Infrastructure\\Routing\\Middleware\\MiddlewareResolver::resolve<\/a>"],[0,2,"<a href=\"Middleware\/MiddlewareResolver.php.html#89\">App\\Infrastructure\\Routing\\Middleware\\MiddlewareResolver::resolveMultiple<\/a>"],[0,4,"<a href=\"Middleware\/MiddlewareResolver.php.html#105\">App\\Infrastructure\\Routing\\Middleware\\MiddlewareResolver::canResolve<\/a>"],[100,1,"<a href=\"Middleware\/MiddlewareResolver.php.html#123\">App\\Infrastructure\\Routing\\Middleware\\MiddlewareResolver::resolveAlias<\/a>"],[0,1,"<a href=\"Middleware\/MiddlewareResolver.php.html#133\">App\\Infrastructure\\Routing\\Middleware\\MiddlewareResolver::getAliases<\/a>"],[0,1,"<a href=\"Middleware\/MiddlewareResolver.php.html#141\">App\\Infrastructure\\Routing\\Middleware\\MiddlewareResolver::registerAlias<\/a>"],[0,1,"<a href=\"Middleware\/RouteInfoMiddleware.php.html#49\">App\\Infrastructure\\Routing\\Middleware\\RouteInfoMiddleware::__construct<\/a>"],[0,5,"<a href=\"Middleware\/RouteInfoMiddleware.php.html#63\">App\\Infrastructure\\Routing\\Middleware\\RouteInfoMiddleware::execute<\/a>"],[0,1,"<a href=\"Middleware\/RouteInfoMiddleware.php.html#102\">App\\Infrastructure\\Routing\\Middleware\\RouteInfoMiddleware::setRouteName<\/a>"],[0,1,"<a href=\"Middleware\/RouteInfoMiddleware.php.html#114\">App\\Infrastructure\\Routing\\Middleware\\RouteInfoMiddleware::setRoutePattern<\/a>"],[0,1,"<a href=\"Middleware\/RouteInfoMiddleware.php.html#126\">App\\Infrastructure\\Routing\\Middleware\\RouteInfoMiddleware::setMethods<\/a>"],[0,1,"<a href=\"Middleware\/RouteInfoMiddleware.php.html#138\">App\\Infrastructure\\Routing\\Middleware\\RouteInfoMiddleware::setHandler<\/a>"],[0,1,"<a href=\"Middleware\/RouteInfoMiddleware.php.html#148\">App\\Infrastructure\\Routing\\Middleware\\RouteInfoMiddleware::getRouteName<\/a>"],[0,1,"<a href=\"Middleware\/RouteInfoMiddleware.php.html#156\">App\\Infrastructure\\Routing\\Middleware\\RouteInfoMiddleware::getRoutePattern<\/a>"],[0,1,"<a href=\"Middleware\/RouteInfoMiddleware.php.html#166\">App\\Infrastructure\\Routing\\Middleware\\RouteInfoMiddleware::getMethods<\/a>"],[0,1,"<a href=\"Middleware\/RouteInfoMiddleware.php.html#174\">App\\Infrastructure\\Routing\\Middleware\\RouteInfoMiddleware::getHandler<\/a>"],[0,1,"<a href=\"Middleware\/RouteParametersMiddleware.php.html#31\">App\\Infrastructure\\Routing\\Middleware\\RouteParametersMiddleware::__construct<\/a>"],[0,2,"<a href=\"Middleware\/RouteParametersMiddleware.php.html#37\">App\\Infrastructure\\Routing\\Middleware\\RouteParametersMiddleware::execute<\/a>"],[0,1,"<a href=\"Middleware\/RouteParametersMiddleware.php.html#57\">App\\Infrastructure\\Routing\\Middleware\\RouteParametersMiddleware::setParameters<\/a>"],[0,1,"<a href=\"Middleware\/RouteParametersMiddleware.php.html#70\">App\\Infrastructure\\Routing\\Middleware\\RouteParametersMiddleware::addParameter<\/a>"],[0,1,"<a href=\"Middleware\/RouteParametersMiddleware.php.html#82\">App\\Infrastructure\\Routing\\Middleware\\RouteParametersMiddleware::getParameters<\/a>"],[0,1,"<a href=\"Middleware\/RouteParametersMiddleware.php.html#92\">App\\Infrastructure\\Routing\\Middleware\\RouteParametersMiddleware::removeParameter<\/a>"],[0,1,"<a href=\"Middleware\/RouteParametersMiddleware.php.html#102\">App\\Infrastructure\\Routing\\Middleware\\RouteParametersMiddleware::clearParameters<\/a>"],[100,1,"<a href=\"Providers\/RoutingServiceProvider.php.html#28\">App\\Infrastructure\\Routing\\Providers\\RoutingServiceProvider::getDefinitions<\/a>"],[100,1,"<a href=\"Providers\/RoutingServiceProvider.php.html#59\">App\\Infrastructure\\Routing\\Providers\\RoutingServiceProvider::createRouteLoader<\/a>"],[100,1,"<a href=\"Providers\/RoutingServiceProvider.php.html#69\">App\\Infrastructure\\Routing\\Providers\\RoutingServiceProvider::createControllerResolver<\/a>"],[100,1,"<a href=\"Providers\/RoutingServiceProvider.php.html#77\">App\\Infrastructure\\Routing\\Providers\\RoutingServiceProvider::createMiddlewareResolver<\/a>"],[100,1,"<a href=\"Providers\/RoutingServiceProvider.php.html#85\">App\\Infrastructure\\Routing\\Providers\\RoutingServiceProvider::createRouteDispatcher<\/a>"],[100,1,"<a href=\"Providers\/RoutingServiceProvider.php.html#103\">App\\Infrastructure\\Routing\\Providers\\RoutingServiceProvider::getRouteFiles<\/a>"],[46.15384615384615,6,"<a href=\"Providers\/RoutingServiceProvider.php.html#116\">App\\Infrastructure\\Routing\\Providers\\RoutingServiceProvider::loadRoutes<\/a>"],[0,2,"<a href=\"Providers\/RoutingServiceProvider.php.html#149\">App\\Infrastructure\\Routing\\Providers\\RoutingServiceProvider::getRoutingStats<\/a>"],[100,1,"<a href=\"RouteDispatcher.php.html#24\">App\\Infrastructure\\Routing\\RouteDispatcher::__construct<\/a>"],[89.47368421052632,5,"<a href=\"RouteDispatcher.php.html#36\">App\\Infrastructure\\Routing\\RouteDispatcher::dispatch<\/a>"],[0,2,"<a href=\"RouteDispatcher.php.html#81\">App\\Infrastructure\\Routing\\RouteDispatcher::handleNotFound<\/a>"],[0,1,"<a href=\"RouteDispatcher.php.html#108\">App\\Infrastructure\\Routing\\RouteDispatcher::create<\/a>"],[100,1,"<a href=\"RouteLoader.php.html#25\">App\\Infrastructure\\Routing\\RouteLoader::__construct<\/a>"],[77.77777777777779,3,"<a href=\"RouteLoader.php.html#33\">App\\Infrastructure\\Routing\\RouteLoader::addRouteFile<\/a>"],[100,2,"<a href=\"RouteLoader.php.html#54\">App\\Infrastructure\\Routing\\RouteLoader::loadRoutes<\/a>"],[35.714285714285715,5,"<a href=\"RouteLoader.php.html#67\">App\\Infrastructure\\Routing\\RouteLoader::loadRouteFile<\/a>"],[100,1,"<a href=\"RouteLoader.php.html#99\">App\\Infrastructure\\Routing\\RouteLoader::requireRouteFile<\/a>"],[61.53846153846154,5,"<a href=\"RouteLoader.php.html#108\">App\\Infrastructure\\Routing\\RouteLoader::processArrayRoutes<\/a>"],[100,4,"<a href=\"RouteLoader.php.html#142\">App\\Infrastructure\\Routing\\RouteLoader::registerRoute<\/a>"],[0,1,"<a href=\"RouteLoader.php.html#173\">App\\Infrastructure\\Routing\\RouteLoader::getLoadedRoutes<\/a>"],[0,3,"<a href=\"RouteLoader.php.html#181\">App\\Infrastructure\\Routing\\RouteLoader::getRouteStats<\/a>"],[0,1,"<a href=\"RouteLoader.php.html#204\">App\\Infrastructure\\Routing\\RouteLoader::clearRoutes<\/a>"],[0,1,"<a href=\"RouteLoader.php.html#214\">App\\Infrastructure\\Routing\\RouteLoader::getRoutesByGroup<\/a>"],[0,1,"<a href=\"RouteLoader.php.html#224\">App\\Infrastructure\\Routing\\RouteLoader::findRoutes<\/a>"],[100,1,"<a href=\"RouteValidator.php.html#37\">App\\Infrastructure\\Routing\\RouteValidator::validateRoute<\/a>"],[42.857142857142854,3,"<a href=\"RouteValidator.php.html#49\">App\\Infrastructure\\Routing\\RouteValidator::validateRouteStructure<\/a>"],[36.84210526315789,5,"<a href=\"RouteValidator.php.html#66\">App\\Infrastructure\\Routing\\RouteValidator::validateHttpMethods<\/a>"],[36.84210526315789,7,"<a href=\"RouteValidator.php.html#99\">App\\Infrastructure\\Routing\\RouteValidator::validatePath<\/a>"],[66.66666666666666,13,"<a href=\"RouteValidator.php.html#134\">App\\Infrastructure\\Routing\\RouteValidator::validateHandler<\/a>"],[87.5,3,"<a href=\"RouteValidator.php.html#178\">App\\Infrastructure\\Routing\\RouteValidator::checkDuplicateRoute<\/a>"],[100,1,"<a href=\"RouteValidator.php.html#198\">App\\Infrastructure\\Routing\\RouteValidator::reset<\/a>"],[0,1,"<a href=\"RouteValidator.php.html#206\">App\\Infrastructure\\Routing\\RouteValidator::getRegisteredRoutes<\/a>"]], 'Method Complexity'))
+      .transition()
+      .duration(500)
+      .call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  function getComplexityData(data, label) {
+    var values = [];
+    $.each(data, function(key) {
+      var value = Math.round(data[key][0]*100) / 100;
+      values.push({
+        x: value,
+        y: data[key][1],
+        class: data[key][2],
+        size: 0.05,
+        shape: 'diamond'
+      });
+    });
+
+    return [
+      {
+        key: label,
+        values: values,
+        color: "#4572A7"
+      }
+    ];
+  }
+});
+  </script>
+ </body>
+</html>

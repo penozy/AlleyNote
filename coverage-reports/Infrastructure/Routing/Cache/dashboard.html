@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Dashboard for /var/www/html/app/Infrastructure/Routing/Cache</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="../../../_css/bootstrap.min.css?v=11.0.10" rel="stylesheet" type="text/css">
+  <link href="../../../_css/nv.d3.min.css?v=11.0.10" rel="stylesheet" type="text/css">
+  <link href="../../../_css/style.css?v=11.0.10" rel="stylesheet" type="text/css">
+  <link href="../../../_css/custom.css" rel="stylesheet" type="text/css">
+ </head>
+ <body>
+  <header>
+   <div class="container-fluid">
+    <div class="row">
+     <div class="col-md-12">
+      <nav aria-label="breadcrumb">
+       <ol class="breadcrumb">
+         <li class="breadcrumb-item"><a href="../../../index.html">/var/www/html/app</a></li>
+         <li class="breadcrumb-item"><a href="../../index.html">Infrastructure</a></li>
+         <li class="breadcrumb-item"><a href="../index.html">Routing</a></li>
+         <li class="breadcrumb-item"><a href="index.html">Cache</a></li>
+         <li class="breadcrumb-item active">(Dashboard)</li>
+
+       </ol>
+      </nav>
+     </div>
+    </div>
+   </div>
+  </header>
+  <div class="container-fluid">
+   <div class="row">
+    <div class="col-md-12">
+     <h2>Classes</h2>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Coverage Distribution</h3>
+     <div id="classCoverageDistribution" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Complexity</h3>
+     <div id="classComplexity" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Insufficient Coverage</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Class</th>
+         <th class="text-right">Coverage</th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="FileRouteCache.php.html#15">App\Infrastructure\Routing\Cache\FileRouteCache</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="MemoryRouteCache.php.html#15">App\Infrastructure\Routing\Cache\MemoryRouteCache</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="RedisRouteCache.php.html#17">App\Infrastructure\Routing\Cache\RedisRouteCache</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="RouteCacheFactory.php.html#15">App\Infrastructure\Routing\Cache\RouteCacheFactory</a></td><td class="text-right">0%</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Project Risks</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Class</th>
+         <th class="text-right"><abbr title="Change Risk Anti-Patterns (CRAP) Index">CRAP</abbr></th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="FileRouteCache.php.html#15">App\Infrastructure\Routing\Cache\FileRouteCache</a></td><td class="text-right">930</td></tr>
+       <tr><td><a href="RedisRouteCache.php.html#17">App\Infrastructure\Routing\Cache\RedisRouteCache</a></td><td class="text-right">930</td></tr>
+       <tr><td><a href="MemoryRouteCache.php.html#15">App\Infrastructure\Routing\Cache\MemoryRouteCache</a></td><td class="text-right">552</td></tr>
+       <tr><td><a href="RouteCacheFactory.php.html#15">App\Infrastructure\Routing\Cache\RouteCacheFactory</a></td><td class="text-right">552</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-12">
+     <h2>Methods</h2>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Coverage Distribution</h3>
+     <div id="methodCoverageDistribution" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Complexity</h3>
+     <div id="methodComplexity" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Insufficient Coverage</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Method</th>
+         <th class="text-right">Coverage</th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="FileRouteCache.php.html#27"><abbr title="App\Infrastructure\Routing\Cache\FileRouteCache::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="FileRouteCache.php.html#34"><abbr title="App\Infrastructure\Routing\Cache\FileRouteCache::isValid">isValid</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="FileRouteCache.php.html#53"><abbr title="App\Infrastructure\Routing\Cache\FileRouteCache::load">load</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="FileRouteCache.php.html#85"><abbr title="App\Infrastructure\Routing\Cache\FileRouteCache::store">store</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="FileRouteCache.php.html#101"><abbr title="App\Infrastructure\Routing\Cache\FileRouteCache::clear">clear</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="FileRouteCache.php.html#127"><abbr title="App\Infrastructure\Routing\Cache\FileRouteCache::getCachePath">getCachePath</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="FileRouteCache.php.html#132"><abbr title="App\Infrastructure\Routing\Cache\FileRouteCache::setTtl">setTtl</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="FileRouteCache.php.html#137"><abbr title="App\Infrastructure\Routing\Cache\FileRouteCache::getTtl">getTtl</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="FileRouteCache.php.html#142"><abbr title="App\Infrastructure\Routing\Cache\FileRouteCache::getStats">getStats</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="FileRouteCache.php.html#150"><abbr title="App\Infrastructure\Routing\Cache\FileRouteCache::getCacheFile">getCacheFile</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="FileRouteCache.php.html#158"><abbr title="App\Infrastructure\Routing\Cache\FileRouteCache::getStatsFile">getStatsFile</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="FileRouteCache.php.html#166"><abbr title="App\Infrastructure\Routing\Cache\FileRouteCache::ensureCacheDirectory">ensureCacheDirectory</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="FileRouteCache.php.html#176"><abbr title="App\Infrastructure\Routing\Cache\FileRouteCache::loadStats">loadStats</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="FileRouteCache.php.html#193"><abbr title="App\Infrastructure\Routing\Cache\FileRouteCache::saveStats">saveStats</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="MemoryRouteCache.php.html#31"><abbr title="App\Infrastructure\Routing\Cache\MemoryRouteCache::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="MemoryRouteCache.php.html#36"><abbr title="App\Infrastructure\Routing\Cache\MemoryRouteCache::isValid">isValid</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="MemoryRouteCache.php.html#56"><abbr title="App\Infrastructure\Routing\Cache\MemoryRouteCache::load">load</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="MemoryRouteCache.php.html#79"><abbr title="App\Infrastructure\Routing\Cache\MemoryRouteCache::store">store</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="MemoryRouteCache.php.html#92"><abbr title="App\Infrastructure\Routing\Cache\MemoryRouteCache::clear">clear</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="MemoryRouteCache.php.html#109"><abbr title="App\Infrastructure\Routing\Cache\MemoryRouteCache::getCachePath">getCachePath</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="MemoryRouteCache.php.html#114"><abbr title="App\Infrastructure\Routing\Cache\MemoryRouteCache::setTtl">setTtl</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="MemoryRouteCache.php.html#119"><abbr title="App\Infrastructure\Routing\Cache\MemoryRouteCache::getTtl">getTtl</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="MemoryRouteCache.php.html#124"><abbr title="App\Infrastructure\Routing\Cache\MemoryRouteCache::getStats">getStats</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="MemoryRouteCache.php.html#132"><abbr title="App\Infrastructure\Routing\Cache\MemoryRouteCache::getCache">getCache</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="MemoryRouteCache.php.html#140"><abbr title="App\Infrastructure\Routing\Cache\MemoryRouteCache::getTimestamps">getTimestamps</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="MemoryRouteCache.php.html#148"><abbr title="App\Infrastructure\Routing\Cache\MemoryRouteCache::isItemExpired">isItemExpired</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="MemoryRouteCache.php.html#166"><abbr title="App\Infrastructure\Routing\Cache\MemoryRouteCache::cleanupExpired">cleanupExpired</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="RedisRouteCache.php.html#33"><abbr title="App\Infrastructure\Routing\Cache\RedisRouteCache::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="RedisRouteCache.php.html#40"><abbr title="App\Infrastructure\Routing\Cache\RedisRouteCache::isValid">isValid</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="RedisRouteCache.php.html#52"><abbr title="App\Infrastructure\Routing\Cache\RedisRouteCache::load">load</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="RedisRouteCache.php.html#86"><abbr title="App\Infrastructure\Routing\Cache\RedisRouteCache::store">store</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="RedisRouteCache.php.html#110"><abbr title="App\Infrastructure\Routing\Cache\RedisRouteCache::clear">clear</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="RedisRouteCache.php.html#137"><abbr title="App\Infrastructure\Routing\Cache\RedisRouteCache::getCachePath">getCachePath</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="RedisRouteCache.php.html#142"><abbr title="App\Infrastructure\Routing\Cache\RedisRouteCache::setTtl">setTtl</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="RedisRouteCache.php.html#147"><abbr title="App\Infrastructure\Routing\Cache\RedisRouteCache::getTtl">getTtl</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="RedisRouteCache.php.html#152"><abbr title="App\Infrastructure\Routing\Cache\RedisRouteCache::getStats">getStats</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="RedisRouteCache.php.html#160"><abbr title="App\Infrastructure\Routing\Cache\RedisRouteCache::getRedis">getRedis</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="RedisRouteCache.php.html#168"><abbr title="App\Infrastructure\Routing\Cache\RedisRouteCache::isConnected">isConnected</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="RedisRouteCache.php.html#180"><abbr title="App\Infrastructure\Routing\Cache\RedisRouteCache::getCacheKey">getCacheKey</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="RedisRouteCache.php.html#188"><abbr title="App\Infrastructure\Routing\Cache\RedisRouteCache::loadStats">loadStats</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="RedisRouteCache.php.html#206"><abbr title="App\Infrastructure\Routing\Cache\RedisRouteCache::saveStats">saveStats</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="RouteCacheFactory.php.html#31"><abbr title="App\Infrastructure\Routing\Cache\RouteCacheFactory::create">create</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="RouteCacheFactory.php.html#54"><abbr title="App\Infrastructure\Routing\Cache\RouteCacheFactory::createFileCache">createFileCache</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="RouteCacheFactory.php.html#71"><abbr title="App\Infrastructure\Routing\Cache\RouteCacheFactory::createMemoryCache">createMemoryCache</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="RouteCacheFactory.php.html#87"><abbr title="App\Infrastructure\Routing\Cache\RouteCacheFactory::getSupportedDrivers">getSupportedDrivers</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="RouteCacheFactory.php.html#95"><abbr title="App\Infrastructure\Routing\Cache\RouteCacheFactory::isDriverSupported">isDriverSupported</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="RouteCacheFactory.php.html#103"><abbr title="App\Infrastructure\Routing\Cache\RouteCacheFactory::getDriverClass">getDriverClass</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="RouteCacheFactory.php.html#111"><abbr title="App\Infrastructure\Routing\Cache\RouteCacheFactory::createDefault">createDefault</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="RouteCacheFactory.php.html#122"><abbr title="App\Infrastructure\Routing\Cache\RouteCacheFactory::validateConfig">validateConfig</abbr></a></td><td class="text-right">0%</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Project Risks</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Method</th>
+         <th class="text-right"><abbr title="Change Risk Anti-Patterns (CRAP) Index">CRAP</abbr></th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="RouteCacheFactory.php.html#122"><abbr title="App\Infrastructure\Routing\Cache\RouteCacheFactory::validateConfig">validateConfig</abbr></a></td><td class="text-right">132</td></tr>
+       <tr><td><a href="FileRouteCache.php.html#34"><abbr title="App\Infrastructure\Routing\Cache\FileRouteCache::isValid">isValid</abbr></a></td><td class="text-right">30</td></tr>
+       <tr><td><a href="MemoryRouteCache.php.html#36"><abbr title="App\Infrastructure\Routing\Cache\MemoryRouteCache::isValid">isValid</abbr></a></td><td class="text-right">30</td></tr>
+       <tr><td><a href="FileRouteCache.php.html#53"><abbr title="App\Infrastructure\Routing\Cache\FileRouteCache::load">load</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="FileRouteCache.php.html#101"><abbr title="App\Infrastructure\Routing\Cache\FileRouteCache::clear">clear</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="FileRouteCache.php.html#176"><abbr title="App\Infrastructure\Routing\Cache\FileRouteCache::loadStats">loadStats</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="RedisRouteCache.php.html#52"><abbr title="App\Infrastructure\Routing\Cache\RedisRouteCache::load">load</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="RedisRouteCache.php.html#86"><abbr title="App\Infrastructure\Routing\Cache\RedisRouteCache::store">store</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="RedisRouteCache.php.html#188"><abbr title="App\Infrastructure\Routing\Cache\RedisRouteCache::loadStats">loadStats</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="RouteCacheFactory.php.html#31"><abbr title="App\Infrastructure\Routing\Cache\RouteCacheFactory::create">create</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="MemoryRouteCache.php.html#56"><abbr title="App\Infrastructure\Routing\Cache\MemoryRouteCache::load">load</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="MemoryRouteCache.php.html#148"><abbr title="App\Infrastructure\Routing\Cache\MemoryRouteCache::isItemExpired">isItemExpired</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="MemoryRouteCache.php.html#166"><abbr title="App\Infrastructure\Routing\Cache\MemoryRouteCache::cleanupExpired">cleanupExpired</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="RedisRouteCache.php.html#40"><abbr title="App\Infrastructure\Routing\Cache\RedisRouteCache::isValid">isValid</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="RedisRouteCache.php.html#110"><abbr title="App\Infrastructure\Routing\Cache\RedisRouteCache::clear">clear</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="RedisRouteCache.php.html#206"><abbr title="App\Infrastructure\Routing\Cache\RedisRouteCache::saveStats">saveStats</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="FileRouteCache.php.html#85"><abbr title="App\Infrastructure\Routing\Cache\FileRouteCache::store">store</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="FileRouteCache.php.html#166"><abbr title="App\Infrastructure\Routing\Cache\FileRouteCache::ensureCacheDirectory">ensureCacheDirectory</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="FileRouteCache.php.html#193"><abbr title="App\Infrastructure\Routing\Cache\FileRouteCache::saveStats">saveStats</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="RedisRouteCache.php.html#168"><abbr title="App\Infrastructure\Routing\Cache\RedisRouteCache::isConnected">isConnected</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="RouteCacheFactory.php.html#54"><abbr title="App\Infrastructure\Routing\Cache\RouteCacheFactory::createFileCache">createFileCache</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="RouteCacheFactory.php.html#71"><abbr title="App\Infrastructure\Routing\Cache\RouteCacheFactory::createMemoryCache">createMemoryCache</abbr></a></td><td class="text-right">6</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+   </div>
+   <footer>
+    <hr/>
+    <p>
+     <small>Generated by <a href="https://github.com/sebastianbergmann/php-code-coverage" target="_top">php-code-coverage 11.0.10</a> using <a href="https://www.php.net/" target="_top">PHP 8.4.11</a> and <a href="https://phpunit.de/">PHPUnit 11.5.34</a> at Fri Aug 29 9:23:06 CST 2025.</small>
+    </p>
+   </footer>
+  </div>
+  <script src="../../../_js/jquery.min.js?v=11.0.10" type="text/javascript"></script>
+  <script src="../../../_js/d3.min.js?v=11.0.10" type="text/javascript"></script>
+  <script src="../../../_js/nv.d3.min.js?v=11.0.10" type="text/javascript"></script>
+  <script type="text/javascript">
+$(document).ready(function() {
+  nv.addGraph(function() {
+    var chart = nv.models.multiBarChart();
+    chart.tooltips(false)
+      .showControls(false)
+      .showLegend(false)
+      .reduceXTicks(false)
+      .staggerLabels(true)
+      .yAxis.tickFormat(d3.format('d'));
+
+    d3.select('#classCoverageDistribution svg')
+      .datum(getCoverageDistributionData([4,0,0,0,0,0,0,0,0,0,0,0], "Class Coverage"))
+      .transition().duration(500).call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  nv.addGraph(function() {
+    var chart = nv.models.multiBarChart();
+    chart.tooltips(false)
+      .showControls(false)
+      .showLegend(false)
+      .reduceXTicks(false)
+      .staggerLabels(true)
+      .yAxis.tickFormat(d3.format('d'));
+
+    d3.select('#methodCoverageDistribution svg')
+      .datum(getCoverageDistributionData([49,0,0,0,0,0,0,0,0,0,0,0], "Method Coverage"))
+      .transition().duration(500).call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  function getCoverageDistributionData(data, label) {
+    var labels = [
+      '0%',
+      '0-10%',
+      '10-20%',
+      '20-30%',
+      '30-40%',
+      '40-50%',
+      '50-60%',
+      '60-70%',
+      '70-80%',
+      '80-90%',
+      '90-100%',
+      '100%'
+    ];
+    var values = [];
+    $.each(labels, function(key) {
+      values.push({x: labels[key], y: data[key]});
+    });
+
+    return [
+      {
+        key: label,
+        values: values,
+        color: "#4572A7"
+      }
+    ];
+  }
+  nv.addGraph(function() {
+    var chart = nv.models.scatterChart()
+      .showDistX(true)
+      .showDistY(true)
+      .showLegend(false)
+      .forceX([0, 100]);
+    chart.tooltipContent(function(graph) {
+      return '<p>' + graph.point.class + '</p>';
+    });
+
+    chart.xAxis.axisLabel('Code Coverage (in percent)');
+    chart.yAxis.axisLabel('Cyclomatic Complexity');
+
+    d3.select('#classComplexity svg')
+      .datum(getComplexityData([[0,30,"<a href=\"FileRouteCache.php.html#15\">App\\Infrastructure\\Routing\\Cache\\FileRouteCache<\/a>"],[0,23,"<a href=\"MemoryRouteCache.php.html#15\">App\\Infrastructure\\Routing\\Cache\\MemoryRouteCache<\/a>"],[0,30,"<a href=\"RedisRouteCache.php.html#17\">App\\Infrastructure\\Routing\\Cache\\RedisRouteCache<\/a>"],[0,23,"<a href=\"RouteCacheFactory.php.html#15\">App\\Infrastructure\\Routing\\Cache\\RouteCacheFactory<\/a>"]], 'Class Complexity'))
+      .transition()
+      .duration(500)
+      .call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  nv.addGraph(function() {
+    var chart = nv.models.scatterChart()
+      .showDistX(true)
+      .showDistY(true)
+      .showLegend(false)
+      .forceX([0, 100]);
+    chart.tooltipContent(function(graph) {
+      return '<p>' + graph.point.class + '</p>';
+    });
+
+    chart.xAxis.axisLabel('Code Coverage (in percent)');
+    chart.yAxis.axisLabel('Method Complexity');
+
+    d3.select('#methodComplexity svg')
+      .datum(getComplexityData([[0,1,"<a href=\"FileRouteCache.php.html#27\">App\\Infrastructure\\Routing\\Cache\\FileRouteCache::__construct<\/a>"],[0,5,"<a href=\"FileRouteCache.php.html#34\">App\\Infrastructure\\Routing\\Cache\\FileRouteCache::isValid<\/a>"],[0,4,"<a href=\"FileRouteCache.php.html#53\">App\\Infrastructure\\Routing\\Cache\\FileRouteCache::load<\/a>"],[0,2,"<a href=\"FileRouteCache.php.html#85\">App\\Infrastructure\\Routing\\Cache\\FileRouteCache::store<\/a>"],[0,4,"<a href=\"FileRouteCache.php.html#101\">App\\Infrastructure\\Routing\\Cache\\FileRouteCache::clear<\/a>"],[0,1,"<a href=\"FileRouteCache.php.html#127\">App\\Infrastructure\\Routing\\Cache\\FileRouteCache::getCachePath<\/a>"],[0,1,"<a href=\"FileRouteCache.php.html#132\">App\\Infrastructure\\Routing\\Cache\\FileRouteCache::setTtl<\/a>"],[0,1,"<a href=\"FileRouteCache.php.html#137\">App\\Infrastructure\\Routing\\Cache\\FileRouteCache::getTtl<\/a>"],[0,1,"<a href=\"FileRouteCache.php.html#142\">App\\Infrastructure\\Routing\\Cache\\FileRouteCache::getStats<\/a>"],[0,1,"<a href=\"FileRouteCache.php.html#150\">App\\Infrastructure\\Routing\\Cache\\FileRouteCache::getCacheFile<\/a>"],[0,1,"<a href=\"FileRouteCache.php.html#158\">App\\Infrastructure\\Routing\\Cache\\FileRouteCache::getStatsFile<\/a>"],[0,2,"<a href=\"FileRouteCache.php.html#166\">App\\Infrastructure\\Routing\\Cache\\FileRouteCache::ensureCacheDirectory<\/a>"],[0,4,"<a href=\"FileRouteCache.php.html#176\">App\\Infrastructure\\Routing\\Cache\\FileRouteCache::loadStats<\/a>"],[0,2,"<a href=\"FileRouteCache.php.html#193\">App\\Infrastructure\\Routing\\Cache\\FileRouteCache::saveStats<\/a>"],[0,1,"<a href=\"MemoryRouteCache.php.html#31\">App\\Infrastructure\\Routing\\Cache\\MemoryRouteCache::__construct<\/a>"],[0,5,"<a href=\"MemoryRouteCache.php.html#36\">App\\Infrastructure\\Routing\\Cache\\MemoryRouteCache::isValid<\/a>"],[0,3,"<a href=\"MemoryRouteCache.php.html#56\">App\\Infrastructure\\Routing\\Cache\\MemoryRouteCache::load<\/a>"],[0,1,"<a href=\"MemoryRouteCache.php.html#79\">App\\Infrastructure\\Routing\\Cache\\MemoryRouteCache::store<\/a>"],[0,1,"<a href=\"MemoryRouteCache.php.html#92\">App\\Infrastructure\\Routing\\Cache\\MemoryRouteCache::clear<\/a>"],[0,1,"<a href=\"MemoryRouteCache.php.html#109\">App\\Infrastructure\\Routing\\Cache\\MemoryRouteCache::getCachePath<\/a>"],[0,1,"<a href=\"MemoryRouteCache.php.html#114\">App\\Infrastructure\\Routing\\Cache\\MemoryRouteCache::setTtl<\/a>"],[0,1,"<a href=\"MemoryRouteCache.php.html#119\">App\\Infrastructure\\Routing\\Cache\\MemoryRouteCache::getTtl<\/a>"],[0,1,"<a href=\"MemoryRouteCache.php.html#124\">App\\Infrastructure\\Routing\\Cache\\MemoryRouteCache::getStats<\/a>"],[0,1,"<a href=\"MemoryRouteCache.php.html#132\">App\\Infrastructure\\Routing\\Cache\\MemoryRouteCache::getCache<\/a>"],[0,1,"<a href=\"MemoryRouteCache.php.html#140\">App\\Infrastructure\\Routing\\Cache\\MemoryRouteCache::getTimestamps<\/a>"],[0,3,"<a href=\"MemoryRouteCache.php.html#148\">App\\Infrastructure\\Routing\\Cache\\MemoryRouteCache::isItemExpired<\/a>"],[0,3,"<a href=\"MemoryRouteCache.php.html#166\">App\\Infrastructure\\Routing\\Cache\\MemoryRouteCache::cleanupExpired<\/a>"],[0,1,"<a href=\"RedisRouteCache.php.html#33\">App\\Infrastructure\\Routing\\Cache\\RedisRouteCache::__construct<\/a>"],[0,3,"<a href=\"RedisRouteCache.php.html#40\">App\\Infrastructure\\Routing\\Cache\\RedisRouteCache::isValid<\/a>"],[0,4,"<a href=\"RedisRouteCache.php.html#52\">App\\Infrastructure\\Routing\\Cache\\RedisRouteCache::load<\/a>"],[0,4,"<a href=\"RedisRouteCache.php.html#86\">App\\Infrastructure\\Routing\\Cache\\RedisRouteCache::store<\/a>"],[0,3,"<a href=\"RedisRouteCache.php.html#110\">App\\Infrastructure\\Routing\\Cache\\RedisRouteCache::clear<\/a>"],[0,1,"<a href=\"RedisRouteCache.php.html#137\">App\\Infrastructure\\Routing\\Cache\\RedisRouteCache::getCachePath<\/a>"],[0,1,"<a href=\"RedisRouteCache.php.html#142\">App\\Infrastructure\\Routing\\Cache\\RedisRouteCache::setTtl<\/a>"],[0,1,"<a href=\"RedisRouteCache.php.html#147\">App\\Infrastructure\\Routing\\Cache\\RedisRouteCache::getTtl<\/a>"],[0,1,"<a href=\"RedisRouteCache.php.html#152\">App\\Infrastructure\\Routing\\Cache\\RedisRouteCache::getStats<\/a>"],[0,1,"<a href=\"RedisRouteCache.php.html#160\">App\\Infrastructure\\Routing\\Cache\\RedisRouteCache::getRedis<\/a>"],[0,2,"<a href=\"RedisRouteCache.php.html#168\">App\\Infrastructure\\Routing\\Cache\\RedisRouteCache::isConnected<\/a>"],[0,1,"<a href=\"RedisRouteCache.php.html#180\">App\\Infrastructure\\Routing\\Cache\\RedisRouteCache::getCacheKey<\/a>"],[0,4,"<a href=\"RedisRouteCache.php.html#188\">App\\Infrastructure\\Routing\\Cache\\RedisRouteCache::loadStats<\/a>"],[0,3,"<a href=\"RedisRouteCache.php.html#206\">App\\Infrastructure\\Routing\\Cache\\RedisRouteCache::saveStats<\/a>"],[0,4,"<a href=\"RouteCacheFactory.php.html#31\">App\\Infrastructure\\Routing\\Cache\\RouteCacheFactory::create<\/a>"],[0,2,"<a href=\"RouteCacheFactory.php.html#54\">App\\Infrastructure\\Routing\\Cache\\RouteCacheFactory::createFileCache<\/a>"],[0,2,"<a href=\"RouteCacheFactory.php.html#71\">App\\Infrastructure\\Routing\\Cache\\RouteCacheFactory::createMemoryCache<\/a>"],[0,1,"<a href=\"RouteCacheFactory.php.html#87\">App\\Infrastructure\\Routing\\Cache\\RouteCacheFactory::getSupportedDrivers<\/a>"],[0,1,"<a href=\"RouteCacheFactory.php.html#95\">App\\Infrastructure\\Routing\\Cache\\RouteCacheFactory::isDriverSupported<\/a>"],[0,1,"<a href=\"RouteCacheFactory.php.html#103\">App\\Infrastructure\\Routing\\Cache\\RouteCacheFactory::getDriverClass<\/a>"],[0,1,"<a href=\"RouteCacheFactory.php.html#111\">App\\Infrastructure\\Routing\\Cache\\RouteCacheFactory::createDefault<\/a>"],[0,11,"<a href=\"RouteCacheFactory.php.html#122\">App\\Infrastructure\\Routing\\Cache\\RouteCacheFactory::validateConfig<\/a>"]], 'Method Complexity'))
+      .transition()
+      .duration(500)
+      .call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  function getComplexityData(data, label) {
+    var values = [];
+    $.each(data, function(key) {
+      var value = Math.round(data[key][0]*100) / 100;
+      values.push({
+        x: value,
+        y: data[key][1],
+        class: data[key][2],
+        size: 0.05,
+        shape: 'diamond'
+      });
+    });
+
+    return [
+      {
+        key: label,
+        values: values,
+        color: "#4572A7"
+      }
+    ];
+  }
+});
+  </script>
+ </body>
+</html>

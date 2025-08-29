@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Dashboard for /var/www/html/app/Infrastructure/Http</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="../../_css/bootstrap.min.css?v=11.0.10" rel="stylesheet" type="text/css">
+  <link href="../../_css/nv.d3.min.css?v=11.0.10" rel="stylesheet" type="text/css">
+  <link href="../../_css/style.css?v=11.0.10" rel="stylesheet" type="text/css">
+  <link href="../../_css/custom.css" rel="stylesheet" type="text/css">
+ </head>
+ <body>
+  <header>
+   <div class="container-fluid">
+    <div class="row">
+     <div class="col-md-12">
+      <nav aria-label="breadcrumb">
+       <ol class="breadcrumb">
+         <li class="breadcrumb-item"><a href="../../index.html">/var/www/html/app</a></li>
+         <li class="breadcrumb-item"><a href="../index.html">Infrastructure</a></li>
+         <li class="breadcrumb-item"><a href="index.html">Http</a></li>
+         <li class="breadcrumb-item active">(Dashboard)</li>
+
+       </ol>
+      </nav>
+     </div>
+    </div>
+   </div>
+  </header>
+  <div class="container-fluid">
+   <div class="row">
+    <div class="col-md-12">
+     <h2>Classes</h2>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Coverage Distribution</h3>
+     <div id="classCoverageDistribution" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Complexity</h3>
+     <div id="classComplexity" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Insufficient Coverage</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Class</th>
+         <th class="text-right">Coverage</th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="Response.php.html#13">App\Infrastructure\Http\Response</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Stream.php.html#14">App\Infrastructure\Http\Stream</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ServerRequest.php.html#13">App\Infrastructure\Http\ServerRequest</a></td><td class="text-right">16%</td></tr>
+       <tr><td><a href="Uri.php.html#12">App\Infrastructure\Http\Uri</a></td><td class="text-right">17%</td></tr>
+       <tr><td><a href="ServerRequestFactory.php.html#12">App\Infrastructure\Http\ServerRequestFactory</a></td><td class="text-right">71%</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Project Risks</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Class</th>
+         <th class="text-right"><abbr title="Change Risk Anti-Patterns (CRAP) Index">CRAP</abbr></th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="Stream.php.html#14">App\Infrastructure\Http\Stream</a></td><td class="text-right">2070</td></tr>
+       <tr><td><a href="ServerRequest.php.html#13">App\Infrastructure\Http\ServerRequest</a></td><td class="text-right">668</td></tr>
+       <tr><td><a href="Response.php.html#13">App\Infrastructure\Http\Response</a></td><td class="text-right">650</td></tr>
+       <tr><td><a href="Uri.php.html#12">App\Infrastructure\Http\Uri</a></td><td class="text-right">645</td></tr>
+       <tr><td><a href="ServerRequestFactory.php.html#12">App\Infrastructure\Http\ServerRequestFactory</a></td><td class="text-right">37</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-12">
+     <h2>Methods</h2>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Coverage Distribution</h3>
+     <div id="methodCoverageDistribution" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Complexity</h3>
+     <div id="methodComplexity" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Insufficient Coverage</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Method</th>
+         <th class="text-right">Coverage</th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="Response.php.html#27"><abbr title="App\Infrastructure\Http\Response::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Response.php.html#49"><abbr title="App\Infrastructure\Http\Response::getProtocolVersion">getProtocolVersion</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Response.php.html#54"><abbr title="App\Infrastructure\Http\Response::withProtocolVersion">withProtocolVersion</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Response.php.html#62"><abbr title="App\Infrastructure\Http\Response::getHeaders">getHeaders</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Response.php.html#67"><abbr title="App\Infrastructure\Http\Response::hasHeader">hasHeader</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Response.php.html#72"><abbr title="App\Infrastructure\Http\Response::getHeader">getHeader</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Response.php.html#82"><abbr title="App\Infrastructure\Http\Response::getHeaderLine">getHeaderLine</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Response.php.html#87"><abbr title="App\Infrastructure\Http\Response::withHeader">withHeader</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Response.php.html#97"><abbr title="App\Infrastructure\Http\Response::withAddedHeader">withAddedHeader</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Response.php.html#113"><abbr title="App\Infrastructure\Http\Response::withoutHeader">withoutHeader</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Response.php.html#128"><abbr title="App\Infrastructure\Http\Response::getBody">getBody</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Response.php.html#133"><abbr title="App\Infrastructure\Http\Response::withBody">withBody</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Response.php.html#141"><abbr title="App\Infrastructure\Http\Response::getStatusCode">getStatusCode</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Response.php.html#146"><abbr title="App\Infrastructure\Http\Response::withStatus">withStatus</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Response.php.html#155"><abbr title="App\Infrastructure\Http\Response::getReasonPhrase">getReasonPhrase</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Response.php.html#164"><abbr title="App\Infrastructure\Http\Response::getDefaultReasonPhrase">getDefaultReasonPhrase</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ServerRequest.php.html#51"><abbr title="App\Infrastructure\Http\ServerRequest::getRequestTarget">getRequestTarget</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ServerRequest.php.html#56"><abbr title="App\Infrastructure\Http\ServerRequest::withRequestTarget">withRequestTarget</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ServerRequest.php.html#69"><abbr title="App\Infrastructure\Http\ServerRequest::withMethod">withMethod</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ServerRequest.php.html#82"><abbr title="App\Infrastructure\Http\ServerRequest::withUri">withUri</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ServerRequest.php.html#90"><abbr title="App\Infrastructure\Http\ServerRequest::getServerParams">getServerParams</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ServerRequest.php.html#95"><abbr title="App\Infrastructure\Http\ServerRequest::getCookieParams">getCookieParams</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ServerRequest.php.html#100"><abbr title="App\Infrastructure\Http\ServerRequest::withCookieParams">withCookieParams</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ServerRequest.php.html#108"><abbr title="App\Infrastructure\Http\ServerRequest::getQueryParams">getQueryParams</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ServerRequest.php.html#113"><abbr title="App\Infrastructure\Http\ServerRequest::withQueryParams">withQueryParams</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ServerRequest.php.html#121"><abbr title="App\Infrastructure\Http\ServerRequest::getUploadedFiles">getUploadedFiles</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ServerRequest.php.html#126"><abbr title="App\Infrastructure\Http\ServerRequest::withUploadedFiles">withUploadedFiles</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ServerRequest.php.html#133"><abbr title="App\Infrastructure\Http\ServerRequest::getParsedBody">getParsedBody</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ServerRequest.php.html#146"><abbr title="App\Infrastructure\Http\ServerRequest::getAttributes">getAttributes</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ServerRequest.php.html#151"><abbr title="App\Infrastructure\Http\ServerRequest::getAttribute">getAttribute</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ServerRequest.php.html#156"><abbr title="App\Infrastructure\Http\ServerRequest::withAttribute">withAttribute</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ServerRequest.php.html#164"><abbr title="App\Infrastructure\Http\ServerRequest::withoutAttribute">withoutAttribute</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ServerRequest.php.html#173"><abbr title="App\Infrastructure\Http\ServerRequest::getProtocolVersion">getProtocolVersion</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ServerRequest.php.html#178"><abbr title="App\Infrastructure\Http\ServerRequest::withProtocolVersion">withProtocolVersion</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ServerRequest.php.html#186"><abbr title="App\Infrastructure\Http\ServerRequest::getHeaders">getHeaders</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ServerRequest.php.html#191"><abbr title="App\Infrastructure\Http\ServerRequest::hasHeader">hasHeader</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ServerRequest.php.html#196"><abbr title="App\Infrastructure\Http\ServerRequest::getHeader">getHeader</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ServerRequest.php.html#201"><abbr title="App\Infrastructure\Http\ServerRequest::getHeaderLine">getHeaderLine</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ServerRequest.php.html#206"><abbr title="App\Infrastructure\Http\ServerRequest::withHeader">withHeader</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ServerRequest.php.html#214"><abbr title="App\Infrastructure\Http\ServerRequest::withAddedHeader">withAddedHeader</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ServerRequest.php.html#226"><abbr title="App\Infrastructure\Http\ServerRequest::withoutHeader">withoutHeader</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ServerRequest.php.html#234"><abbr title="App\Infrastructure\Http\ServerRequest::getBody">getBody</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ServerRequest.php.html#239"><abbr title="App\Infrastructure\Http\ServerRequest::withBody">withBody</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ServerRequestFactory.php.html#74"><abbr title="App\Infrastructure\Http\ServerRequestFactory::isDefaultPort">isDefaultPort</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Stream.php.html#24"><abbr title="App\Infrastructure\Http\Stream::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Stream.php.html#43"><abbr title="App\Infrastructure\Http\Stream::__toString">__toString</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Stream.php.html#52"><abbr title="App\Infrastructure\Http\Stream::close">close</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Stream.php.html#61"><abbr title="App\Infrastructure\Http\Stream::detach">detach</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Stream.php.html#72"><abbr title="App\Infrastructure\Http\Stream::getSize">getSize</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Stream.php.html#86"><abbr title="App\Infrastructure\Http\Stream::tell">tell</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Stream.php.html#100"><abbr title="App\Infrastructure\Http\Stream::eof">eof</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Stream.php.html#109"><abbr title="App\Infrastructure\Http\Stream::isSeekable">isSeekable</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Stream.php.html#114"><abbr title="App\Infrastructure\Http\Stream::seek">seek</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Stream.php.html#129"><abbr title="App\Infrastructure\Http\Stream::rewind">rewind</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Stream.php.html#134"><abbr title="App\Infrastructure\Http\Stream::isWritable">isWritable</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Stream.php.html#139"><abbr title="App\Infrastructure\Http\Stream::write">write</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Stream.php.html#157"><abbr title="App\Infrastructure\Http\Stream::isReadable">isReadable</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Stream.php.html#162"><abbr title="App\Infrastructure\Http\Stream::read">read</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Stream.php.html#180"><abbr title="App\Infrastructure\Http\Stream::getContents">getContents</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Stream.php.html#198"><abbr title="App\Infrastructure\Http\Stream::getMetadata">getMetadata</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Uri.php.html#35"><abbr title="App\Infrastructure\Http\Uri::parseUri">parseUri</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Uri.php.html#54"><abbr title="App\Infrastructure\Http\Uri::getScheme">getScheme</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Uri.php.html#59"><abbr title="App\Infrastructure\Http\Uri::getAuthority">getAuthority</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Uri.php.html#76"><abbr title="App\Infrastructure\Http\Uri::isDefaultPort">isDefaultPort</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Uri.php.html#82"><abbr title="App\Infrastructure\Http\Uri::getUserInfo">getUserInfo</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Uri.php.html#87"><abbr title="App\Infrastructure\Http\Uri::getHost">getHost</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Uri.php.html#92"><abbr title="App\Infrastructure\Http\Uri::getPort">getPort</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Uri.php.html#102"><abbr title="App\Infrastructure\Http\Uri::getQuery">getQuery</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Uri.php.html#107"><abbr title="App\Infrastructure\Http\Uri::getFragment">getFragment</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Uri.php.html#120"><abbr title="App\Infrastructure\Http\Uri::withUserInfo">withUserInfo</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Uri.php.html#139"><abbr title="App\Infrastructure\Http\Uri::withPort">withPort</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Uri.php.html#155"><abbr title="App\Infrastructure\Http\Uri::withQuery">withQuery</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Uri.php.html#163"><abbr title="App\Infrastructure\Http\Uri::withFragment">withFragment</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Uri.php.html#171"><abbr title="App\Infrastructure\Http\Uri::__toString">__toString</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Uri.php.html#28"><abbr title="App\Infrastructure\Http\Uri::__construct">__construct</abbr></a></td><td class="text-right">50%</td></tr>
+       <tr><td><a href="ServerRequestFactory.php.html#14"><abbr title="App\Infrastructure\Http\ServerRequestFactory::fromGlobals">fromGlobals</abbr></a></td><td class="text-right">68%</td></tr>
+       <tr><td><a href="ServerRequestFactory.php.html#80"><abbr title="App\Infrastructure\Http\ServerRequestFactory::parseHeaders">parseHeaders</abbr></a></td><td class="text-right">77%</td></tr>
+       <tr><td><a href="ServerRequestFactory.php.html#46"><abbr title="App\Infrastructure\Http\ServerRequestFactory::createUriFromGlobals">createUriFromGlobals</abbr></a></td><td class="text-right">80%</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Project Risks</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Method</th>
+         <th class="text-right"><abbr title="Change Risk Anti-Patterns (CRAP) Index">CRAP</abbr></th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="Stream.php.html#24"><abbr title="App\Infrastructure\Http\Stream::__construct">__construct</abbr></a></td><td class="text-right">72</td></tr>
+       <tr><td><a href="Uri.php.html#171"><abbr title="App\Infrastructure\Http\Uri::__toString">__toString</abbr></a></td><td class="text-right">30</td></tr>
+       <tr><td><a href="Response.php.html#97"><abbr title="App\Infrastructure\Http\Response::withAddedHeader">withAddedHeader</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="ServerRequestFactory.php.html#74"><abbr title="App\Infrastructure\Http\ServerRequestFactory::isDefaultPort">isDefaultPort</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="Stream.php.html#114"><abbr title="App\Infrastructure\Http\Stream::seek">seek</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="Stream.php.html#139"><abbr title="App\Infrastructure\Http\Stream::write">write</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="Stream.php.html#162"><abbr title="App\Infrastructure\Http\Stream::read">read</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="Stream.php.html#180"><abbr title="App\Infrastructure\Http\Stream::getContents">getContents</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="Stream.php.html#198"><abbr title="App\Infrastructure\Http\Stream::getMetadata">getMetadata</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="Uri.php.html#59"><abbr title="App\Infrastructure\Http\Uri::getAuthority">getAuthority</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="Uri.php.html#76"><abbr title="App\Infrastructure\Http\Uri::isDefaultPort">isDefaultPort</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="Response.php.html#27"><abbr title="App\Infrastructure\Http\Response::__construct">__construct</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Stream.php.html#72"><abbr title="App\Infrastructure\Http\Stream::getSize">getSize</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Stream.php.html#86"><abbr title="App\Infrastructure\Http\Stream::tell">tell</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Uri.php.html#35"><abbr title="App\Infrastructure\Http\Uri::parseUri">parseUri</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="ServerRequestFactory.php.html#14"><abbr title="App\Infrastructure\Http\ServerRequestFactory::fromGlobals">fromGlobals</abbr></a></td><td class="text-right">9</td></tr>
+       <tr><td><a href="ServerRequestFactory.php.html#46"><abbr title="App\Infrastructure\Http\ServerRequestFactory::createUriFromGlobals">createUriFromGlobals</abbr></a></td><td class="text-right">8</td></tr>
+       <tr><td><a href="Response.php.html#72"><abbr title="App\Infrastructure\Http\Response::getHeader">getHeader</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Response.php.html#87"><abbr title="App\Infrastructure\Http\Response::withHeader">withHeader</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Response.php.html#113"><abbr title="App\Infrastructure\Http\Response::withoutHeader">withoutHeader</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Response.php.html#155"><abbr title="App\Infrastructure\Http\Response::getReasonPhrase">getReasonPhrase</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="ServerRequest.php.html#206"><abbr title="App\Infrastructure\Http\ServerRequest::withHeader">withHeader</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="ServerRequest.php.html#214"><abbr title="App\Infrastructure\Http\ServerRequest::withAddedHeader">withAddedHeader</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Stream.php.html#43"><abbr title="App\Infrastructure\Http\Stream::__toString">__toString</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Stream.php.html#52"><abbr title="App\Infrastructure\Http\Stream::close">close</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Stream.php.html#100"><abbr title="App\Infrastructure\Http\Stream::eof">eof</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Uri.php.html#120"><abbr title="App\Infrastructure\Http\Uri::withUserInfo">withUserInfo</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="ServerRequestFactory.php.html#80"><abbr title="App\Infrastructure\Http\ServerRequestFactory::parseHeaders">parseHeaders</abbr></a></td><td class="text-right">4</td></tr>
+       <tr><td><a href="Uri.php.html#28"><abbr title="App\Infrastructure\Http\Uri::__construct">__construct</abbr></a></td><td class="text-right">2</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+   </div>
+   <footer>
+    <hr/>
+    <p>
+     <small>Generated by <a href="https://github.com/sebastianbergmann/php-code-coverage" target="_top">php-code-coverage 11.0.10</a> using <a href="https://www.php.net/" target="_top">PHP 8.4.11</a> and <a href="https://phpunit.de/">PHPUnit 11.5.34</a> at Fri Aug 29 9:23:06 CST 2025.</small>
+    </p>
+   </footer>
+  </div>
+  <script src="../../_js/jquery.min.js?v=11.0.10" type="text/javascript"></script>
+  <script src="../../_js/d3.min.js?v=11.0.10" type="text/javascript"></script>
+  <script src="../../_js/nv.d3.min.js?v=11.0.10" type="text/javascript"></script>
+  <script type="text/javascript">
+$(document).ready(function() {
+  nv.addGraph(function() {
+    var chart = nv.models.multiBarChart();
+    chart.tooltips(false)
+      .showControls(false)
+      .showLegend(false)
+      .reduceXTicks(false)
+      .staggerLabels(true)
+      .yAxis.tickFormat(d3.format('d'));
+
+    d3.select('#classCoverageDistribution svg')
+      .datum(getCoverageDistributionData([2,0,2,0,0,0,0,0,1,0,0,0], "Class Coverage"))
+      .transition().duration(500).call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  nv.addGraph(function() {
+    var chart = nv.models.multiBarChart();
+    chart.tooltips(false)
+      .showControls(false)
+      .showLegend(false)
+      .reduceXTicks(false)
+      .staggerLabels(true)
+      .yAxis.tickFormat(d3.format('d'));
+
+    d3.select('#methodCoverageDistribution svg')
+      .datum(getCoverageDistributionData([74,0,0,0,0,0,1,1,1,1,0,8], "Method Coverage"))
+      .transition().duration(500).call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  function getCoverageDistributionData(data, label) {
+    var labels = [
+      '0%',
+      '0-10%',
+      '10-20%',
+      '20-30%',
+      '30-40%',
+      '40-50%',
+      '50-60%',
+      '60-70%',
+      '70-80%',
+      '80-90%',
+      '90-100%',
+      '100%'
+    ];
+    var values = [];
+    $.each(labels, function(key) {
+      values.push({x: labels[key], y: data[key]});
+    });
+
+    return [
+      {
+        key: label,
+        values: values,
+        color: "#4572A7"
+      }
+    ];
+  }
+  nv.addGraph(function() {
+    var chart = nv.models.scatterChart()
+      .showDistX(true)
+      .showDistY(true)
+      .showLegend(false)
+      .forceX([0, 100]);
+    chart.tooltipContent(function(graph) {
+      return '<p>' + graph.point.class + '</p>';
+    });
+
+    chart.xAxis.axisLabel('Code Coverage (in percent)');
+    chart.yAxis.axisLabel('Cyclomatic Complexity');
+
+    d3.select('#classComplexity svg')
+      .datum(getComplexityData([[0,25,"<a href=\"Response.php.html#13\">App\\Infrastructure\\Http\\Response<\/a>"],[16.417910447761194,33,"<a href=\"ServerRequest.php.html#13\">App\\Infrastructure\\Http\\ServerRequest<\/a>"],[71.42857142857143,24,"<a href=\"ServerRequestFactory.php.html#12\">App\\Infrastructure\\Http\\ServerRequestFactory<\/a>"],[0,45,"<a href=\"Stream.php.html#14\">App\\Infrastructure\\Http\\Stream<\/a>"],[17.46031746031746,33,"<a href=\"Uri.php.html#12\">App\\Infrastructure\\Http\\Uri<\/a>"]], 'Class Complexity'))
+      .transition()
+      .duration(500)
+      .call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  nv.addGraph(function() {
+    var chart = nv.models.scatterChart()
+      .showDistX(true)
+      .showDistY(true)
+      .showLegend(false)
+      .forceX([0, 100]);
+    chart.tooltipContent(function(graph) {
+      return '<p>' + graph.point.class + '</p>';
+    });
+
+    chart.xAxis.axisLabel('Code Coverage (in percent)');
+    chart.yAxis.axisLabel('Method Complexity');
+
+    d3.select('#methodComplexity svg')
+      .datum(getComplexityData([[0,3,"<a href=\"Response.php.html#27\">App\\Infrastructure\\Http\\Response::__construct<\/a>"],[0,1,"<a href=\"Response.php.html#49\">App\\Infrastructure\\Http\\Response::getProtocolVersion<\/a>"],[0,1,"<a href=\"Response.php.html#54\">App\\Infrastructure\\Http\\Response::withProtocolVersion<\/a>"],[0,1,"<a href=\"Response.php.html#62\">App\\Infrastructure\\Http\\Response::getHeaders<\/a>"],[0,1,"<a href=\"Response.php.html#67\">App\\Infrastructure\\Http\\Response::hasHeader<\/a>"],[0,2,"<a href=\"Response.php.html#72\">App\\Infrastructure\\Http\\Response::getHeader<\/a>"],[0,1,"<a href=\"Response.php.html#82\">App\\Infrastructure\\Http\\Response::getHeaderLine<\/a>"],[0,2,"<a href=\"Response.php.html#87\">App\\Infrastructure\\Http\\Response::withHeader<\/a>"],[0,4,"<a href=\"Response.php.html#97\">App\\Infrastructure\\Http\\Response::withAddedHeader<\/a>"],[0,2,"<a href=\"Response.php.html#113\">App\\Infrastructure\\Http\\Response::withoutHeader<\/a>"],[0,1,"<a href=\"Response.php.html#128\">App\\Infrastructure\\Http\\Response::getBody<\/a>"],[0,1,"<a href=\"Response.php.html#133\">App\\Infrastructure\\Http\\Response::withBody<\/a>"],[0,1,"<a href=\"Response.php.html#141\">App\\Infrastructure\\Http\\Response::getStatusCode<\/a>"],[0,1,"<a href=\"Response.php.html#146\">App\\Infrastructure\\Http\\Response::withStatus<\/a>"],[0,2,"<a href=\"Response.php.html#155\">App\\Infrastructure\\Http\\Response::getReasonPhrase<\/a>"],[0,1,"<a href=\"Response.php.html#164\">App\\Infrastructure\\Http\\Response::getDefaultReasonPhrase<\/a>"],[100,1,"<a href=\"ServerRequest.php.html#35\">App\\Infrastructure\\Http\\ServerRequest::__construct<\/a>"],[0,1,"<a href=\"ServerRequest.php.html#51\">App\\Infrastructure\\Http\\ServerRequest::getRequestTarget<\/a>"],[0,1,"<a href=\"ServerRequest.php.html#56\">App\\Infrastructure\\Http\\ServerRequest::withRequestTarget<\/a>"],[100,1,"<a href=\"ServerRequest.php.html#64\">App\\Infrastructure\\Http\\ServerRequest::getMethod<\/a>"],[0,1,"<a href=\"ServerRequest.php.html#69\">App\\Infrastructure\\Http\\ServerRequest::withMethod<\/a>"],[100,1,"<a href=\"ServerRequest.php.html#77\">App\\Infrastructure\\Http\\ServerRequest::getUri<\/a>"],[0,1,"<a href=\"ServerRequest.php.html#82\">App\\Infrastructure\\Http\\ServerRequest::withUri<\/a>"],[0,1,"<a href=\"ServerRequest.php.html#90\">App\\Infrastructure\\Http\\ServerRequest::getServerParams<\/a>"],[0,1,"<a href=\"ServerRequest.php.html#95\">App\\Infrastructure\\Http\\ServerRequest::getCookieParams<\/a>"],[0,1,"<a href=\"ServerRequest.php.html#100\">App\\Infrastructure\\Http\\ServerRequest::withCookieParams<\/a>"],[0,1,"<a href=\"ServerRequest.php.html#108\">App\\Infrastructure\\Http\\ServerRequest::getQueryParams<\/a>"],[0,1,"<a href=\"ServerRequest.php.html#113\">App\\Infrastructure\\Http\\ServerRequest::withQueryParams<\/a>"],[0,1,"<a href=\"ServerRequest.php.html#121\">App\\Infrastructure\\Http\\ServerRequest::getUploadedFiles<\/a>"],[0,1,"<a href=\"ServerRequest.php.html#126\">App\\Infrastructure\\Http\\ServerRequest::withUploadedFiles<\/a>"],[0,1,"<a href=\"ServerRequest.php.html#133\">App\\Infrastructure\\Http\\ServerRequest::getParsedBody<\/a>"],[100,1,"<a href=\"ServerRequest.php.html#138\">App\\Infrastructure\\Http\\ServerRequest::withParsedBody<\/a>"],[0,1,"<a href=\"ServerRequest.php.html#146\">App\\Infrastructure\\Http\\ServerRequest::getAttributes<\/a>"],[0,1,"<a href=\"ServerRequest.php.html#151\">App\\Infrastructure\\Http\\ServerRequest::getAttribute<\/a>"],[0,1,"<a href=\"ServerRequest.php.html#156\">App\\Infrastructure\\Http\\ServerRequest::withAttribute<\/a>"],[0,1,"<a href=\"ServerRequest.php.html#164\">App\\Infrastructure\\Http\\ServerRequest::withoutAttribute<\/a>"],[0,1,"<a href=\"ServerRequest.php.html#173\">App\\Infrastructure\\Http\\ServerRequest::getProtocolVersion<\/a>"],[0,1,"<a href=\"ServerRequest.php.html#178\">App\\Infrastructure\\Http\\ServerRequest::withProtocolVersion<\/a>"],[0,1,"<a href=\"ServerRequest.php.html#186\">App\\Infrastructure\\Http\\ServerRequest::getHeaders<\/a>"],[0,1,"<a href=\"ServerRequest.php.html#191\">App\\Infrastructure\\Http\\ServerRequest::hasHeader<\/a>"],[0,1,"<a href=\"ServerRequest.php.html#196\">App\\Infrastructure\\Http\\ServerRequest::getHeader<\/a>"],[0,1,"<a href=\"ServerRequest.php.html#201\">App\\Infrastructure\\Http\\ServerRequest::getHeaderLine<\/a>"],[0,2,"<a href=\"ServerRequest.php.html#206\">App\\Infrastructure\\Http\\ServerRequest::withHeader<\/a>"],[0,2,"<a href=\"ServerRequest.php.html#214\">App\\Infrastructure\\Http\\ServerRequest::withAddedHeader<\/a>"],[0,1,"<a href=\"ServerRequest.php.html#226\">App\\Infrastructure\\Http\\ServerRequest::withoutHeader<\/a>"],[0,1,"<a href=\"ServerRequest.php.html#234\">App\\Infrastructure\\Http\\ServerRequest::getBody<\/a>"],[0,1,"<a href=\"ServerRequest.php.html#239\">App\\Infrastructure\\Http\\ServerRequest::withBody<\/a>"],[68.75,8,"<a href=\"ServerRequestFactory.php.html#14\">App\\Infrastructure\\Http\\ServerRequestFactory::fromGlobals<\/a>"],[80,8,"<a href=\"ServerRequestFactory.php.html#46\">App\\Infrastructure\\Http\\ServerRequestFactory::createUriFromGlobals<\/a>"],[0,4,"<a href=\"ServerRequestFactory.php.html#74\">App\\Infrastructure\\Http\\ServerRequestFactory::isDefaultPort<\/a>"],[77.77777777777779,4,"<a href=\"ServerRequestFactory.php.html#80\">App\\Infrastructure\\Http\\ServerRequestFactory::parseHeaders<\/a>"],[0,8,"<a href=\"Stream.php.html#24\">App\\Infrastructure\\Http\\Stream::__construct<\/a>"],[0,2,"<a href=\"Stream.php.html#43\">App\\Infrastructure\\Http\\Stream::__toString<\/a>"],[0,2,"<a href=\"Stream.php.html#52\">App\\Infrastructure\\Http\\Stream::close<\/a>"],[0,1,"<a href=\"Stream.php.html#61\">App\\Infrastructure\\Http\\Stream::detach<\/a>"],[0,3,"<a href=\"Stream.php.html#72\">App\\Infrastructure\\Http\\Stream::getSize<\/a>"],[0,3,"<a href=\"Stream.php.html#86\">App\\Infrastructure\\Http\\Stream::tell<\/a>"],[0,2,"<a href=\"Stream.php.html#100\">App\\Infrastructure\\Http\\Stream::eof<\/a>"],[0,1,"<a href=\"Stream.php.html#109\">App\\Infrastructure\\Http\\Stream::isSeekable<\/a>"],[0,4,"<a href=\"Stream.php.html#114\">App\\Infrastructure\\Http\\Stream::seek<\/a>"],[0,1,"<a href=\"Stream.php.html#129\">App\\Infrastructure\\Http\\Stream::rewind<\/a>"],[0,1,"<a href=\"Stream.php.html#134\">App\\Infrastructure\\Http\\Stream::isWritable<\/a>"],[0,4,"<a href=\"Stream.php.html#139\">App\\Infrastructure\\Http\\Stream::write<\/a>"],[0,1,"<a href=\"Stream.php.html#157\">App\\Infrastructure\\Http\\Stream::isReadable<\/a>"],[0,4,"<a href=\"Stream.php.html#162\">App\\Infrastructure\\Http\\Stream::read<\/a>"],[0,4,"<a href=\"Stream.php.html#180\">App\\Infrastructure\\Http\\Stream::getContents<\/a>"],[0,4,"<a href=\"Stream.php.html#198\">App\\Infrastructure\\Http\\Stream::getMetadata<\/a>"],[50,2,"<a href=\"Uri.php.html#28\">App\\Infrastructure\\Http\\Uri::__construct<\/a>"],[0,3,"<a href=\"Uri.php.html#35\">App\\Infrastructure\\Http\\Uri::parseUri<\/a>"],[0,1,"<a href=\"Uri.php.html#54\">App\\Infrastructure\\Http\\Uri::getScheme<\/a>"],[0,4,"<a href=\"Uri.php.html#59\">App\\Infrastructure\\Http\\Uri::getAuthority<\/a>"],[0,4,"<a href=\"Uri.php.html#76\">App\\Infrastructure\\Http\\Uri::isDefaultPort<\/a>"],[0,1,"<a href=\"Uri.php.html#82\">App\\Infrastructure\\Http\\Uri::getUserInfo<\/a>"],[0,1,"<a href=\"Uri.php.html#87\">App\\Infrastructure\\Http\\Uri::getHost<\/a>"],[0,1,"<a href=\"Uri.php.html#92\">App\\Infrastructure\\Http\\Uri::getPort<\/a>"],[100,1,"<a href=\"Uri.php.html#97\">App\\Infrastructure\\Http\\Uri::getPath<\/a>"],[0,1,"<a href=\"Uri.php.html#102\">App\\Infrastructure\\Http\\Uri::getQuery<\/a>"],[0,1,"<a href=\"Uri.php.html#107\">App\\Infrastructure\\Http\\Uri::getFragment<\/a>"],[100,1,"<a href=\"Uri.php.html#112\">App\\Infrastructure\\Http\\Uri::withScheme<\/a>"],[0,2,"<a href=\"Uri.php.html#120\">App\\Infrastructure\\Http\\Uri::withUserInfo<\/a>"],[100,1,"<a href=\"Uri.php.html#131\">App\\Infrastructure\\Http\\Uri::withHost<\/a>"],[0,1,"<a href=\"Uri.php.html#139\">App\\Infrastructure\\Http\\Uri::withPort<\/a>"],[100,1,"<a href=\"Uri.php.html#147\">App\\Infrastructure\\Http\\Uri::withPath<\/a>"],[0,1,"<a href=\"Uri.php.html#155\">App\\Infrastructure\\Http\\Uri::withQuery<\/a>"],[0,1,"<a href=\"Uri.php.html#163\">App\\Infrastructure\\Http\\Uri::withFragment<\/a>"],[0,5,"<a href=\"Uri.php.html#171\">App\\Infrastructure\\Http\\Uri::__toString<\/a>"]], 'Method Complexity'))
+      .transition()
+      .duration(500)
+      .call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  function getComplexityData(data, label) {
+    var values = [];
+    $.each(data, function(key) {
+      var value = Math.round(data[key][0]*100) / 100;
+      values.push({
+        x: value,
+        y: data[key][1],
+        class: data[key][2],
+        size: 0.05,
+        shape: 'diamond'
+      });
+    });
+
+    return [
+      {
+        key: label,
+        values: values,
+        color: "#4572A7"
+      }
+    ];
+  }
+});
+  </script>
+ </body>
+</html>

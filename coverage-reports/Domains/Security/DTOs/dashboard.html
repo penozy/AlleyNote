@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Dashboard for /var/www/html/app/Domains/Security/DTOs</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="../../../_css/bootstrap.min.css?v=11.0.10" rel="stylesheet" type="text/css">
+  <link href="../../../_css/nv.d3.min.css?v=11.0.10" rel="stylesheet" type="text/css">
+  <link href="../../../_css/style.css?v=11.0.10" rel="stylesheet" type="text/css">
+  <link href="../../../_css/custom.css" rel="stylesheet" type="text/css">
+ </head>
+ <body>
+  <header>
+   <div class="container-fluid">
+    <div class="row">
+     <div class="col-md-12">
+      <nav aria-label="breadcrumb">
+       <ol class="breadcrumb">
+         <li class="breadcrumb-item"><a href="../../../index.html">/var/www/html/app</a></li>
+         <li class="breadcrumb-item"><a href="../../index.html">Domains</a></li>
+         <li class="breadcrumb-item"><a href="../index.html">Security</a></li>
+         <li class="breadcrumb-item"><a href="index.html">DTOs</a></li>
+         <li class="breadcrumb-item active">(Dashboard)</li>
+
+       </ol>
+      </nav>
+     </div>
+    </div>
+   </div>
+  </header>
+  <div class="container-fluid">
+   <div class="row">
+    <div class="col-md-12">
+     <h2>Classes</h2>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Coverage Distribution</h3>
+     <div id="classCoverageDistribution" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Complexity</h3>
+     <div id="classComplexity" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Insufficient Coverage</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Class</th>
+         <th class="text-right">Coverage</th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="ActivityLogSearchDTO.php.html#18">App\Domains\Security\DTOs\ActivityLogSearchDTO</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CreateActivityLogDTO.php.html#17">App\Domains\Security\DTOs\CreateActivityLogDTO</a></td><td class="text-right">13%</td></tr>
+       <tr><td><a href="SuspiciousActivityAnalysisDTO.php.html#16">App\Domains\Security\DTOs\SuspiciousActivityAnalysisDTO</a></td><td class="text-right">47%</td></tr>
+       <tr><td><a href="CreateIpRuleDTO.php.html#16">App\Domains\Security\DTOs\CreateIpRuleDTO</a></td><td class="text-right">53%</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Project Risks</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Class</th>
+         <th class="text-right"><abbr title="Change Risk Anti-Patterns (CRAP) Index">CRAP</abbr></th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="ActivityLogSearchDTO.php.html#18">App\Domains\Security\DTOs\ActivityLogSearchDTO</a></td><td class="text-right">3306</td></tr>
+       <tr><td><a href="CreateActivityLogDTO.php.html#17">App\Domains\Security\DTOs\CreateActivityLogDTO</a></td><td class="text-right">827</td></tr>
+       <tr><td><a href="SuspiciousActivityAnalysisDTO.php.html#16">App\Domains\Security\DTOs\SuspiciousActivityAnalysisDTO</a></td><td class="text-right">248</td></tr>
+       <tr><td><a href="CreateIpRuleDTO.php.html#16">App\Domains\Security\DTOs\CreateIpRuleDTO</a></td><td class="text-right">198</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-12">
+     <h2>Methods</h2>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Coverage Distribution</h3>
+     <div id="methodCoverageDistribution" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Complexity</h3>
+     <div id="methodComplexity" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Insufficient Coverage</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Method</th>
+         <th class="text-right">Coverage</th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="ActivityLogSearchDTO.php.html#30"><abbr title="App\Domains\Security\DTOs\ActivityLogSearchDTO::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ActivityLogSearchDTO.php.html#54"><abbr title="App\Domains\Security\DTOs\ActivityLogSearchDTO::create">create</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ActivityLogSearchDTO.php.html#62"><abbr title="App\Domains\Security\DTOs\ActivityLogSearchDTO::withUserId">withUserId</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ActivityLogSearchDTO.php.html#87"><abbr title="App\Domains\Security\DTOs\ActivityLogSearchDTO::withSessionId">withSessionId</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ActivityLogSearchDTO.php.html#112"><abbr title="App\Domains\Security\DTOs\ActivityLogSearchDTO::withActionType">withActionType</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ActivityLogSearchDTO.php.html#137"><abbr title="App\Domains\Security\DTOs\ActivityLogSearchDTO::withActionCategory">withActionCategory</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ActivityLogSearchDTO.php.html#162"><abbr title="App\Domains\Security\DTOs\ActivityLogSearchDTO::withStatus">withStatus</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ActivityLogSearchDTO.php.html#187"><abbr title="App\Domains\Security\DTOs\ActivityLogSearchDTO::withMinSeverity">withMinSeverity</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ActivityLogSearchDTO.php.html#212"><abbr title="App\Domains\Security\DTOs\ActivityLogSearchDTO::withTarget">withTarget</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ActivityLogSearchDTO.php.html#237"><abbr title="App\Domains\Security\DTOs\ActivityLogSearchDTO::withIpAddress">withIpAddress</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ActivityLogSearchDTO.php.html#262"><abbr title="App\Domains\Security\DTOs\ActivityLogSearchDTO::withTimeRange">withTimeRange</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ActivityLogSearchDTO.php.html#291"><abbr title="App\Domains\Security\DTOs\ActivityLogSearchDTO::withSearchKeyword">withSearchKeyword</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ActivityLogSearchDTO.php.html#316"><abbr title="App\Domains\Security\DTOs\ActivityLogSearchDTO::withPagination">withPagination</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ActivityLogSearchDTO.php.html#349"><abbr title="App\Domains\Security\DTOs\ActivityLogSearchDTO::withSort">withSort</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ActivityLogSearchDTO.php.html#390"><abbr title="App\Domains\Security\DTOs\ActivityLogSearchDTO::getUserId">getUserId</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ActivityLogSearchDTO.php.html#395"><abbr title="App\Domains\Security\DTOs\ActivityLogSearchDTO::getSessionId">getSessionId</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ActivityLogSearchDTO.php.html#400"><abbr title="App\Domains\Security\DTOs\ActivityLogSearchDTO::getActionType">getActionType</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ActivityLogSearchDTO.php.html#405"><abbr title="App\Domains\Security\DTOs\ActivityLogSearchDTO::getActionCategory">getActionCategory</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ActivityLogSearchDTO.php.html#410"><abbr title="App\Domains\Security\DTOs\ActivityLogSearchDTO::getStatus">getStatus</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ActivityLogSearchDTO.php.html#415"><abbr title="App\Domains\Security\DTOs\ActivityLogSearchDTO::getMinSeverity">getMinSeverity</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ActivityLogSearchDTO.php.html#420"><abbr title="App\Domains\Security\DTOs\ActivityLogSearchDTO::getTargetType">getTargetType</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ActivityLogSearchDTO.php.html#425"><abbr title="App\Domains\Security\DTOs\ActivityLogSearchDTO::getTargetId">getTargetId</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ActivityLogSearchDTO.php.html#430"><abbr title="App\Domains\Security\DTOs\ActivityLogSearchDTO::getIpAddress">getIpAddress</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ActivityLogSearchDTO.php.html#435"><abbr title="App\Domains\Security\DTOs\ActivityLogSearchDTO::getStartDate">getStartDate</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ActivityLogSearchDTO.php.html#440"><abbr title="App\Domains\Security\DTOs\ActivityLogSearchDTO::getEndDate">getEndDate</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ActivityLogSearchDTO.php.html#445"><abbr title="App\Domains\Security\DTOs\ActivityLogSearchDTO::getSearchKeyword">getSearchKeyword</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ActivityLogSearchDTO.php.html#450"><abbr title="App\Domains\Security\DTOs\ActivityLogSearchDTO::getPage">getPage</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ActivityLogSearchDTO.php.html#455"><abbr title="App\Domains\Security\DTOs\ActivityLogSearchDTO::getPerPage">getPerPage</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ActivityLogSearchDTO.php.html#460"><abbr title="App\Domains\Security\DTOs\ActivityLogSearchDTO::getSortBy">getSortBy</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ActivityLogSearchDTO.php.html#465"><abbr title="App\Domains\Security\DTOs\ActivityLogSearchDTO::getSortOrder">getSortOrder</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ActivityLogSearchDTO.php.html#473"><abbr title="App\Domains\Security\DTOs\ActivityLogSearchDTO::getOffset">getOffset</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ActivityLogSearchDTO.php.html#481"><abbr title="App\Domains\Security\DTOs\ActivityLogSearchDTO::hasFilters">hasFilters</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ActivityLogSearchDTO.php.html#502"><abbr title="App\Domains\Security\DTOs\ActivityLogSearchDTO::toArray">toArray</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ActivityLogSearchDTO.php.html#527"><abbr title="App\Domains\Security\DTOs\ActivityLogSearchDTO::validateSearchConditions">validateSearchConditions</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CreateActivityLogDTO.php.html#46"><abbr title="App\Domains\Security\DTOs\CreateActivityLogDTO::fromArray">fromArray</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CreateActivityLogDTO.php.html#72"><abbr title="App\Domains\Security\DTOs\CreateActivityLogDTO::success">success</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CreateActivityLogDTO.php.html#96"><abbr title="App\Domains\Security\DTOs\CreateActivityLogDTO::failure">failure</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CreateActivityLogDTO.php.html#139"><abbr title="App\Domains\Security\DTOs\CreateActivityLogDTO::getActionType">getActionType</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CreateActivityLogDTO.php.html#144"><abbr title="App\Domains\Security\DTOs\CreateActivityLogDTO::getUserId">getUserId</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CreateActivityLogDTO.php.html#149"><abbr title="App\Domains\Security\DTOs\CreateActivityLogDTO::getSessionId">getSessionId</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CreateActivityLogDTO.php.html#154"><abbr title="App\Domains\Security\DTOs\CreateActivityLogDTO::getStatus">getStatus</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CreateActivityLogDTO.php.html#159"><abbr title="App\Domains\Security\DTOs\CreateActivityLogDTO::getTargetType">getTargetType</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CreateActivityLogDTO.php.html#164"><abbr title="App\Domains\Security\DTOs\CreateActivityLogDTO::getTargetId">getTargetId</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CreateActivityLogDTO.php.html#169"><abbr title="App\Domains\Security\DTOs\CreateActivityLogDTO::getDescription">getDescription</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CreateActivityLogDTO.php.html#177"><abbr title="App\Domains\Security\DTOs\CreateActivityLogDTO::getMetadata">getMetadata</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CreateActivityLogDTO.php.html#182"><abbr title="App\Domains\Security\DTOs\CreateActivityLogDTO::getIpAddress">getIpAddress</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CreateActivityLogDTO.php.html#187"><abbr title="App\Domains\Security\DTOs\CreateActivityLogDTO::getUserAgent">getUserAgent</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CreateActivityLogDTO.php.html#192"><abbr title="App\Domains\Security\DTOs\CreateActivityLogDTO::getRequestMethod">getRequestMethod</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CreateActivityLogDTO.php.html#197"><abbr title="App\Domains\Security\DTOs\CreateActivityLogDTO::getRequestPath">getRequestPath</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CreateActivityLogDTO.php.html#202"><abbr title="App\Domains\Security\DTOs\CreateActivityLogDTO::getOccurredAt">getOccurredAt</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CreateActivityLogDTO.php.html#209"><abbr title="App\Domains\Security\DTOs\CreateActivityLogDTO::withUserId">withUserId</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CreateActivityLogDTO.php.html#217"><abbr title="App\Domains\Security\DTOs\CreateActivityLogDTO::withSessionId">withSessionId</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CreateActivityLogDTO.php.html#225"><abbr title="App\Domains\Security\DTOs\CreateActivityLogDTO::withRequestInfo">withRequestInfo</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CreateActivityLogDTO.php.html#234"><abbr title="App\Domains\Security\DTOs\CreateActivityLogDTO::withNetworkInfo">withNetworkInfo</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CreateActivityLogDTO.php.html#246"><abbr title="App\Domains\Security\DTOs\CreateActivityLogDTO::withMetadata">withMetadata</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CreateActivityLogDTO.php.html#255"><abbr title="App\Domains\Security\DTOs\CreateActivityLogDTO::addMetadata">addMetadata</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CreateActivityLogDTO.php.html#270"><abbr title="App\Domains\Security\DTOs\CreateActivityLogDTO::toArray">toArray</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CreateActivityLogDTO.php.html#294"><abbr title="App\Domains\Security\DTOs\CreateActivityLogDTO::jsonSerialize">jsonSerialize</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CreateIpRuleDTO.php.html#178"><abbr title="App\Domains\Security\DTOs\CreateIpRuleDTO::isCidrFormat">isCidrFormat</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CreateIpRuleDTO.php.html#186"><abbr title="App\Domains\Security\DTOs\CreateIpRuleDTO::getIpPart">getIpPart</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CreateIpRuleDTO.php.html#198"><abbr title="App\Domains\Security\DTOs\CreateIpRuleDTO::getCidrSuffix">getCidrSuffix</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CreateIpRuleDTO.php.html#210"><abbr title="App\Domains\Security\DTOs\CreateIpRuleDTO::isIpv4">isIpv4</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CreateIpRuleDTO.php.html#220"><abbr title="App\Domains\Security\DTOs\CreateIpRuleDTO::isIpv6">isIpv6</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CreateIpRuleDTO.php.html#230"><abbr title="App\Domains\Security\DTOs\CreateIpRuleDTO::isPrivateIp">isPrivateIp</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CreateIpRuleDTO.php.html#240"><abbr title="App\Domains\Security\DTOs\CreateIpRuleDTO::isLoopback">isLoopback</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CreateIpRuleDTO.php.html#256"><abbr title="App\Domains\Security\DTOs\CreateIpRuleDTO::getDisplayName">getDisplayName</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CreateIpRuleDTO.php.html#268"><abbr title="App\Domains\Security\DTOs\CreateIpRuleDTO::getDetailedInfo">getDetailedInfo</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="SuspiciousActivityAnalysisDTO.php.html#121"><abbr title="App\Domains\Security\DTOs\SuspiciousActivityAnalysisDTO::forGlobalPattern">forGlobalPattern</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="SuspiciousActivityAnalysisDTO.php.html#167"><abbr title="App\Domains\Security\DTOs\SuspiciousActivityAnalysisDTO::getAnalysisTime">getAnalysisTime</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="SuspiciousActivityAnalysisDTO.php.html#172"><abbr title="App\Domains\Security\DTOs\SuspiciousActivityAnalysisDTO::getTimeWindowMinutes">getTimeWindowMinutes</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="SuspiciousActivityAnalysisDTO.php.html#187"><abbr title="App\Domains\Security\DTOs\SuspiciousActivityAnalysisDTO::getActivityCounts">getActivityCounts</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="SuspiciousActivityAnalysisDTO.php.html#192"><abbr title="App\Domains\Security\DTOs\SuspiciousActivityAnalysisDTO::getFailureCounts">getFailureCounts</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="SuspiciousActivityAnalysisDTO.php.html#197"><abbr title="App\Domains\Security\DTOs\SuspiciousActivityAnalysisDTO::getAnomalyScores">getAnomalyScores</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="SuspiciousActivityAnalysisDTO.php.html#202"><abbr title="App\Domains\Security\DTOs\SuspiciousActivityAnalysisDTO::getDetectionRules">getDetectionRules</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="SuspiciousActivityAnalysisDTO.php.html#207"><abbr title="App\Domains\Security\DTOs\SuspiciousActivityAnalysisDTO::getMetadata">getMetadata</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="SuspiciousActivityAnalysisDTO.php.html#212"><abbr title="App\Domains\Security\DTOs\SuspiciousActivityAnalysisDTO::getRecommendedAction">getRecommendedAction</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="SuspiciousActivityAnalysisDTO.php.html#241"><abbr title="App\Domains\Security\DTOs\SuspiciousActivityAnalysisDTO::getFailureRate">getFailureRate</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="SuspiciousActivityAnalysisDTO.php.html#254"><abbr title="App\Domains\Security\DTOs\SuspiciousActivityAnalysisDTO::getMaxAnomalyScore">getMaxAnomalyScore</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="SuspiciousActivityAnalysisDTO.php.html#266"><abbr title="App\Domains\Security\DTOs\SuspiciousActivityAnalysisDTO::getAverageAnomalyScore">getAverageAnomalyScore</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="SuspiciousActivityAnalysisDTO.php.html#309"><abbr title="App\Domains\Security\DTOs\SuspiciousActivityAnalysisDTO::toArray">toArray</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="SuspiciousActivityAnalysisDTO.php.html#339"><abbr title="App\Domains\Security\DTOs\SuspiciousActivityAnalysisDTO::jsonSerialize">jsonSerialize</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CreateActivityLogDTO.php.html#304"><abbr title="App\Domains\Security\DTOs\CreateActivityLogDTO::validateMetadata">validateMetadata</abbr></a></td><td class="text-right">36%</td></tr>
+       <tr><td><a href="CreateIpRuleDTO.php.html#51"><abbr title="App\Domains\Security\DTOs\CreateIpRuleDTO::addIpRuleValidationRules">addIpRuleValidationRules</abbr></a></td><td class="text-right">76%</td></tr>
+       <tr><td><a href="SuspiciousActivityAnalysisDTO.php.html#290"><abbr title="App\Domains\Security\DTOs\SuspiciousActivityAnalysisDTO::getSummary">getSummary</abbr></a></td><td class="text-right">80%</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Project Risks</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Method</th>
+         <th class="text-right"><abbr title="Change Risk Anti-Patterns (CRAP) Index">CRAP</abbr></th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="ActivityLogSearchDTO.php.html#481"><abbr title="App\Domains\Security\DTOs\ActivityLogSearchDTO::hasFilters">hasFilters</abbr></a></td><td class="text-right">156</td></tr>
+       <tr><td><a href="ActivityLogSearchDTO.php.html#527"><abbr title="App\Domains\Security\DTOs\ActivityLogSearchDTO::validateSearchConditions">validateSearchConditions</abbr></a></td><td class="text-right">56</td></tr>
+       <tr><td><a href="CreateIpRuleDTO.php.html#256"><abbr title="App\Domains\Security\DTOs\CreateIpRuleDTO::getDisplayName">getDisplayName</abbr></a></td><td class="text-right">42</td></tr>
+       <tr><td><a href="CreateIpRuleDTO.php.html#51"><abbr title="App\Domains\Security\DTOs\CreateIpRuleDTO::addIpRuleValidationRules">addIpRuleValidationRules</abbr></a></td><td class="text-right">22</td></tr>
+       <tr><td><a href="ActivityLogSearchDTO.php.html#316"><abbr title="App\Domains\Security\DTOs\ActivityLogSearchDTO::withPagination">withPagination</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="ActivityLogSearchDTO.php.html#349"><abbr title="App\Domains\Security\DTOs\ActivityLogSearchDTO::withSort">withSort</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="CreateActivityLogDTO.php.html#46"><abbr title="App\Domains\Security\DTOs\CreateActivityLogDTO::fromArray">fromArray</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="CreateIpRuleDTO.php.html#240"><abbr title="App\Domains\Security\DTOs\CreateIpRuleDTO::isLoopback">isLoopback</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="CreateActivityLogDTO.php.html#304"><abbr title="App\Domains\Security\DTOs\CreateActivityLogDTO::validateMetadata">validateMetadata</abbr></a></td><td class="text-right">11</td></tr>
+       <tr><td><a href="SuspiciousActivityAnalysisDTO.php.html#290"><abbr title="App\Domains\Security\DTOs\SuspiciousActivityAnalysisDTO::getSummary">getSummary</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="ActivityLogSearchDTO.php.html#262"><abbr title="App\Domains\Security\DTOs\ActivityLogSearchDTO::withTimeRange">withTimeRange</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="CreateActivityLogDTO.php.html#270"><abbr title="App\Domains\Security\DTOs\CreateActivityLogDTO::toArray">toArray</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="CreateIpRuleDTO.php.html#186"><abbr title="App\Domains\Security\DTOs\CreateIpRuleDTO::getIpPart">getIpPart</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="CreateIpRuleDTO.php.html#198"><abbr title="App\Domains\Security\DTOs\CreateIpRuleDTO::getCidrSuffix">getCidrSuffix</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="SuspiciousActivityAnalysisDTO.php.html#241"><abbr title="App\Domains\Security\DTOs\SuspiciousActivityAnalysisDTO::getFailureRate">getFailureRate</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="SuspiciousActivityAnalysisDTO.php.html#254"><abbr title="App\Domains\Security\DTOs\SuspiciousActivityAnalysisDTO::getMaxAnomalyScore">getMaxAnomalyScore</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="SuspiciousActivityAnalysisDTO.php.html#266"><abbr title="App\Domains\Security\DTOs\SuspiciousActivityAnalysisDTO::getAverageAnomalyScore">getAverageAnomalyScore</abbr></a></td><td class="text-right">6</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+   </div>
+   <footer>
+    <hr/>
+    <p>
+     <small>Generated by <a href="https://github.com/sebastianbergmann/php-code-coverage" target="_top">php-code-coverage 11.0.10</a> using <a href="https://www.php.net/" target="_top">PHP 8.4.11</a> and <a href="https://phpunit.de/">PHPUnit 11.5.34</a> at Fri Aug 29 9:23:06 CST 2025.</small>
+    </p>
+   </footer>
+  </div>
+  <script src="../../../_js/jquery.min.js?v=11.0.10" type="text/javascript"></script>
+  <script src="../../../_js/d3.min.js?v=11.0.10" type="text/javascript"></script>
+  <script src="../../../_js/nv.d3.min.js?v=11.0.10" type="text/javascript"></script>
+  <script type="text/javascript">
+$(document).ready(function() {
+  nv.addGraph(function() {
+    var chart = nv.models.multiBarChart();
+    chart.tooltips(false)
+      .showControls(false)
+      .showLegend(false)
+      .reduceXTicks(false)
+      .staggerLabels(true)
+      .yAxis.tickFormat(d3.format('d'));
+
+    d3.select('#classCoverageDistribution svg')
+      .datum(getCoverageDistributionData([1,0,1,0,0,1,1,0,0,0,0,0], "Class Coverage"))
+      .transition().duration(500).call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  nv.addGraph(function() {
+    var chart = nv.models.multiBarChart();
+    chart.tooltips(false)
+      .showControls(false)
+      .showLegend(false)
+      .reduceXTicks(false)
+      .staggerLabels(true)
+      .yAxis.tickFormat(d3.format('d'));
+
+    d3.select('#methodCoverageDistribution svg')
+      .datum(getCoverageDistributionData([81,0,0,0,1,0,0,0,1,1,0,17], "Method Coverage"))
+      .transition().duration(500).call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  function getCoverageDistributionData(data, label) {
+    var labels = [
+      '0%',
+      '0-10%',
+      '10-20%',
+      '20-30%',
+      '30-40%',
+      '40-50%',
+      '50-60%',
+      '60-70%',
+      '70-80%',
+      '80-90%',
+      '90-100%',
+      '100%'
+    ];
+    var values = [];
+    $.each(labels, function(key) {
+      values.push({x: labels[key], y: data[key]});
+    });
+
+    return [
+      {
+        key: label,
+        values: values,
+        color: "#4572A7"
+      }
+    ];
+  }
+  nv.addGraph(function() {
+    var chart = nv.models.scatterChart()
+      .showDistX(true)
+      .showDistY(true)
+      .showLegend(false)
+      .forceX([0, 100]);
+    chart.tooltipContent(function(graph) {
+      return '<p>' + graph.point.class + '</p>';
+    });
+
+    chart.xAxis.axisLabel('Code Coverage (in percent)');
+    chart.yAxis.axisLabel('Cyclomatic Complexity');
+
+    d3.select('#classComplexity svg')
+      .datum(getComplexityData([[0,57,"<a href=\"ActivityLogSearchDTO.php.html#18\">App\\Domains\\Security\\DTOs\\ActivityLogSearchDTO<\/a>"],[13.513513513513514,35,"<a href=\"CreateActivityLogDTO.php.html#17\">App\\Domains\\Security\\DTOs\\CreateActivityLogDTO<\/a>"],[53.77358490566038,40,"<a href=\"CreateIpRuleDTO.php.html#16\">App\\Domains\\Security\\DTOs\\CreateIpRuleDTO<\/a>"],[47.368421052631575,38,"<a href=\"SuspiciousActivityAnalysisDTO.php.html#16\">App\\Domains\\Security\\DTOs\\SuspiciousActivityAnalysisDTO<\/a>"]], 'Class Complexity'))
+      .transition()
+      .duration(500)
+      .call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  nv.addGraph(function() {
+    var chart = nv.models.scatterChart()
+      .showDistX(true)
+      .showDistY(true)
+      .showLegend(false)
+      .forceX([0, 100]);
+    chart.tooltipContent(function(graph) {
+      return '<p>' + graph.point.class + '</p>';
+    });
+
+    chart.xAxis.axisLabel('Code Coverage (in percent)');
+    chart.yAxis.axisLabel('Method Complexity');
+
+    d3.select('#methodComplexity svg')
+      .datum(getComplexityData([[0,1,"<a href=\"ActivityLogSearchDTO.php.html#30\">App\\Domains\\Security\\DTOs\\ActivityLogSearchDTO::__construct<\/a>"],[0,1,"<a href=\"ActivityLogSearchDTO.php.html#54\">App\\Domains\\Security\\DTOs\\ActivityLogSearchDTO::create<\/a>"],[0,1,"<a href=\"ActivityLogSearchDTO.php.html#62\">App\\Domains\\Security\\DTOs\\ActivityLogSearchDTO::withUserId<\/a>"],[0,1,"<a href=\"ActivityLogSearchDTO.php.html#87\">App\\Domains\\Security\\DTOs\\ActivityLogSearchDTO::withSessionId<\/a>"],[0,1,"<a href=\"ActivityLogSearchDTO.php.html#112\">App\\Domains\\Security\\DTOs\\ActivityLogSearchDTO::withActionType<\/a>"],[0,1,"<a href=\"ActivityLogSearchDTO.php.html#137\">App\\Domains\\Security\\DTOs\\ActivityLogSearchDTO::withActionCategory<\/a>"],[0,1,"<a href=\"ActivityLogSearchDTO.php.html#162\">App\\Domains\\Security\\DTOs\\ActivityLogSearchDTO::withStatus<\/a>"],[0,1,"<a href=\"ActivityLogSearchDTO.php.html#187\">App\\Domains\\Security\\DTOs\\ActivityLogSearchDTO::withMinSeverity<\/a>"],[0,1,"<a href=\"ActivityLogSearchDTO.php.html#212\">App\\Domains\\Security\\DTOs\\ActivityLogSearchDTO::withTarget<\/a>"],[0,1,"<a href=\"ActivityLogSearchDTO.php.html#237\">App\\Domains\\Security\\DTOs\\ActivityLogSearchDTO::withIpAddress<\/a>"],[0,2,"<a href=\"ActivityLogSearchDTO.php.html#262\">App\\Domains\\Security\\DTOs\\ActivityLogSearchDTO::withTimeRange<\/a>"],[0,1,"<a href=\"ActivityLogSearchDTO.php.html#291\">App\\Domains\\Security\\DTOs\\ActivityLogSearchDTO::withSearchKeyword<\/a>"],[0,4,"<a href=\"ActivityLogSearchDTO.php.html#316\">App\\Domains\\Security\\DTOs\\ActivityLogSearchDTO::withPagination<\/a>"],[0,3,"<a href=\"ActivityLogSearchDTO.php.html#349\">App\\Domains\\Security\\DTOs\\ActivityLogSearchDTO::withSort<\/a>"],[0,1,"<a href=\"ActivityLogSearchDTO.php.html#390\">App\\Domains\\Security\\DTOs\\ActivityLogSearchDTO::getUserId<\/a>"],[0,1,"<a href=\"ActivityLogSearchDTO.php.html#395\">App\\Domains\\Security\\DTOs\\ActivityLogSearchDTO::getSessionId<\/a>"],[0,1,"<a href=\"ActivityLogSearchDTO.php.html#400\">App\\Domains\\Security\\DTOs\\ActivityLogSearchDTO::getActionType<\/a>"],[0,1,"<a href=\"ActivityLogSearchDTO.php.html#405\">App\\Domains\\Security\\DTOs\\ActivityLogSearchDTO::getActionCategory<\/a>"],[0,1,"<a href=\"ActivityLogSearchDTO.php.html#410\">App\\Domains\\Security\\DTOs\\ActivityLogSearchDTO::getStatus<\/a>"],[0,1,"<a href=\"ActivityLogSearchDTO.php.html#415\">App\\Domains\\Security\\DTOs\\ActivityLogSearchDTO::getMinSeverity<\/a>"],[0,1,"<a href=\"ActivityLogSearchDTO.php.html#420\">App\\Domains\\Security\\DTOs\\ActivityLogSearchDTO::getTargetType<\/a>"],[0,1,"<a href=\"ActivityLogSearchDTO.php.html#425\">App\\Domains\\Security\\DTOs\\ActivityLogSearchDTO::getTargetId<\/a>"],[0,1,"<a href=\"ActivityLogSearchDTO.php.html#430\">App\\Domains\\Security\\DTOs\\ActivityLogSearchDTO::getIpAddress<\/a>"],[0,1,"<a href=\"ActivityLogSearchDTO.php.html#435\">App\\Domains\\Security\\DTOs\\ActivityLogSearchDTO::getStartDate<\/a>"],[0,1,"<a href=\"ActivityLogSearchDTO.php.html#440\">App\\Domains\\Security\\DTOs\\ActivityLogSearchDTO::getEndDate<\/a>"],[0,1,"<a href=\"ActivityLogSearchDTO.php.html#445\">App\\Domains\\Security\\DTOs\\ActivityLogSearchDTO::getSearchKeyword<\/a>"],[0,1,"<a href=\"ActivityLogSearchDTO.php.html#450\">App\\Domains\\Security\\DTOs\\ActivityLogSearchDTO::getPage<\/a>"],[0,1,"<a href=\"ActivityLogSearchDTO.php.html#455\">App\\Domains\\Security\\DTOs\\ActivityLogSearchDTO::getPerPage<\/a>"],[0,1,"<a href=\"ActivityLogSearchDTO.php.html#460\">App\\Domains\\Security\\DTOs\\ActivityLogSearchDTO::getSortBy<\/a>"],[0,1,"<a href=\"ActivityLogSearchDTO.php.html#465\">App\\Domains\\Security\\DTOs\\ActivityLogSearchDTO::getSortOrder<\/a>"],[0,1,"<a href=\"ActivityLogSearchDTO.php.html#473\">App\\Domains\\Security\\DTOs\\ActivityLogSearchDTO::getOffset<\/a>"],[0,12,"<a href=\"ActivityLogSearchDTO.php.html#481\">App\\Domains\\Security\\DTOs\\ActivityLogSearchDTO::hasFilters<\/a>"],[0,1,"<a href=\"ActivityLogSearchDTO.php.html#502\">App\\Domains\\Security\\DTOs\\ActivityLogSearchDTO::toArray<\/a>"],[0,7,"<a href=\"ActivityLogSearchDTO.php.html#527\">App\\Domains\\Security\\DTOs\\ActivityLogSearchDTO::validateSearchConditions<\/a>"],[100,2,"<a href=\"CreateActivityLogDTO.php.html#19\">App\\Domains\\Security\\DTOs\\CreateActivityLogDTO::__construct<\/a>"],[0,3,"<a href=\"CreateActivityLogDTO.php.html#46\">App\\Domains\\Security\\DTOs\\CreateActivityLogDTO::fromArray<\/a>"],[0,1,"<a href=\"CreateActivityLogDTO.php.html#72\">App\\Domains\\Security\\DTOs\\CreateActivityLogDTO::success<\/a>"],[0,1,"<a href=\"CreateActivityLogDTO.php.html#96\">App\\Domains\\Security\\DTOs\\CreateActivityLogDTO::failure<\/a>"],[100,1,"<a href=\"CreateActivityLogDTO.php.html#120\">App\\Domains\\Security\\DTOs\\CreateActivityLogDTO::securityEvent<\/a>"],[0,1,"<a href=\"CreateActivityLogDTO.php.html#139\">App\\Domains\\Security\\DTOs\\CreateActivityLogDTO::getActionType<\/a>"],[0,1,"<a href=\"CreateActivityLogDTO.php.html#144\">App\\Domains\\Security\\DTOs\\CreateActivityLogDTO::getUserId<\/a>"],[0,1,"<a href=\"CreateActivityLogDTO.php.html#149\">App\\Domains\\Security\\DTOs\\CreateActivityLogDTO::getSessionId<\/a>"],[0,1,"<a href=\"CreateActivityLogDTO.php.html#154\">App\\Domains\\Security\\DTOs\\CreateActivityLogDTO::getStatus<\/a>"],[0,1,"<a href=\"CreateActivityLogDTO.php.html#159\">App\\Domains\\Security\\DTOs\\CreateActivityLogDTO::getTargetType<\/a>"],[0,1,"<a href=\"CreateActivityLogDTO.php.html#164\">App\\Domains\\Security\\DTOs\\CreateActivityLogDTO::getTargetId<\/a>"],[0,1,"<a href=\"CreateActivityLogDTO.php.html#169\">App\\Domains\\Security\\DTOs\\CreateActivityLogDTO::getDescription<\/a>"],[0,1,"<a href=\"CreateActivityLogDTO.php.html#177\">App\\Domains\\Security\\DTOs\\CreateActivityLogDTO::getMetadata<\/a>"],[0,1,"<a href=\"CreateActivityLogDTO.php.html#182\">App\\Domains\\Security\\DTOs\\CreateActivityLogDTO::getIpAddress<\/a>"],[0,1,"<a href=\"CreateActivityLogDTO.php.html#187\">App\\Domains\\Security\\DTOs\\CreateActivityLogDTO::getUserAgent<\/a>"],[0,1,"<a href=\"CreateActivityLogDTO.php.html#192\">App\\Domains\\Security\\DTOs\\CreateActivityLogDTO::getRequestMethod<\/a>"],[0,1,"<a href=\"CreateActivityLogDTO.php.html#197\">App\\Domains\\Security\\DTOs\\CreateActivityLogDTO::getRequestPath<\/a>"],[0,1,"<a href=\"CreateActivityLogDTO.php.html#202\">App\\Domains\\Security\\DTOs\\CreateActivityLogDTO::getOccurredAt<\/a>"],[0,1,"<a href=\"CreateActivityLogDTO.php.html#209\">App\\Domains\\Security\\DTOs\\CreateActivityLogDTO::withUserId<\/a>"],[0,1,"<a href=\"CreateActivityLogDTO.php.html#217\">App\\Domains\\Security\\DTOs\\CreateActivityLogDTO::withSessionId<\/a>"],[0,1,"<a href=\"CreateActivityLogDTO.php.html#225\">App\\Domains\\Security\\DTOs\\CreateActivityLogDTO::withRequestInfo<\/a>"],[0,1,"<a href=\"CreateActivityLogDTO.php.html#234\">App\\Domains\\Security\\DTOs\\CreateActivityLogDTO::withNetworkInfo<\/a>"],[0,1,"<a href=\"CreateActivityLogDTO.php.html#246\">App\\Domains\\Security\\DTOs\\CreateActivityLogDTO::withMetadata<\/a>"],[0,1,"<a href=\"CreateActivityLogDTO.php.html#255\">App\\Domains\\Security\\DTOs\\CreateActivityLogDTO::addMetadata<\/a>"],[0,2,"<a href=\"CreateActivityLogDTO.php.html#270\">App\\Domains\\Security\\DTOs\\CreateActivityLogDTO::toArray<\/a>"],[0,1,"<a href=\"CreateActivityLogDTO.php.html#294\">App\\Domains\\Security\\DTOs\\CreateActivityLogDTO::jsonSerialize<\/a>"],[36.36363636363637,5,"<a href=\"CreateActivityLogDTO.php.html#304\">App\\Domains\\Security\\DTOs\\CreateActivityLogDTO::validateMetadata<\/a>"],[100,2,"<a href=\"CreateIpRuleDTO.php.html#31\">App\\Domains\\Security\\DTOs\\CreateIpRuleDTO::__construct<\/a>"],[76,18,"<a href=\"CreateIpRuleDTO.php.html#51\">App\\Domains\\Security\\DTOs\\CreateIpRuleDTO::addIpRuleValidationRules<\/a>"],[100,1,"<a href=\"CreateIpRuleDTO.php.html#152\">App\\Domains\\Security\\DTOs\\CreateIpRuleDTO::getValidationRules<\/a>"],[100,1,"<a href=\"CreateIpRuleDTO.php.html#165\">App\\Domains\\Security\\DTOs\\CreateIpRuleDTO::toArray<\/a>"],[0,1,"<a href=\"CreateIpRuleDTO.php.html#178\">App\\Domains\\Security\\DTOs\\CreateIpRuleDTO::isCidrFormat<\/a>"],[0,2,"<a href=\"CreateIpRuleDTO.php.html#186\">App\\Domains\\Security\\DTOs\\CreateIpRuleDTO::getIpPart<\/a>"],[0,2,"<a href=\"CreateIpRuleDTO.php.html#198\">App\\Domains\\Security\\DTOs\\CreateIpRuleDTO::getCidrSuffix<\/a>"],[0,1,"<a href=\"CreateIpRuleDTO.php.html#210\">App\\Domains\\Security\\DTOs\\CreateIpRuleDTO::isIpv4<\/a>"],[0,1,"<a href=\"CreateIpRuleDTO.php.html#220\">App\\Domains\\Security\\DTOs\\CreateIpRuleDTO::isIpv6<\/a>"],[0,1,"<a href=\"CreateIpRuleDTO.php.html#230\">App\\Domains\\Security\\DTOs\\CreateIpRuleDTO::isPrivateIp<\/a>"],[0,3,"<a href=\"CreateIpRuleDTO.php.html#240\">App\\Domains\\Security\\DTOs\\CreateIpRuleDTO::isLoopback<\/a>"],[0,6,"<a href=\"CreateIpRuleDTO.php.html#256\">App\\Domains\\Security\\DTOs\\CreateIpRuleDTO::getDisplayName<\/a>"],[0,1,"<a href=\"CreateIpRuleDTO.php.html#268\">App\\Domains\\Security\\DTOs\\CreateIpRuleDTO::getDetailedInfo<\/a>"],[100,1,"<a href=\"SuspiciousActivityAnalysisDTO.php.html#33\">App\\Domains\\Security\\DTOs\\SuspiciousActivityAnalysisDTO::__construct<\/a>"],[100,1,"<a href=\"SuspiciousActivityAnalysisDTO.php.html#53\">App\\Domains\\Security\\DTOs\\SuspiciousActivityAnalysisDTO::forUser<\/a>"],[100,1,"<a href=\"SuspiciousActivityAnalysisDTO.php.html#87\">App\\Domains\\Security\\DTOs\\SuspiciousActivityAnalysisDTO::forIpAddress<\/a>"],[0,1,"<a href=\"SuspiciousActivityAnalysisDTO.php.html#121\">App\\Domains\\Security\\DTOs\\SuspiciousActivityAnalysisDTO::forGlobalPattern<\/a>"],[100,1,"<a href=\"SuspiciousActivityAnalysisDTO.php.html#152\">App\\Domains\\Security\\DTOs\\SuspiciousActivityAnalysisDTO::getAnalysisId<\/a>"],[100,1,"<a href=\"SuspiciousActivityAnalysisDTO.php.html#157\">App\\Domains\\Security\\DTOs\\SuspiciousActivityAnalysisDTO::getTargetType<\/a>"],[100,1,"<a href=\"SuspiciousActivityAnalysisDTO.php.html#162\">App\\Domains\\Security\\DTOs\\SuspiciousActivityAnalysisDTO::getTargetId<\/a>"],[0,1,"<a href=\"SuspiciousActivityAnalysisDTO.php.html#167\">App\\Domains\\Security\\DTOs\\SuspiciousActivityAnalysisDTO::getAnalysisTime<\/a>"],[0,1,"<a href=\"SuspiciousActivityAnalysisDTO.php.html#172\">App\\Domains\\Security\\DTOs\\SuspiciousActivityAnalysisDTO::getTimeWindowMinutes<\/a>"],[100,1,"<a href=\"SuspiciousActivityAnalysisDTO.php.html#177\">App\\Domains\\Security\\DTOs\\SuspiciousActivityAnalysisDTO::isSuspicious<\/a>"],[100,1,"<a href=\"SuspiciousActivityAnalysisDTO.php.html#182\">App\\Domains\\Security\\DTOs\\SuspiciousActivityAnalysisDTO::getSeverityLevel<\/a>"],[0,1,"<a href=\"SuspiciousActivityAnalysisDTO.php.html#187\">App\\Domains\\Security\\DTOs\\SuspiciousActivityAnalysisDTO::getActivityCounts<\/a>"],[0,1,"<a href=\"SuspiciousActivityAnalysisDTO.php.html#192\">App\\Domains\\Security\\DTOs\\SuspiciousActivityAnalysisDTO::getFailureCounts<\/a>"],[0,1,"<a href=\"SuspiciousActivityAnalysisDTO.php.html#197\">App\\Domains\\Security\\DTOs\\SuspiciousActivityAnalysisDTO::getAnomalyScores<\/a>"],[0,1,"<a href=\"SuspiciousActivityAnalysisDTO.php.html#202\">App\\Domains\\Security\\DTOs\\SuspiciousActivityAnalysisDTO::getDetectionRules<\/a>"],[0,1,"<a href=\"SuspiciousActivityAnalysisDTO.php.html#207\">App\\Domains\\Security\\DTOs\\SuspiciousActivityAnalysisDTO::getMetadata<\/a>"],[0,1,"<a href=\"SuspiciousActivityAnalysisDTO.php.html#212\">App\\Domains\\Security\\DTOs\\SuspiciousActivityAnalysisDTO::getRecommendedAction<\/a>"],[100,1,"<a href=\"SuspiciousActivityAnalysisDTO.php.html#217\">App\\Domains\\Security\\DTOs\\SuspiciousActivityAnalysisDTO::getConfidenceScore<\/a>"],[100,1,"<a href=\"SuspiciousActivityAnalysisDTO.php.html#225\">App\\Domains\\Security\\DTOs\\SuspiciousActivityAnalysisDTO::getTotalActivityCount<\/a>"],[100,1,"<a href=\"SuspiciousActivityAnalysisDTO.php.html#233\">App\\Domains\\Security\\DTOs\\SuspiciousActivityAnalysisDTO::getTotalFailureCount<\/a>"],[0,2,"<a href=\"SuspiciousActivityAnalysisDTO.php.html#241\">App\\Domains\\Security\\DTOs\\SuspiciousActivityAnalysisDTO::getFailureRate<\/a>"],[0,2,"<a href=\"SuspiciousActivityAnalysisDTO.php.html#254\">App\\Domains\\Security\\DTOs\\SuspiciousActivityAnalysisDTO::getMaxAnomalyScore<\/a>"],[0,2,"<a href=\"SuspiciousActivityAnalysisDTO.php.html#266\">App\\Domains\\Security\\DTOs\\SuspiciousActivityAnalysisDTO::getAverageAnomalyScore<\/a>"],[100,4,"<a href=\"SuspiciousActivityAnalysisDTO.php.html#278\">App\\Domains\\Security\\DTOs\\SuspiciousActivityAnalysisDTO::requiresImmediateAction<\/a>"],[80,6,"<a href=\"SuspiciousActivityAnalysisDTO.php.html#290\">App\\Domains\\Security\\DTOs\\SuspiciousActivityAnalysisDTO::getSummary<\/a>"],[0,1,"<a href=\"SuspiciousActivityAnalysisDTO.php.html#309\">App\\Domains\\Security\\DTOs\\SuspiciousActivityAnalysisDTO::toArray<\/a>"],[0,1,"<a href=\"SuspiciousActivityAnalysisDTO.php.html#339\">App\\Domains\\Security\\DTOs\\SuspiciousActivityAnalysisDTO::jsonSerialize<\/a>"]], 'Method Complexity'))
+      .transition()
+      .duration(500)
+      .call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  function getComplexityData(data, label) {
+    var values = [];
+    $.each(data, function(key) {
+      var value = Math.round(data[key][0]*100) / 100;
+      values.push({
+        x: value,
+        y: data[key][1],
+        class: data[key][2],
+        size: 0.05,
+        shape: 'diamond'
+      });
+    });
+
+    return [
+      {
+        key: label,
+        values: values,
+        color: "#4572A7"
+      }
+    ];
+  }
+});
+  </script>
+ </body>
+</html>

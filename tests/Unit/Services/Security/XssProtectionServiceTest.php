@@ -4,17 +4,32 @@ declare(strict_types=1);
 
 namespace Tests\Unit\Services\Security;
 
+use App\Domains\Security\Contracts\ActivityLoggingServiceInterface;
 use App\Domains\Security\Services\Core\XssProtectionService;
+use Mockery;
+use Mockery\Adapter\Phpunit\MockeryPHPUnitIntegration;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 
 class XssProtectionServiceTest extends TestCase
 {
+    use MockeryPHPUnitIntegration;
+
     private XssProtectionService $service;
+
+    private ActivityLoggingServiceInterface $activityLogger;
 
     protected function setUp(): void
     {
-        $this->service = new XssProtectionService();
+        $this->activityLogger = Mockery::mock(ActivityLoggingServiceInterface::class);
+
+        // 設定 ActivityLogger Mock 的通用預期
+        $this->activityLogger->shouldReceive('log')
+            ->zeroOrMoreTimes();
+        $this->activityLogger->shouldReceive('logSecurityEvent')
+            ->zeroOrMoreTimes();
+
+        $this->service = new XssProtectionService($this->activityLogger);
     }
 
     #[Test]
