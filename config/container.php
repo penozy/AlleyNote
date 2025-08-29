@@ -10,6 +10,7 @@ declare(strict_types=1);
 
 use App\Domains\Auth\Providers\SimpleAuthServiceProvider;
 use App\Domains\Security\Providers\SecurityServiceProvider;
+use App\Infrastructure\Cache\Providers\CacheServiceProvider;
 use App\Infrastructure\Http\Response;
 use App\Infrastructure\Http\ServerRequest;
 use App\Infrastructure\Http\ServerRequestFactory;
@@ -49,6 +50,7 @@ return array_merge(
     // 路由系統服務
     RoutingServiceProvider::getDefinitions(),
     SecurityServiceProvider::getDefinitions(),
+    CacheServiceProvider::getDefinitions(),
 
     // JWT 認證系統服務
     SimpleAuthServiceProvider::getDefinitions(),

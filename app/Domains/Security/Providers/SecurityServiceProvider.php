@@ -8,6 +8,8 @@ use App\Domains\Security\Contracts\ActivityLoggingServiceInterface;
 use App\Domains\Security\Contracts\ActivityLogRepositoryInterface;
 use App\Domains\Security\Repositories\ActivityLogRepository;
 use App\Domains\Security\Services\ActivityLoggingService;
+use App\Domains\Security\Services\CachedActivityLoggingService;
+use App\Shared\Contracts\CacheInterface;
 use Psr\Container\ContainerInterface;
 use Psr\Log\LoggerInterface;
 use Stringable;
@@ -28,8 +30,11 @@ class SecurityServiceProvider
             // Activity Log Repository Interface
             ActivityLogRepositoryInterface::class => \DI\create(ActivityLogRepository::class),
 
-            // Activity Logging Service
-            ActivityLoggingServiceInterface::class => \DI\factory([self::class, 'createActivityLoggingService']),
+            // Base Activity Logging Service
+            'base_activity_logging_service' => \DI\factory([self::class, 'createActivityLoggingService']),
+
+            // Cached Activity Logging Service (預設實作)
+            ActivityLoggingServiceInterface::class => \DI\factory([self::class, 'createCachedActivityLoggingService']),
         ];
     }
 
@@ -89,5 +94,16 @@ class SecurityServiceProvider
         };
 
         return new ActivityLoggingService($repository, $logger);
+    }
+
+    /**
+     * 建立 CachedActivityLoggingService 實例.
+     */
+    public static function createCachedActivityLoggingService(ContainerInterface $container): CachedActivityLoggingService
+    {
+        $baseService = $container->get('base_activity_logging_service');
+        $cache = $container->get(CacheInterface::class);
+
+        return new CachedActivityLoggingService($baseService, $cache);
     }
 }

@@ -321,7 +321,7 @@ class AuthControllerTest extends TestCase
             'refresh_token' => 'valid_refresh_token',
             'logout_all_devices' => false,
         ];
-        
+
         // 設定 Mock 期望和請求數據
         $this->request->shouldReceive('getParsedBody')->andReturn($requestData);
         $this->request->shouldReceive('getHeaderLine')->with('Authorization')->andReturn('Bearer valid_access_token');
@@ -333,13 +333,13 @@ class AuthControllerTest extends TestCase
         $authenticationService = Mockery::mock(\AlleyNote\Domains\Auth\Contracts\AuthenticationServiceInterface::class);
         $jwtTokenService = Mockery::mock(\AlleyNote\Domains\Auth\Contracts\JwtTokenServiceInterface::class);
         $activityLoggingService = Mockery::mock(\App\Domains\Security\Contracts\ActivityLoggingServiceInterface::class);
-        
+
         // Mock logout 方法，它應該接收 LogoutRequestDTO 並回傳 bool
         $authenticationService->shouldReceive('logout')
             ->once()
             ->with(Mockery::type(\AlleyNote\Domains\Auth\DTOs\LogoutRequestDTO::class))
             ->andReturn(true);
-        
+
         // Mock 活動記錄服務
         $activityLoggingService->shouldReceive('log')
             ->once()

@@ -2,18 +2,30 @@
 
 declare(strict_types=1);
 
-namespace App\Infrastructure\Cache;
+namespace AlleyNote\Infrastructure\Cache;
 
-class CacheManager
+use AlleyNote\Shared\Cache\CacheServiceInterface;
+use AlleyNote\Infrastructure\Cache\CacheKeys;
+
+/**
+ * 快取管理器
+ * 
+ * 提供高階快取操作介面，包含記憶化、模式操作、統計等功能。
+ * 基於 CacheServiceInterface 實作，支援不同的快取後端。
+ * 
+ * @author AI Assistant
+ * @version 1.0
+ */
+final class CacheManager
 {
-    private array $cache = [];
+    private CacheServiceInterface $cache;
+    private int $defaultTtl;
 
-    private array $expiry = [];
-
-    private int $defaultTtl = 3600; // 1 hour
-
-    public function __construct(int $defaultTtl = 3600)
-    {
+    public function __construct(
+        CacheServiceInterface $cache,
+        int $defaultTtl = 3600
+    ) {
+        $this->cache = $cache;
         $this->defaultTtl = $defaultTtl;
     }
 
@@ -22,11 +34,8 @@ class CacheManager
      */
     public function get(string $key, $default = null)
     {
-        if (!$this->has($key)) {
-            return $default;
-        }
-
-        return $this->cache[$key];
+        $value = $this->cache->get($key);
+        return $value !== null ? $value : $default;
     }
 
     /**
@@ -35,54 +44,35 @@ class CacheManager
     public function set(string $key, $value, ?int $ttl = null): bool
     {
         $ttl ??= $this->defaultTtl;
-
-        $this->cache[$key] = $value;
-        $this->expiry[$key] = time() + $ttl;
-
-        return true;
+        return $this->cache->set($key, $value, $ttl);
     }
 
     /**
-     * 檢查快取是否存在且未過期
+     * 檢查快取是否存在
      */
     public function has(string $key): bool
     {
-        if (!isset($this->cache[$key])) {
-            return false;
-        }
-
-        if (isset($this->expiry[$key]) && time() > $this->expiry[$key]) {
-            $this->delete($key);
-
-            return false;
-        }
-
-        return true;
+        return $this->cache->exists($key);
     }
 
     /**
-     * 刪除快取.
+     * 刪除快取
      */
     public function delete(string $key): bool
     {
-        unset($this->cache[$key], $this->expiry[$key]);
-
-        return true;
+        return $this->cache->delete($key);
     }
 
     /**
-     * 清空所有快取.
+     * 清空所有快取
      */
     public function clear(): bool
     {
-        $this->cache = [];
-        $this->expiry = [];
-
-        return true;
+        return $this->cache->clear();
     }
 
     /**
-     * 記憶化取得（如果不存在則執行回調並快取結果）.
+     * 記憶化取得（如果不存在則執行回調並快取結果）
      */
     public function remember(string $key, callable $callback, ?int $ttl = null)
     {
@@ -97,7 +87,7 @@ class CacheManager
     }
 
     /**
-     * 永久記憶化取得（直到手動刪除）.
+     * 永久記憶化取得（直到手動刪除）
      */
     public function rememberForever(string $key, callable $callback)
     {
@@ -106,23 +96,17 @@ class CacheManager
         }
 
         $value = $callback();
-        $this->cache[$key] = $value;
-        unset($this->expiry[$key]); // 永不過期
+        $this->cache->set($key, $value); // 無 TTL，永不過期
 
         return $value;
     }
 
     /**
-     * 取得或設定多個快取值
+     * 取得多個快取值
      */
     public function many(array $keys): array
     {
-        $result = [];
-        foreach ($keys as $key) {
-            $result[$key] = $this->get($key);
-        }
-
-        return $result;
+        return $this->cache->getMultiple($keys);
     }
 
     /**
@@ -130,39 +114,38 @@ class CacheManager
      */
     public function putMany(array $values, ?int $ttl = null): bool
     {
-        foreach ($values as $key => $value) {
-            $this->set($key, $value, $ttl);
-        }
-
-        return true;
+        $ttl ??= $this->defaultTtl;
+        return $this->cache->setMultiple($values, $ttl);
     }
 
     /**
-     * 根據模式刪除快取.
+     * 根據模式刪除快取
+     * 注意：這個功能需要快取後端支援，目前僅支援部分實作
      */
     public function deletePattern(string $pattern): int
     {
-        // 先 quote 特殊字符，但保留 * 不被 quote
-        $escapedPattern = str_replace('\\*', '*', preg_quote($pattern, '/'));
-        // 然後將 * 替換為正則表達式的 .*
-        $regexPattern = str_replace('*', '.*', $escapedPattern);
-        $deleted = 0;
-
-        foreach (array_keys($this->cache) as $key) {
-            if (preg_match("/^{$regexPattern}$/", $key)) {
-                $this->delete($key);
-                $deleted++;
-            }
+        // 這個功能依賴具體的快取實作
+        // Redis 支援 KEYS 命令，但記憶體快取不支援
+        if ($this->cache instanceof RedisCache && method_exists($this->cache, 'deletePattern')) {
+            return $this->cache->deletePattern($pattern);
         }
 
-        return $deleted;
+        // 對於不支援的實作，返回 0 表示未刪除任何項目
+        return 0;
     }
 
     /**
-     * 增加數值快取.
+     * 增加數值快取
+     * 注意：這個功能需要快取後端支援
      */
     public function increment(string $key, int $value = 1): int
     {
+        if ($this->cache instanceof RedisCache && method_exists($this->cache, 'increment')) {
+            $result = $this->cache->increment($key, $value);
+            return $result !== false ? $result : 0;
+        }
+
+        // 回退實作：取得目前值，增加後設定回去
         $current = (int) $this->get($key, 0);
         $new = $current + $value;
         $this->set($key, $new);
@@ -171,7 +154,7 @@ class CacheManager
     }
 
     /**
-     * 減少數值快取.
+     * 減少數值快取
      */
     public function decrement(string $key, int $value = 1): int
     {
@@ -179,62 +162,73 @@ class CacheManager
     }
 
     /**
-     * 取得快取統計資訊.
+     * 取得快取統計資訊
+     * 注意：此實作可能不準確，依賴於快取後端
      */
     public function getStats(): array
     {
-        $now = time();
-        $expired = 0;
-        $active = 0;
-
-        foreach ($this->expiry as $key => $expireTime) {
-            if ($now > $expireTime) {
-                $expired++;
-            } else {
-                $active++;
-            }
-        }
-
+        // 基本統計資訊，實際實作可能需要更多細節
         return [
-            'total_keys' => count($this->cache),
-            'active_keys' => $active,
-            'expired_keys' => $expired,
-            'memory_usage' => $this->getMemoryUsage(),
+            'cache_backend' => get_class($this->cache),
+            'default_ttl' => $this->defaultTtl,
+            'supported_operations' => $this->getSupportedOperations(),
         ];
     }
 
     /**
-     * 估算記憶體使用量.
+     * 取得支援的操作列表
+     */
+    private function getSupportedOperations(): array
+    {
+        $operations = ['get', 'set', 'delete', 'exists', 'clear'];
+        
+        if (method_exists($this->cache, 'getMultiple')) {
+            $operations[] = 'getMultiple';
+        }
+        if (method_exists($this->cache, 'setMultiple')) {
+            $operations[] = 'setMultiple';
+        }
+        if (method_exists($this->cache, 'deleteMultiple')) {
+            $operations[] = 'deleteMultiple';
+        }
+        if (method_exists($this->cache, 'increment')) {
+            $operations[] = 'increment';
+        }
+        if (method_exists($this->cache, 'decrement')) {
+            $operations[] = 'decrement';
+        }
+
+        return $operations;
+    }
+
+    /**
+     * 估算記憶體使用量（簡化實作）
      */
     private function getMemoryUsage(): string
     {
-        $size = strlen(serialize($this->cache)) + strlen(serialize($this->expiry));
-
-        if ($size < 1024) {
-            return $size . ' B';
-        } elseif ($size < 1048576) {
-            return round($size / 1024, 2) . ' KB';
+        $memory = memory_get_usage(true);
+        
+        if ($memory < 1024) {
+            return $memory . ' B';
+        } elseif ($memory < 1048576) {
+            return round($memory / 1024, 2) . ' KB';
         } else {
-            return round($size / 1048576, 2) . ' MB';
+            return round($memory / 1048576, 2) . ' MB';
         }
     }
 
     /**
-     * 清理過期的快取.
+     * 清理過期的快取（依賴快取後端實作）
      */
     public function cleanup(): int
     {
-        $now = time();
-        $cleaned = 0;
-
-        foreach ($this->expiry as $key => $expireTime) {
-            if ($now > $expireTime) {
-                $this->delete($key);
-                $cleaned++;
-            }
+        // 這個功能通常由快取後端自動處理
+        // Redis 會自動清理過期鍵，記憶體快取則不支援 TTL
+        if ($this->cache instanceof RedisCache && method_exists($this->cache, 'cleanup')) {
+            return $this->cache->cleanup();
         }
 
-        return $cleaned;
+        return 0;
     }
 
     /**
